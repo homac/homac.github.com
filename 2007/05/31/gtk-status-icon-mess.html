@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GTK status icon mess</title>
+<!--    <link rel="stylesheet" href="" type="text/css" media="screen"/>-->
+ <link rel="stylesheet" href="/stylesheets/dark.css" type="text/css" media="screen"/>
+  </head>
+
+  <body>
+    <div id="page">
+      <div id="header">
+	<div id="headerimg">
+	  <h1 class="caption"><a href="http://blog.homac.de" class="caption">Holger's Blog</a></h1>
+	  <h3 class="description">Cervisiam Bibat</h3>
+	</div>
+      </div>
+
+      <div id="content">
+	<small>31 May 2007 20:11</small>
+	<a href="/atom.xml" title="Subscribe"><img class="top-icon" width="48"
+						   height="48" alt="Subscribe"
+						   src="/images/feed-icon.png"/></a>
+
+
+
+<span class="navigation">
+  <a rel="prev" href="/2007/03/31/orgfreedesktoppowermanagement.html" title="View org.freedesktop.PowerManagement">&larr; previous</a>
+</span>
+
+
+<br>
+<span class="navigation">
+  <a rel="next" href="/2007/06/25/hack-week.html" title="View Hack Week">next &rarr;</a>
+</span>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><a href="http://blog.homac.de//2007/05/31/gtk-status-icon-mess.html">GTK status icon mess</a></h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+While trying to add the ability to change the display brightness via the
+tray icon in gnome-power-manager, I just wanted to catch the
+corresponding mouse wheel events on a GtkStatusIcon. Seeing that this is
+not possible without ugly hacks or whole reimplementations is really
+bad. It would really be simple to add this feature or to export the
+underlying GtkWidget through the API so that one can catch he
+'scroll-event' manually. Looking for the causes, found <a href="http://bugzilla.gnome.org/show_bug.cgi?id=409435">that</a>. Why is
+working on GNOME or GTK sometimes so depressive&hellip;
+</p></div>
+</div>
+
+
+<p>&nbsp;<hr></p>
+      <!-- DISQUS -->
+<!--      <script type="text/javascript">  var disqus_developer = true; </script>-->
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+	(function() {
+	var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	dsq.src = 'http://holgersblog.disqus.com/embed.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=holgersblog">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </div> <!-- content -->
+
+      <div id="footer">
+	<p>Generated with a <a href="http://www.gnu.org/software/emacs/tour/">GNU Emacs</a>, <a href="http://orgmode.org/">org-mode</a>,
+          <a href="http://github.com/mojombo/jekyll">Jekyll</a>,
+          and <a href="http://juanreyero.com/open/org-jekyll/">org-jekyll</a>
+          toolchain.</p>
+      </div>
+    </div> <!-- page -->
+
+  </body>
+</html>
+

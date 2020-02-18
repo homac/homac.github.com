@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Package Updates (Powersave, QNotify, Update KTray)</title>
+<!--    <link rel="stylesheet" href="" type="text/css" media="screen"/>-->
+ <link rel="stylesheet" href="/stylesheets/dark.css" type="text/css" media="screen"/>
+  </head>
+
+  <body>
+    <div id="page">
+      <div id="header">
+	<div id="headerimg">
+	  <h1 class="caption"><a href="http://blog.homac.de" class="caption">Holger's Blog</a></h1>
+	  <h3 class="description">Cervisiam Bibat</h3>
+	</div>
+      </div>
+
+      <div id="content">
+	<small>04 Feb 2008 23:16</small>
+	<a href="/atom.xml" title="Subscribe"><img class="top-icon" width="48"
+						   height="48" alt="Subscribe"
+						   src="/images/feed-icon.png"/></a>
+
+
+
+<span class="navigation">
+  <a rel="prev" href="/2008/01/12/fixing-a-broken-n-or-a-new-way-to-freeze-a-device.html" title="View Fixing a broken N810, or... A new way to freeze a device">&larr; previous</a>
+</span>
+
+
+<br>
+<span class="navigation">
+  <a rel="next" href="/2008/03/09/energy-star-jump-on-the-bandwagon.html" title="View Energy Star: Jump on the Bandwagon!">next &rarr;</a>
+</span>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><a href="http://blog.homac.de//2008/02/04/package-updates-powersave-qnotify-update-ktray.html">Package Updates (Powersave, QNotify, Update KTray)</a></h2>
+<div class="outline-text-2" id="text-1">
+
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1"><a href="http://en.opensuse.org/Projects_Powersave">Powersave Daemon</a></h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+<p>
+I finally managed to release a new version of the powersave daemon,
+0.15.20. This is a plain bugfix release. We're some kind of feature
+complete, so I doubt that there will be anything else than bugfix
+releases in the future ;-) <a href="http://sourceforge.net/project/showfiles.php?group_id=124576&amp;package_id=162525">Sourceforge</a> has the files.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2"><a href="http://qnotify.homac.de">QNotify</a></h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+<p>
+After almost 2 years of QNotify hacking abstinence, I finally managed to
+do what was on my TODO for so long. I removed the qnotifyd daemon which
+blew my machine with 100% CPU usage from time to time. Now the qnotify
+command line client manages multiple notification widget on the desktop
+on its own, by using a simple file locking mechanism. The outcome is
+qnotify-0.6. Again, <a href="http://sourceforge.net/project/showfiles.php?group_id=116172&amp;package_id=126131&amp;release_id=573987">Sourceforge</a> is your friend. For a really cool video
+about what QNotify actually can be used for, have a look at this <a href="http://www.homac.de/files/qnotify-demo.html">video</a>.
+</p>
+<p>
+On a related note, does KDE4 actually have a companion piece to GNOME's
+notification daemon? Does it look cool? May be I've to check again
+myself&hellip; If not, may be I finally manage to get a grip on myself and
+try to integrate libQNotify's features into KDE4.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3">Update: <a href="http://ktray.homac.de">KTray</a></h3>
+<div class="outline-text-3" id="text-1-3">
+
+
+<p>
+And while we're at it, just hacked in a user request feature into
+KTray. I was suprised that someone is actually still using it. Yes,
+there are users out there who don't use KDE or GNOME, so they need ktray
+to use tray applications correctly. <a href="https://sourceforge.net/project/showfiles.php?group_id=133266&amp;package_id=146415&amp;release_id=574174">Sourceforge</a> has version 0.2 which
+features:
+</p>
+<ul>
+<li>add cmd line option -r to use horizontal alignment
+</li>
+<li>add cmd line option -w to draw widget without borders
+</li>
+<li>add cmd line option -p to specify the window position
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+
+<p>&nbsp;<hr></p>
+      <!-- DISQUS -->
+<!--      <script type="text/javascript">  var disqus_developer = true; </script>-->
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+	(function() {
+	var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	dsq.src = 'http://holgersblog.disqus.com/embed.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=holgersblog">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </div> <!-- content -->
+
+      <div id="footer">
+	<p>Generated with a <a href="http://www.gnu.org/software/emacs/tour/">GNU Emacs</a>, <a href="http://orgmode.org/">org-mode</a>,
+          <a href="http://github.com/mojombo/jekyll">Jekyll</a>,
+          and <a href="http://juanreyero.com/open/org-jekyll/">org-jekyll</a>
+          toolchain.</p>
+      </div>
+    </div> <!-- page -->
+
+  </body>
+</html>
+

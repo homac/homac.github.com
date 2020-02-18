@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Liblazy - D-Bus methods provided for convenience</title>
+<!--    <link rel="stylesheet" href="" type="text/css" media="screen"/>-->
+ <link rel="stylesheet" href="/stylesheets/dark.css" type="text/css" media="screen"/>
+  </head>
+
+  <body>
+    <div id="page">
+      <div id="header">
+	<div id="headerimg">
+	  <h1 class="caption"><a href="http://blog.homac.de" class="caption">Holger's Blog</a></h1>
+	  <h3 class="description">Cervisiam Bibat</h3>
+	</div>
+      </div>
+
+      <div id="content">
+	<small>12 Nov 2006 01:31</small>
+	<a href="/atom.xml" title="Subscribe"><img class="top-icon" width="48"
+						   height="48" alt="Subscribe"
+						   src="/images/feed-icon.png"/></a>
+
+
+
+<span class="navigation">
+  <a rel="prev" href="/2006/09/28/my-work-today.html" title="View My Work Today">&larr; previous</a>
+</span>
+
+
+<br>
+<span class="navigation">
+  <a rel="next" href="/2007/02/11/new-tasks-opensuse--and-a-framework-called-dockutils.html" title="View New tasks, openSUSE 10.2 and a framework called Dockutils">next &rarr;</a>
+</span>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><a href="http://blog.homac.de//2006/11/12/liblazy---d-bus-methods-provided-for-convenience.html">Liblazy - D-Bus methods provided for convenience</a></h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+I finally found some time to release <a href="http://liblazy.freedesktop.org/wiki/Software_2fliblazy">liblazy</a> to the public. I'm already
+using it in several smaller applications and the KDE kickoff menu links
+against it in openSUSE 10.2, so it's some kind of public, but there
+hasn't been a place where you can download tarballs or to get further
+information. Starting from today, it is hosted on <a href="http://www.freedesktop.org">freedesktop</a> and has a
+<a href="http://liblazy.freedesktop.org/wiki/Software_2fliblazy">wiki page</a>.
+</p>
+<p>
+So what's liblazy all about? Liblazy is a simple and easy to use library
+that provides convenient functions for sending messages over the D-Bus
+daemon, querying information from HAL or asking PolicyKit for a
+privilege. Its features may grow as needed, though.
+</p>
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">Rationale</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+<p>
+Once in a while, I stumble across an application which has no proper
+D-Bus support and gathers some information through reading /proc or
+sysfs, or any other circumstantial way, although software like HAL or
+PolicyKit already have this information. Or they just want to send a
+simple message to another application, sometimes even without caring
+about the reply. These applications often only have to do very simple
+tasks.
+</p>
+<p>
+So to adopt these applications, you always have to duplicate lots of
+code over and over again.
+</p>
+<p>
+Just some examples&hellip;
+</p>
+<p>
+To to send a message over D-Bus one has to do:
+</p>
+<ol>
+<li>Get a D-Bus connection
+</li>
+<li>Check for errors
+</li>
+<li>Send a message over the bus
+</li>
+<li>Check for errors
+</li>
+<li>Get the reply
+</li>
+<li>Check for errors
+</li>
+</ol>
+
+
+<p>
+To get a simple property from HAL, one has to do (with libhal in this
+example):
+</p>
+<ol>
+<li>Get a D-Bus connection
+</li>
+<li>Check for errors
+</li>
+<li>Get a LibHalContext
+</li>
+<li>C.f.e.
+</li>
+<li>Register the connection with the context
+</li>
+<li>C.f.e.
+</li>
+<li>Fetch the property with libhal
+</li>
+<li>C.f.e
+</li>
+</ol>
+
+
+<p>
+When you have to check if your application possess a specific privilege
+according to PolicyKit:
+</p>
+<ul>
+<li>Either do a mixture of the above things to ask directly via D-Bus or
+    link against libpolkit and do a complicated call of
+    libpolkit<sub>is</sub><sub>uid</sub><sub>allowed</sub><sub>for</sub><sub>privilege</sub>(7 arguments follow). This
+    call gives you a lot of information you might not care about at all.
+</li>
+</ul>
+
+
+<p>
+So in every application, you have to implement functions like:
+</p>
+<ul>
+<li>dbus<sub>send</sub><sub>message</sub>(service, path, interface, method);
+</li>
+<li>dbus<sub>send</sub><sub>message</sub><sub>with</sub><sub>reply</sub>(service, path, interface, method,
+    &amp;reply);
+</li>
+<li>hal<sub>get</sub><sub>property</sub><sub>int</sub>(udi, property)
+</li>
+<li>&hellip;
+</li>
+</ul>
+
+
+<p>
+There are a lot of applications which just don't want to care too much
+about D-Bus or HAL at all. I'm mostly talking about small applications,
+of course, even about those without a mainloop. They just want to make
+use of hardware databases and abstractions and a new way of inter
+process communication we have with D-Bus these days.
+</p>
+<p>
+So what I've done is combining these very simple functions into one
+small library called liblazy. A small application may just want to do
+the following to send a message over the bus and get its reply, maybe
+even with ignoring any errors:
+</p>
+
+<p>
+      DBusMessage *reply;
+      liblazy<sub>dbus</sub><sub>system</sub><sub>send</sub><sub>method</sub><sub>call</sub>("org.freedesktop.NetworkworkManager",
+      "/org/freedesktop/NetworkManager",
+      "org.freedesktop.NetworkManager", "sleep", &amp;reply,
+      DBUS<sub>TYPE</sub><sub>INVALID</sub>);
+</p>
+<p>
+      int *arg<sub>from</sub><sub>reply</sub>; liblazy<sub>dbus</sub><sub>message</sub><sub>get</sub><sub>arg</sub>(reply,
+      DBUS<sub>TYPE</sub><sub>INT32</sub>, &amp;arg<sub>from</sub><sub>reply</sub>, 0);
+</p>
+
+<p>
+That's it. The application developer just has to link against libdbus
+and liblazy, without caring about any other stuff.
+</p>
+<p>
+Liblazy also contains very simple functions to get a property from HAL
+or ask for a privilege from PolicyKit. But it doesn't contain complex
+functionality. It may grow as needed, though. But&hellip;
+</p>
+<p>
+It is definitely not intended for replacing any of the dbus bindings,
+libhal or libpolkit. Complex applications can and will still have their
+own implementations and will link agains libhal or libpolkit or
+whatever. They are free to use liblazy, of course. But it is definitely
+of benefit for small applications which only need a subset of
+functionality and like to profit from new software like D-Bus, HAL,
+etc. but without having to care a lot. It should serve as a set of
+functions for developers provided for convenience. Also a lot more
+command line applications could make use of HAL, etc. in an easy way
+IMO. Additionally, it may serve as a code example for developers to get
+familiar with D-Bus.
+</p>
+<p>
+Most likely, my next blog post will contain something about dockutils, a
+framework for getting docking station support for as many notebooks as
+possible. But read more next time&hellip;
+</p></div>
+</div>
+</div>
+
+
+<p>&nbsp;<hr></p>
+      <!-- DISQUS -->
+<!--      <script type="text/javascript">  var disqus_developer = true; </script>-->
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+	(function() {
+	var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	dsq.src = 'http://holgersblog.disqus.com/embed.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=holgersblog">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </div> <!-- content -->
+
+      <div id="footer">
+	<p>Generated with a <a href="http://www.gnu.org/software/emacs/tour/">GNU Emacs</a>, <a href="http://orgmode.org/">org-mode</a>,
+          <a href="http://github.com/mojombo/jekyll">Jekyll</a>,
+          and <a href="http://juanreyero.com/open/org-jekyll/">org-jekyll</a>
+          toolchain.</p>
+      </div>
+    </div> <!-- page -->
+
+  </body>
+</html>
+

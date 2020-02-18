@@ -1,0 +1,19 @@
+#+BEGIN_HTML
+---
+layout: default
+title: All Blog Posts
+stylesheet: /stylesheets/dark.css
+---
+#+end_HTML
+
+* All blog posts
+#+BEGIN_HTML
+
+<ul> {% for post in site.posts %}
+ <li><span class="date">{{ post.date | date:"%d %b %Y" }}</span> &raquo; <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a> </li>
+{% endfor %} </ul>
+
+#+end_HTML
+
+
+

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Screen capturing with vnc2swf</title>
+<!--    <link rel="stylesheet" href="" type="text/css" media="screen"/>-->
+ <link rel="stylesheet" href="/stylesheets/dark.css" type="text/css" media="screen"/>
+  </head>
+
+  <body>
+    <div id="page">
+      <div id="header">
+	<div id="headerimg">
+	  <h1 class="caption"><a href="http://blog.homac.de" class="caption">Holger's Blog</a></h1>
+	  <h3 class="description">Cervisiam Bibat</h3>
+	</div>
+      </div>
+
+      <div id="content">
+	<small>12 Mar 2006 02:27</small>
+	<a href="/atom.xml" title="Subscribe"><img class="top-icon" width="48"
+						   height="48" alt="Subscribe"
+						   src="/images/feed-icon.png"/></a>
+
+
+
+<span class="navigation">
+  <a rel="prev" href="/2006/03/11/exhausting-wordpress-update.html" title="View Exhausting wordpress update">&larr; previous</a>
+</span>
+
+
+<br>
+<span class="navigation">
+  <a rel="next" href="/2006/03/17/powersave----a-longer-statement.html" title="View Powersave 0.13.0 - A longer Statement">next &rarr;</a>
+</span>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><a href="http://blog.homac.de//2006/03/12/screen-capturing-with-vncswf.html">Screen capturing with vnc2swf</a></h2>
+<div class="outline-text-2" id="text-1">
+
+
+
+
+<script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=31"; </script>
+
+<p>
+Looking for a screen capturing software this evening, I finally found
+vnc2swf which works quite well. I only tried the C version because I was
+too lazy to solve all those python dependencies and I have no good rpm
+repository at home. Just a short guide for anyone who wants to try:
+</p>
+<ol>
+<li>Download vnc2swf from
+     <a href="http://www.unixuser.org/~euske/vnc2swf/vnc2swf.html">here</a>
+</li>
+<li>Compile and install it
+</li>
+<li>Start a vnc server like that: `vncserver :1 -geometry 640x480
+</li>
+</ol>
+
+<p>-depth 16`
+</p><ol>
+<li>Execute the following command to start recording: `vnc2swf
+</li>
+</ol>
+
+<p>-startrecording -geometry 640:480 out.swf :1 &gt; out.html`
+</p><ol>
+<li>Play the resulting html file in your favourite browser which
+     supports shockwave flash
+</li>
+</ol>
+
+
+<p>
+If you like to see how a possible result might look like, watch my <b>live demonstration</b> about <a href="http://qnotify.homac.de">LibQNotify</a>. LibQNotify
+is an very easy to use QT library to pop up information on the
+desktop. There also comes along a command line tool and daemon. Have a
+look at the <a href="http://qnotify.homac.de">project page</a> for more
+information. The video is not perfect because the frame drops are too
+high in some cases. So be sure that in reality everything is very smooth
+;-)
+</p>
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1"><a href="http://www.homac.de/files/qnotify-demo.html">&ndash;&gt; LibQNotify Live Demontration (2,7M)</a></h3>
+<div class="outline-text-3" id="text-1-1">
+
+</div>
+</div>
+</div>
+
+
+<p>&nbsp;<hr></p>
+      <!-- DISQUS -->
+<!--      <script type="text/javascript">  var disqus_developer = true; </script>-->
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+	(function() {
+	var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	dsq.src = 'http://holgersblog.disqus.com/embed.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=holgersblog">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </div> <!-- content -->
+
+      <div id="footer">
+	<p>Generated with a <a href="http://www.gnu.org/software/emacs/tour/">GNU Emacs</a>, <a href="http://orgmode.org/">org-mode</a>,
+          <a href="http://github.com/mojombo/jekyll">Jekyll</a>,
+          and <a href="http://juanreyero.com/open/org-jekyll/">org-jekyll</a>
+          toolchain.</p>
+      </div>
+    </div> <!-- page -->
+
+  </body>
+</html>
+

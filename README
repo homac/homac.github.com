@@ -1,0 +1,9 @@
+
+Installation: gem install jekyll
+Build: jekyll build
+Starting: jekyll serve -w
+
+To generate the site:
+
+ - In org/index.org: org-publish-current-file
+ - In org/posts: org-jekyll-*

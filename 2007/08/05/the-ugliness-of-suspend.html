@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Ugliness of Suspend</title>
+<!--    <link rel="stylesheet" href="" type="text/css" media="screen"/>-->
+ <link rel="stylesheet" href="/stylesheets/dark.css" type="text/css" media="screen"/>
+  </head>
+
+  <body>
+    <div id="page">
+      <div id="header">
+	<div id="headerimg">
+	  <h1 class="caption"><a href="http://blog.homac.de" class="caption">Holger's Blog</a></h1>
+	  <h3 class="description">Cervisiam Bibat</h3>
+	</div>
+      </div>
+
+      <div id="content">
+	<small>05 Aug 2007 16:10</small>
+	<a href="/atom.xml" title="Subscribe"><img class="top-icon" width="48"
+						   height="48" alt="Subscribe"
+						   src="/images/feed-icon.png"/></a>
+
+
+
+<span class="navigation">
+  <a rel="prev" href="/2007/06/25/hack-week.html" title="View Hack Week">&larr; previous</a>
+</span>
+
+
+<br>
+<span class="navigation">
+  <a rel="next" href="/2007/10/18/mmpc-for-the-n.html" title="View MMPC for the N770">next &rarr;</a>
+</span>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><a href="http://blog.homac.de//2007/08/05/the-ugliness-of-suspend.html">The Ugliness of Suspend</a></h2>
+<div class="outline-text-2" id="text-1">
+
+
+
+
+<script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=53"; </script>
+
+<p>
+These days, you can do absolutely all kinds of freaky stuff with your
+Linux box. There are nearly no limitations for doing fancy graphics,
+applications, 3D desktops etc.
+</p>
+<p>
+However, there are still some rough edges which makes Linux still look
+like a hacky system to new, or M$ blended,
+users. Suspend. Hibernate. Standby. Whatever you might call them.  No!
+You never ever want to see a white font on a black background with
+cryptic statements when using a computer. You're writing letters, you're
+browsing the web, you're sending emails, you're editing pictures, and
+once in a while, you like you're system to suspend to disk. And you
+don't want to see all this ugliness in front of you!
+</p>
+<p>
+Luckily, times are changing. So with the release of openSUSE Beta1,
+you'll not see this ugliness again. With the integration of <a href="http://splashy.alioth.debian.org">splashy</a>,
+you'll always see a nice image showing you the progress of suspend and
+resume. The general aim is to <b>hide</b> all the ugliness on your system
+from you. That doesn't mean removing it. I'm using the ugliness all day
+long on my own ;-)
+</p>
+<p>
+Configuring splashy is easy. Most important files atm:
+</p>
+
+<ul>
+<li>/etc/splashy/config.xml: General configuration, which theme to use,
+    etc. 'man splashy-config.xml' for more information
+</li>
+<li>/etc/splashy/themes/default/theme.xml: Theme configuration, where
+    are the images, fade, progressbar, text, etc., 'man
+    splashy-theme.xml' for more information
+</li>
+<li>/etc/splashy/themes/default/suspend.png: Image used for
+    suspending. You put there any image you like. Run 'mkinitrd'
+    afterwards to enable it also for resume
+</li>
+</ul>
+
+
+<p>
+<img src="http://www.homac.de/files/suspend_small.png"  alt="http://www.homac.de/files/suspend_small.png" />
+</p>
+<p>
+I'm currently using a somehow experimental approach for the suspend
+image. I'm taking a screenshot of the currently displayed desktop,
+blurring and black&amp;whitening it with convert, and using it to show the
+progress bar afterwards. This may take up to two seconds on a moderate
+system. It's a cool feature, however, if the impact on the suspend time
+is too high, I might consider removing it again. Please share any
+experience you may make. Let's test this together in Beta1!
+</p>
+<p>
+Currently the screenshot creation and image manipulation is done by a
+pm-utils hook. It would be better to let kpowersave/gnome-power-manager
+take the screenshot and put it to a place splashy can read from. This
+way it would be possible to configure the shown image inside kcontrol or
+the gnome-control-center. And that's actually what you want. There just
+wasn't enough time yet to implement this correctly.
+</p>
+<p>
+So what about Suspend to RAM? I'll see what I can do. One might think
+that it doesn't make much sense there because S2RAM is so fast
+anyway. However, it's still not fast enough ;-) You can still read
+"Preparing suspend&hellip;" for the time of a wink of your eyes. And I've set
+myself the goal to iron this out ;-)
+</p>
+<p>
+Actually, splashy is already in Alpha7, but you have to enable it there
+first. So if you're too impatient for waiting for Beta1, enter 'splash =
+y' in /etc/suspend.conf to get it. This is due to a
+<a href="https://bugzilla.novell.com/show_bug.cgi?id=293826">bug</a> which
+prevented to abort the suspend I had to fix first.
+</p>
+<p>
+The old <a href="http://www.bootsplash.org/Welcome_to_the_graphical_world_of_Linux">bootsplash</a> is still used for
+general boot and shutdown, though. We'll see what we can do to have a
+smooth conversion in the future.
+</p>
+<p>
+As always, if you find issues, put them into
+<a href="http://bugzilla.novell.com">bugzilla</a>.  <b>Hint:</b> Enter 'splash = n' in
+/etc/suspend.conf to disable splash for debugging of general suspend
+problems. But those are non existant anyway ;-)
+</p>
+<p>
+Have fun, Holger
+</p></div>
+</div>
+
+
+<p>&nbsp;<hr></p>
+      <!-- DISQUS -->
+<!--      <script type="text/javascript">  var disqus_developer = true; </script>-->
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+	(function() {
+	var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	dsq.src = 'http://holgersblog.disqus.com/embed.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=holgersblog">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </div> <!-- content -->
+
+      <div id="footer">
+	<p>Generated with a <a href="http://www.gnu.org/software/emacs/tour/">GNU Emacs</a>, <a href="http://orgmode.org/">org-mode</a>,
+          <a href="http://github.com/mojombo/jekyll">Jekyll</a>,
+          and <a href="http://juanreyero.com/open/org-jekyll/">org-jekyll</a>
+          toolchain.</p>
+      </div>
+    </div> <!-- page -->
+
+  </body>
+</html>
+

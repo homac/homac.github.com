@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New tasks, openSUSE 10.2 and a framework called Dockutils</title>
+<!--    <link rel="stylesheet" href="" type="text/css" media="screen"/>-->
+ <link rel="stylesheet" href="/stylesheets/dark.css" type="text/css" media="screen"/>
+  </head>
+
+  <body>
+    <div id="page">
+      <div id="header">
+	<div id="headerimg">
+	  <h1 class="caption"><a href="http://blog.homac.de" class="caption">Holger's Blog</a></h1>
+	  <h3 class="description">Cervisiam Bibat</h3>
+	</div>
+      </div>
+
+      <div id="content">
+	<small>11 Feb 2007 20:26</small>
+	<a href="/atom.xml" title="Subscribe"><img class="top-icon" width="48"
+						   height="48" alt="Subscribe"
+						   src="/images/feed-icon.png"/></a>
+
+
+
+<span class="navigation">
+  <a rel="prev" href="/2006/11/12/liblazy---d-bus-methods-provided-for-convenience.html" title="View Liblazy - D-Bus methods provided for convenience">&larr; previous</a>
+</span>
+
+
+<br>
+<span class="navigation">
+  <a rel="next" href="/2007/02/19/couch-potato-goodies.html" title="View Couch potato goodies">next &rarr;</a>
+</span>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><a href="http://blog.homac.de//2007/02/11/new-tasks-opensuse--and-a-framework-called-dockutils.html">New tasks, openSUSE 10.2 and a framework called Dockutils</a></h2>
+<div class="outline-text-2" id="text-1">
+
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">New tasks at university</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+<p>
+Long time no post, and a lot of things happened. At least to me. Forgot
+to mention last time, for anyone interested, I started college at the
+<a href="http://www.uni-erlangen.org/">Friedrich-Alexander-University of Erlangen-Nuremberg</a> in middle of
+october with course of studies in computer science. On Friday, the
+winter semester was over - finally. Learning all this difficult and
+completely new stuff is quite different from what I've been doing the
+last couple of years at SUSE. So I was really busy the last months to
+reconcile university and my work on linux ;-)
+</p>
+<p>
+Well, but my time at SUSE isn't over, of course, still working there at
+regular times, just not that much like before. And therefore, I wasn't
+able to be as active in regard to linux as I hoped to be. You can't be
+very innovative, you just have to do the things that have to be
+done. Working on bugs, handling mail, etc.. I'll have two exams in
+middle of March, though, but except from that, until the new semester
+starts, I will be able to work fulltime on linux.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">openSUSE 10.2 and Dockutils</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+<p>
+Nevertheless, openSUSE 10.2 was released during this time, and I finally
+finished the power management redesign <a href="http://forge.novell.com/pipermail/powersave-devel/2006-June/000589.html">announced</a> some time ago. Doing
+stuff like integrating pm-utils, the CPUFreq HAL addon, adjusting the
+powersave daemon or failing to get more involved in kpowersave's future
+development.
+</p>
+<p>
+Not to forget about <a href="http://dockutils.sourceforge.net">dockutils</a>, a framework, or better, a collection of
+scripts providing an infrastructure to easily trigger actions on
+docking/undocking requests for different laptops and vendors. To quote
+the <a href="http://en.opensuse.org/Dockutils">openSUSE wiki page</a> where you can find more information, it shall be
+the following, not more and not less:
+</p>
+<ul>
+<li>Provide infrastructure to do userspace stuff that has to be done on
+    dock and undock
+</li>
+<li>Provide easy to use infrastructure for hardware vendors,
+    distributors or users to get proper docking station support or to do
+    just anything they like on dock/undock, for instance starting a
+    special tool or just displaying a message on the desktop.
+</li>
+<li>Provide infrastructure for nasty and ugly workarounds either because
+    of broken hardware, bugs or just because of a lack of support in the
+    kernel
+</li>
+</ul>
+
+
+<p>
+There are some basic scripts already included, at least to get the X60
+dock station and some other Thinkpads working, but there's also still
+lot to do. Some days ago I registered <a href="http://sourceforge.net/projects/dockutils/">a project</a> at sourceforge. I'm not
+even sure if dockutils prevails itself, but I needed a place to host the
+code, and I did not want to just include it in the openSUSE rpms. So if
+you like to have a look at it, check it out:
+</p>
+
+<p>
+ svn co <a href="https://dockutils.svn.sourceforge.net/svnroot/dockutils">https://dockutils.svn.sourceforge.net/svnroot/dockutils</a> dockutils
+</p>
+
+<p>
+Just to prevent questions: Yes, I know that there is a new generic dock
+station driver (and bay driver) in recent kernels, and yes, I already
+got familiar with it, and yes, I will do the integration into HAL and
+openSUSE very soon ;-)
+</p>
+<p>
+Unfortunatelly, we get rare feedback on docking. Therefore I like to ask
+some questions:
+</p>
+<p>
+Do you have a docking station? Does it work for you? Does it work
+combined with suspend/resume? Does the hardware included in the dock
+station work after docking/undocking? Do you have a workaround or a
+script to get it working? Please drop a comment, send me a mail or
+create a bugreport if you can answer any of the above
+questions. Otherwise it will be nearly impossible to improve docking
+station support. You can find my email at the <a href="http://en.opensuse.org/Dockutils#How_to_contribute">openSUSE</a>. Thanks.
+</p>
+<p>
+Next post will follow very soon, because I will have to write something
+very exciting (at least to me) regarding the Nokia n800 I received a
+developer code for, thanks Nokia!
+</p>
+<p>
+Regards, Holger
+</p></div>
+</div>
+</div>
+
+
+<p>&nbsp;<hr></p>
+      <!-- DISQUS -->
+<!--      <script type="text/javascript">  var disqus_developer = true; </script>-->
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+	(function() {
+	var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	dsq.src = 'http://holgersblog.disqus.com/embed.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=holgersblog">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </div> <!-- content -->
+
+      <div id="footer">
+	<p>Generated with a <a href="http://www.gnu.org/software/emacs/tour/">GNU Emacs</a>, <a href="http://orgmode.org/">org-mode</a>,
+          <a href="http://github.com/mojombo/jekyll">Jekyll</a>,
+          and <a href="http://juanreyero.com/open/org-jekyll/">org-jekyll</a>
+          toolchain.</p>
+      </div>
+    </div> <!-- page -->
+
+  </body>
+</html>
+

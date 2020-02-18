@@ -1,0 +1,25 @@
+#+BEGIN_HTML
+---
+layout: default
+title: Holger's Blog
+description: Cervisiam Bibat - Bibe, si bibis
+stylesheet: /stylesheets/dark.css
+---
+#+end_HTML
+
+* Projects
+  - Android:
+    - [[https://play.google.com/store/apps/details?id=de.homac.Mirrored][Mirrored/ Gespiegelt]]
+    - [[https://www.volatilesystems.com/default/volatility][Volatility]]
+  - [[http://gitorious.org/python-killswitch][python-killswitch and killswitch-applet]]
+  - [[http://www.freedesktop.org/wiki/Software/liblazy][Liblazy]]
+  - [[http://sourceforge.net/projects/pm-profiler/][pm-profiler]]
+
+** Not actively pursued
+   - [[http://sourceforge.net/projects/powersave/][Powersave Daemon]]: Power management support for Linux
+   - [[http://mmpc.garage.maemo.org/][Maemo Music Player Client]]: Music Player Daemon client for the Maemo platform
+   - [[http://git.gnome.org/browse/gnome-docker/][GNOME docker]]: A GNOME applet to manage dock stations
+   - External Editor Plugin for [[http://projects.gnome.org/evolution/][Evolution]]
+   - [[http://www.freedesktop.org/wiki/Software/hal][Hardware Abstraction Layer - HAL]]
+   - [[http://sourceforge.net/projects/ktray/][KTray]]
+   - [[http://sourceforge.net/projects/qnotify/][QNotify]]

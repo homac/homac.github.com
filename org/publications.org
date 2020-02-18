@@ -1,0 +1,44 @@
+#+BEGIN_HTML
+---
+layout: default
+title: Holger's Blog
+description: Cervisiam Bibat
+stylesheet: /stylesheets/dark.css
+---
+#+end_HTML
+
+* Publications and Talks
+  - [[http://www.homac.de/publications/Post-Mortem-Memory-Analysis-of-Cold-Booted-Android-Devices.pdf][Post-Mortem Memory Analysis of Cold-Booted Android Devices]] ([[http://www.homac.de/publications/Post-Mortem-Memory-Analysis-of-Cold-Booted-Android-Devices-slides.pdf][talk]])
+
+    Conference Paper, 8th International Conference on IT Security
+    Incident Management & IT Forensics ([[http://www1.gi-ev.de/fachbereiche/sicherheit/fg/sidar/imf/imf2014/][IMF 2014]])
+  - [[http://www.homac.de/publications/Live_Memory_Forensics_on_Android_with_Volatility.pdf][Live Memory Forensics on Android with Volatility]]
+
+    Diploma Thesis, Friedrich-Alexander-University Erlangen-Nuremberg
+  - [[http://www.homac.de/publications/A_Case_Study_in_Open_Source_Patch_Submission.pdf][A Case Study in Open Source Patch Submission]]
+
+    Student Research Paper, Friedrich-Alexander-University Erlangen-Nuremberg
+  - [[http://www.homac.de/publications/Smart_Grid.pdf][Smart Grid und Intelligentes Wohnen]] ([[http://www.homac.de/publications/Smart_Grid-presentation.pdf][talk]]) (both in German)
+
+    Seminar Paper, Friedrich-Alexander-University Erlangen-Nuremberg
+  - [[http://www.homac.de/publications/Measuring_Power_Consumption_in_the_Light_of_EnergyStar.pdf][Measuring Power Consumption in the Light of EnergyStar]]
+
+    Whitepaper, Intel / SUSE
+  - [[http://www.homac.de/publications/PowerManagementWhatsNewInSLED11.pdf][Power Management: What's new in SUSE Linux Enterprise Desktop 11]]
+
+    Customer Presentation at SUSE
+  - [[http://www.homac.de/publications/Power_Consumption_and_-Optimization_of_PCs.pdf][Power Consumption and Optimization of PCs]] ([[http://www.homac.de/publications/Power_Consumption_and_-Optimization_of_PCs-presentation.pdf][talk]] (German))
+
+    Seminar Paper, Friedrich-Alexander-University Erlangen-Nuremberg
+  - [[http://www.homac.de/publications/LinuxTag-2008-Laptop-2.0.pdf][Laptop 2.0: Neues bei Power Management, Wireless und Energy Star]]
+
+    LinuxTag 2008
+  - [[http://www.homac.de/publications/EnergyStar_Jump_on_the_Bandwagon.pdf][EnergyStar: Jump on the Bandwagon!]] ([[http://www.youtube.com/watch?v=enLGwKCQ4Uo][video]])
+
+    FOSDEM 2008
+  - [[http://www.homac.de/publications/Power_Management_at_SUSE.pdf][Power Management at SUSE]]
+
+    Linux Kernel Power Management Summit, Santa Clara, CA, USA
+  - [[http://www.homac.de/publications/Linux_Power_Management_One_Step_Ahead.pdf][Linux Power Management - One Step Ahead!]] ([[http://ftp.belnet.be/mirror/FOSDEM/2006/FOSDEM2006-openSUSE-03-PowerSave-2006-02-25-video_full.ogg][video]])
+
+    FOSDEM 2006

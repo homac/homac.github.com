@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title>Holger's Blog &#187; Maemo</title>
+  <link href="http://blog.homac.de/atom-maemo.xml" rel="self"/>
+  <link href="http://blog.homac.de"/>
+  <updated>2014-06-30T09:07:49+02:00</updated>
+  <id>http://blog.homac.de/</id>
+  <author>
+    <name>Holger Macht</name>
+    <email>holger@homac.de</email>
+  </author>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <entry>
+    <title>Declaring MMPC unsupported, nearly deathlike</title>
+    <link href="http://blog.homac.de"/>
+    <updated>2011-10-08T20:02:00+02:00</updated>
+    <id>http://blog.homac.de/2011/10/08/declaring-mmpc-unsupported-nearly-deathlike</id>
+    <content type="html">&lt;div id=&quot;outline-container-1&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-1&quot;&gt;&lt;a href=&quot;http://blog.homac.de//2011/10/08/declaring-mmpc-unsupported-nearly-deathlike.html&quot;&gt;Declaring MMPC unsupported, nearly deathlike&lt;/a&gt;&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-1&quot;&gt;
+
+
+&lt;p&gt;
+Quite surprised by receiving yet another feature request about the
+&lt;i&gt;Maemo Music Player Client&lt;/i&gt; for the Maemo platform. I always got some
+mails here and then, but didn't receive one in quite a while. But just
+that everybody knows:
+&lt;/p&gt;
+&lt;p&gt;
+&lt;b&gt;I hereby declare&lt;/b&gt; &lt;a href=&quot;http://mmpc.garage.maemo.org&quot;&gt;MMPC&lt;/a&gt; &lt;b&gt;officially unsupported, not to say dead, stone-dead in particular.&lt;/b&gt;
+&lt;/p&gt;
+&lt;p&gt;
+Nevertheless, it's nice to hear that the project still has (at least a
+few) users, so that I can say it has been a success after all.
+&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <entry>
+    <title>Maemo Music Player Client (MMPC) for Diablo</title>
+    <link href="http://blog.homac.de"/>
+    <updated>2009-02-24T08:56:00+01:00</updated>
+    <id>http://blog.homac.de/2009/02/24/maemo-music-player-client-mmpc-for-diablo</id>
+    <content type="html">&lt;div id=&quot;outline-container-1&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-1&quot;&gt;&lt;a href=&quot;http://blog.homac.de//2009/02/24/maemo-music-player-client-mmpc-for-diablo.html&quot;&gt;Maemo Music Player Client (MMPC) for Diablo&lt;/a&gt;&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-1&quot;&gt;
+
+
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;  var disqus_url = &quot;http://blog.homac.de/?p=81&quot;; &lt;/script&gt;
+
+&lt;p&gt;
+Finally I took the time to respond to multiple requests about providing
+&lt;a href=&quot;http://mmpc.garage.maemo.org&quot;&gt;mmpc 0.2.1&lt;/a&gt; packages for Diablo. That also gave me the possibility to try
+the &lt;a href=&quot;https://garage.maemo.org/extras-assistant/index.php&quot;&gt;maemo autobuilder&lt;/a&gt; to upload my packages to the &lt;a href=&quot;http://wiki.maemo.org/Uploading_to_Extras&quot;&gt;extras repository&lt;/a&gt;. And well, it worked out. It's especially useful for those
+people not running debian based systems, because with autobuilder you
+don't have to care about signing and uploading the packages with debian
+tools like debsign and dput.
+&lt;/p&gt;
+&lt;p&gt;
+So, this is not a new release, these are just new packages build for the
+Diable 4.1 distribution. I still did not manage to find the time to
+enhance mmpc further. There are just too many other things like work and
+university I have to care about. Either download the packages from &lt;a href=&quot;https://garage.maemo.org/frs/?group_id=193&quot;&gt; Maemo Garage&lt;/a&gt;, or just get it through the extras repository as usual.
+&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <entry>
+    <title>Maemo Music Player Client 0.2.1</title>
+    <link href="http://blog.homac.de"/>
+    <updated>2008-04-14T15:21:00+02:00</updated>
+    <id>http://blog.homac.de/2008/04/14/maemo-music-player-client-</id>
+    <content type="html">&lt;div id=&quot;outline-container-1&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-1&quot;&gt;&lt;a href=&quot;http://blog.homac.de//2008/04/14/maemo-music-player-client-.html&quot;&gt;Maemo Music Player Client 0.2.1&lt;/a&gt;&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-1&quot;&gt;
+
+
+&lt;p&gt;
+I finally managed to get to work on &lt;a href=&quot;http://mmpc.garage.maemo.org&quot;&gt;MMPC&lt;/a&gt; after quite some time. MMPC 0.1
+was 2007-11-14 08:45 (wow, that was pretty early in morning :-))
+&lt;/p&gt;
+&lt;p&gt;
+&lt;img src=&quot;http://mmpc.garage.maemo.org/images/mmpc.png&quot;  alt=&quot;http://mmpc.garage.maemo.org/images/mmpc.png&quot; /&gt;
+&lt;/p&gt;
+&lt;p&gt;
+Well, mmpc-0.2.1 is available for immediate consumption. Changes, which
+were major concerns until now, are:
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;New buttons and images, finally. And a new logo you can see above.
+&lt;/li&gt;
+&lt;li&gt;Add tap-and-hold functionality to more places. For example, it's now
+    possible to update the database from within the client.
+&lt;/li&gt;
+&lt;li&gt;Add scroll windows to all preference tabs to display the full
+    content.
+&lt;/li&gt;
+&lt;li&gt;Bold the currently played track.
+&lt;/li&gt;
+&lt;li&gt;Increase connection timeout to 3 seconds. This will hopefully solve
+    the strange disconnect issues I wasn't able to reproduce.
+&lt;/li&gt;
+&lt;li&gt;Fixed tree browsing in playlist browser.
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+Fresh screenshots can be found &lt;a href=&quot;http://mmpc.garage.maemo.org&quot;&gt;here&lt;/a&gt;. Packages are available from the
+extras repository. So most people will get the update automatically (if
+anything goes wrong, try to enable red pill mode). Otherwise, grab them
+from &lt;a href=&quot;https://garage.maemo.org/frs/?group_id=193&quot;&gt;garage&lt;/a&gt;.
+&lt;/p&gt;
+&lt;p&gt;
+Next things will include the support for some plugins. Please report any
+problems. Happy listening!
+&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <entry>
+    <title>Fixing a broken N810, or... A new way to freeze a device</title>
+    <link href="http://blog.homac.de"/>
+    <updated>2008-01-12T14:05:00+01:00</updated>
+    <id>http://blog.homac.de/2008/01/12/fixing-a-broken-n-or-a-new-way-to-freeze-a-device</id>
+    <content type="html">&lt;div id=&quot;outline-container-1&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-1&quot;&gt;&lt;a href=&quot;http://blog.homac.de//2008/01/12/fixing-a-broken-n-or-a-new-way-to-freeze-a-device.html&quot;&gt;Fixing a broken N810, or&amp;hellip; A new way to freeze a device&lt;/a&gt;&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-1&quot;&gt;
+
+
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;  var disqus_url = &quot;http://blog.homac.de/?p=58&quot;; &lt;/script&gt;
+
+&lt;p&gt;
+Finally I ordered a &lt;a href=&quot;http://www.nokia.com/N810&quot;&gt;Nokia N810&lt;/a&gt; with my discount code provided by the
+&lt;a href=&quot;http://www.maemo.org&quot;&gt;Maemo&lt;/a&gt; project on Tuesday. It arrived Thursday. With all my tenseness and
+pleasant anticipation, it looked and felt great while having a quick
+glance. But the disenchantment followed right away:
+&lt;/p&gt;
+&lt;p&gt;
+Huh? What's that? It doesn't power on after shutting it down the first
+time. Putting in the charger doesn't help. Removing the battery and
+putting it back doesn't help. &quot;Charging&quot; it several hours (without any
+sign that it does so) doesn't help. Removing the battery for several
+minutes doesn't help. Checking with a original Nokia battery and charger
+from a colleague doesn't help. What to do? (Already really frightened of
+having received a broken device&amp;hellip;)
+&lt;/p&gt;
+&lt;p&gt;
+In the evening, I decided to remove the battery and put it on the
+balcony. On the balcony? Why that? It only was a very vague
+suspicion&amp;hellip;it's currently winter in Europe, you know
+;-). Waiting&amp;hellip;(and maybe praying) about another 30 minutes. Device was
+cold now. Inserting the battery, pushing the power button, and voila!
+The N810 turns on and powers up properly. Happy about thinking that this
+was only a temporary failure, I tried again some minutes later and the
+device kept silent again. What a mess! Next day, another colleague came
+to me telling me that he has exactly the same problem. And I already had
+a temporary solution for him&amp;hellip;(Skip the next paragraph if you want to
+read it immediately)
+&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&quot;http://www.yahoo.com&quot;&gt;Yahoo&lt;/a&gt;'ing around, I found out that this is a well known problem, at
+least for the customers, I don't know how it behaves to the Nokia
+company/manufacturers. There are plenty of reports for this issue. On
+&lt;a href=&quot;http://www.internettablettalk.com/&quot;&gt;Internettablettalk&lt;/a&gt; and even in the &lt;a href=&quot;https://bugs.maemo.org/show_bug.cgi?id=2673&quot;&gt; Maemo bugzilla&lt;/a&gt; known as &quot;N800 Power
+up Drama&quot;. Interestingly, the problem seems to also be present on N800
+devices. But only the new and recent ones. So it seems that some
+electronic parts like capacitors installed in recent devices (N800 and
+N810) are causing this issue. I tried everything people are suggesting,
+waiting a specific period of time before switching it on again, making
+sure that everything fits properly, enabling r&amp;amp;d mode, and so on. Please
+don't tell me &quot;Just don't power off the device&quot;, because that's what I'm
+generally doing, but that's no choice when you're on the road running
+out of battery. And you sometimes need to power down the device for
+development, too.
+&lt;/p&gt;
+&lt;p&gt;
+The only thing that seems to help:
+&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Switch the device off
+&lt;/li&gt;
+&lt;li&gt;Remove the battery
+&lt;/li&gt;
+&lt;li&gt;Put the device to a fridge (without the battery) for about 30
+     minutes. If you are impatient like I am, put it into a deep-freezer
+     for about 10 minutes to get it cold. Hint: Use a plastic bag to
+     protect it from moisture, and more importantly, don't forget about
+     it while doing something else ;-)
+&lt;/li&gt;
+&lt;li&gt;Take it out and insert the battery
+&lt;/li&gt;
+&lt;li&gt;Turn it back on, you'll see that it works
+&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;p&gt;
+This procedure was already verified on two devices.
+&lt;/p&gt;
+&lt;p&gt;
+Strange, I currently know of five people having a &lt;a href=&quot;http://www.nokia.com/N810&quot;&gt;N810&lt;/a&gt;, with two of them
+showing this issue. This is really bad percentage. I already fear that
+this is like the issue I encountered with my N800 and the display issue
+where the right side of the touchscreen became more and more
+unresponsive. Also widely known. To that time, I returned the &lt;a href=&quot;http://www.nokia.com/N800&quot;&gt;N800&lt;/a&gt; back
+to Nokia, and it lasted solid 6 weeks until I got a repaired device. I
+do not want to repeat that! I do not want to develop inside a scratchbox
+without the possibility to see the outcome on a live device. But the
+most frustrating thing I encounter these days is that there is no
+official statement from Nokia about this issue. There's still not even
+one for the display issue with the N800. Please correct me if I'm wrong.
+&lt;/p&gt;
+&lt;p&gt;
+The only thing which keeps me alive ( ;-) ) and which prevents me from
+returning the device immediately is the hope that it can be fixed via
+software. I just hope that there will be a statement by the &lt;a href=&quot;http://www.nokia.com&quot;&gt;Nokia&lt;/a&gt; or
+&lt;a href=&quot;http://www.maemo.org&quot;&gt;Maemo&lt;/a&gt; people telling me: &quot;Be patient, we're working on the issue with
+high pressure and we think it can be fixed with a firmware update&quot;. If
+it really is a hardware issue, I at least hope that the issue is handled
+as &quot;we've sold broken devices, process returned ones with high
+priority!&quot;.
+&lt;/p&gt;
+&lt;p&gt;
+Getting away from the bad news, if there wouldn't be those, I would
+really be amazed by this gadget! As long as it's on, I just have fun
+with it. I'm just very frustrated.
+&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+
+  
+
+  
+  <entry>
+    <title>MMPC for Chinook</title>
+    <link href="http://blog.homac.de"/>
+    <updated>2007-11-14T12:04:00+01:00</updated>
+    <id>http://blog.homac.de/2007/11/14/mmpc-for-chinook</id>
+    <content type="html">&lt;div id=&quot;outline-container-1&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-1&quot;&gt;&lt;a href=&quot;http://blog.homac.de//2007/11/14/mmpc-for-chinook.html&quot;&gt;MMPC for Chinook&lt;/a&gt;&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-1&quot;&gt;
+
+
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;  var disqus_url = &quot;http://blog.homac.de/?p=55&quot;; &lt;/script&gt;
+
+&lt;p&gt;
+Even before the N810 is shipped, I'm able to to announce &lt;a href=&quot;http://mmpc.garage.maemo.org&quot;&gt;MMPC&lt;/a&gt; &lt;a href=&quot;https://garage.maemo.org/frs/?group_id=193&quot;&gt;packages&lt;/a&gt;
+for the new Chinook 4.0 (OS2008) release. Untested in real production
+environments, of course, but I see no reason why it shouldn't work
+outside my ARM development environment.
+&lt;/p&gt;
+&lt;p&gt;
+Packages are &lt;a href=&quot;https://garage.maemo.org/frs/?group_id=193&quot;&gt;here&lt;/a&gt; (including libmpd). Please report any issues you might
+encounter.
+&lt;/p&gt;
+&lt;p&gt;
+Now I'm eagerly awaiting the availability of the &lt;a href=&quot;http://www.nokia.de/n810&quot;&gt;N810&lt;/a&gt; in Germany to
+finally get rid of my discount code. Thanks Nokia!
+&lt;/p&gt;
+&lt;p&gt;
+&lt;img src=&quot;http://mmpc.garage.maemo.org/images/playing.png&quot;  alt=&quot;http://mmpc.garage.maemo.org/images/playing.png&quot; /&gt;
+&lt;img src=&quot;http://mmpc.garage.maemo.org/images/playing_1.png&quot;  alt=&quot;http://mmpc.garage.maemo.org/images/playing_1.png&quot; /&gt;
+&lt;/p&gt;
+&lt;p&gt;
+On a related note: I'm still looking for designers creating some nice,
+&quot;Play&quot;, &quot;Stop&quot;, &quot;Pause&quot;, &quot;Backward&quot; and &quot;Forward&quot; buttons. These are
+just too ugly in the current state. Nobody willing to help out?
+&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+
+  
+
+  
+  <entry>
+    <title>MMPC for the N770</title>
+    <link href="http://blog.homac.de"/>
+    <updated>2007-10-18T21:24:00+02:00</updated>
+    <id>http://blog.homac.de/2007/10/18/mmpc-for-the-n</id>
+    <content type="html">&lt;div id=&quot;outline-container-1&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-1&quot;&gt;&lt;a href=&quot;http://blog.homac.de//2007/10/18/mmpc-for-the-n.html&quot;&gt;MMPC for the N770&lt;/a&gt;&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-1&quot;&gt;
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;  var disqus_url = &quot;http://blog.homac.de/?p=54&quot;; &lt;/script&gt;
+&lt;p&gt;
+I am proud to announce that there finally are &lt;a href=&quot;http://mmpc.garage.maemo.org&quot;&gt;Maemo Music Player Client&lt;/a&gt;
+&lt;a href=&quot;https://garage.maemo.org/frs/?group_id=193&quot;&gt;packages&lt;/a&gt; built for the N770 (OS2006). It is thanks to &lt;a href=&quot;http://wap.ecw.de&quot;&gt;Christopher Klein&lt;/a&gt;,
+who did the required code changes and the rebuild, that my inbox will be
+delivered from requests about this apparently important missing piece.
+&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <entry>
+    <title>Couch potato goodies</title>
+    <link href="http://blog.homac.de"/>
+    <updated>2007-02-19T17:12:00+01:00</updated>
+    <id>http://blog.homac.de/2007/02/19/couch-potato-goodies</id>
+    <content type="html">&lt;div id=&quot;outline-container-1&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-1&quot;&gt;&lt;a href=&quot;http://blog.homac.de//2007/02/19/couch-potato-goodies.html&quot;&gt;Couch potato goodies&lt;/a&gt;&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-1&quot;&gt;
+
+
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;  var disqus_url = &quot;http://blog.homac.de/?p=48&quot;; &lt;/script&gt;
+
+
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-1-1&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-1-1&quot;&gt;Maemo Music Player Client&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-1-1&quot;&gt;
+
+
+&lt;p&gt;
+As briefly mentioned last time, I got a developer code for a &lt;a href=&quot;http://www.nokia.com/n800&quot;&gt;Nokia n800&lt;/a&gt;. Thanks. I already had a n770, so without further ado, I decided to
+purchase one. And that really kept me on the go the last couple of
+weeks. At home, my computer is connected to my stereo system to play my
+mp3s with passable good sound. So having a n800 with wlan, I thought
+there has to be a possibility to use it as remote control. Looking for
+something at the web, I shortly found the &lt;a href=&quot;http://www.musicpd.org&quot;&gt;Music Player Daemon (mpd)&lt;/a&gt; to
+be used as a service running on my home computer managing and playing my
+mp3 collection. And very easy to install. Well, first duty was to find a
+good client that works on the n800. Trying two web based clients and
+noticing that they are ugly was not really satisfying. It was not hard
+to build the &lt;a href=&quot;http://www.musicpd.org/gmpc.shtml&quot;&gt;Gnome Music Player Client&lt;/a&gt; with some small modifications
+inside my scratchbox environment for the &lt;a href=&quot;http://www.maemo.org&quot;&gt;Maemo&lt;/a&gt; platform. Too bad for me,
+the GUI is optimised for higher screen resolutions and for multi
+windowed systems.
+&lt;/p&gt;
+&lt;p&gt;
+The default multimedia player which comes along with the n800 is quite
+nice IMO, so an interface similar to this would be best. Well, noticing
+that Nokia didn't open source its code although there's a request from
+within the community is quite disappointing. I thought they wouldn't do
+things by halves, but, well, other story&amp;hellip; Hopefully there's at least
+no patent or the like for the GUI, otherwise I just hope they won't sue
+me for reverse engineering it ;-)
+&lt;/p&gt;
+&lt;p&gt;
+Writing my first own gtk application was quite exhausting. The
+documentation is so horrible bad :-( I just wonder why there aren't more
+tutorials out there. For instance, about IMHO common problems like
+setting bold font of a row in a GtkTreeView. Well, after getting into
+it, it was, hm, well, O.k. ;-)
+&lt;/p&gt;
+&lt;p&gt;
+So here it is:
+&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&quot;http://mmpc.garage.maemo.org&quot;&gt;http://mmpc.garage.maemo.org&lt;/a&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-1-2&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-1-2&quot;&gt;Maemo Music Player Client (mmpc)&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-1-2&quot;&gt;
+
+
+&lt;p&gt;
+&lt;img src=&quot;http://mmpc.garage.maemo.org/images/playing_1.png&quot;  alt=&quot;http://mmpc.garage.maemo.org/images/playing_1.png&quot; /&gt;
+&lt;/p&gt;
+&lt;p&gt;
+It is based on the &lt;a href=&quot;http://sarine.nl/gmpc&quot;&gt;Gnome Music Player Client&lt;/a&gt;, but has undergone quite
+much modification like hildonization, Maemo menus, the new player
+interface, etc&amp;hellip; The GUI got especially designed to be used as a remote
+control, meaning that it should be good to use without the stylus. All
+in all, it is more a fork than a port. The first couple of days really
+show the huge interest in an application like this. At the time of
+writing this, there are already 281 downloads as you can see on the
+Maemo garage &lt;a href=&quot;https://garage.maemo.org/frs/?group_id=193&quot;&gt; project page&lt;/a&gt;. It's a great toy ;-)
+&lt;/p&gt;
+&lt;p&gt;
+Actually I had another cool feature in mind. The device being used as a
+remote control, and only as a remote control, you do not want other
+people using or seeing any other things on the device while managing
+music. So I actually wanted to force fullscreen mode until a correct
+password gets entered. The code is already finished, but there's one
+problem. The actual user can just turn off the device and reboot ;-) So
+anyone having any idea how to prevent the user to reboot the device?
+There's no possibility to lock the device in a way that one has to enter
+a password everytime the device boots. Something like a PIN in cell
+phones would be good. I can catch the hardware button event, of course,
+but the system is turned off in any case. Different story&amp;hellip;
+&lt;/p&gt;
+&lt;p&gt;
+What I'm currently looking for is a graphic designer. I'm usually not
+very good at that. So someone out there either doing web design or is
+willing and able to design some nice play, stop, forward, backward,
+etc. buttons? Any help would be appreciated. In any case, visit the
+&lt;a href=&quot;http://mmpc.garage.maemo.org&quot;&gt;homepage&lt;/a&gt; for more information.
+&lt;/p&gt;
+&lt;p&gt;
+Greetings, Holger
+&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</feed>

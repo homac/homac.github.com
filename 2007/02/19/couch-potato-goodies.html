@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Couch potato goodies</title>
+<!--    <link rel="stylesheet" href="" type="text/css" media="screen"/>-->
+ <link rel="stylesheet" href="/stylesheets/dark.css" type="text/css" media="screen"/>
+  </head>
+
+  <body>
+    <div id="page">
+      <div id="header">
+	<div id="headerimg">
+	  <h1 class="caption"><a href="http://blog.homac.de" class="caption">Holger's Blog</a></h1>
+	  <h3 class="description">Cervisiam Bibat</h3>
+	</div>
+      </div>
+
+      <div id="content">
+	<small>19 Feb 2007 17:12</small>
+	<a href="/atom.xml" title="Subscribe"><img class="top-icon" width="48"
+						   height="48" alt="Subscribe"
+						   src="/images/feed-icon.png"/></a>
+
+
+
+<span class="navigation">
+  <a rel="prev" href="/2007/02/11/new-tasks-opensuse--and-a-framework-called-dockutils.html" title="View New tasks, openSUSE 10.2 and a framework called Dockutils">&larr; previous</a>
+</span>
+
+
+<br>
+<span class="navigation">
+  <a rel="next" href="/2007/02/26/fosdem-.html" title="View FOSDEM 2007">next &rarr;</a>
+</span>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><a href="http://blog.homac.de//2007/02/19/couch-potato-goodies.html">Couch potato goodies</a></h2>
+<div class="outline-text-2" id="text-1">
+
+
+
+
+<script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=48"; </script>
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">Maemo Music Player Client</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+<p>
+As briefly mentioned last time, I got a developer code for a <a href="http://www.nokia.com/n800">Nokia n800</a>. Thanks. I already had a n770, so without further ado, I decided to
+purchase one. And that really kept me on the go the last couple of
+weeks. At home, my computer is connected to my stereo system to play my
+mp3s with passable good sound. So having a n800 with wlan, I thought
+there has to be a possibility to use it as remote control. Looking for
+something at the web, I shortly found the <a href="http://www.musicpd.org">Music Player Daemon (mpd)</a> to
+be used as a service running on my home computer managing and playing my
+mp3 collection. And very easy to install. Well, first duty was to find a
+good client that works on the n800. Trying two web based clients and
+noticing that they are ugly was not really satisfying. It was not hard
+to build the <a href="http://www.musicpd.org/gmpc.shtml">Gnome Music Player Client</a> with some small modifications
+inside my scratchbox environment for the <a href="http://www.maemo.org">Maemo</a> platform. Too bad for me,
+the GUI is optimised for higher screen resolutions and for multi
+windowed systems.
+</p>
+<p>
+The default multimedia player which comes along with the n800 is quite
+nice IMO, so an interface similar to this would be best. Well, noticing
+that Nokia didn't open source its code although there's a request from
+within the community is quite disappointing. I thought they wouldn't do
+things by halves, but, well, other story&hellip; Hopefully there's at least
+no patent or the like for the GUI, otherwise I just hope they won't sue
+me for reverse engineering it ;-)
+</p>
+<p>
+Writing my first own gtk application was quite exhausting. The
+documentation is so horrible bad :-( I just wonder why there aren't more
+tutorials out there. For instance, about IMHO common problems like
+setting bold font of a row in a GtkTreeView. Well, after getting into
+it, it was, hm, well, O.k. ;-)
+</p>
+<p>
+So here it is:
+</p>
+<p>
+<a href="http://mmpc.garage.maemo.org">http://mmpc.garage.maemo.org</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">Maemo Music Player Client (mmpc)</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+<p>
+<img src="http://mmpc.garage.maemo.org/images/playing_1.png"  alt="http://mmpc.garage.maemo.org/images/playing_1.png" />
+</p>
+<p>
+It is based on the <a href="http://sarine.nl/gmpc">Gnome Music Player Client</a>, but has undergone quite
+much modification like hildonization, Maemo menus, the new player
+interface, etc&hellip; The GUI got especially designed to be used as a remote
+control, meaning that it should be good to use without the stylus. All
+in all, it is more a fork than a port. The first couple of days really
+show the huge interest in an application like this. At the time of
+writing this, there are already 281 downloads as you can see on the
+Maemo garage <a href="https://garage.maemo.org/frs/?group_id=193"> project page</a>. It's a great toy ;-)
+</p>
+<p>
+Actually I had another cool feature in mind. The device being used as a
+remote control, and only as a remote control, you do not want other
+people using or seeing any other things on the device while managing
+music. So I actually wanted to force fullscreen mode until a correct
+password gets entered. The code is already finished, but there's one
+problem. The actual user can just turn off the device and reboot ;-) So
+anyone having any idea how to prevent the user to reboot the device?
+There's no possibility to lock the device in a way that one has to enter
+a password everytime the device boots. Something like a PIN in cell
+phones would be good. I can catch the hardware button event, of course,
+but the system is turned off in any case. Different story&hellip;
+</p>
+<p>
+What I'm currently looking for is a graphic designer. I'm usually not
+very good at that. So someone out there either doing web design or is
+willing and able to design some nice play, stop, forward, backward,
+etc. buttons? Any help would be appreciated. In any case, visit the
+<a href="http://mmpc.garage.maemo.org">homepage</a> for more information.
+</p>
+<p>
+Greetings, Holger
+</p></div>
+</div>
+</div>
+
+
+<p>&nbsp;<hr></p>
+      <!-- DISQUS -->
+<!--      <script type="text/javascript">  var disqus_developer = true; </script>-->
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+	(function() {
+	var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	dsq.src = 'http://holgersblog.disqus.com/embed.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=holgersblog">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </div> <!-- content -->
+
+      <div id="footer">
+	<p>Generated with a <a href="http://www.gnu.org/software/emacs/tour/">GNU Emacs</a>, <a href="http://orgmode.org/">org-mode</a>,
+          <a href="http://github.com/mojombo/jekyll">Jekyll</a>,
+          and <a href="http://juanreyero.com/open/org-jekyll/">org-jekyll</a>
+          toolchain.</p>
+      </div>
+    </div> <!-- page -->
+
+  </body>
+</html>
+

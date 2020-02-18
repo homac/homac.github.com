@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mutt next generation</title>
+<!--    <link rel="stylesheet" href="" type="text/css" media="screen"/>-->
+ <link rel="stylesheet" href="/stylesheets/dark.css" type="text/css" media="screen"/>
+  </head>
+
+  <body>
+    <div id="page">
+      <div id="header">
+	<div id="headerimg">
+	  <h1 class="caption"><a href="http://blog.homac.de" class="caption">Holger's Blog</a></h1>
+	  <h3 class="description">Cervisiam Bibat</h3>
+	</div>
+      </div>
+
+      <div id="content">
+	<small>05 Jun 2006 00:52</small>
+	<a href="/atom.xml" title="Subscribe"><img class="top-icon" width="48"
+						   height="48" alt="Subscribe"
+						   src="/images/feed-icon.png"/></a>
+
+
+
+<span class="navigation">
+  <a rel="prev" href="/2006/05/03/working-on-homepage-wwwfoto-hersbruckde.html" title="View Working on homepage www.Foto-Hersbruck.de">&larr; previous</a>
+</span>
+
+
+<br>
+<span class="navigation">
+  <a rel="next" href="/2006/07/11/my-personal-gnome-experience.html" title="View My personal GNOME experience">next &rarr;</a>
+</span>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><a href="http://blog.homac.de//2006/06/05/mutt-next-generation.html">Mutt next generation</a></h2>
+<div class="outline-text-2" id="text-1">
+
+
+
+
+<script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=38"; </script>
+
+<p>
+Looking for some nice modifications for my mutt in the web, I stumbled
+over <a href="http://mutt-ng.berlios.de/">mutt-ng (mutt next generation)</a>.
+</p>
+<p>
+Well, that it what I was looking for all the time. These are the reasons
+why I favour mutt-ng over mutt&hellip;
+</p>
+<ul>
+<li>I do not have to patch my mutt anymore to get a nice sidebar showing
+    all my folders. It highlights folders with new mail and I can see
+    which folders still have unread (not new) mails in them.
+</li>
+<li>Another big advantage is the possibility to read nntp news and to
+    treat them exactly like any other mails.
+</li>
+<li>Until now, everytime I reinstalled my system I had to configure my
+    local postfix to sent my mails (with tls). Muttng finally supports
+    the smtp protocol (with tls, of course). I agree that the separation
+    of a MUA like mutt and an MTA like postfix is generally a good idea,
+    but with the new integration of smtp, it makes my life a lot
+    easier. I just have to store my configuration in my home directory
+    and everytime I upgrade my system I just have to keep my home
+    partition and I can send mails without any further
+    adjustments. That's nice!
+</li>
+<li>According to the <a href="http://mutt-ng.berlios.de/">homepage</a> and the two mailinglists, there's heavy
+    (and happy ;-) development going on. So possible new features and
+    patches will hopefully go in sooner as it has been with mutt until
+    now.
+</li>
+<li>No problems and crashes so far
+</li>
+</ul>
+
+
+<p>
+I also decided to package it for the SUSE distribution. So it should
+soon show up in the factory tree.
+</p>
+<p>
+I have nicely separated my "old" mutt configuration from the new mutt-ng
+configuration so I can switch back easily if something unexpected might
+happen. I now have file ~/.muttngrc which sources my ~/.mutt/muttrc with
+the following content:
+</p>
+<p>
+` source ~/.mutt/muttrc # sidebar settings set sidebar<sub>visible</sub>=yes set
+sidebar<sub>width</sub>=25 set sidebar<sub>shorten</sub><sub>hierarchy</sub>=yes set
+sidebar<sub>number</sub><sub>format</sub>=%n(%u) color sidebar<sub>new</sub> brightyellow default #
+keybindings for the sidebar bind index \CP sidebar-prev bind index \CN
+sidebar-next bind index \CO sidebar-open bind pager \CP sidebar-prev
+bind pager \CN sidebar-next bind pager \CO sidebar-open macro index \CT
+':toggle sidebar<sub>visible</sub> macro pager \CT ':toggle sidebar<sub>visible</sub> # nntp
+configuration set nntp<sub>host</sub>="news.gmane.org" set
+nntp<sub>cache</sub><sub>dir</sub>=~/.mutt/ # keybindings for nntp bind index \en
+change-newsgroup # smtp configuration set smtp<sub>host</sub>=&lt;my relayhost&gt; set
+smtp<sub>user</sub>=hmacht set smtp<sub>use</sub><sub>tls</sub>=enabled `
+</p>
+<p>
+Have fun, Holger
+</p></div>
+</div>
+
+
+<p>&nbsp;<hr></p>
+      <!-- DISQUS -->
+<!--      <script type="text/javascript">  var disqus_developer = true; </script>-->
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+	(function() {
+	var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	dsq.src = 'http://holgersblog.disqus.com/embed.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=holgersblog">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </div> <!-- content -->
+
+      <div id="footer">
+	<p>Generated with a <a href="http://www.gnu.org/software/emacs/tour/">GNU Emacs</a>, <a href="http://orgmode.org/">org-mode</a>,
+          <a href="http://github.com/mojombo/jekyll">Jekyll</a>,
+          and <a href="http://juanreyero.com/open/org-jekyll/">org-jekyll</a>
+          toolchain.</p>
+      </div>
+    </div> <!-- page -->
+
+  </body>
+</html>
+

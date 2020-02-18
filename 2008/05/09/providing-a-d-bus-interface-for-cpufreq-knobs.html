@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Providing a D-Bus interface for CPUFreq knobs</title>
+<!--    <link rel="stylesheet" href="" type="text/css" media="screen"/>-->
+ <link rel="stylesheet" href="/stylesheets/dark.css" type="text/css" media="screen"/>
+  </head>
+
+  <body>
+    <div id="page">
+      <div id="header">
+	<div id="headerimg">
+	  <h1 class="caption"><a href="http://blog.homac.de" class="caption">Holger's Blog</a></h1>
+	  <h3 class="description">Cervisiam Bibat</h3>
+	</div>
+      </div>
+
+      <div id="content">
+	<small>09 May 2008 23:30</small>
+	<a href="/atom.xml" title="Subscribe"><img class="top-icon" width="48"
+						   height="48" alt="Subscribe"
+						   src="/images/feed-icon.png"/></a>
+
+
+
+<span class="navigation">
+  <a rel="prev" href="/2008/04/14/maemo-music-player-client-.html" title="View Maemo Music Player Client 0.2.1">&larr; previous</a>
+</span>
+
+
+<br>
+<span class="navigation">
+  <a rel="next" href="/2008/06/03/back-from-linuxtag-.html" title="View Back from LinuxTag 2008">next &rarr;</a>
+</span>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><a href="http://blog.homac.de//2008/05/09/providing-a-d-bus-interface-for-cpufreq-knobs.html">Providing a D-Bus interface for CPUFreq knobs</a></h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+There has been a discussion on the HAL development list regarding
+DeviceKit, a corresponding power management subsystem daemon, and a
+possible CPU frequency scaling interface.
+</p>
+<p>
+During the discussion, it turned out, and I realised this quite late,
+that KPowersave still exports the possibility to set either the
+powersave or performance governor. That is basically a bad idea, and
+still there because of former times. See this <a href="http://mjg59.livejournal.com/2008/05/08/">journal</a> for a good
+rationale. However, the author quite unfriendly rants towards the
+developers. Unfortunately, I've not seen a bugreport in <a href="http://sourceforge.net/tracker/?group_id=124576&amp;atid=700009">sourceforge's bugtracker</a> for that, nor anywhere else. Maybe he could have pointed this
+out in a more elegant way, instead of immediately telling people they
+are dangerous. How emotional. And funny after all. I filed it <a href="https://bugzilla.novell.com/show_bug.cgi?id=389049">here</a>, just
+to be sure it is not missed for upcoming openSUSE 11.0.
+</p>
+<p>
+So that is the one issue of the discussion, a completely other one is
+about if we need a D-Bus interface for tuning CPU frequency scaling
+(related to the ondemand governor) knobs. As an example, the ondemand
+governor provides an up<sub>threshold</sub> setting you can tune through
+sysfs. Basically it defines how long a CPU burst has to be so that the
+frequency is increased. Quoting the kernel documentation:
+</p>
+
+<p>
+    up<sub>threshold</sub>: defines what the average CPU usaged between the
+    samplings of 'sampling<sub>rate'</sub> needs to be for the kernel to make a
+    decision on whether it should increase the frequency.  For example
+    when it is set to its default value of '80' it means that between
+    the checking intervals the CPU needs to be on average more than 80%
+    in use to then decide that the CPU frequency needs to be increased.
+</p>
+
+<p>
+When having only short CPU bursts, it is better to stay at a low
+frequency for a short period of time when it comes down to power
+consumption. And the typical desktop use consists of those short CPU
+bursts. Browsing a web page, opening a mail folder, etc.
+</p>
+<p>
+The kernel sets a sane default for this setting. It is nearly
+self-evident for a default to be sane, someone should have thought
+carefully about it. However, that does not mean it is ideal. It just
+cannot be for all different kind of use cases. Servers, desktops, what
+applications are running, "on battery", "on AC", namely, depending on
+the current power source.
+</p>
+<p>
+So I am an advocator of having a D-Bus interface somewhere at the system
+level (we already have in HAL, but this will most likely vanish sooner
+or later due to its successor called DeviceKit) for tuning such knobs by
+someone who cares about policy. And policy is more and more put to
+Desktop applications these days.
+</p></div>
+</div>
+
+
+<p>&nbsp;<hr></p>
+      <!-- DISQUS -->
+<!--      <script type="text/javascript">  var disqus_developer = true; </script>-->
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+	(function() {
+	var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	dsq.src = 'http://holgersblog.disqus.com/embed.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=holgersblog">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </div> <!-- content -->
+
+      <div id="footer">
+	<p>Generated with a <a href="http://www.gnu.org/software/emacs/tour/">GNU Emacs</a>, <a href="http://orgmode.org/">org-mode</a>,
+          <a href="http://github.com/mojombo/jekyll">Jekyll</a>,
+          and <a href="http://juanreyero.com/open/org-jekyll/">org-jekyll</a>
+          toolchain.</p>
+      </div>
+    </div> <!-- page -->
+
+  </body>
+</html>
+

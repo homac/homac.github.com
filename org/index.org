@@ -1,0 +1,26 @@
+#+BEGIN_HTML
+---
+layout: default
+title: Holger's Blog
+description: Cervisiam Bibat - Bibe, si bibis
+stylesheet: /stylesheets/dark.css
+---
+#+end_HTML
+
+* Most recent blog posts
+#+BEGIN_HTML
+
+<p class="permalinks">
+  <a href="publications.html">&ndash;&gt; Publications and Talks</a><br>
+<!--  <a href="projects.html">&ndash;&gt; Projects</a>-->
+</p>
+
+<ul>
+{% for post in site.posts limit: 10 %}
+ <li><span class="date">{{ post.date | date:"%d %b %Y" }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+</ul>
+
+#+end_HTML
+
+[[file:all_posts.html][--> List of all posts]]

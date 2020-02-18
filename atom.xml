@@ -1,0 +1,1057 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title>Holger's Blog</title>
+  <link href="http://blog.homac.de/atom.xml" rel="self"/>
+  <link href="http://blog.homac.de"/>
+  <updated>2014-06-30T09:07:49+02:00</updated>
+  <id>http://blog.homac.de/</id>
+  <author>
+    <name>Holger Macht</name>
+    <email>holger@homac.de</email>
+  </author>
+
+  
+  <entry>
+    <title>Post-Mortem Memory Analysis of Cold-Booted Android Devices</title>
+    <link href="http://blog.homac.de/2014/06/29/post-mortem-memory-analysis-of-cold-booted-android-devices.html"/>
+    <updated>2014-06-29T23:30:00+02:00</updated>
+    <id>http://blog.homac.de/2014/06/29/post-mortem-memory-analysis-of-cold-booted-android-devices</id>
+    <content type="html">&lt;p&gt;
+Although the &lt;a href=&quot;http://www1.gi-ev.de/fachbereiche/sicherheit/fg/sidar/imf/imf2014/&quot;&gt;IMF 2014&lt;/a&gt; already took place over a month ago, it is still
+time to mention the publication which has been presented there:
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;b&gt;Post-Mortem Memory Analysis of Cold-Booted Android Devices&lt;/b&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Both the &lt;a href=&quot;http://www.homac.de/publications/Post-Mortem-Memory-Analysis-of-Cold-Booted-Android-Devices.pdf&quot;&gt;paper&lt;/a&gt; and the corresponding &lt;a href=&quot;http://www.homac.de/publications/Post-Mortem-Memory-Analysis-of-Cold-Booted-Android-Devices-slides.pdf&quot;&gt;presentation slides&lt;/a&gt; are online
+(click links or see &lt;a href=&quot;http://blog.homac.de/publications.html&quot;&gt;publications&lt;/a&gt;).
+&lt;/p&gt;
+
+&lt;p&gt;
+The paper was created in cooperation with the &lt;a href=&quot;https://www4.cs.fau.de/&quot;&gt;Department of Computer
+Science&lt;/a&gt; at the Friedrich-Alexander-University of Erlangen-Nuremberg. I
+herewith thank the other authors Christian Hilgers, Tilo Müller and
+Michael Spreitzenbarth. Especially for presenting the paper at the
+conference during my absence.
+&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Mirrored / Gespiegelt - Android App Updated</title>
+    <link href="http://blog.homac.de/2014/01/15/mirrored--gespiegelt---android-app-updated.html"/>
+    <updated>2014-01-15T23:30:00+01:00</updated>
+    <id>http://blog.homac.de/2014/01/15/mirrored--gespiegelt---android-app-updated</id>
+    <content type="html">&lt;div id=&quot;outline-container-1&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-1&quot;&gt;&lt;a href=&quot;http://blog.homac.de//2014/01/15/mirrored--gespiegelt---android-app-updated.html&quot;&gt;Mirrored / Gespiegelt - Android App Updated&lt;/a&gt;&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-1&quot;&gt;
+
+
+&lt;p&gt;
+Well, never actually blogged about this one. Although the project's
+initial release has been done in late 2010. It basically started as a
+proof of concept to see what those Android apps are all about. And it
+was a good exercise for doing some Java I used to need at university
+that time.
+&lt;/p&gt;
+&lt;p&gt;
+So what is it all about? Mirrored (German name &quot;Gespiegelt&quot;) is a simple
+news reader to read the articles posted on &lt;a href=&quot;http://www.spiegel.de&quot;&gt;Spiegel Online&lt;/a&gt;. What is
+special about it? It has been around even before the &lt;a href=&quot;http://www.spiegel.de&quot;&gt;Spiegel&lt;/a&gt; published
+the official application. Though there is more, it has the capability to
+download and save the articles to read them offline. Comes in handy when
+having no internet flat rate or being on the subway without proper
+broadband people tell in comments.
+&lt;/p&gt;
+&lt;p&gt;
+ &lt;img src=&quot;http://www.homac.de/images/mirrored_highres.png&quot;  alt=&quot;http://www.homac.de/images/mirrored_highres.png&quot; /&gt;
+&lt;/p&gt;
+&lt;p&gt;
+Anyway, it is up on &lt;a href=&quot;https://play.google.com/store/apps/details?id=de.homac.Mirrored&quot;&gt;Google Play&lt;/a&gt; and can be installed from your favorite
+Android device. The source code and more information is available on
+&lt;a href=&quot;https://gitorious.org/mirrored/pages/Home&quot;&gt;Gitorious&lt;/a&gt;.
+&lt;/p&gt;
+&lt;p&gt;
+I just released version 0.2.5 fixing a bug in offline storage and a
+minor menu alignment issue caused by the latest design changes. Bug
+fixing, let me call it maintenance instead, is basically everything I do
+for Mirrored though. It is feature complete and my personal motivation
+for doing high level programming with Java is rather low.
+&lt;/p&gt;
+&lt;p&gt;
+So last but not least, let me seize the chance to thank &lt;a href=&quot;https://gitorious.org/~framas&quot;&gt;Frank Scheffold&lt;/a&gt;
+and &lt;a href=&quot;https://gitorious.org/~doccrazy&quot;&gt;Doccrazy&lt;/a&gt; for their bug fixing and improvements during the last
+couple of years. I am really grateful for any patches or improvements I
+receive. Even if someone would like to take over maintainership, go for
+it.
+&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>python-killswitch ported to URfkill 0.4</title>
+    <link href="http://blog.homac.de/2012/10/25/python-killswitch-ported-to-urfkill-.html"/>
+    <updated>2012-10-25T10:30:00+02:00</updated>
+    <id>http://blog.homac.de/2012/10/25/python-killswitch-ported-to-urfkill-</id>
+    <content type="html">&lt;div id=&quot;outline-container-1&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-1&quot;&gt;&lt;a href=&quot;http://blog.homac.de//2012/10/25/python-killswitch-ported-to-urfkill-.html&quot;&gt;python-killswitch ported to URfkill 0.4&lt;/a&gt;&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-1&quot;&gt;
+
+
+&lt;p&gt;
+URfkill 0.4 has been released for quite some time now. However, I've
+been quite busy the last couple of months so I didn't make it to port
+the python-killswitch module to the new DBus API. Until now, until I've
+finally releasing python-killswitch 0.4 which is basically fixing &lt;a href=&quot;https://bugzilla.novell.com/show_bug.cgi?id=734894&quot;&gt;SUSE bug 734894&lt;/a&gt;.
+&lt;/p&gt;
+&lt;p&gt;
+The package can either be found in my &lt;a href=&quot;https://build.opensuse.org/package/show?package=python-killswitch&amp;amp;project=home:hmacht&quot;&gt;home project&lt;/a&gt; or can be installed
+via &lt;a href=&quot;http://software.opensuse.org/package/python-killswitch?search_term=python-killswitch&quot;&gt;1-Click-Install&lt;/a&gt;. Maintenance updates for openSUSE 12.1 and 12.2 are
+already running. The source code can be found at &lt;a href=&quot;https://gitorious.org/python-killswitch/python-killswitch&quot;&gt;Gitorious&lt;/a&gt;.
+&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Declaring MMPC unsupported, nearly deathlike</title>
+    <link href="http://blog.homac.de/2011/10/08/declaring-mmpc-unsupported-nearly-deathlike.html"/>
+    <updated>2011-10-08T20:02:00+02:00</updated>
+    <id>http://blog.homac.de/2011/10/08/declaring-mmpc-unsupported-nearly-deathlike</id>
+    <content type="html">&lt;div id=&quot;outline-container-1&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-1&quot;&gt;&lt;a href=&quot;http://blog.homac.de//2011/10/08/declaring-mmpc-unsupported-nearly-deathlike.html&quot;&gt;Declaring MMPC unsupported, nearly deathlike&lt;/a&gt;&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-1&quot;&gt;
+
+
+&lt;p&gt;
+Quite surprised by receiving yet another feature request about the
+&lt;i&gt;Maemo Music Player Client&lt;/i&gt; for the Maemo platform. I always got some
+mails here and then, but didn't receive one in quite a while. But just
+that everybody knows:
+&lt;/p&gt;
+&lt;p&gt;
+&lt;b&gt;I hereby declare&lt;/b&gt; &lt;a href=&quot;http://mmpc.garage.maemo.org&quot;&gt;MMPC&lt;/a&gt; &lt;b&gt;officially unsupported, not to say dead, stone-dead in particular.&lt;/b&gt;
+&lt;/p&gt;
+&lt;p&gt;
+Nevertheless, it's nice to hear that the project still has (at least a
+few) users, so that I can say it has been a success after all.
+&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Saving Power with a new Killswitch Applet</title>
+    <link href="http://blog.homac.de/2010/06/14/saving-power-with-a-new-killswitch-applet.html"/>
+    <updated>2010-06-14T10:15:00+02:00</updated>
+    <id>http://blog.homac.de/2010/06/14/saving-power-with-a-new-killswitch-applet</id>
+    <content type="html">&lt;div id=&quot;outline-container-1&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-1&quot;&gt;&lt;a href=&quot;http://blog.homac.de//2010/06/14/saving-power-with-a-new-killswitch-applet.html&quot;&gt;Saving Power with a new Killswitch Applet&lt;/a&gt;&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-1&quot;&gt;
+
+
+&lt;p&gt;
+So there has been &lt;a href=&quot;https://features.opensuse.org/hackweek&quot;&gt;Hackweek&lt;/a&gt; at SUSE/Novell the last week and I'm finally
+finding the time to release a new version of &lt;a href=&quot;http://gitorious.org/python-killswitch/killswitch-applet&quot;&gt;killswitch-applet&lt;/a&gt;. This
+time, it's version 0.2.3, and really a lot has changed from the previous
+&lt;a href=&quot;http://blog.homac.de/2009/04/17/killswitch-applet----or-my-personal-hello-world-in-python.html&quot;&gt;0.1 release&lt;/a&gt;:
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The applet remembers your settings across reboots
+
+&lt;p&gt;
+   That is actually &lt;b&gt;the&lt;/b&gt; feature which makes you want killswitch-applet
+   at all. Without the applet, whenever you disable a device, let's say
+   bluetooth, after a reboot, the device is active again. I'm assuming
+   two prerequisites here:
+&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;You're not using a Thinkpad laptop, because those are the only
+      ones I know of (please enlighten me if you know of others) which
+      are able to store the state of their devices in
+      NVRAM. Speficically, the thinkpad-acpi driver is able to do so.
+
+&lt;/li&gt;
+&lt;li&gt;Your laptop doesn't have a physical hardware switch for
+      enabling/disabling bluetooth/wifi. This hardware switch might also
+      be hidden after a usual button which doesn't look like it is
+      handled in hardware.
+
+&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;   All other laptop owners might find killswitch-applet very useful. If
+   you're the owner of let's say, a sony, HP, Acer, or whatever laptop,
+   you would have to disable the bluetooth device over and over again
+   after each reboot. Maybe even after a sleep, depending on the
+   hardware configuration, distribution, kernel version, etc.. These
+   unnecessary mouse clicks are just avoided. Disabling the bluetooth
+   device once will take care that it is disabled the next time
+   killswitch-applet starts, which is mostly when you're doing a reboot
+   and/or logging in to your desktop.
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;Vector graphic (svg) is used for the tray icon, which makes it scale
+   nicely for whatever panel (kicker, gnome-applet, etc.) you're using.
+
+&lt;/li&gt;
+&lt;li&gt;Add tool tip to get a fast overview about which killswitches are
+   active.
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+ &lt;img src=&quot;http://www.homac.de/images/killswitch-applet-0.2.3-screenshot.png&quot;  alt=&quot;http://www.homac.de/images/killswitch-applet-0.2.3-screenshot.png&quot; /&gt;
+&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-1-1&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-1-1&quot;&gt;Source Code/Tarball Release&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-1-1&quot;&gt;
+
+
+&lt;p&gt;
+   I found a home for the &lt;a href=&quot;http://gitorious.org/python-killswitch&quot;&gt;code&lt;/a&gt; and chose &lt;a href=&quot;http://gitorious.org&quot;&gt;gitorious&lt;/a&gt; for it. Contributions
+   welcome!
+&lt;/p&gt;
+&lt;p&gt;
+   Here are the required tarballs:
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.homac.de/files/python-killswitch-0.2.tar.gz&quot;&gt;python-killswitch-0.2&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.homac.de/files/killswitch-applet-0.2.3.tar.gz&quot;&gt;killswitch-applet-0.2.3&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-1-2&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-1-2&quot;&gt;Packages for openSUSE users&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-1-2&quot;&gt;
+
+
+&lt;p&gt;
+   The package can be found in my &lt;a href=&quot;https://build.opensuse.org/package/show?package=killswitch-applet&amp;amp;project=home:hmacht&quot;&gt;home project&lt;/a&gt; or can be installed via
+   &lt;a href=&quot;http://en.opensuse.org/One_Click_Install&quot;&gt;1-Click-Install&lt;/a&gt;:
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://software.opensuse.org/ymp/home:hmacht/openSUSE_Factory/killswitch-applet.ymp?base=openSUSE:Factory&amp;amp;query=killswitch-applet&quot;&gt;openSUSE Factory&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://software.opensuse.org/ymp/home:hmacht/openSUSE_11.2/killswitch-applet.ymp?base=openSUSE:11.2&amp;amp;query=killswitch-applet&quot;&gt;openSUSE 11.2&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://software.opensuse.org/ymp/home:hmacht/openSUSE_11.1/killswitch-applet.ymp?base=openSUSE:11.1&amp;amp;query=killswitch-applet&quot;&gt;openSUSE 11.1&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>z-shell (zsh) completion for osc and zypper</title>
+    <link href="http://blog.homac.de/2010/03/29/z-shell-zsh-completion-for-osc-and-zypper.html"/>
+    <updated>2010-03-29T00:13:00+02:00</updated>
+    <id>http://blog.homac.de/2010/03/29/z-shell-zsh-completion-for-osc-and-zypper</id>
+    <content type="html">&lt;div id=&quot;outline-container-1&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-1&quot;&gt;&lt;a href=&quot;http://blog.homac.de//2010/03/29/z-shell-zsh-completion-for-osc-and-zypper.html&quot;&gt;z-shell (zsh) completion for osc and zypper&lt;/a&gt;&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-1&quot;&gt;
+
+
+&lt;p&gt;
+When working with the &lt;a href=&quot;http://www.opensuse.org&quot;&gt;openSUSE&lt;/a&gt; distribution, there are a couple of tools
+you have to deal with over and over again. Two of them are &lt;a href=&quot;http://en.opensuse.org/Osc&quot;&gt;osc&lt;/a&gt; and
+&lt;a href=&quot;http://en.opensuse.org/Zypper&quot;&gt;zypper&lt;/a&gt;. The first one to build or fix packages, the latter to install,
+remove or update them. Using one of those tools on a regular basis? Read
+on&amp;hellip;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;hellip;but to make this post actually useful for you, there needs to be
+another prerequisite: You need to use zsh as your primary shell. And I
+hope you do. If not, you should definitely put this on your TODO list.
+&lt;/p&gt;
+&lt;p&gt;
+All of the following is ready to use, because it's already in openSUSE
+Factory for quite some time and has already been in openSUSE 11.2. I
+just have the feeling that people are not aware of this feature, so I am
+writing this post&amp;hellip;
+&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-1-1&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-1-1&quot;&gt;osc&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-1-1&quot;&gt;
+
+&lt;p&gt;So let's start with osc. There are a couple of sub commands like
+&lt;i&gt;checkout&lt;/i&gt;, &lt;i&gt;getbinaries&lt;/i&gt; or &lt;i&gt;branch&lt;/i&gt; I need all the time. And every
+time I do, I have to look up the syntax. For instance, have a look at
+the &lt;i&gt;osc getbinaries&lt;/i&gt; command:
+&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;example&quot;&gt;$ osc help getbinaries
+osc getbinaries PROJECT PACKAGE REPOSITORY ARCHITECTURE
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+Hm? Four parameters? Things like that were actually the reason I sat
+down implementing a solution which works quite well for me: Zsh
+completion for osc. Now you can do stuff like the following:
+&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;example&quot;&gt;$ osc getbinaries &amp;lt;tab&amp;gt;
+home:hmacht              openSUSE:11.0            openSUSE:11.3            SUSE:SLE-11:Update:Test
+home:hmacht:kernel-sony  openSUSE:11.1            openSUSE:Factory
+openSUSE:10.3            openSUSE:11.2            SUSE:SLE-11-SP1:GA
+
+$ osc getbinaries openSUSE:Factory aaa_base &amp;lt;tab&amp;gt;
+openSUSE_10.2     openSUSE_11.0     openSUSE_11.2     openSUSE_Factory  SUSE_SLE-11_GA
+openSUSE_10.3     openSUSE_11.1     openSUSE_11.3     standard
+
+$ osc getbinaries openSUSE:Factory aaa_base openSUSE_Factory
+i586    x86_64
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+Quite handy, isn't it?
+&lt;/p&gt;
+&lt;p&gt;
+You might also wonder why the first completion output in the above
+example contains my personal home project &lt;i&gt;home:hmacht&lt;/i&gt;. By default, the
+completion contains a couple of default build targets, repositories and
+architectures like &lt;i&gt;openSUSE_Factory&lt;/i&gt;, &lt;i&gt;openSUSE:Factory&lt;/i&gt; or
+&lt;i&gt;x86_64&lt;/i&gt;. You can extend those lists with the shell variables
+&lt;i&gt;ZSH_OSC_PROJECTS_EXTRA&lt;/i&gt; and &lt;i&gt;ZSH_OSC_BUILD_TARGETS_EXTRA&lt;/i&gt;. My
+corresponding part of my ~/.zshrc looks so:
+&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;example&quot;&gt;export ZSH_OSC_PROJECTS_EXTRA=&quot;home:hmacht home:hmacht:kernel-sony SUSE:SLE-11:Update:Test SUSE:SLE-11-SP1:GA&quot;
+export ZSH_OSC_BUILD_TARGETS_EXTRA=&quot;standard SUSE_SLE-11_GA&quot;
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+After that, the extra repos/targets show up in the completion output.
+&lt;/p&gt;
+&lt;p&gt;
+By default, the completion is in &lt;i&gt;verbose mode&lt;/i&gt;:
+&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;example&quot;&gt;$ osc &amp;lt;tab&amp;gt;
+--debugger             -- jump into the debugger before executing anything
+--no-keyring           -- disable usage of desktop keyring system
+--post-mortem          -- jump into the debugger in case of errors
+--version              -- show program's version number and exit
+-A                     -- URL/alias, --apiurl=URL/alias
+-H                     -- --http-debug debug HTTP traffic
+-c                     -- FILE, --config=FILE
+-d                     -- --debug print info useful for debugging
+-h                     -- --help show this help message and exit
+-q                     -- --quiet be quiet, not verbose
+-t                     -- --traceback print call trace in case of errors
+-v                     -- --verbose increase verbosity
+abortbuild             -- Aborts the build of a certain project/package
+add                    -- Mark files to be added upon the next commit
+addremove              -- (ar) Adds new files, removes disappeared files
+aggregatepac           -- &quot;Aggregate&quot; a package to another package
+api                    -- Issue an arbitrary request to the API
+branch                 -- (bco, branchco, getpac)
+bugowner               -- Show bugowners of a project/package
+build                  -- Build a package on your local machine
+[...]
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+To change that you can set
+&lt;/p&gt;
+
+
+&lt;pre class=&quot;example&quot;&gt;$ zstyle ':completion:*:osc:*' verbose no
+$ zstyle ':completion:*:osc-subcommand:*' verbose no
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+Now it looks like:
+&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;example&quot;&gt;$ osc &amp;lt;tab&amp;gt;
+--debugger             api                    diff                   meta                   resolved
+--no-keyring           branch                 disable                mkpac                  results
+--post-mortem          bugowner               getbinaries            mv                     rremove
+--version              build                  global                 my                     search
+[...]
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+All the completion output is auto generated by the &lt;i&gt;osc help&lt;/i&gt; output
+(btw., even &lt;i&gt;osc help &amp;lt;tab&amp;gt;&lt;/i&gt; can be completed), so new commands should
+show up automatically. However, this contains the risk of possible bugs
+where the help output is unexpected, so if you find any issues, send me
+a mail or add a comment.
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-1-2&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-1-2&quot;&gt;zypper&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-1-2&quot;&gt;
+
+
+&lt;p&gt;
+Basically all the above applies for &lt;i&gt;zypper&lt;/i&gt;. An example output looks like:
+&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;example&quot;&gt;$ zypper re&amp;lt;tab&amp;gt;
+refresh                 -- ref Refresh all repositories.
+refresh-services        -- refs Refresh all services.
+remove                  -- rm Remove packages.
+removelock              -- rl Remove a package lock.
+removerepo              -- rr Remove specified repository.
+removeservice           -- rs Remove specified service.
+renamerepo              -- nr Rename specified repository.
+repos                   -- lr List all defined repositories.
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+Change verbose/short output with:
+&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;example&quot;&gt;$ zstyle ':completion:*:osc:*' verbose no
+$ zstyle ':completion:*:osc-subcommand:*' verbose no
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+Personally I use the zypper completion quite seldom, nevertheless, some
+people might find it useful.
+&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Power Management in openSUSE and SLE11</title>
+    <link href="http://blog.homac.de/2009/05/11/power-management-in-opensuse-and-sle.html"/>
+    <updated>2009-05-11T20:50:00+02:00</updated>
+    <id>http://blog.homac.de/2009/05/11/power-management-in-opensuse-and-sle</id>
+    <content type="html">&lt;div id=&quot;outline-container-1&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-1&quot;&gt;&lt;a href=&quot;http://blog.homac.de//2009/05/11/power-management-in-opensuse-and-sle.html&quot;&gt;Power Management in openSUSE and SLE11&lt;/a&gt;&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-1&quot;&gt;
+
+
+&lt;p&gt;
+&lt;img src=&quot;http://blog.homac.de/images/energystar_logo_planet.png&quot;  alt=&quot;http://blog.homac.de/images/energystar_logo_planet.png&quot; /&gt;
+&lt;/p&gt;
+&lt;p&gt;
+Wanna know what we're doing to make your laptop run longer? Have a look
+at the new &lt;a href=&quot;http://en.opensuse.org/Powersaving&quot;&gt;wiki page&lt;/a&gt; I have just finished. It talks about three major
+topics:
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What is done
+&lt;/li&gt;
+&lt;li&gt;What can be done better
+&lt;/li&gt;
+&lt;li&gt;What is not done
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+It might give you some hints to tease even more out of your battery
+runtime.
+&lt;/p&gt;
+&lt;p&gt;
+Discussion welcome!
+&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>killswitch-applet-0.1 ...  or my personal Hello World in Python</title>
+    <link href="http://blog.homac.de/2009/04/17/killswitch-applet----or-my-personal-hello-world-in-python.html"/>
+    <updated>2009-04-17T21:29:00+02:00</updated>
+    <id>http://blog.homac.de/2009/04/17/killswitch-applet----or-my-personal-hello-world-in-python</id>
+    <content type="html">&lt;div id=&quot;outline-container-1&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-1&quot;&gt;&lt;a href=&quot;http://blog.homac.de//2009/04/17/killswitch-applet----or-my-personal-hello-world-in-python.html&quot;&gt;killswitch-applet-0.1 &amp;hellip;  or my personal Hello World in Python&lt;/a&gt;&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-1&quot;&gt;
+
+
+&lt;p&gt;
+One thing that was on my TODO for already quite some time was to have a
+look at that half-new language called Python. Because an old-fashioned
+&quot;Hello World&quot; is far too simple here, I was looking for some kind of
+project to get familiar with the basic principles.
+&lt;/p&gt;
+&lt;p&gt;
+One thing I found quite annoying in the past was the fact that I always
+had to disable some kind of radios in some far too complicated ways to
+save some battery power. Modern laptops often have multiple killswitches
+for their wireless communication devices like bluetooth, WLAN or
+WWAN. So that was the chance for me to seize, and the output looks like
+this:
+&lt;/p&gt;
+&lt;p&gt;
+&lt;img src=&quot;http://blog.homac.de/images/killswitch-applet-large.png&quot;  alt=&quot;http://blog.homac.de/images/killswitch-applet-large.png&quot; /&gt;
+&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-1-1&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-1-1&quot;&gt;From the README:&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-1-1&quot;&gt;
+
+
+&lt;p&gt;
+killswitch-applet is a small application sitting in the system tray
+providing the possibility to manage all the killswitches found in the
+system. In this context, &quot;managing&quot; means enabling or disabling certain
+killswitches. This is especially useful if you have multiple
+killswitches like bluetooth, WWAN or WLAN seen in many modern laptops.
+&lt;/p&gt;
+&lt;p&gt;
+&lt;img src=&quot;http://blog.homac.de/images/killswitch-applet-screenshot.png&quot;  alt=&quot;http://blog.homac.de/images/killswitch-applet-screenshot.png&quot; /&gt; Tray
+Icon on the Left
+&lt;/p&gt;
+&lt;p&gt;
+The source tarball for version 0.1 can be downloaded here:
+&lt;a href=&quot;http://www.homac.de/files/killswitch-applet-0.1.tar.gz&quot;&gt;killswitch-applet-0.1&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+The summary here definitely is: Wow, that was damn simple! Especially
+when it comes down to GTK programming and D-Bus interaction, Python
+definitely provides a very good way to hack those things together quite
+easily. The whole source file contains a whole of 189 lines of code
+including comments.
+&lt;/p&gt;
+&lt;p&gt;
+Another question: Is it worth creating a sourceforge project for this?
+I'll wait until and if I'm getting some feedback.
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-1-2&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-1-2&quot;&gt;Note for openSUSE users:&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-1-2&quot;&gt;
+
+
+&lt;p&gt;
+Of course this is also available in the openSUSE Buildservice. Go to
+&lt;a href=&quot;http://software.opensuse.org/search&quot;&gt;http://software.opensuse.org/search&lt;/a&gt; and search for &quot;killswitch-applet&quot;.
+&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Tomboy^WGnote</title>
+    <link href="http://blog.homac.de/2009/04/16/tomboywgnote.html"/>
+    <updated>2009-04-16T22:49:00+02:00</updated>
+    <id>http://blog.homac.de/2009/04/16/tomboywgnote</id>
+    <content type="html">&lt;div id=&quot;outline-container-1&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-1&quot;&gt;&lt;a href=&quot;http://blog.homac.de//2009/04/16/tomboywgnote.html&quot;&gt;Tomboy&lt;sup&gt;WGnote&lt;/sup&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-1&quot;&gt;
+
+
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;  var disqus_url = &quot;http://blog.homac.de/?p=109&quot;; &lt;/script&gt;
+
+&lt;p&gt;
+Inspired by a recent &lt;a href=&quot;http://www.figuiere.net/hub/blog/?2009/04/15/660-gnote-012&quot;&gt;blog post&lt;/a&gt;, &lt;a href=&quot;http://live.gnome.org/Gnote&quot;&gt;Gnote&lt;/a&gt; is now available in the openSUSE
+build service. If you have been using Tomboy and wouldn't miss any of
+its plugins (which are WIP), give it a try. The Mono to C++ conversion
+can be that easy:
+&lt;/p&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;For Factory: $ zypper ar \
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;    &lt;a href=&quot;http://download.opensuse.org/repositories/home:/hmacht/openSUSE_Factory/&quot;&gt;http://download.opensuse.org/repositories/home:/hmacht/openSUSE_Factory/&lt;/a&gt;
+    \ home:hmacht
+&lt;/p&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;For 11.1: $ zypper ar \
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;    &lt;a href=&quot;http://download.opensuse.org/repositories/home:/hmacht/openSUSE_11.1/&quot;&gt;http://download.opensuse.org/repositories/home:/hmacht/openSUSE_11.1/&lt;/a&gt;
+    \ home:hmacht
+&lt;/p&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;$ zypper in gnote
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+&lt;ul&gt;
+&lt;li&gt;$ mkdir ~/.gnote &amp;amp;&amp;amp; cp ~/.tomboy/*.note ~/.gnote/
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+&lt;ul&gt;
+&lt;li&gt;$ gnote
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+&lt;p&gt;
+AFAICT, it's running quite well. Tomboy has been the only Mono
+application I was running, so 'zypper remove mono' removed a bunch of 42
+packages.
+&lt;/p&gt;
+&lt;p&gt;
+Have fun, Holger
+&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Maemo Music Player Client (MMPC) for Diablo</title>
+    <link href="http://blog.homac.de/2009/02/24/maemo-music-player-client-mmpc-for-diablo.html"/>
+    <updated>2009-02-24T08:56:00+01:00</updated>
+    <id>http://blog.homac.de/2009/02/24/maemo-music-player-client-mmpc-for-diablo</id>
+    <content type="html">&lt;div id=&quot;outline-container-1&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-1&quot;&gt;&lt;a href=&quot;http://blog.homac.de//2009/02/24/maemo-music-player-client-mmpc-for-diablo.html&quot;&gt;Maemo Music Player Client (MMPC) for Diablo&lt;/a&gt;&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-1&quot;&gt;
+
+
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;  var disqus_url = &quot;http://blog.homac.de/?p=81&quot;; &lt;/script&gt;
+
+&lt;p&gt;
+Finally I took the time to respond to multiple requests about providing
+&lt;a href=&quot;http://mmpc.garage.maemo.org&quot;&gt;mmpc 0.2.1&lt;/a&gt; packages for Diablo. That also gave me the possibility to try
+the &lt;a href=&quot;https://garage.maemo.org/extras-assistant/index.php&quot;&gt;maemo autobuilder&lt;/a&gt; to upload my packages to the &lt;a href=&quot;http://wiki.maemo.org/Uploading_to_Extras&quot;&gt;extras repository&lt;/a&gt;. And well, it worked out. It's especially useful for those
+people not running debian based systems, because with autobuilder you
+don't have to care about signing and uploading the packages with debian
+tools like debsign and dput.
+&lt;/p&gt;
+&lt;p&gt;
+So, this is not a new release, these are just new packages build for the
+Diable 4.1 distribution. I still did not manage to find the time to
+enhance mmpc further. There are just too many other things like work and
+university I have to care about. Either download the packages from &lt;a href=&quot;https://garage.maemo.org/frs/?group_id=193&quot;&gt; Maemo Garage&lt;/a&gt;, or just get it through the extras repository as usual.
+&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>GreenIT: Power Consumption and -Optimization of PCs</title>
+    <link href="http://blog.homac.de/2009/01/14/greenit-power-consumption-and--optimization-of-pcs.html"/>
+    <updated>2009-01-14T10:27:00+01:00</updated>
+    <id>http://blog.homac.de/2009/01/14/greenit-power-consumption-and--optimization-of-pcs</id>
+    <content type="html">&lt;div id=&quot;outline-container-1&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-1&quot;&gt;&lt;a href=&quot;http://blog.homac.de//2009/01/14/greenit-power-consumption-and--optimization-of-pcs.html&quot;&gt;&quot;GreenIT: Power Consumption and -Optimization of PCs&quot;&lt;/a&gt;&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-1&quot;&gt;
+
+
+&lt;p&gt;
+In the middle of last year, I participated in a seminar called &quot;GreenIT&quot;
+at university. The result was a 17 paged whitepaper called &lt;a href=&quot;http://www.homac.de/files/Power_Consumption_and_-Optimization_of_PCs.pdf&quot;&gt;&quot;GreenIT: Power Consumption and -Optimization of PCs&quot;&lt;/a&gt;. It took quite some time to
+finish this up, so it would be a waste of time if I would not publish
+it. A shortened table of contents looks like this:
+&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Introduction
+&lt;/li&gt;
+&lt;li&gt;ACPI
+&lt;/li&gt;
+&lt;li&gt;System as a Whole
+&lt;/li&gt;
+&lt;li&gt;System Components
+&lt;/li&gt;
+&lt;li&gt;Software Policies
+&lt;/li&gt;
+&lt;li&gt;Conclusion
+&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;p&gt;
+Please note: If you are only interested in how things are implemented in
+Linux, this might not be that interesting for you. It does not include
+any specific operating system details. It's rather general, although of
+a technical nature, and thus can be applied to any operating system out
+there.
+&lt;/p&gt;
+&lt;p&gt;
+If you are lazy of reading through the whole document, you might
+consider having a look at the corresponding &lt;a href=&quot;http://www.homac.de/files/Power_Consumption_and_-Optimization_of_PCs-presentation.pdf&quot;&gt;presentation slides&lt;/a&gt;. However, you need to be able to speak, or at least to read, the
+German language for the slides to be useful for you.
+&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>GNOME Docker 0.1 Released</title>
+    <link href="http://blog.homac.de/2008/07/14/gnome-docker--released.html"/>
+    <updated>2008-07-14T21:13:00+02:00</updated>
+    <id>http://blog.homac.de/2008/07/14/gnome-docker--released</id>
+    <content type="html">&lt;div id=&quot;outline-container-1&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-1&quot;&gt;&lt;a href=&quot;http://blog.homac.de//2008/07/14/gnome-docker--released.html&quot;&gt;GNOME Docker 0.1 Released&lt;/a&gt;&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-1&quot;&gt;
+
+
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;  var disqus_url = &quot;http://blog.homac.de/?p=64&quot;; &lt;/script&gt;
+
+&lt;p&gt;
+Finally I managed to release gnome-docker 0.1, a small application to
+support users using a docking station. It is already included in
+&lt;a href=&quot;http://www.opensuse.org&quot;&gt;openSUSE&lt;/a&gt; 11.0, but other pending things prevented me to do a public
+release earlier. One of these things is the self designed tray
+icon :-). I definitely have to look for a better alternative. The README
+should have all the necessary information:
+&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-1-1&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-1-1&quot;&gt;GNOME docker 0.1&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-1-1&quot;&gt;
+
+
+&lt;p&gt;
+GNOME application for notifying laptop users about the state of their
+dock station and the possibility to undock the system via software,
+either from the tray icon, or via a hotkey. In future, it will also care
+about hotpluggable devices placed on the dock station, such as hard
+drives and DVD/CD drives.
+&lt;/p&gt;
+&lt;p&gt;
+It is meant to be well designed and to fit into the GNOME desktop. So an
+important aim for gnome-docker is to be shipped with GNOME upstream. It
+is still in early development.
+&lt;/p&gt;
+&lt;p&gt;
+Currently, it has the following features:
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;tray icon showing the current status and with functionality to
+    undock a laptop
+&lt;/li&gt;
+&lt;li&gt;handling of hotkeys to undock a laptop (e.g. FN-F9 on ThinkPads)
+&lt;/li&gt;
+&lt;li&gt;xrandr support to enable/disable external outputs attached to the
+    dock station (experimental, evaluating how it fits there)
+&lt;/li&gt;
+&lt;li&gt;user notifications about the state of the dock station. E.g.: &quot;Now
+    it's safe to remove the laptop&quot;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+&lt;img src=&quot;http://blog.homac.de/images/gnome-docker-pointer.png&quot;  alt=&quot;http://blog.homac.de/images/gnome-docker-pointer.png&quot; /&gt;
+&lt;/p&gt;
+&lt;p&gt;
+As gnome-docker forges ahead, the linux kernel has to improve and has to
+provide sensible date for userspace to make use of, like exporting which
+devices are inside a dock station.
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-1-2&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-1-2&quot;&gt;Requirements&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-1-2&quot;&gt;
+
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-1-3&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-1-3&quot;&gt;&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-1-3&quot;&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;liblazy &amp;gt;= 0.2 from &lt;a href=&quot;http://www.freedesktop.org/wiki/Software/liblazy&quot;&gt;http://www.freedesktop.org/wiki/Software/liblazy&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-1-4&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-1-4&quot;&gt;Download&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-1-4&quot;&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.homac.de/files/gnome-docker-0.1.tar.gz&quot;&gt;gnome-docker 0.1&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Back from LinuxTag 2008</title>
+    <link href="http://blog.homac.de/2008/06/03/back-from-linuxtag-.html"/>
+    <updated>2008-06-03T19:32:00+02:00</updated>
+    <id>http://blog.homac.de/2008/06/03/back-from-linuxtag-</id>
+    <content type="html">&lt;div id=&quot;outline-container-1&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-1&quot;&gt;&lt;a href=&quot;http://blog.homac.de//2008/06/03/back-from-linuxtag-.html&quot;&gt;Back from LinuxTag 2008&lt;/a&gt;&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-1&quot;&gt;
+
+
+&lt;p&gt;
+Came back from &lt;a href=&quot;http://www.linuxtag.org/2008/&quot;&gt;Linux Tag 2008&lt;/a&gt; on saturday evening. It was a short, only
+two days lasting trip to Berlin, but nevertheless, just great! Had a lot
+of fun with my colleagues &lt;a href=&quot;http://blog.nouse.net&quot;&gt;Timo Hoenig&lt;/a&gt; and &lt;a href=&quot;http://trinkteufel.de/&quot;&gt;Helmut Schaa&lt;/a&gt; giving a talk
+about laptop support in the upcoming openSUSE 11.0. It was a huge
+success. Great thanks goes to Martin Lasarsch for managing/moderating
+our talk. The quiz at the end giving away some USB sticks for correct
+answers has been just fun. It seems people are really listening to our
+laptops stories, or should we better not have told them at the beginning
+that there will be give-aways? ;-)
+&lt;/p&gt;
+&lt;p&gt;
+If you like to have a look at our achivement regarding fingerprint
+readers, suspend, power management and wireless, go have a look at &lt;a href=&quot;http://files.opensuse.org/opensuse/en/0/09/LinuxTag-2008-Laptop-2.0.pdf&quot;&gt;the slides&lt;/a&gt;.
+&lt;/p&gt;
+&lt;p&gt;
+I think the improvements have never been so astonishing before!
+Actually, they even suprised myself when seeing the test results. Just
+some key facts:
+&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-1-1&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-1-1&quot;&gt;Suspend to Disk&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-1-1&quot;&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;LinuxTag 2007: 37.5 seconds
+&lt;/li&gt;
+&lt;li&gt;LinuxTag 2008: 14.9 seconds
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+Pretty fast, I guess.
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-1-2&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-1-2&quot;&gt;Idle power consumption on a battery powered Thinkpad T61&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-1-2&quot;&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;openSUSE 10.3: 11.11 Watt
+&lt;/li&gt;
+&lt;li&gt;openSUSE 11.0 RC1: 8.51 Watt
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+Pretty economical, I guess.
+&lt;/p&gt;
+&lt;p&gt;
+For more details, look
+&lt;a href=&quot;http://files.opensuse.org/opensuse/en/0/09/LinuxTag-2008-Laptop-2.0.pdf&quot;&gt;here&lt;/a&gt;.
+&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Providing a D-Bus interface for CPUFreq knobs</title>
+    <link href="http://blog.homac.de/2008/05/09/providing-a-d-bus-interface-for-cpufreq-knobs.html"/>
+    <updated>2008-05-09T23:30:00+02:00</updated>
+    <id>http://blog.homac.de/2008/05/09/providing-a-d-bus-interface-for-cpufreq-knobs</id>
+    <content type="html">&lt;div id=&quot;outline-container-1&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-1&quot;&gt;&lt;a href=&quot;http://blog.homac.de//2008/05/09/providing-a-d-bus-interface-for-cpufreq-knobs.html&quot;&gt;Providing a D-Bus interface for CPUFreq knobs&lt;/a&gt;&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-1&quot;&gt;
+
+
+&lt;p&gt;
+There has been a discussion on the HAL development list regarding
+DeviceKit, a corresponding power management subsystem daemon, and a
+possible CPU frequency scaling interface.
+&lt;/p&gt;
+&lt;p&gt;
+During the discussion, it turned out, and I realised this quite late,
+that KPowersave still exports the possibility to set either the
+powersave or performance governor. That is basically a bad idea, and
+still there because of former times. See this &lt;a href=&quot;http://mjg59.livejournal.com/2008/05/08/&quot;&gt;journal&lt;/a&gt; for a good
+rationale. However, the author quite unfriendly rants towards the
+developers. Unfortunately, I've not seen a bugreport in &lt;a href=&quot;http://sourceforge.net/tracker/?group_id=124576&amp;amp;atid=700009&quot;&gt;sourceforge's bugtracker&lt;/a&gt; for that, nor anywhere else. Maybe he could have pointed this
+out in a more elegant way, instead of immediately telling people they
+are dangerous. How emotional. And funny after all. I filed it &lt;a href=&quot;https://bugzilla.novell.com/show_bug.cgi?id=389049&quot;&gt;here&lt;/a&gt;, just
+to be sure it is not missed for upcoming openSUSE 11.0.
+&lt;/p&gt;
+&lt;p&gt;
+So that is the one issue of the discussion, a completely other one is
+about if we need a D-Bus interface for tuning CPU frequency scaling
+(related to the ondemand governor) knobs. As an example, the ondemand
+governor provides an up&lt;sub&gt;threshold&lt;/sub&gt; setting you can tune through
+sysfs. Basically it defines how long a CPU burst has to be so that the
+frequency is increased. Quoting the kernel documentation:
+&lt;/p&gt;
+
+&lt;p&gt;
+    up&lt;sub&gt;threshold&lt;/sub&gt;: defines what the average CPU usaged between the
+    samplings of 'sampling&lt;sub&gt;rate'&lt;/sub&gt; needs to be for the kernel to make a
+    decision on whether it should increase the frequency.  For example
+    when it is set to its default value of '80' it means that between
+    the checking intervals the CPU needs to be on average more than 80%
+    in use to then decide that the CPU frequency needs to be increased.
+&lt;/p&gt;
+
+&lt;p&gt;
+When having only short CPU bursts, it is better to stay at a low
+frequency for a short period of time when it comes down to power
+consumption. And the typical desktop use consists of those short CPU
+bursts. Browsing a web page, opening a mail folder, etc.
+&lt;/p&gt;
+&lt;p&gt;
+The kernel sets a sane default for this setting. It is nearly
+self-evident for a default to be sane, someone should have thought
+carefully about it. However, that does not mean it is ideal. It just
+cannot be for all different kind of use cases. Servers, desktops, what
+applications are running, &quot;on battery&quot;, &quot;on AC&quot;, namely, depending on
+the current power source.
+&lt;/p&gt;
+&lt;p&gt;
+So I am an advocator of having a D-Bus interface somewhere at the system
+level (we already have in HAL, but this will most likely vanish sooner
+or later due to its successor called DeviceKit) for tuning such knobs by
+someone who cares about policy. And policy is more and more put to
+Desktop applications these days.
+&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Maemo Music Player Client 0.2.1</title>
+    <link href="http://blog.homac.de/2008/04/14/maemo-music-player-client-.html"/>
+    <updated>2008-04-14T15:21:00+02:00</updated>
+    <id>http://blog.homac.de/2008/04/14/maemo-music-player-client-</id>
+    <content type="html">&lt;div id=&quot;outline-container-1&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-1&quot;&gt;&lt;a href=&quot;http://blog.homac.de//2008/04/14/maemo-music-player-client-.html&quot;&gt;Maemo Music Player Client 0.2.1&lt;/a&gt;&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-1&quot;&gt;
+
+
+&lt;p&gt;
+I finally managed to get to work on &lt;a href=&quot;http://mmpc.garage.maemo.org&quot;&gt;MMPC&lt;/a&gt; after quite some time. MMPC 0.1
+was 2007-11-14 08:45 (wow, that was pretty early in morning :-))
+&lt;/p&gt;
+&lt;p&gt;
+&lt;img src=&quot;http://mmpc.garage.maemo.org/images/mmpc.png&quot;  alt=&quot;http://mmpc.garage.maemo.org/images/mmpc.png&quot; /&gt;
+&lt;/p&gt;
+&lt;p&gt;
+Well, mmpc-0.2.1 is available for immediate consumption. Changes, which
+were major concerns until now, are:
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;New buttons and images, finally. And a new logo you can see above.
+&lt;/li&gt;
+&lt;li&gt;Add tap-and-hold functionality to more places. For example, it's now
+    possible to update the database from within the client.
+&lt;/li&gt;
+&lt;li&gt;Add scroll windows to all preference tabs to display the full
+    content.
+&lt;/li&gt;
+&lt;li&gt;Bold the currently played track.
+&lt;/li&gt;
+&lt;li&gt;Increase connection timeout to 3 seconds. This will hopefully solve
+    the strange disconnect issues I wasn't able to reproduce.
+&lt;/li&gt;
+&lt;li&gt;Fixed tree browsing in playlist browser.
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+Fresh screenshots can be found &lt;a href=&quot;http://mmpc.garage.maemo.org&quot;&gt;here&lt;/a&gt;. Packages are available from the
+extras repository. So most people will get the update automatically (if
+anything goes wrong, try to enable red pill mode). Otherwise, grab them
+from &lt;a href=&quot;https://garage.maemo.org/frs/?group_id=193&quot;&gt;garage&lt;/a&gt;.
+&lt;/p&gt;
+&lt;p&gt;
+Next things will include the support for some plugins. Please report any
+problems. Happy listening!
+&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+
+</feed>

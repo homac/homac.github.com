@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CPU frequency scaling in HAL</title>
+<!--    <link rel="stylesheet" href="" type="text/css" media="screen"/>-->
+ <link rel="stylesheet" href="/stylesheets/dark.css" type="text/css" media="screen"/>
+  </head>
+
+  <body>
+    <div id="page">
+      <div id="header">
+	<div id="headerimg">
+	  <h1 class="caption"><a href="http://blog.homac.de" class="caption">Holger's Blog</a></h1>
+	  <h3 class="description">Cervisiam Bibat</h3>
+	</div>
+      </div>
+
+      <div id="content">
+	<small>25 Aug 2006 21:50</small>
+	<a href="/atom.xml" title="Subscribe"><img class="top-icon" width="48"
+						   height="48" alt="Subscribe"
+						   src="/images/feed-icon.png"/></a>
+
+
+
+<span class="navigation">
+  <a rel="prev" href="/2006/08/08/futuristic-hacking-on-the-nokia-.html" title="View Futuristic hacking on the Nokia 770">&larr; previous</a>
+</span>
+
+
+<br>
+<span class="navigation">
+  <a rel="next" href="/2006/09/13/arrived-at-suse-labs-conference.html" title="View Arrived at SUSE Labs Conference">next &rarr;</a>
+</span>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><a href="http://blog.homac.de//2006/08/25/cpu-frequency-scaling-in-hal.html">CPU frequency scaling in HAL</a></h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+Yesterday, my HAL addon which cares about CPU frequency scaling got
+committed to the HAL git master branch. Finally, after one and a half
+month of discussions, new patches, and no responses.
+</p>
+<p>
+It's main goal is to unify the way linux distributions are doing CPU
+frequency scaling. At the moment there are different daemons out there
+which are doing the job. powernowd, cpuspeed or powersaved. Powersaved
+currently is the only one which supports both kernel governors
+(powersave, performance and ondemand) and has a userspace governor
+implementation. All this is wrapped around by a nice DBus interface to
+make it easy controllable by higher level applications like desktop GUIs
+(e.g. kpowersave).
+</p>
+<p>
+But unfortunately powersaved didn't get enough acceptance in the
+community, for whatever reasons. And my main goal is to improve power
+management in linux. So the only solution which seemed to be accepted by
+the GNOME, the KDE and the general community was to put CPU frequency
+scaling functionality into <a href="http://hal.freedesktop.org">HAL</a>.
+</p>
+<p>
+In the end, this was no bad idea. This decision forced me reconsider
+some parts of the present implementation and design which we have in
+powersaved. And I really had a great idea. Maybe the best idea I ever
+had. It's a real masterpiece ;-)
+</p>
+<p>
+So in future, it comes along with most modern distributions. And
+hopefully everybody will use it ;-) At least the gnome power manager
+maintainer already states his willingness to make use of it in his
+<a href="http://hughsient.livejournal.com/3265.html">blog</a>.
+</p>
+<p>
+The following explanations should be the documentation for the CPUFreq
+addon. It summarizes what has been discussed on the HAL and
+powersave-devel mailinglist during the last weeks and what's the addon
+all about. It should point out answers to the common questions which may
+come up. If anything else is not clear, please don't hesitate to send me
+an email or add a comment.
+</p>
+
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">Available methods on the interface org.freedesktop.Hal.Device.CPUFreq.</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+<p>
+Method: SetCPUFreqGovernor (string)
+</p>
+<p>
+Parameters: The name of the governor to set. Get a list of available
+governors with the GetCPUFreqAvailableGovernors method.
+</p>
+<p>
+Sets a CPU frequency scaling governor for all CPUFreq interfaces the
+kernel provides. If the userspace governor is set, this interface also
+contains a proper scaling mechanism. The default performance is set to
+</p><ol>
+<li>
+</li>
+</ol>
+
+
+<p>
+Method: SetCPUFreqPerformance (integer)
+</p>
+<p>
+Parameters: The performance between 1 and 100 to set in dynamic scaling
+modes.
+</p>
+<p>
+Sets the performance of the dynamic scaling mechanism. This method
+summarizes and abstracts all the different settings which can be taken
+for dynamic frequency adjustments, like at which load to switch up
+frequency or how many steps the mechanism should traverse until reaching
+the maximum frequency. The higher the value, the more performance you
+get. Respectively, the higher the value, the sooner and the more often
+the frequency is switched up.
+</p>
+<p>
+Method: SetCPUFreqConsiderNice (boolean)
+</p>
+<p>
+Parameters: Whether or not niced processes should be considered on CPU
+load calculation.
+</p>
+<p>
+Whether or not niced processes should be considered on CPU load
+calculation. If niced processes are considered, they can cause a
+frequency increment although their absolute load percentage wouldn't
+trigger the scaling mechanism to switch up the frequency. The default
+setting is 'false'.
+</p>
+<p>
+Method: GetCPUFreqGovernor (void)
+</p>
+<p>
+Get the current active governor for all CPU frequency interfaces
+(string).
+</p>
+<p>
+Method: GetCPUFreqPerformance (void)
+</p>
+<p>
+Get the current active performance setting if a dynamic scaling
+mechanism is in use (integer between 1 and 100).
+</p>
+<p>
+Method: GetCPUFreqConsiderNice (void)
+</p>
+<p>
+Returns whether niced processed are considered during CPU load
+calculation or not (returns boolean).
+</p>
+<p>
+Method: GetCPUFreqAvailableGovernors (void)
+</p>
+<p>
+Returns a list of strings of all available governors which could be set
+with the SetCPUFreqGovernor method.
+</p>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">Errors the above methods may raise on the interface org.freedesktop.Hal.Device.CPUFreq.</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+<p>
+Error: GeneralError (void)
+</p>
+<p>
+Detail field: The exact error.
+</p>
+<p>
+A general error occured.
+</p>
+<p>
+Error: UnknownGovernor (void)
+</p>
+<p>
+Detail field: The governor which was tried be to set.
+</p>
+<p>
+The governor which was tried to be set doesn't exist.
+</p>
+<p>
+Error: PermissionDenied (void)
+</p>
+<p>
+Detail field: The privilege the caller needs to execute the method.
+</p>
+<p>
+The caller doesn't have the privilege to execute this method.
+</p>
+<p>
+Error: NoSuitableGovernor (void)
+</p>
+<p>
+Detail field: The method which was tried to be executed.
+</p>
+<p>
+The method executed doesn't exist for the current active governor.
+</p>
+<p>
+Error: GovernorInitFailed (void)
+</p>
+<p>
+Detail field: The reason for the failure.
+</p>
+<p>
+The initialization of the governor failed.
+</p>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3">What's the CPUFreq addon all about</h3>
+<div class="outline-text-3" id="text-1-3">
+
+
+<p>
+Addon-cpufreq supports kernel governors and also implements a userspace
+controlling mechanism. That makes it the "all you need for CPUFreq"
+application. Furthermore, to not make things unnecessarily complicated
+for desktop applications, it is supposed to abstract all the different
+settings you can make for the different governors. One thing which isn't
+available yet, is the possibility to control the performance of
+dynamically scaled CPUs. There's a method to set the performance (from 1
+to 100) which can be easily used from other applications with showing a
+nice progress bar or the like. That makes it unique in contrast to
+former solutions.
+</p>
+<p>
+The biggest advantage is that you get CPUFreq out of the box on every
+system supporting HAL without the need to install another
+daemon. Another one is that desktop applications like
+gnome-power-manager or kpowersave can use one common interface after
+all.
+</p>
+<p>
+In general, there are three different policies one can choose from:
+</p>
+<ol>
+<li>Statically min frequency (corresponds to the powersave governor)
+</li>
+<li>Statically max frequency (corresponds to the performance governor)
+</li>
+<li>Dynamic frequency (ondemand or userspace governor)
+</li>
+</ol>
+
+
+<p>
+In an ideal world, the the first two shouldn't be used at all. But at
+least the performance governor is still used because you get a little
+bit more performance in comparison with the dynamic policy. Particularly
+as soon as you have many small processes running. The default dynamic
+setting can be and was sufficient in most cases. But it's a too general
+setting IMO. So to basically get rid of the two static policies, I'm
+doing a split of the dynmaic policy into several parts.
+</p>
+<p>
+The dynamic machanisms, either ondemand governor, conservative governor
+or the userspace implementation etc. consist each of several different
+settings and configuration options like at which load to switch up, how
+many steps the mechanism should traverse until reaching max freq and so
+on. The SetCPUFreqPerformance method which is available combines all
+these setting into one. The performance can be set between 1 and 100.
+</p>
+<p>
+In general it sais, the higher the value the more often and the faster
+the frequency is switched up. Each governor has some sort of fixed CPU
+load limit (up<sub>threshold</sub>) at which load to switch up frequencies. For
+instance, the ondemand governor has the up<sub>threshold</sub> set to 80 by
+default. This corresponds to a performance value of 50. As an example,
+if you change the performance to 75, the up<sub>threshold</sub> is set to
+about 45. So if the CPU load reaches a value higher than 45, the
+frequency is switched up. If the up<sub>threshold</sub> would be 80 and a process
+would only need 60 percent of CPU, the frequency wouldn't be switched
+up. If the performance value would be 1 (lowest performance), the
+up<sub>threshold</sub> would be 99. That means that the frequency is really only
+increased if you have a process which needs all CPU power (100%, for
+instance at compilation time).
+</p>
+<p>
+I will do a small comparison&hellip; Two main situations where policies
+differ are
+</p>
+<ul>
+<li>On AC power: You want to do dynamic frequency scaling, but It's not
+    that important to reduce power consumption. You want to have the
+    maximum performance as soon as you start a process but still want to
+    reduce the power drain as soon as the system is idle. (e.g. because
+    of thermal reasons). So you need a more aggressive dynamic CPU
+    frequency scaling where you switch up sooner and more often. So for
+    instance, you set the performance to 75.
+</li>
+<li>On battery: The primary goal is to increase battery life. But you
+    still want a job done as fast as possible as soon there is need to,
+    for instance when compiling. So you might want a more tentative
+    frequency adjustment. Performance maybe set to 25 in this case.
+</li>
+</ul>
+
+
+<p>
+The reason why I chose such a fine grained range (from 1 to 100) is to
+get an interface that is not limited to only one implementation. For the
+CPUFreq case, one can image to have only five steps like min, low,
+medium, high, max. But that's something the GUI can and should
+decide. It can map these 100 steps to whatever it likes but I don't
+think that's the job of the addon. And maybe some system (embedded?,
+whatever) likes to have a completely other implementation with 20, 30,
+or even 100 steps but still likes to take advantage of the common
+interface, it than wouldn't be limited to a predefined range.
+</p>
+<p>
+Additionally, if a policy decision maker (like a GUI) doesn't like to
+touch the performance setting, it doesn't need to. It gets a good
+default setting. The default is 50 and corresponds to a configuration
+which is either the kernel default or which is tested to be stable and
+useful for several years now in the userspace case.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-4" class="outline-3">
+<h3 id="sec-1-4">FAQ</h3>
+<div class="outline-text-3" id="text-1-4">
+
+
+<p>
+<b>Q:</b> What's the SetCPUFreqConsiderNice setting all about?
+</p>
+<p>
+<b>A:</b> With the ondemand governor this setting is set through
+/sys/devices/system/cpu/cpu0/cpufreq/ondemand/ignore<sub>nice</sub><sub>load</sub> . The
+userspace implementation evaluates the CPU nice load when calculation
+the CPU load, too.  It specifies whether niced processes can cause a CPU
+frequency increment although they don't really need that much CPU power
+and thus wouldn't jump over the UP<sub>THRESHOLD</sub> where frequencies are
+usually increased.  It's a policy decision. On AC power for example, you
+also want to consider niced processes because switching up CPU
+frequencies more often isn't that problematic. In the other case, On
+battery, you want a more passive frequency policy and thus you don't
+consider niced processes.
+</p>
+<p>
+<b>Q:</b> Why not export a D-Bus interface for each of the processors in the
+system?
+</p>
+<p>
+<b>A:</b> I thought about this possibility, too, but came to the conclusion
+that it doesn't make sense. There main reasons are:
+</p>
+<ol>
+<li>There are several dependencies between the different CPUs. The
+     cpufreq interfaces below <i>sys/devices/system/cpu</i> lists all
+     available CPUs, each in one directory. However, you cannot assume
+     that you can simply control each CPU through it's single
+     interface. There's a file affected<sub>cpus</sub> in each directory listing
+     the CPUs which are controlled through this interface. So maybe it
+     could look like:
+</li>
+</ol>
+
+
+<p>
+cpu0/cpufreq/ &ndash;&gt; controls cpu0, cpu1 cpu1/cpufreq/ &ndash;&gt; controls cpu0,
+cpu1 &hellip;
+</p>
+<p>
+or: cpu0/cpufreq/ &ndash;&gt; controls cpu0, cpu1, cpu2, cpu3 &hellip;
+</p>
+<p>
+or: cpu0/cpufreq/ &ndash;&gt; only controls cpu0 cpu1/cpufreq/ &ndash;&gt; only controls
+cpu1 &hellip;
+</p>
+
+<p>
+It doesn't make sence to export these dependencies. This would make
+things unnecessarily complicated for higher level applications.
+</p>
+<ol>
+<li>I can't imagine a use case were one might want to have different
+     settings for different CPUs.
+</li>
+<li>Some of the cpufreq kernel developers even are agains the
+     possibility to set different governors for the CPUs.
+</li>
+<li>There's a new powernow-k8 driver pending where you only can scale
+     all CPUs at a time which would perfectly fit into the current
+     desing.
+</li>
+<li>There's currently no such device object where to export it. There's
+     only acpi<sub>CPU</sub>*. Except in very new implementations, in general,
+     cpufreq has nothing to do with acpi, it also works with apm or even
+     without acpi <span style="text-decoration:underline;">and</span> apm.
+</li>
+</ol>
+
+
+<p>
+<b>Q:</b> Isn't there a possibility to set the frequency manually?
+</p>
+<p>
+<b>A:</b> No. Usually I'm one of those arguing for having a possibility to
+export all possible features to the user on the desktop ;-) But&hellip;  This
+doesn't really fit into the concept of this addon. It would be a method
+that can only exclusively used if the userspace governor is set. And
+that contradics the concept to use common interfaces for all
+governors. And to be honest, we all hope that the userspace governor
+wouldn't be needed anymore someday. However, it would be possible. It
+would need another method SetCPUFreqFrequency and another property
+'cpufreq<sub>available</sub><sub>frequencies'</sub>. But I really like to avoid that. This
+would also be something which we could add afterwards if it turns out be
+be <span style="text-decoration:underline;">really</span> needed.
+</p></div>
+</div>
+</div>
+
+
+<p>&nbsp;<hr></p>
+      <!-- DISQUS -->
+<!--      <script type="text/javascript">  var disqus_developer = true; </script>-->
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+	(function() {
+	var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	dsq.src = 'http://holgersblog.disqus.com/embed.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=holgersblog">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </div> <!-- content -->
+
+      <div id="footer">
+	<p>Generated with a <a href="http://www.gnu.org/software/emacs/tour/">GNU Emacs</a>, <a href="http://orgmode.org/">org-mode</a>,
+          <a href="http://github.com/mojombo/jekyll">Jekyll</a>,
+          and <a href="http://juanreyero.com/open/org-jekyll/">org-jekyll</a>
+          toolchain.</p>
+      </div>
+    </div> <!-- page -->
+
+  </body>
+</html>
+

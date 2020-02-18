@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GNOME Docker 0.1 Released</title>
+<!--    <link rel="stylesheet" href="" type="text/css" media="screen"/>-->
+ <link rel="stylesheet" href="/stylesheets/dark.css" type="text/css" media="screen"/>
+  </head>
+
+  <body>
+    <div id="page">
+      <div id="header">
+	<div id="headerimg">
+	  <h1 class="caption"><a href="http://blog.homac.de" class="caption">Holger's Blog</a></h1>
+	  <h3 class="description">Cervisiam Bibat</h3>
+	</div>
+      </div>
+
+      <div id="content">
+	<small>14 Jul 2008 21:13</small>
+	<a href="/atom.xml" title="Subscribe"><img class="top-icon" width="48"
+						   height="48" alt="Subscribe"
+						   src="/images/feed-icon.png"/></a>
+
+
+
+<span class="navigation">
+  <a rel="prev" href="/2008/06/03/back-from-linuxtag-.html" title="View Back from LinuxTag 2008">&larr; previous</a>
+</span>
+
+
+<br>
+<span class="navigation">
+  <a rel="next" href="/2009/01/14/greenit-power-consumption-and--optimization-of-pcs.html" title="View GreenIT: Power Consumption and -Optimization of PCs">next &rarr;</a>
+</span>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><a href="http://blog.homac.de//2008/07/14/gnome-docker--released.html">GNOME Docker 0.1 Released</a></h2>
+<div class="outline-text-2" id="text-1">
+
+
+
+
+<script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=64"; </script>
+
+<p>
+Finally I managed to release gnome-docker 0.1, a small application to
+support users using a docking station. It is already included in
+<a href="http://www.opensuse.org">openSUSE</a> 11.0, but other pending things prevented me to do a public
+release earlier. One of these things is the self designed tray
+icon :-). I definitely have to look for a better alternative. The README
+should have all the necessary information:
+</p>
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">GNOME docker 0.1</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+<p>
+GNOME application for notifying laptop users about the state of their
+dock station and the possibility to undock the system via software,
+either from the tray icon, or via a hotkey. In future, it will also care
+about hotpluggable devices placed on the dock station, such as hard
+drives and DVD/CD drives.
+</p>
+<p>
+It is meant to be well designed and to fit into the GNOME desktop. So an
+important aim for gnome-docker is to be shipped with GNOME upstream. It
+is still in early development.
+</p>
+<p>
+Currently, it has the following features:
+</p>
+<ul>
+<li>tray icon showing the current status and with functionality to
+    undock a laptop
+</li>
+<li>handling of hotkeys to undock a laptop (e.g. FN-F9 on ThinkPads)
+</li>
+<li>xrandr support to enable/disable external outputs attached to the
+    dock station (experimental, evaluating how it fits there)
+</li>
+<li>user notifications about the state of the dock station. E.g.: "Now
+    it's safe to remove the laptop"
+</li>
+</ul>
+
+
+<p>
+<img src="http://blog.homac.de/images/gnome-docker-pointer.png"  alt="http://blog.homac.de/images/gnome-docker-pointer.png" />
+</p>
+<p>
+As gnome-docker forges ahead, the linux kernel has to improve and has to
+provide sensible date for userspace to make use of, like exporting which
+devices are inside a dock station.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">Requirements</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3"></h3>
+<div class="outline-text-3" id="text-1-3">
+
+
+<ul>
+<li>liblazy &gt;= 0.2 from <a href="http://www.freedesktop.org/wiki/Software/liblazy">http://www.freedesktop.org/wiki/Software/liblazy</a>
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-4" class="outline-3">
+<h3 id="sec-1-4">Download</h3>
+<div class="outline-text-3" id="text-1-4">
+
+
+<ul>
+<li><a href="http://www.homac.de/files/gnome-docker-0.1.tar.gz">gnome-docker 0.1</a>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+
+<p>&nbsp;<hr></p>
+      <!-- DISQUS -->
+<!--      <script type="text/javascript">  var disqus_developer = true; </script>-->
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+	(function() {
+	var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	dsq.src = 'http://holgersblog.disqus.com/embed.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=holgersblog">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </div> <!-- content -->
+
+      <div id="footer">
+	<p>Generated with a <a href="http://www.gnu.org/software/emacs/tour/">GNU Emacs</a>, <a href="http://orgmode.org/">org-mode</a>,
+          <a href="http://github.com/mojombo/jekyll">Jekyll</a>,
+          and <a href="http://juanreyero.com/open/org-jekyll/">org-jekyll</a>
+          toolchain.</p>
+      </div>
+    </div> <!-- page -->
+
+  </body>
+</html>
+

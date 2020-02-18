@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Powersave-0.11.10 released</title>
+<!--    <link rel="stylesheet" href="" type="text/css" media="screen"/>-->
+ <link rel="stylesheet" href="/stylesheets/dark.css" type="text/css" media="screen"/>
+  </head>
+
+  <body>
+    <div id="page">
+      <div id="header">
+	<div id="headerimg">
+	  <h1 class="caption"><a href="http://blog.homac.de" class="caption">Holger's Blog</a></h1>
+	  <h3 class="description">Cervisiam Bibat</h3>
+	</div>
+      </div>
+
+      <div id="content">
+	<small>07 Feb 2006 09:54</small>
+	<a href="/atom.xml" title="Subscribe"><img class="top-icon" width="48"
+						   height="48" alt="Subscribe"
+						   src="/images/feed-icon.png"/></a>
+
+
+
+<span class="navigation">
+  <a rel="prev" href="/2006/02/03/new-mailinglist-and-irc-channel-for-topics-regarding-the-powersave-daemon.html" title="View New mailinglist and IRC channel for topics regarding the Powersave daemon">&larr; previous</a>
+</span>
+
+
+<br>
+<span class="navigation">
+  <a rel="next" href="/2006/03/04/time-for-blogging.html" title="View Time for blogging...">next &rarr;</a>
+</span>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><a href="http://blog.homac.de//2006/02/07/powersave--released.html">Powersave-0.11.10 released</a></h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+I uploaded and released Powersave-0.11.10. Again, SUSE 10.0 and Fedora
+Core 4 packages are available at sourceforge and novell forge. FC4 RPMs
+for kpowersave-0.5.6 can also be downloaded. The last changelog entries
+are: -------------------------------------------------------------------
+Tue Feb 7 10:00:53 CET 2006 - hmacht@suse.de Patch by Michael Biebl: -
+adjust fix paths in documentation - configure.ac cleanup
+-&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; Mon
+Feb 6 17:49:11 CET 2006 - hmacht@suse.de - remove config substitution
+for smp machines and userspace governor for now - install extra scripts
+in package, not in specfile - initscript cleanup - add check for
+POWERSAVE=off on kernel cmdline to avoid starting of powersaved and thus
+loading of cpufreq modules - remember which filesystems where remounted
+(novell bug #147584) - adjust writing of image size from MB to bytes due
+to kernel interface change - If suspend to disk fails because of missing
+swap space, try again with minimal image size - only link daemon binary
+agains libcpufreq Have fun, Holger
+</p></div>
+</div>
+
+
+<p>&nbsp;<hr></p>
+      <!-- DISQUS -->
+<!--      <script type="text/javascript">  var disqus_developer = true; </script>-->
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+	(function() {
+	var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	dsq.src = 'http://holgersblog.disqus.com/embed.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=holgersblog">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </div> <!-- content -->
+
+      <div id="footer">
+	<p>Generated with a <a href="http://www.gnu.org/software/emacs/tour/">GNU Emacs</a>, <a href="http://orgmode.org/">org-mode</a>,
+          <a href="http://github.com/mojombo/jekyll">Jekyll</a>,
+          and <a href="http://juanreyero.com/open/org-jekyll/">org-jekyll</a>
+          toolchain.</p>
+      </div>
+    </div> <!-- page -->
+
+  </body>
+</html>
+

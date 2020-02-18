@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ndiswrapper and wpa_supplicant</title>
+<!--    <link rel="stylesheet" href="" type="text/css" media="screen"/>-->
+ <link rel="stylesheet" href="/stylesheets/dark.css" type="text/css" media="screen"/>
+  </head>
+
+  <body>
+    <div id="page">
+      <div id="header">
+	<div id="headerimg">
+	  <h1 class="caption"><a href="http://blog.homac.de" class="caption">Holger's Blog</a></h1>
+	  <h3 class="description">Cervisiam Bibat</h3>
+	</div>
+      </div>
+
+      <div id="content">
+	<small>28 Dec 2005 01:11</small>
+	<a href="/atom.xml" title="Subscribe"><img class="top-icon" width="48"
+						   height="48" alt="Subscribe"
+						   src="/images/feed-icon.png"/></a>
+
+
+
+<span class="navigation">
+  <a rel="prev" href="/2005/12/18/making-progress-with-getting-the-community-involved.html" title="View Making progress with getting the community involved">&larr; previous</a>
+</span>
+
+
+<br>
+<span class="navigation">
+  <a rel="next" href="/2005/12/29/gnu-autotools-tutorial.html" title="View GNU autotools tutorial">next &rarr;</a>
+</span>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><a href="http://blog.homac.de//2005/12/28/ndiswrapper-and-wpasupplicant.html">ndiswrapper and wpa<sub>supplicant</sub></a></h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+I got a Netgear WG511v2 pcmcia card and really feared the installation
+and setup. But it was much easier as I thought. I only had to perform
+the following steps:
+</p>
+<p>
+<b>Basic setup or configuring ndiswrapper:</b>
+</p>
+<ol>
+<li>Copy the files WG511v2.INF and WG511v2.sys from the windows
+     installation CDs to your local linux box
+</li>
+<li>Issue the command 'ndiswrapper -i WG511v2.INF' to install the
+     windows driver
+</li>
+<li>execute 'modprobe ndiswrapper'
+</li>
+<li>now iwconfig showed up my wlan card as wlan1 and it was ready for
+     action
+</li>
+</ol>
+
+
+<p>
+<b>Getting wpa encryption with wpa<sub>supplicant</sub>:</b>
+</p>
+<ol>
+<li>Setup your access point to use wpa encryption
+</li>
+<li>Copy the basic configuration part from the wpa<sub>supplicant</sub> README to
+     /etc/wpa<sub>supplicant</sub>.con and adjust it to your personal needs:
+</li>
+</ol>
+
+
+
+<p>
+    #allow frontend (e.g., wpa<sub>cli</sub>) to be used by all users in 'root' group
+    ctrl<sub>interface</sub>=/var/run/wpa<sub>supplicant</sub> ctrl<sub>interface</sub><sub>group</sub>=root
+    #
+    # home network; allow all valid ciphers
+    network={ ssid="essidfoo" scan<sub>ssid</sub>=1 key<sub>mgmt</sub>=WPA-PSK psk="keybar"
+            }
+</p>
+
+<ol>
+<li>Now start wpa<sub>supplicant</sub> with 'wpa<sub>supplicant</sub> -d -c
+     /etc/wpa<sub>supplicant</sub>.conf -i wlan1 -D ndiswrapper' as root
+</li>
+<li>done
+</li>
+</ol>
+
+
+<p>
+Happy hotspotting ;-)!
+</p></div>
+</div>
+
+
+<p>&nbsp;<hr></p>
+      <!-- DISQUS -->
+<!--      <script type="text/javascript">  var disqus_developer = true; </script>-->
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+	(function() {
+	var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	dsq.src = 'http://holgersblog.disqus.com/embed.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=holgersblog">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </div> <!-- content -->
+
+      <div id="footer">
+	<p>Generated with a <a href="http://www.gnu.org/software/emacs/tour/">GNU Emacs</a>, <a href="http://orgmode.org/">org-mode</a>,
+          <a href="http://github.com/mojombo/jekyll">Jekyll</a>,
+          and <a href="http://juanreyero.com/open/org-jekyll/">org-jekyll</a>
+          toolchain.</p>
+      </div>
+    </div> <!-- page -->
+
+  </body>
+</html>
+

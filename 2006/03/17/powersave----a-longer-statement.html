@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Powersave 0.13.0 - A longer Statement</title>
+<!--    <link rel="stylesheet" href="" type="text/css" media="screen"/>-->
+ <link rel="stylesheet" href="/stylesheets/dark.css" type="text/css" media="screen"/>
+  </head>
+
+  <body>
+    <div id="page">
+      <div id="header">
+	<div id="headerimg">
+	  <h1 class="caption"><a href="http://blog.homac.de" class="caption">Holger's Blog</a></h1>
+	  <h3 class="description">Cervisiam Bibat</h3>
+	</div>
+      </div>
+
+      <div id="content">
+	<small>17 Mar 2006 23:18</small>
+	<a href="/atom.xml" title="Subscribe"><img class="top-icon" width="48"
+						   height="48" alt="Subscribe"
+						   src="/images/feed-icon.png"/></a>
+
+
+
+<span class="navigation">
+  <a rel="prev" href="/2006/03/12/screen-capturing-with-vncswf.html" title="View Screen capturing with vnc2swf">&larr; previous</a>
+</span>
+
+
+<br>
+<span class="navigation">
+  <a rel="next" href="/2006/04/13/across-the-pond.html" title="View Across the pond">next &rarr;</a>
+</span>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><a href="http://blog.homac.de//2006/03/17/powersave----a-longer-statement.html">Powersave 0.13.0 - A longer Statement</a></h2>
+<div class="outline-text-2" id="text-1">
+
+
+
+
+<script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=32"; </script>
+
+<p>
+Finally I managed to release Powersave 0.13.0 that brings along a lot
+new features. After some nerve-racking problems with sourceforge, files
+have arrived at the server. Here comes the announcement I'm still
+waiting for to be delivered to our powersave mailinglists.
+</p>
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">Topics</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+<ol>
+<li>New release 0.13.0
+</li>
+<li>CPU Hotplugging
+</li>
+<li>Suspend to ram that 'just works'
+</li>
+<li>Make use of our messaging architecture
+</li>
+<li>Excerpt from the changelog
+</li>
+</ol>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">New release 0.13.0</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+<p>
+I'm glad to announce a brand new release of the Powersave Daemon. It's
+tagged with 0.13.0, our so called 'unstable' series of releases. 0.12.x
+is, or will become, the stable set which will be maintained over a long
+time period. SUSE 10.0 packages are already available on sourceforge,
+FC4 or Mandriva packages will follow soon.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3">CPU Hotplugging</h3>
+<div class="outline-text-3" id="text-1-3">
+
+
+<p>
+So, what's new? The most important thing is definitely the support for
+CPU hotplugging with full integration into our scheme architecture.
+</p>
+<p>
+[Once again, I think we are the first application out there implementing
+that state of the art feature and integrating it into an easy to use
+architecture]
+</p>
+<p>
+What about disabling one of two cores when running on batteries and
+being at full throttle when on ac? I think this simply a great and
+promising opportunity. Unfortunatelly, up to now only newer laptops
+support it at all, but this will become more and more important in
+future. Of course, this also works for desktop or server systems. So if
+you are already in a position (like me ;-) to make use of it, try it and
+provide feedback of any kind. Integration into kpowersave will be done
+soon.
+</p>
+<p>
+There's a new configuration variable that can be set in each scheme
+controlling CPU hotplugging: From /etc/powersave/scheme<sub>powersave</sub>:
+</p>
+<p>
+` ## Path: System/Powermanagement/Powersave/CPU ## Type:
+integer(1:100) ## Default: "0" # # Set how much CPUs should be online at
+max. A value of 0 means 'all'. # MAX<sub>CPUS</sub><sub>ONLINE</sub>="" `
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-4" class="outline-3">
+<h3 id="sec-1-4">Suspend to ram that 'just works'</h3>
+<div class="outline-text-3" id="text-1-4">
+
+
+<p>
+We integrated the s2ram utility from the suspend project <sup><a class="footref" name="fnr.1" href="#fn.1">1</a></sup> into the
+daemon if it is installed. Thanks to Stefan Seyfried for doing the most
+work! This tool integrates all those nasty workarounds like vbetool,
+radeontool or setting acpi video flags like s3<sub>mode</sub> or s3
+bios. Additonally, or even more important, it contains a huge whitelist
+of machines that are known to work with suspend to ram including the
+hacks which are needed for each of those systems. But this list is of
+course not complete. So&hellip;
+</p>
+<p>
+PLEASE HELP US! Stefan created a wikipage on openSUSE <sup><a class="footref" name="fnr.2" href="#fn.2">2</a></sup> that explains
+the steps that can be done to get suspend to ram working out of the box
+without applying any manual steps. Please read this guide and if it
+makes suspend to ram working on your system, please provide the needed
+information either to the e-mail mentioned in the output of the s2ram
+utility or mail it to the powersave-devel list.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-5" class="outline-3">
+<h3 id="sec-1-5">Make use of our messaging architecture</h3>
+<div class="outline-text-3" id="text-1-5">
+
+
+<p>
+Furthermore, we opened up our notification architecture to be used by
+other root applications. Simply use the powersave-notify script located
+in /usr/lib/powersave/powersave-notify to make use of it. You do not
+need to bother any longer about in which way the user or admin will be
+notified, just be sure he will get informed.
+</p>
+<p>
+<b>What we provide:</b>
+</p>
+<p>
+No client connected and no X Server running: Do 'wall' message
+</p>
+<p>
+No client connected and user logged in to X: Pop up kdialog (KDE) or
+zenity (GNOME)
+</p>
+<p>
+client connected (like kpowersave): Forward message to client which in
+turn displays the message
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-6" class="outline-3">
+<h3 id="sec-1-6">Excerpt from the changelog</h3>
+<div class="outline-text-3" id="text-1-6">
+
+
+<p>
+` -------------------------------------------------------------------
+Fri Mar 17 20:52:15 CET 2006 - hmacht@suse.de - CPU hotplugging support
+and integration into schemes
+-&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; Fri
+Mar 17 16:54:01 CET 2006 - hmacht@suse.de - if suspend is done as root
+user, don't use su to do the xlock (novell bug 158773) - open one DBus
+connection in library and reuse it (novell bug 157905) - add script for
+use by other applications to use the powersaved's notification
+architecture (e.g. upsd) - increase timeout we wait for hal to 10
+minutes on startup - -r2079
+-&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; Mon
+Mar 13 18:36:34 CET 2006 - hmacht@suse.de - fix compilation errors when
+C library is included in cpp application - add powersave-notify script
+to be used by other applications using the powersave message
+architecture - inform user on suspend2ram if his machine is not in the
+whitelist
+-&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; Mon
+Mar 6 19:06:55 CET 2006 - hmacht@suse.de - integrate s2ram utility from
+<a href="http://sourceforge.net/projects/suspend">http://sourceforge.net/projects/suspend</a> that brings along a huge
+whitelist and the needed workarounds (vbetool, radeontool, acpi<sub>sleep</sub>=)
+(seife) (closes novell bug 145294) - bump version to go along with
+upstream version - r1990 ` Have a lot of fun, Holger <sup><a class="footref" name="fnr.1.2" href="#fn.1">1</a></sup>
+<a href="http://sourceforge.net/projects/suspend">http://sourceforge.net/projects/suspend</a> <sup><a class="footref" name="fnr.2.2" href="#fn.2">2</a></sup> <a href="http://en.opensuse.org/S2ram">http://en.opensuse.org/S2ram</a>
+</p>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+<p class="footnote"><sup><a class="footnum" name="fn.1" href="#fnr.1">1</a></sup> DEFINITION NOT FOUND: 1
+</p>
+
+<p class="footnote"><sup><a class="footnum" name="fn.2" href="#fnr.2">2</a></sup> DEFINITION NOT FOUND: 2
+</p></div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<p>&nbsp;<hr></p>
+      <!-- DISQUS -->
+<!--      <script type="text/javascript">  var disqus_developer = true; </script>-->
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+	(function() {
+	var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	dsq.src = 'http://holgersblog.disqus.com/embed.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=holgersblog">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </div> <!-- content -->
+
+      <div id="footer">
+	<p>Generated with a <a href="http://www.gnu.org/software/emacs/tour/">GNU Emacs</a>, <a href="http://orgmode.org/">org-mode</a>,
+          <a href="http://github.com/mojombo/jekyll">Jekyll</a>,
+          and <a href="http://juanreyero.com/open/org-jekyll/">org-jekyll</a>
+          toolchain.</p>
+      </div>
+    </div> <!-- page -->
+
+  </body>
+</html>
+

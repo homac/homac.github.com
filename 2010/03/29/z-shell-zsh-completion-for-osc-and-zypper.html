@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>z-shell (zsh) completion for osc and zypper</title>
+<!--    <link rel="stylesheet" href="" type="text/css" media="screen"/>-->
+ <link rel="stylesheet" href="/stylesheets/dark.css" type="text/css" media="screen"/>
+  </head>
+
+  <body>
+    <div id="page">
+      <div id="header">
+	<div id="headerimg">
+	  <h1 class="caption"><a href="http://blog.homac.de" class="caption">Holger's Blog</a></h1>
+	  <h3 class="description">Cervisiam Bibat</h3>
+	</div>
+      </div>
+
+      <div id="content">
+	<small>29 Mar 2010 00:13</small>
+	<a href="/atom.xml" title="Subscribe"><img class="top-icon" width="48"
+						   height="48" alt="Subscribe"
+						   src="/images/feed-icon.png"/></a>
+
+
+
+<span class="navigation">
+  <a rel="prev" href="/2009/05/11/power-management-in-opensuse-and-sle.html" title="View Power Management in openSUSE and SLE11">&larr; previous</a>
+</span>
+
+
+<br>
+<span class="navigation">
+  <a rel="next" href="/2010/06/14/saving-power-with-a-new-killswitch-applet.html" title="View Saving Power with a new Killswitch Applet">next &rarr;</a>
+</span>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><a href="http://blog.homac.de//2010/03/29/z-shell-zsh-completion-for-osc-and-zypper.html">z-shell (zsh) completion for osc and zypper</a></h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+When working with the <a href="http://www.opensuse.org">openSUSE</a> distribution, there are a couple of tools
+you have to deal with over and over again. Two of them are <a href="http://en.opensuse.org/Osc">osc</a> and
+<a href="http://en.opensuse.org/Zypper">zypper</a>. The first one to build or fix packages, the latter to install,
+remove or update them. Using one of those tools on a regular basis? Read
+on&hellip;
+</p>
+<p>
+&hellip;but to make this post actually useful for you, there needs to be
+another prerequisite: You need to use zsh as your primary shell. And I
+hope you do. If not, you should definitely put this on your TODO list.
+</p>
+<p>
+All of the following is ready to use, because it's already in openSUSE
+Factory for quite some time and has already been in openSUSE 11.2. I
+just have the feeling that people are not aware of this feature, so I am
+writing this post&hellip;
+</p>
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">osc</h3>
+<div class="outline-text-3" id="text-1-1">
+
+<p>So let's start with osc. There are a couple of sub commands like
+<i>checkout</i>, <i>getbinaries</i> or <i>branch</i> I need all the time. And every
+time I do, I have to look up the syntax. For instance, have a look at
+the <i>osc getbinaries</i> command:
+</p>
+
+
+
+<pre class="example">$ osc help getbinaries
+osc getbinaries PROJECT PACKAGE REPOSITORY ARCHITECTURE
+</pre>
+
+
+<p>
+Hm? Four parameters? Things like that were actually the reason I sat
+down implementing a solution which works quite well for me: Zsh
+completion for osc. Now you can do stuff like the following:
+</p>
+
+
+
+<pre class="example">$ osc getbinaries &lt;tab&gt;
+home:hmacht              openSUSE:11.0            openSUSE:11.3            SUSE:SLE-11:Update:Test
+home:hmacht:kernel-sony  openSUSE:11.1            openSUSE:Factory
+openSUSE:10.3            openSUSE:11.2            SUSE:SLE-11-SP1:GA
+
+$ osc getbinaries openSUSE:Factory aaa_base &lt;tab&gt;
+openSUSE_10.2     openSUSE_11.0     openSUSE_11.2     openSUSE_Factory  SUSE_SLE-11_GA
+openSUSE_10.3     openSUSE_11.1     openSUSE_11.3     standard
+
+$ osc getbinaries openSUSE:Factory aaa_base openSUSE_Factory
+i586    x86_64
+</pre>
+
+
+<p>
+Quite handy, isn't it?
+</p>
+<p>
+You might also wonder why the first completion output in the above
+example contains my personal home project <i>home:hmacht</i>. By default, the
+completion contains a couple of default build targets, repositories and
+architectures like <i>openSUSE_Factory</i>, <i>openSUSE:Factory</i> or
+<i>x86_64</i>. You can extend those lists with the shell variables
+<i>ZSH_OSC_PROJECTS_EXTRA</i> and <i>ZSH_OSC_BUILD_TARGETS_EXTRA</i>. My
+corresponding part of my ~/.zshrc looks so:
+</p>
+
+
+
+<pre class="example">export ZSH_OSC_PROJECTS_EXTRA="home:hmacht home:hmacht:kernel-sony SUSE:SLE-11:Update:Test SUSE:SLE-11-SP1:GA"
+export ZSH_OSC_BUILD_TARGETS_EXTRA="standard SUSE_SLE-11_GA"
+</pre>
+
+
+<p>
+After that, the extra repos/targets show up in the completion output.
+</p>
+<p>
+By default, the completion is in <i>verbose mode</i>:
+</p>
+
+
+
+<pre class="example">$ osc &lt;tab&gt;
+--debugger             -- jump into the debugger before executing anything
+--no-keyring           -- disable usage of desktop keyring system
+--post-mortem          -- jump into the debugger in case of errors
+--version              -- show program's version number and exit
+-A                     -- URL/alias, --apiurl=URL/alias
+-H                     -- --http-debug debug HTTP traffic
+-c                     -- FILE, --config=FILE
+-d                     -- --debug print info useful for debugging
+-h                     -- --help show this help message and exit
+-q                     -- --quiet be quiet, not verbose
+-t                     -- --traceback print call trace in case of errors
+-v                     -- --verbose increase verbosity
+abortbuild             -- Aborts the build of a certain project/package
+add                    -- Mark files to be added upon the next commit
+addremove              -- (ar) Adds new files, removes disappeared files
+aggregatepac           -- "Aggregate" a package to another package
+api                    -- Issue an arbitrary request to the API
+branch                 -- (bco, branchco, getpac)
+bugowner               -- Show bugowners of a project/package
+build                  -- Build a package on your local machine
+[...]
+</pre>
+
+
+<p>
+To change that you can set
+</p>
+
+
+<pre class="example">$ zstyle ':completion:*:osc:*' verbose no
+$ zstyle ':completion:*:osc-subcommand:*' verbose no
+</pre>
+
+
+<p>
+Now it looks like:
+</p>
+
+
+
+<pre class="example">$ osc &lt;tab&gt;
+--debugger             api                    diff                   meta                   resolved
+--no-keyring           branch                 disable                mkpac                  results
+--post-mortem          bugowner               getbinaries            mv                     rremove
+--version              build                  global                 my                     search
+[...]
+</pre>
+
+
+<p>
+All the completion output is auto generated by the <i>osc help</i> output
+(btw., even <i>osc help &lt;tab&gt;</i> can be completed), so new commands should
+show up automatically. However, this contains the risk of possible bugs
+where the help output is unexpected, so if you find any issues, send me
+a mail or add a comment.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">zypper</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+<p>
+Basically all the above applies for <i>zypper</i>. An example output looks like:
+</p>
+
+
+
+<pre class="example">$ zypper re&lt;tab&gt;
+refresh                 -- ref Refresh all repositories.
+refresh-services        -- refs Refresh all services.
+remove                  -- rm Remove packages.
+removelock              -- rl Remove a package lock.
+removerepo              -- rr Remove specified repository.
+removeservice           -- rs Remove specified service.
+renamerepo              -- nr Rename specified repository.
+repos                   -- lr List all defined repositories.
+</pre>
+
+
+<p>
+Change verbose/short output with:
+</p>
+
+
+
+<pre class="example">$ zstyle ':completion:*:osc:*' verbose no
+$ zstyle ':completion:*:osc-subcommand:*' verbose no
+</pre>
+
+
+<p>
+Personally I use the zypper completion quite seldom, nevertheless, some
+people might find it useful.
+</p></div>
+</div>
+</div>
+
+
+<p>&nbsp;<hr></p>
+      <!-- DISQUS -->
+<!--      <script type="text/javascript">  var disqus_developer = true; </script>-->
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+	(function() {
+	var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	dsq.src = 'http://holgersblog.disqus.com/embed.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=holgersblog">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </div> <!-- content -->
+
+      <div id="footer">
+	<p>Generated with a <a href="http://www.gnu.org/software/emacs/tour/">GNU Emacs</a>, <a href="http://orgmode.org/">org-mode</a>,
+          <a href="http://github.com/mojombo/jekyll">Jekyll</a>,
+          and <a href="http://juanreyero.com/open/org-jekyll/">org-jekyll</a>
+          toolchain.</p>
+      </div>
+    </div> <!-- page -->
+
+  </body>
+</html>
+

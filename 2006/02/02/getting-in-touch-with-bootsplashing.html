@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Getting in touch with bootsplashing</title>
+<!--    <link rel="stylesheet" href="" type="text/css" media="screen"/>-->
+ <link rel="stylesheet" href="/stylesheets/dark.css" type="text/css" media="screen"/>
+  </head>
+
+  <body>
+    <div id="page">
+      <div id="header">
+	<div id="headerimg">
+	  <h1 class="caption"><a href="http://blog.homac.de" class="caption">Holger's Blog</a></h1>
+	  <h3 class="description">Cervisiam Bibat</h3>
+	</div>
+      </div>
+
+      <div id="content">
+	<small>02 Feb 2006 01:07</small>
+	<a href="/atom.xml" title="Subscribe"><img class="top-icon" width="48"
+						   height="48" alt="Subscribe"
+						   src="/images/feed-icon.png"/></a>
+
+
+
+<span class="navigation">
+  <a rel="prev" href="/2006/01/25/powersave--update-fc-packages.html" title="View Powersave 0.11.6 update FC4 packages">&larr; previous</a>
+</span>
+
+
+<br>
+<span class="navigation">
+  <a rel="next" href="/2006/02/03/new-mailinglist-and-irc-channel-for-topics-regarding-the-powersave-daemon.html" title="View New mailinglist and IRC channel for topics regarding the Powersave daemon">next &rarr;</a>
+</span>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><a href="http://blog.homac.de//2006/02/02/getting-in-touch-with-bootsplashing.html">Getting in touch with bootsplashing</a></h2>
+<div class="outline-text-2" id="text-1">
+
+
+
+
+<script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=25"; </script>
+
+<p>
+I just wanted to play around with the bootsplash a little bit, but it
+consts me several hours. At first, the documentation is completely
+outdated, thus RTFM didn't help much. Someone knows more recent
+documentation (not the READMEs, they are the same)? Please drop me a
+note and I will slap the bootsplash.org webmaster for not pointing to it
+;-) Google? Maybe I unlearned " to google" in the right way, but there
+is not much either. Installing a new bootsplash is steight
+forward. Simply copy a new theme below /etc/bootsplash/themes and
+recreate your initrd to use it. Getting the "verbose splash" while the
+system is up is also easy: ` splash
+/etc/bootsplash/themes//config/bootsplash-.cfg ` But I nearly dispaired
+of getting the "silent splash". When looking at several websites, the
+splash utility is used in many different ways. At first it came to my
+mind that the "splash -s" or "splash -S" could mean silent, but who
+knows? No manpage, no "&ndash;help" output. Sorry, but this piece of software
+is a horror. I saw another one while digging around the web and maybe
+should have used that one. Ok, back to getting into silent splash
+mode. After looking at various rc scripts, I came across /etc/rc.splash
+which finally had the solution. The SuSE bootsplash theme contains some
+lines as follows: ` trigger silent play anim trigger "rlchange B" play
+text system trigger "rlchange 3" play text devices trigger "rlchange 5"
+play text devices trigger "rlreached 5" toverbose trigger "YaST running"
+stopanim anim trigger "rlreached 0" tosilent ` Seems that this is
+related to my aim. On action "rlchange 0" for example, goto silent mode
+(tosilent). But how to trigger this trigger? Ahh, there is an option
+'-t' to give to the splash binary. Everything I read said something
+about "this is the text to display". That might be true if you have a
+textbox in your bootsplash, and have defined triggers to change the
+text, but this is generally speaking simply wrong. The option '-t' just
+triggers specific actions and has nothing to do with text. No
+documentation states that. Bullshit! So all you need to go to silent
+mode is to do a ` splash -t "rlreached 0"
+/etc/bootsplash/themes//config/bootsplash-.cfg ` provided that you have
+a line like this in your config file: `trigger "rlreached 0" tosilent`
+Wouldn't it be better to have something like this: `trigger "silent"
+tosilent` A 'splash -t "silent"' would be more intuitive IMHO. But this
+is personal taste. Last but not least, I have one more. Don't forget to
+put a newline at the end of your config file, else you will wonder for a
+long time why it doesn't work as expected although you thought that you
+had understand this whole thing. As a conclusion, IMO I think all this
+bootspash monster is a good example how software should not be done. At
+least i learned that ;-) Happy splashing, Holger
+</p></div>
+</div>
+
+
+<p>&nbsp;<hr></p>
+      <!-- DISQUS -->
+<!--      <script type="text/javascript">  var disqus_developer = true; </script>-->
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+	(function() {
+	var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	dsq.src = 'http://holgersblog.disqus.com/embed.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=holgersblog">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </div> <!-- content -->
+
+      <div id="footer">
+	<p>Generated with a <a href="http://www.gnu.org/software/emacs/tour/">GNU Emacs</a>, <a href="http://orgmode.org/">org-mode</a>,
+          <a href="http://github.com/mojombo/jekyll">Jekyll</a>,
+          and <a href="http://juanreyero.com/open/org-jekyll/">org-jekyll</a>
+          toolchain.</p>
+      </div>
+    </div> <!-- page -->
+
+  </body>
+</html>
+

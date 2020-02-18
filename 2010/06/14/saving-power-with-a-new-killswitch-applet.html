@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Saving Power with a new Killswitch Applet</title>
+<!--    <link rel="stylesheet" href="" type="text/css" media="screen"/>-->
+ <link rel="stylesheet" href="/stylesheets/dark.css" type="text/css" media="screen"/>
+  </head>
+
+  <body>
+    <div id="page">
+      <div id="header">
+	<div id="headerimg">
+	  <h1 class="caption"><a href="http://blog.homac.de" class="caption">Holger's Blog</a></h1>
+	  <h3 class="description">Cervisiam Bibat</h3>
+	</div>
+      </div>
+
+      <div id="content">
+	<small>14 Jun 2010 10:15</small>
+	<a href="/atom.xml" title="Subscribe"><img class="top-icon" width="48"
+						   height="48" alt="Subscribe"
+						   src="/images/feed-icon.png"/></a>
+
+
+
+<span class="navigation">
+  <a rel="prev" href="/2010/03/29/z-shell-zsh-completion-for-osc-and-zypper.html" title="View z-shell (zsh) completion for osc and zypper">&larr; previous</a>
+</span>
+
+
+<br>
+<span class="navigation">
+  <a rel="next" href="/2011/10/08/declaring-mmpc-unsupported-nearly-deathlike.html" title="View Declaring MMPC unsupported, nearly deathlike">next &rarr;</a>
+</span>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><a href="http://blog.homac.de//2010/06/14/saving-power-with-a-new-killswitch-applet.html">Saving Power with a new Killswitch Applet</a></h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+So there has been <a href="https://features.opensuse.org/hackweek">Hackweek</a> at SUSE/Novell the last week and I'm finally
+finding the time to release a new version of <a href="http://gitorious.org/python-killswitch/killswitch-applet">killswitch-applet</a>. This
+time, it's version 0.2.3, and really a lot has changed from the previous
+<a href="http://blog.homac.de/2009/04/17/killswitch-applet----or-my-personal-hello-world-in-python.html">0.1 release</a>:
+</p>
+<ul>
+<li>The applet remembers your settings across reboots
+
+<p>
+   That is actually <b>the</b> feature which makes you want killswitch-applet
+   at all. Without the applet, whenever you disable a device, let's say
+   bluetooth, after a reboot, the device is active again. I'm assuming
+   two prerequisites here:
+</p>
+<ol>
+<li>You're not using a Thinkpad laptop, because those are the only
+      ones I know of (please enlighten me if you know of others) which
+      are able to store the state of their devices in
+      NVRAM. Speficically, the thinkpad-acpi driver is able to do so.
+
+</li>
+<li>Your laptop doesn't have a physical hardware switch for
+      enabling/disabling bluetooth/wifi. This hardware switch might also
+      be hidden after a usual button which doesn't look like it is
+      handled in hardware.
+
+</li>
+</ol>
+
+<p>   All other laptop owners might find killswitch-applet very useful. If
+   you're the owner of let's say, a sony, HP, Acer, or whatever laptop,
+   you would have to disable the bluetooth device over and over again
+   after each reboot. Maybe even after a sleep, depending on the
+   hardware configuration, distribution, kernel version, etc.. These
+   unnecessary mouse clicks are just avoided. Disabling the bluetooth
+   device once will take care that it is disabled the next time
+   killswitch-applet starts, which is mostly when you're doing a reboot
+   and/or logging in to your desktop.
+</p>
+</li>
+<li>Vector graphic (svg) is used for the tray icon, which makes it scale
+   nicely for whatever panel (kicker, gnome-applet, etc.) you're using.
+
+</li>
+<li>Add tool tip to get a fast overview about which killswitches are
+   active.
+</li>
+</ul>
+
+
+<p>
+ <img src="http://www.homac.de/images/killswitch-applet-0.2.3-screenshot.png"  alt="http://www.homac.de/images/killswitch-applet-0.2.3-screenshot.png" />
+</p>
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">Source Code/Tarball Release</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+<p>
+   I found a home for the <a href="http://gitorious.org/python-killswitch">code</a> and chose <a href="http://gitorious.org">gitorious</a> for it. Contributions
+   welcome!
+</p>
+<p>
+   Here are the required tarballs:
+</p>
+<ul>
+<li><a href="http://www.homac.de/files/python-killswitch-0.2.tar.gz">python-killswitch-0.2</a>
+</li>
+<li><a href="http://www.homac.de/files/killswitch-applet-0.2.3.tar.gz">killswitch-applet-0.2.3</a>
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">Packages for openSUSE users</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+<p>
+   The package can be found in my <a href="https://build.opensuse.org/package/show?package=killswitch-applet&amp;project=home:hmacht">home project</a> or can be installed via
+   <a href="http://en.opensuse.org/One_Click_Install">1-Click-Install</a>:
+</p>
+<ul>
+<li><a href="http://software.opensuse.org/ymp/home:hmacht/openSUSE_Factory/killswitch-applet.ymp?base=openSUSE:Factory&amp;query=killswitch-applet">openSUSE Factory</a>
+</li>
+<li><a href="http://software.opensuse.org/ymp/home:hmacht/openSUSE_11.2/killswitch-applet.ymp?base=openSUSE:11.2&amp;query=killswitch-applet">openSUSE 11.2</a>
+</li>
+<li><a href="http://software.opensuse.org/ymp/home:hmacht/openSUSE_11.1/killswitch-applet.ymp?base=openSUSE:11.1&amp;query=killswitch-applet">openSUSE 11.1</a>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+
+<p>&nbsp;<hr></p>
+      <!-- DISQUS -->
+<!--      <script type="text/javascript">  var disqus_developer = true; </script>-->
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+	(function() {
+	var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	dsq.src = 'http://holgersblog.disqus.com/embed.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=holgersblog">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </div> <!-- content -->
+
+      <div id="footer">
+	<p>Generated with a <a href="http://www.gnu.org/software/emacs/tour/">GNU Emacs</a>, <a href="http://orgmode.org/">org-mode</a>,
+          <a href="http://github.com/mojombo/jekyll">Jekyll</a>,
+          and <a href="http://juanreyero.com/open/org-jekyll/">org-jekyll</a>
+          toolchain.</p>
+      </div>
+    </div> <!-- page -->
+
+  </body>
+</html>
+

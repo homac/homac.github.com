@@ -1,0 +1,3923 @@
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Post-Mortem Memory Analysis of Cold-Booted Android Devices</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Although the <a href="http://www1.gi-ev.de/fachbereiche/sicherheit/fg/sidar/imf/imf2014/">IMF 2014</a> already took place over a month ago, it is still
+time to mention the publication which has been presented there:
+</p>
+
+<p>
+<b>Post-Mortem Memory Analysis of Cold-Booted Android Devices</b>
+</p>
+
+<p>
+Both the <a href="http://www.homac.de/publications/Post-Mortem-Memory-Analysis-of-Cold-Booted-Android-Devices.pdf">paper</a> and the corresponding <a href="http://www.homac.de/publications/Post-Mortem-Memory-Analysis-of-Cold-Booted-Android-Devices-slides.pdf">presentation slides</a> are online
+(click links or see <a href="http://www.homac.de/publications.html">publications</a>).
+</p>
+
+<p>
+The paper was created in cooperation with the <a href="https://www4.cs.fau.de/">Department of Computer
+Science</a> at the Friedrich-Alexander-University of Erlangen-Nuremberg. I
+herewith thank the other authors Christian Hilgers, Tilo Müller and
+Michael Spreitzenbarth. Especially for presenting the paper in my
+absence.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Mirrored / Gespiegelt - Android App Updated</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Well, never actually blogged about this one. Although the project's
+initial release has been done in late 2010. It basically started as a
+proof of concept to see what those Android apps are all about. And it
+was a good exercise for doing some Java I used to need at university
+that time.
+</p>
+
+<p>
+So what is it all about? Mirrored (German name "Gespiegelt") is a simple
+news reader to read the articles posted on <a href="http://www.spiegel.de">Spiegel Online</a>. What is
+special about it? It has been around even before the <a href="http://www.spiegel.de">Spiegel</a> published
+the official application. Though there is more, it has the capability to
+download and save the articles to read them offline. Comes in handy when
+having no internet flat rate or being on the subway without proper
+broadband people tell in comments.
+</p>
+
+
+<div class="figure">
+<p><img src="http://www.homac.de/images/mirrored_highres.png" alt="mirrored_highres.png" />
+</p>
+</div>
+
+<p>
+Anyway, it is up on <a href="https://play.google.com/store/apps/details?id=de.homac.Mirrored">Google Play</a> and can be installed from your favorite
+Android device. The source code and more information is available on
+<a href="https://gitorious.org/mirrored/pages/Home">Gitorious</a>.
+</p>
+
+<p>
+I just released version 0.2.5 fixing a bug in offline storage and a
+minor menu alignment issue caused by the latest design changes. Bug
+fixing, let me call it maintenance instead, is basically everything I do
+for Mirrored though. It is feature complete and my personal motivation
+for doing high level programming with Java is rather low.
+</p>
+
+<p>
+So last but not least, let me seize the chance to thank <a href="https://gitorious.org/~framas">Frank Scheffold</a>
+and <a href="https://gitorious.org/~doccrazy">Doccrazy</a> for their bug fixing and improvements during the last
+couple of years. I am really grateful for any patches or improvements I
+receive. Even if someone would like to take over maintainership, go for
+it.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">python-killswitch ported to URfkill 0.4</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+URfkill 0.4 has been released for quite some time now. However, I've
+been quite busy the last couple of months so I didn't make it to port
+the python-killswitch module to the new DBus API. Until now, until I've
+finally releasing python-killswitch 0.4 which is basically fixing <a href="https://bugzilla.novell.com/show_bug.cgi?id=734894">SUSE
+bug 734894</a>.
+</p>
+
+<p>
+The package can either be found in my <a href="https://build.opensuse.org/package/show?package=python-killswitch&project=home:hmacht">home project</a> or can be installed
+via <a href="http://software.opensuse.org/package/python-killswitch?search_term=python-killswitch">1-Click-Install</a>. Maintenance updates for openSUSE 12.1 and 12.2 are
+already running. The source code can be found at <a href="https://gitorious.org/python-killswitch/python-killswitch">Gitorious</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">Declaring MMPC unsupported, nearly deathlike</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Quite surprised by receiving yet another feature request about the
+<i>Maemo Music Player Client</i> for the Maemo platform. I always got some
+mails here and then, but didn't receive one in quite a while. But just
+that everybody knows:
+</p>
+
+<p>
+<b>I hereby declare</b> <a href="http://mmpc.garage.maemo.org">MMPC</a> <b>officially unsupported, not to say dead, stone-dead in particular.</b>
+</p>
+
+<p>
+Nevertheless, it's nice to hear that the project still has (at least a
+few) users, so that I can say it has been a success after all.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">Saving Power with a new Killswitch Applet</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+So there has been <a href="https://features.opensuse.org/hackweek">Hackweek</a> at SUSE/Novell the last week and I'm finally
+finding the time to release a new version of <a href="http://gitorious.org/python-killswitch/killswitch-applet">killswitch-applet</a>. This
+time, it's version 0.2.3, and really a lot has changed from the previous
+<a href="http://blog.homac.de/2009/04/17/killswitch-applet----or-my-personal-hello-world-in-python.html">0.1 release</a>:
+</p>
+
+<ul class="org-ul">
+<li>The applet remembers your settings across reboots
+
+<p>
+That is actually <b>the</b> feature which makes you want killswitch-applet
+at all. Without the applet, whenever you disable a device, let's say
+bluetooth, after a reboot, the device is active again. I'm assuming
+two prerequisites here:
+</p>
+
+<ol class="org-ol">
+<li>You're not using a Thinkpad laptop, because those are the only
+ones I know of (please enlighten me if you know of others) which
+are able to store the state of their devices in
+NVRAM. Speficically, the thinkpad-acpi driver is able to do so.
+</li>
+
+<li>Your laptop doesn't have a physical hardware switch for
+enabling/disabling bluetooth/wifi. This hardware switch might also
+be hidden after a usual button which doesn't look like it is
+handled in hardware.
+</li>
+</ol>
+<p>
+All other laptop owners might find killswitch-applet very useful. If
+you're the owner of let's say, a sony, HP, Acer, or whatever laptop,
+you would have to disable the bluetooth device over and over again
+after each reboot. Maybe even after a sleep, depending on the
+hardware configuration, distribution, kernel version, etc.. These
+unnecessary mouse clicks are just avoided. Disabling the bluetooth
+device once will take care that it is disabled the next time
+killswitch-applet starts, which is mostly when you're doing a reboot
+and/or logging in to your desktop.
+</p>
+</li>
+
+<li>Vector graphic (svg) is used for the tray icon, which makes it scale
+nicely for whatever panel (kicker, gnome-applet, etc.) you're using.
+</li>
+
+<li>Add tool tip to get a fast overview about which killswitches are
+active.
+</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="http://www.homac.de/images/killswitch-applet-0.2.3-screenshot.png" alt="killswitch-applet-0.2.3-screenshot.png" />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1">Source Code/Tarball Release</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+I found a home for the <a href="http://gitorious.org/python-killswitch">code</a> and chose <a href="http://gitorious.org">gitorious</a> for it. Contributions
+welcome!
+</p>
+
+<p>
+Here are the required tarballs:
+</p>
+
+<ul class="org-ul">
+<li><a href="http://www.homac.de/files/python-killswitch-0.2.tar.gz">python-killswitch-0.2</a>
+</li>
+<li><a href="http://www.homac.de/files/killswitch-applet-0.2.3.tar.gz">killswitch-applet-0.2.3</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-5-2" class="outline-3">
+<h3 id="sec-5-2">Packages for openSUSE users</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+The package can be found in my <a href="https://build.opensuse.org/package/show?package=killswitch-applet&project=home:hmacht">home project</a> or can be installed via
+<a href="http://en.opensuse.org/One_Click_Install">1-Click-Install</a>:
+</p>
+
+<ul class="org-ul">
+<li><a href="http://software.opensuse.org/ymp/home:hmacht/openSUSE_Factory/killswitch-applet.ymp?base=openSUSE:Factory&query=killswitch-applet">openSUSE Factory</a>
+</li>
+<li><a href="http://software.opensuse.org/ymp/home:hmacht/openSUSE_11.2/killswitch-applet.ymp?base=openSUSE:11.2&query=killswitch-applet">openSUSE 11.2</a>
+</li>
+<li><a href="http://software.opensuse.org/ymp/home:hmacht/openSUSE_11.1/killswitch-applet.ymp?base=openSUSE:11.1&query=killswitch-applet">openSUSE 11.1</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6">z-shell (zsh) completion for osc and zypper</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+When working with the <a href="http://www.opensuse.org">openSUSE</a> distribution, there are a couple of tools
+you have to deal with over and over again. Two of them are <a href="http://en.opensuse.org/Osc">osc</a> and
+<a href="http://en.opensuse.org/Zypper">zypper</a>. The first one to build or fix packages, the latter to install,
+remove or update them. Using one of those tools on a regular basis? Read
+on&#x2026;
+</p>
+
+<p>
+&#x2026;but to make this post actually useful for you, there needs to be
+another prerequisite: You need to use zsh as your primary shell. And I
+hope you do. If not, you should definitely put this on your TODO list.
+</p>
+
+<p>
+All of the following is ready to use, because it's already in openSUSE
+Factory for quite some time and has already been in openSUSE 11.2. I
+just have the feeling that people are not aware of this feature, so I am
+writing this post&#x2026;
+</p>
+</div>
+
+<div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1">osc</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+So let's start with osc. There are a couple of sub commands like
+<i>checkout</i>, <i>getbinaries</i> or <i>branch</i> I need all the time. And every
+time I do, I have to look up the syntax. For instance, have a look at
+the <i>osc getbinaries</i> command:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-bash">$ osc help getbinaries
+osc getbinaries PROJECT PACKAGE REPOSITORY ARCHITECTURE
+</pre>
+</div>
+
+<p>
+Hm? Four parameters? Things like that were actually the reason I sat
+down implementing a solution which works quite well for me: Zsh
+completion for osc. Now you can do stuff like the following:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-bash">$ osc getbinaries &lt;tab&gt;
+home:hmacht              openSUSE:11.0            openSUSE:11.3            SUSE:SLE-11:Update:Test
+home:hmacht:kernel-sony  openSUSE:11.1            openSUSE:Factory
+openSUSE:10.3            openSUSE:11.2            SUSE:SLE-11-SP1:GA
+
+$ osc getbinaries openSUSE:Factory aaa_base &lt;tab&gt;
+openSUSE_10.2     openSUSE_11.0     openSUSE_11.2     openSUSE_Factory  SUSE_SLE-11_GA
+openSUSE_10.3     openSUSE_11.1     openSUSE_11.3     standard
+
+$ osc getbinaries openSUSE:Factory aaa_base openSUSE_Factory
+i586    x86_64
+</pre>
+</div>
+
+<p>
+Quite handy, isn't it?
+</p>
+
+<p>
+You might also wonder why the first completion output in the above
+example contains my personal home project <i>home:hmacht</i>. By default, the
+completion contains a couple of default build targets, repositories and
+architectures like <i>openSUSE\<sub>Factory</sub></i>, <i>openSUSE:Factory</i> or
+<i>x86\<sub>64</sub></i>. You can extend those lists with the shell variables
+<i>ZSH\<sub>OSC</sub>\<sub>PROJECTS</sub>\<sub>EXTRA</sub></i> and <i>ZSH\<sub>OSC</sub>\<sub>BUILD</sub>\<sub>TARGETS</sub>\<sub>EXTRA</sub></i>. My
+corresponding part of my ~/.zshrc looks so:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-bash">export ZSH_OSC_PROJECTS_EXTRA="home:hmacht home:hmacht:kernel-sony SUSE:SLE-11:Update:Test SUSE:SLE-11-SP1:GA"
+export ZSH_OSC_BUILD_TARGETS_EXTRA="standard SUSE_SLE-11_GA"
+</pre>
+</div>
+
+<p>
+After that, the extra repos/targets show up in the completion output.
+</p>
+
+<p>
+By default, the completion is in <i>verbose mode</i>:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-bash">$ osc &lt;tab&gt;
+--debugger             -- jump into the debugger before executing anything
+--no-keyring           -- disable usage of desktop keyring system
+--post-mortem          -- jump into the debugger in case of errors
+--version              -- show program's version number and exit
+-A                     -- URL/alias, --apiurl=URL/alias
+-H                     -- --http-debug debug HTTP traffic
+-c                     -- FILE, --config=FILE
+-d                     -- --debug print info useful for debugging
+-h                     -- --help show this help message and exit
+-q                     -- --quiet be quiet, not verbose
+-t                     -- --traceback print call trace in case of errors
+-v                     -- --verbose increase verbosity
+abortbuild             -- Aborts the build of a certain project/package
+add                    -- Mark files to be added upon the next commit
+addremove              -- (ar) Adds new files, removes disappeared files
+aggregatepac           -- "Aggregate" a package to another package
+api                    -- Issue an arbitrary request to the API
+branch                 -- (bco, branchco, getpac)
+bugowner               -- Show bugowners of a project/package
+build                  -- Build a package on your local machine
+[...]
+</pre>
+</div>
+
+<p>
+To change that you can set
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">$ zstyle ':completion:*:osc:*' verbose no
+$ zstyle ':completion:*:osc-subcommand:*' verbose no
+</pre>
+</div>
+
+<p>
+Now it looks like:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-bash">$ osc &lt;tab&gt;
+--debugger             api                    diff                   meta                   resolved
+--no-keyring           branch                 disable                mkpac                  results
+--post-mortem          bugowner               getbinaries            mv                     rremove
+--version              build                  global                 my                     search
+[...]
+</pre>
+</div>
+
+<p>
+All the completion output is auto generated by the <i>osc help</i> output
+(btw., even <i>osc help &lt;tab&gt;</i> can be completed), so new commands should
+show up automatically. However, this contains the risk of possible bugs
+where the help output is unexpected, so if you find any issues, send me
+a mail or add a comment.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-6-2" class="outline-3">
+<h3 id="sec-6-2">zypper</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+Basically all the above applies for <i>zypper</i>. An example output looks like:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-bash">$ zypper re&lt;tab&gt;
+refresh                 -- ref Refresh all repositories.
+refresh-services        -- refs Refresh all services.
+remove                  -- rm Remove packages.
+removelock              -- rl Remove a package lock.
+removerepo              -- rr Remove specified repository.
+removeservice           -- rs Remove specified service.
+renamerepo              -- nr Rename specified repository.
+repos                   -- lr List all defined repositories.
+</pre>
+</div>
+
+<p>
+Change verbose/short output with:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-bash">$ zstyle ':completion:*:osc:*' verbose no
+$ zstyle ':completion:*:osc-subcommand:*' verbose no
+</pre>
+</div>
+
+<p>
+Personally I use the zypper completion quite seldom, nevertheless, some
+people might find it useful.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7">Power Management in openSUSE and SLE11</h2>
+<div class="outline-text-2" id="text-7">
+
+<div class="figure">
+<p><img src="http://blog.homac.de/images/energystar_logo_planet.png" alt="energystar_logo_planet.png" />
+</p>
+</div>
+
+<p>
+Wanna know what we're doing to make your laptop run longer? Have a look
+at the new <a href="http://en.opensuse.org/Powersaving">wiki page</a> I have just finished. It talks about three major
+topics:
+</p>
+
+<ul class="org-ul">
+<li>What is done
+</li>
+<li>What can be done better
+</li>
+<li>What is not done
+</li>
+</ul>
+
+<p>
+It might give you some hints to tease even more out of your battery
+runtime.
+</p>
+
+<p>
+Discussion welcome!
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8">killswitch-applet-0.1 &#x2026;  or my personal Hello World in Python</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+One thing that was on my TODO for already quite some time was to have a
+look at that half-new language called Python. Because an old-fashioned
+"Hello World" is far too simple here, I was looking for some kind of
+project to get familiar with the basic principles.
+</p>
+
+<p>
+One thing I found quite annoying in the past was the fact that I always
+had to disable some kind of radios in some far too complicated ways to
+save some battery power. Modern laptops often have multiple killswitches
+for their wireless communication devices like bluetooth, WLAN or
+WWAN. So that was the chance for me to seize, and the output looks like
+this:
+</p>
+
+
+<div class="figure">
+<p><img src="http://blog.homac.de/images/killswitch-applet-large.png" alt="killswitch-applet-large.png" />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-8-1" class="outline-3">
+<h3 id="sec-8-1">From the README:</h3>
+<div class="outline-text-3" id="text-8-1">
+<p>
+killswitch-applet is a small application sitting in the system tray
+providing the possibility to manage all the killswitches found in the
+system. In this context, "managing" means enabling or disabling certain
+killswitches. This is especially useful if you have multiple
+killswitches like bluetooth, WWAN or WLAN seen in many modern laptops.
+</p>
+
+<p>
+<img src="http://blog.homac.de/images/killswitch-applet-screenshot.png" alt="killswitch-applet-screenshot.png" /> Tray
+Icon on the Left
+</p>
+
+<p>
+The source tarball for version 0.1 can be downloaded here:
+<a href="http://www.homac.de/files/killswitch-applet-0.1.tar.gz">killswitch-applet-0.1</a>
+</p>
+
+<p>
+The summary here definitely is: Wow, that was damn simple! Especially
+when it comes down to GTK programming and D-Bus interaction, Python
+definitely provides a very good way to hack those things together quite
+easily. The whole source file contains a whole of 189 lines of code
+including comments.
+</p>
+
+<p>
+Another question: Is it worth creating a sourceforge project for this?
+I'll wait until and if I'm getting some feedback.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-8-2" class="outline-3">
+<h3 id="sec-8-2">Note for openSUSE users:</h3>
+<div class="outline-text-3" id="text-8-2">
+<p>
+Of course this is also available in the openSUSE Buildservice. Go to
+<a href="http://software.opensuse.org/search"><a href="http://software.opensuse.org/search">http://software.opensuse.org/search</a></a> and search for "killswitch-applet".
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9">Tomboy<sup>WGnote</sup></h2>
+<div class="outline-text-2" id="text-9">
+<script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=109"; </script>
+
+<p>
+Inspired by a recent <a href="http://www.figuiere.net/hub/blog/?2009/04/15/660-gnote-012">blog post</a>, <a href="http://live.gnome.org/Gnote">Gnote</a> is now available in the openSUSE
+build service. If you have been using Tomboy and wouldn't miss any of
+its plugins (which are WIP), give it a try. The Mono to C++ conversion
+can be that easy:
+</p>
+
+
+
+<ul class="org-ul">
+<li>For Factory: $ zypper ar \
+</li>
+</ul>
+<p>
+<a href="http://download.opensuse.org/repositories/home:/hmacht/openSUSE_Factory/">http://download.opensuse.org/repositories/home:/hmacht/openSUSE_Factory/</a>
+\ home:hmacht
+</p>
+
+
+
+<ul class="org-ul">
+<li>For 11.1: $ zypper ar \
+</li>
+</ul>
+<p>
+<a href="http://download.opensuse.org/repositories/home:/hmacht/openSUSE_11.1/">http://download.opensuse.org/repositories/home:/hmacht/openSUSE_11.1/</a>
+\ home:hmacht
+</p>
+
+
+
+<ul class="org-ul">
+<li>$ zypper in gnote
+</li>
+</ul>
+
+
+
+<ul class="org-ul">
+<li>$ mkdir ~/.gnote &amp;&amp; cp ~/.tomboy/*.note ~/.gnote/
+</li>
+</ul>
+
+
+
+<ul class="org-ul">
+<li>$ gnote
+</li>
+</ul>
+
+
+
+
+<p>
+AFAICT, it's running quite well. Tomboy has been the only Mono
+application I was running, so 'zypper remove mono' removed a bunch of 42
+packages.
+</p>
+
+<p>
+Have fun, Holger
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10">Maemo Music Player Client (MMPC) for Diablo</h2>
+<div class="outline-text-2" id="text-10">
+<script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=81"; </script>
+
+<p>
+Finally I took the time to respond to multiple requests about providing
+<a href="http://mmpc.garage.maemo.org">mmpc 0.2.1</a> packages for Diablo. That also gave me the possibility to try
+the <a href="https://garage.maemo.org/extras-assistant/index.php">maemo autobuilder</a> to upload my packages to the <a href="http://wiki.maemo.org/Uploading_to_Extras">extras
+repository</a>. And well, it worked out. It's especially useful for those
+people not running debian based systems, because with autobuilder you
+don't have to care about signing and uploading the packages with debian
+tools like debsign and dput.
+</p>
+
+<p>
+So, this is not a new release, these are just new packages build for the
+Diable 4.1 distribution. I still did not manage to find the time to
+enhance mmpc further. There are just too many other things like work and
+university I have to care about. Either download the packages from <a href="https://garage.maemo.org/frs/?group_id=193">
+Maemo Garage</a>, or just get it through the extras repository as usual.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11">"GreenIT: Power Consumption and -Optimization of PCs"</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+In the middle of last year, I participated in a seminar called "GreenIT"
+at university. The result was a 17 paged whitepaper called <a href="http://www.homac.de/files/Power_Consumption_and_-Optimization_of_PCs.pdf">"GreenIT:
+Power Consumption and -Optimization of PCs"</a>. It took quite some time to
+finish this up, so it would be a waste of time if I would not publish
+it. A shortened table of contents looks like this:
+</p>
+
+<ol class="org-ol">
+<li>Introduction
+</li>
+<li>ACPI
+</li>
+<li>System as a Whole
+</li>
+<li>System Components
+</li>
+<li>Software Policies
+</li>
+<li>Conclusion
+</li>
+</ol>
+
+<p>
+Please note: If you are only interested in how things are implemented in
+Linux, this might not be that interesting for you. It does not include
+any specific operating system details. It's rather general, although of
+a technical nature, and thus can be applied to any operating system out
+there.
+</p>
+
+<p>
+If you are lazy of reading through the whole document, you might
+consider having a look at the corresponding <a href="http://www.homac.de/files/Power_Consumption_and_-Optimization_of_PCs-presentation.pdf">presentation
+slides</a>. However, you need to be able to speak, or at least to read, the
+German language for the slides to be useful for you.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-12" class="outline-2">
+<h2 id="sec-12">GNOME Docker 0.1 Released</h2>
+<div class="outline-text-2" id="text-12">
+<script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=64"; </script>
+
+<p>
+Finally I managed to release gnome-docker 0.1, a small application to
+support users using a docking station. It is already included in
+<a href="http://www.opensuse.org">openSUSE</a> 11.0, but other pending things prevented me to do a public
+release earlier. One of these things is the self designed tray
+icon :-). I definitely have to look for a better alternative. The README
+should have all the necessary information:
+</p>
+</div>
+
+<div id="outline-container-sec-12-1" class="outline-3">
+<h3 id="sec-12-1">GNOME docker 0.1</h3>
+<div class="outline-text-3" id="text-12-1">
+<p>
+GNOME application for notifying laptop users about the state of their
+dock station and the possibility to undock the system via software,
+either from the tray icon, or via a hotkey. In future, it will also care
+about hotpluggable devices placed on the dock station, such as hard
+drives and DVD/CD drives.
+</p>
+
+<p>
+It is meant to be well designed and to fit into the GNOME desktop. So an
+important aim for gnome-docker is to be shipped with GNOME upstream. It
+is still in early development.
+</p>
+
+<p>
+Currently, it has the following features:
+</p>
+
+<ul class="org-ul">
+<li>tray icon showing the current status and with functionality to
+undock a laptop
+</li>
+<li>handling of hotkeys to undock a laptop (e.g. FN-F9 on ThinkPads)
+</li>
+<li>xrandr support to enable/disable external outputs attached to the
+dock station (experimental, evaluating how it fits there)
+</li>
+<li>user notifications about the state of the dock station. E.g.: "Now
+it's safe to remove the laptop"
+</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="http://blog.homac.de/images/gnome-docker-pointer.png" alt="gnome-docker-pointer.png" />
+</p>
+</div>
+
+<p>
+As gnome-docker forges ahead, the linux kernel has to improve and has to
+provide sensible date for userspace to make use of, like exporting which
+devices are inside a dock station.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-12-2" class="outline-3">
+<h3 id="sec-12-2">Requirements</h3>
+<div class="outline-text-3" id="text-12-2">
+<p>
+**
+</p>
+
+<ul class="org-ul">
+<li>liblazy &gt;= 0.2 from <a href="http://www.freedesktop.org/wiki/Software/liblazy">http://www.freedesktop.org/wiki/Software/liblazy</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-12-3" class="outline-3">
+<h3 id="sec-12-3">Download</h3>
+<div class="outline-text-3" id="text-12-3">
+<ul class="org-ul">
+<li><a href="http://www.homac.de/files/gnome-docker-0.1.tar.gz">gnome-docker 0.1</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-13" class="outline-2">
+<h2 id="sec-13">Back from LinuxTag 2008</h2>
+<div class="outline-text-2" id="text-13">
+<p>
+Came back from <a href="http://www.linuxtag.org/2008/">Linux Tag 2008</a> on saturday evening. It was a short, only
+two days lasting trip to Berlin, but nevertheless, just great! Had a lot
+of fun with my colleagues <a href="http://blog.nouse.net">Timo Hoenig</a> and <a href="http://trinkteufel.de/">Helmut Schaa</a> giving a talk
+about laptop support in the upcoming openSUSE 11.0. It was a huge
+success. Great thanks goes to Martin Lasarsch for managing/moderating
+our talk. The quiz at the end giving away some USB sticks for correct
+answers has been just fun. It seems people are really listening to our
+laptops stories, or should we better not have told them at the beginning
+that there will be give-aways? ;-)
+</p>
+
+<p>
+If you like to have a look at our achivement regarding fingerprint
+readers, suspend, power management and wireless, go have a look at <a href="http://files.opensuse.org/opensuse/en/0/09/LinuxTag-2008-Laptop-2.0.pdf">the
+slides</a>.
+</p>
+
+<p>
+I think the improvements have never been so astonishing before!
+Actually, they even suprised myself when seeing the test results. Just
+some key facts:
+</p>
+</div>
+
+<div id="outline-container-sec-13-1" class="outline-3">
+<h3 id="sec-13-1">Suspend to Disk</h3>
+<div class="outline-text-3" id="text-13-1">
+<ul class="org-ul">
+<li>LinuxTag 2007: 37.5 seconds
+</li>
+<li>LinuxTag 2008: 14.9 seconds
+</li>
+</ul>
+
+<p>
+Pretty fast, I guess.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-13-2" class="outline-3">
+<h3 id="sec-13-2">Idle power consumption on a battery powered Thinkpad T61</h3>
+<div class="outline-text-3" id="text-13-2">
+<ul class="org-ul">
+<li>openSUSE 10.3: 11.11 Watt
+</li>
+<li>openSUSE 11.0 RC1: 8.51 Watt
+</li>
+</ul>
+
+<p>
+Pretty economical, I guess.
+</p>
+
+<p>
+For more details, look
+<a href="http://files.opensuse.org/opensuse/en/0/09/LinuxTag-2008-Laptop-2.0.pdf">here</a>.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-14" class="outline-2">
+<h2 id="sec-14">Providing a D-Bus interface for CPUFreq knobs</h2>
+<div class="outline-text-2" id="text-14">
+<p>
+There has been a discussion on the HAL development list regarding
+DeviceKit, a corresponding power management subsystem daemon, and a
+possible CPU frequency scaling interface.
+</p>
+
+<p>
+During the discussion, it turned out, and I realised this quite late,
+that KPowersave still exports the possibility to set either the
+powersave or performance governor. That is basically a bad idea, and
+still there because of former times. See this <a href="http://mjg59.livejournal.com/2008/05/08/">journal</a> for a good
+rationale. However, the author quite unfriendly rants towards the
+developers. Unfortunately, I've not seen a bugreport in <a href="http://sourceforge.net/tracker/?group_id=124576&atid=700009">sourceforge's
+bugtracker</a> for that, nor anywhere else. Maybe he could have pointed this
+out in a more elegant way, instead of immediately telling people they
+are dangerous. How emotional. And funny after all. I filed it <a href="https://bugzilla.novell.com/show_bug.cgi?id=389049">here</a>, just
+to be sure it is not missed for upcoming openSUSE 11.0.
+</p>
+
+<p>
+So that is the one issue of the discussion, a completely other one is
+about if we need a D-Bus interface for tuning CPU frequency scaling
+(related to the ondemand governor) knobs. As an example, the ondemand
+governor provides an up<sub>threshold</sub> setting you can tune through
+sysfs. Basically it defines how long a CPU burst has to be so that the
+frequency is increased. Quoting the kernel documentation:
+</p>
+
+
+<p>
+up<sub>threshold</sub>: defines what the average CPU usaged between the
+samplings of 'sampling<sub>rate</sub>' needs to be for the kernel to make a
+decision on whether it should increase the frequency.  For example
+when it is set to its default value of '80' it means that between
+the checking intervals the CPU needs to be on average more than 80%
+in use to then decide that the CPU frequency needs to be increased.
+</p>
+
+
+<p>
+When having only short CPU bursts, it is better to stay at a low
+frequency for a short period of time when it comes down to power
+consumption. And the typical desktop use consists of those short CPU
+bursts. Browsing a web page, opening a mail folder, etc.
+</p>
+
+<p>
+The kernel sets a sane default for this setting. It is nearly
+self-evident for a default to be sane, someone should have thought
+carefully about it. However, that does not mean it is ideal. It just
+cannot be for all different kind of use cases. Servers, desktops, what
+applications are running, "on battery", "on AC", namely, depending on
+the current power source.
+</p>
+
+<p>
+So I am an advocator of having a D-Bus interface somewhere at the system
+level (we already have in HAL, but this will most likely vanish sooner
+or later due to its successor called DeviceKit) for tuning such knobs by
+someone who cares about policy. And policy is more and more put to
+Desktop applications these days.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-15" class="outline-2">
+<h2 id="sec-15">Maemo Music Player Client 0.2.1</h2>
+<div class="outline-text-2" id="text-15">
+<p>
+I finally managed to get to work on <a href="http://mmpc.garage.maemo.org">MMPC</a> after quite some time. MMPC 0.1
+was 2007-11-14 08:45 (wow, that was pretty early in morning :-))
+</p>
+
+
+<div class="figure">
+<p><img src="http://mmpc.garage.maemo.org/images/mmpc.png" alt="mmpc.png" />
+</p>
+</div>
+
+<p>
+Well, mmpc-0.2.1 is available for immediate consumption. Changes, which
+were major concerns until now, are:
+</p>
+
+<ul class="org-ul">
+<li>New buttons and images, finally. And a new logo you can see above.
+</li>
+<li>Add tap-and-hold functionality to more places. For example, it's now
+possible to update the database from within the client.
+</li>
+<li>Add scroll windows to all preference tabs to display the full
+content.
+</li>
+<li>Bold the currently played track.
+</li>
+<li>Increase connection timeout to 3 seconds. This will hopefully solve
+the strange disconnect issues I wasn't able to reproduce.
+</li>
+<li>Fixed tree browsing in playlist browser.
+</li>
+</ul>
+
+<p>
+Fresh screenshots can be found <a href="http://mmpc.garage.maemo.org">here</a>. Packages are available from the
+extras repository. So most people will get the update automatically (if
+anything goes wrong, try to enable red pill mode). Otherwise, grab them
+from <a href="https://garage.maemo.org/frs/?group_id=193">garage</a>.
+</p>
+
+<p>
+Next things will include the support for some plugins. Please report any
+problems. Happy listening!
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-16" class="outline-2">
+<h2 id="sec-16">"Energy Star: Jump on the Bandwagon!"</h2>
+<div class="outline-text-2" id="text-16">
+<script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=60"; </script>
+</div>
+
+<div id="outline-container-sec-16-1" class="outline-3">
+<h3 id="sec-16-1">Do it yourself</h3>
+<div class="outline-text-3" id="text-16-1">
+<p>
+Ever wondered what the Energy Star label is good for? Ever wondered why
+it mostly pops up on things like printers and monitors? But how about
+your personal computer or your laptop?
+</p>
+
+<p>
+If you want to find out, consider reading <a href="http://www.homac.de/files/EnergyStar/PowerMeasurements.pdf">Measuring Power Consumption in
+the Light of EnergyStar</a>. It contains a detailed guide about how to test
+your laptop for Energy Star compliance. At SUSE's <a href="http://en.opensuse.org/Mobile_Devices_Team">Mobile Devices Team</a>,
+we're currently building up a database of all different kind of laptop
+computers regarding their Energy Star compliance and power
+consumption. Wanna help? Follow the above mentioned guide and send your
+results to me (hmacht a t suse d o t de). All results will help us to
+drive development efforts in this area and will help to identify
+possible power consumption regressions in upcoming releases. However, to
+make this possible, the first thing we need is a base collection of
+laptop results to compare against.
+</p>
+
+<p>
+To prevent questions about publishing the results, no, I won't do
+that. I do not want to compromise any kind of manufacturer in
+public. They will notice for themselves as soon as there pop up more
+laptops running Linux having a shiny blue Energy Star label printed on
+the case or packing ;-)
+</p>
+
+
+<div class="figure">
+<p><img src="http://www.homac.de/files/EnergyStar/EnergyStar.jpg" alt="EnergyStar.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-16-2" class="outline-3">
+<h3 id="sec-16-2">FOSDEM 2008</h3>
+<div class="outline-text-3" id="text-16-2">
+<p>
+Like the homonymous title of this post, I gave a <a href="http://files.opensuse.org/opensuse/en/3/34/EnergyStar.pdf">talk</a> at this year's
+<a href="http://www.fosdem.org">FOSDEM</a> at Brussels on Energy Star. It focuses on the requirements for
+laptop computers, and about how anyone can test his laptop for Energy
+Star compliance.
+</p>
+
+<p>
+If you're too lazy to read through the <a href="http://files.opensuse.org/opensuse/en/3/34/EnergyStar.pdf">slides</a>, which should be quite
+self-explanatory, wait for the video showing me in action. The videos of
+all FOSDEM talks given by openSUSE community people should be up at the
+openSUSE FOSDEM page soon. Stay tuned.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-16-3" class="outline-3">
+<h3 id="sec-16-3"><a href="http://en.opensuse.org/PowerMeasurements">http://en.opensuse.org/PowerMeasurements</a></h3>
+<div class="outline-text-3" id="text-16-3">
+<p>
+Interested in power consumption measurements in general? Consider having
+a look at the <a href="http://en.opensuse.org/PowerMeasurements">PowerMeasurements openSUSE wiki page</a>. This is, and will be
+pushed to become the central point for collecting information, hints or
+tips and tricks about this topic.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-17" class="outline-2">
+<h2 id="sec-17">Package Updates (Powersave, QNotify, Update KTray)</h2>
+<div class="outline-text-2" id="text-17">
+</div>
+
+<div id="outline-container-sec-17-1" class="outline-3">
+<h3 id="sec-17-1"><a href="http://en.opensuse.org/Projects_Powersave">Powersave Daemon</a></h3>
+<div class="outline-text-3" id="text-17-1">
+<p>
+I finally managed to release a new version of the powersave daemon,
+0.15.20. This is a plain bugfix release. We're some kind of feature
+complete, so I doubt that there will be anything else than bugfix
+releases in the future ;-) <a href="http://sourceforge.net/project/showfiles.php?group_id=124576&package_id=162525">Sourceforge</a> has the files.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-17-2" class="outline-3">
+<h3 id="sec-17-2"><a href="http://qnotify.homac.de">QNotify</a></h3>
+<div class="outline-text-3" id="text-17-2">
+<p>
+After almost 2 years of QNotify hacking abstinence, I finally managed to
+do what was on my TODO for so long. I removed the qnotifyd daemon which
+blew my machine with 100% CPU usage from time to time. Now the qnotify
+command line client manages multiple notification widget on the desktop
+on its own, by using a simple file locking mechanism. The outcome is
+qnotify-0.6. Again, <a href="http://sourceforge.net/project/showfiles.php?group_id=116172&package_id=126131&release_id=573987">Sourceforge</a> is your friend. For a really cool video
+about what QNotify actually can be used for, have a look at this <a href="http://www.homac.de/files/qnotify-demo.html">video</a>.
+</p>
+
+<p>
+On a related note, does KDE4 actually have a companion piece to GNOME's
+notification daemon? Does it look cool? May be I've to check again
+myself&#x2026; If not, may be I finally manage to get a grip on myself and
+try to integrate libQNotify's features into KDE4.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-17-3" class="outline-3">
+<h3 id="sec-17-3">Update: <a href="http://ktray.homac.de">KTray</a></h3>
+<div class="outline-text-3" id="text-17-3">
+<p>
+And while we're at it, just hacked in a user request feature into
+KTray. I was suprised that someone is actually still using it. Yes,
+there are users out there who don't use KDE or GNOME, so they need ktray
+to use tray applications correctly. <a href="https://sourceforge.net/project/showfiles.php?group_id=133266&package_id=146415&release_id=574174">Sourceforge</a> has version 0.2 which
+features:
+</p>
+
+<ul class="org-ul">
+<li>add cmd line option -r to use horizontal alignment
+</li>
+<li>add cmd line option -w to draw widget without borders
+</li>
+<li>add cmd line option -p to specify the window position
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-18" class="outline-2">
+<h2 id="sec-18">Fixing a broken N810, or&#x2026; A new way to freeze a device</h2>
+<div class="outline-text-2" id="text-18">
+<script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=58"; </script>
+
+<p>
+Finally I ordered a <a href="http://www.nokia.com/N810">Nokia N810</a> with my discount code provided by the
+<a href="http://www.maemo.org">Maemo</a> project on Tuesday. It arrived Thursday. With all my tenseness and
+pleasant anticipation, it looked and felt great while having a quick
+glance. But the disenchantment followed right away:
+</p>
+
+<p>
+Huh? What's that? It doesn't power on after shutting it down the first
+time. Putting in the charger doesn't help. Removing the battery and
+putting it back doesn't help. "Charging" it several hours (without any
+sign that it does so) doesn't help. Removing the battery for several
+minutes doesn't help. Checking with a original Nokia battery and charger
+from a colleague doesn't help. What to do? (Already really frightened of
+having received a broken device&#x2026;)
+</p>
+
+<p>
+In the evening, I decided to remove the battery and put it on the
+balcony. On the balcony? Why that? It only was a very vague
+suspicion&#x2026;it's currently winter in Europe, you know
+;-). Waiting&#x2026;(and maybe praying) about another 30 minutes. Device was
+cold now. Inserting the battery, pushing the power button, and voila!
+The N810 turns on and powers up properly. Happy about thinking that this
+was only a temporary failure, I tried again some minutes later and the
+device kept silent again. What a mess! Next day, another colleague came
+to me telling me that he has exactly the same problem. And I already had
+a temporary solution for him&#x2026;(Skip the next paragraph if you want to
+read it immediately)
+</p>
+
+<p>
+<a href="http://www.yahoo.com">Yahoo</a>'ing around, I found out that this is a well known problem, at
+least for the customers, I don't know how it behaves to the Nokia
+company/manufacturers. There are plenty of reports for this issue. On
+<a href="http://www.internettablettalk.com/">Internettablettalk</a> and even in the <a href="https://bugs.maemo.org/show_bug.cgi?id=2673"> Maemo bugzilla</a> known as "N800 Power
+up Drama". Interestingly, the problem seems to also be present on N800
+devices. But only the new and recent ones. So it seems that some
+electronic parts like capacitors installed in recent devices (N800 and
+N810) are causing this issue. I tried everything people are suggesting,
+waiting a specific period of time before switching it on again, making
+sure that everything fits properly, enabling r&amp;d mode, and so on. Please
+don't tell me "Just don't power off the device", because that's what I'm
+generally doing, but that's no choice when you're on the road running
+out of battery. And you sometimes need to power down the device for
+development, too.
+</p>
+
+<p>
+The only thing that seems to help:
+</p>
+
+<ol class="org-ol">
+<li>Switch the device off
+</li>
+<li>Remove the battery
+</li>
+<li>Put the device to a fridge (without the battery) for about 30
+minutes. If you are impatient like I am, put it into a deep-freezer
+for about 10 minutes to get it cold. Hint: Use a plastic bag to
+protect it from moisture, and more importantly, don't forget about
+it while doing something else ;-)
+</li>
+<li>Take it out and insert the battery
+</li>
+<li>Turn it back on, you'll see that it works
+</li>
+</ol>
+
+<p>
+This procedure was already verified on two devices.
+</p>
+
+<p>
+Strange, I currently know of five people having a <a href="http://www.nokia.com/N810">N810</a>, with two of them
+showing this issue. This is really bad percentage. I already fear that
+this is like the issue I encountered with my N800 and the display issue
+where the right side of the touchscreen became more and more
+unresponsive. Also widely known. To that time, I returned the <a href="http://www.nokia.com/N800">N800</a> back
+to Nokia, and it lasted solid 6 weeks until I got a repaired device. I
+do not want to repeat that! I do not want to develop inside a scratchbox
+without the possibility to see the outcome on a live device. But the
+most frustrating thing I encounter these days is that there is no
+official statement from Nokia about this issue. There's still not even
+one for the display issue with the N800. Please correct me if I'm wrong.
+</p>
+
+<p>
+The only thing which keeps me alive ( ;-) ) and which prevents me from
+returning the device immediately is the hope that it can be fixed via
+software. I just hope that there will be a statement by the <a href="http://www.nokia.com">Nokia</a> or
+<a href="http://www.maemo.org">Maemo</a> people telling me: "Be patient, we're working on the issue with
+high pressure and we think it can be fixed with a firmware update". If
+it really is a hardware issue, I at least hope that the issue is handled
+as "we've sold broken devices, process returned ones with high
+priority!".
+</p>
+
+<p>
+Getting away from the bad news, if there wouldn't be those, I would
+really be amazed by this gadget! As long as it's on, I just have fun
+with it. I'm just very frustrated.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-19" class="outline-2">
+<h2 id="sec-19">MMPC for Chinook</h2>
+<div class="outline-text-2" id="text-19">
+<script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=55"; </script>
+
+<p>
+Even before the N810 is shipped, I'm able to to announce <a href="http://mmpc.garage.maemo.org">MMPC</a> <a href="https://garage.maemo.org/frs/?group_id=193">packages</a>
+for the new Chinook 4.0 (OS2008) release. Untested in real production
+environments, of course, but I see no reason why it shouldn't work
+outside my ARM development environment.
+</p>
+
+<p>
+Packages are <a href="https://garage.maemo.org/frs/?group_id=193">here</a> (including libmpd). Please report any issues you might
+encounter.
+</p>
+
+<p>
+Now I'm eagerly awaiting the availability of the <a href="http://www.nokia.de/n810">N810</a> in Germany to
+finally get rid of my discount code. Thanks Nokia!
+</p>
+
+<p>
+<img src="http://mmpc.garage.maemo.org/images/playing.png" alt="playing.png" />
+<img src="http://mmpc.garage.maemo.org/images/playing_1.png" alt="playing_1.png" />
+</p>
+
+<p>
+On a related note: I'm still looking for designers creating some nice,
+"Play", "Stop", "Pause", "Backward" and "Forward" buttons. These are
+just too ugly in the current state. Nobody willing to help out?
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-20" class="outline-2">
+<h2 id="sec-20">MMPC for the N770</h2>
+<div class="outline-text-2" id="text-20">
+<script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=54"; </script>
+<p>
+I am proud to announce that there finally are <a href="http://mmpc.garage.maemo.org">Maemo Music Player Client</a>
+<a href="https://garage.maemo.org/frs/?group_id=193">packages</a> built for the N770 (OS2006). It is thanks to <a href="http://wap.ecw.de">Christopher Klein</a>,
+who did the required code changes and the rebuild, that my inbox will be
+delivered from requests about this apparently important missing piece.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-21" class="outline-2">
+<h2 id="sec-21">The Ugliness of Suspend</h2>
+<div class="outline-text-2" id="text-21">
+<script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=53"; </script>
+
+<p>
+These days, you can do absolutely all kinds of freaky stuff with your
+Linux box. There are nearly no limitations for doing fancy graphics,
+applications, 3D desktops etc.
+</p>
+
+<p>
+However, there are still some rough edges which makes Linux still look
+like a hacky system to new, or M$ blended,
+users. Suspend. Hibernate. Standby. Whatever you might call them.  No!
+You never ever want to see a white font on a black background with
+cryptic statements when using a computer. You're writing letters, you're
+browsing the web, you're sending emails, you're editing pictures, and
+once in a while, you like you're system to suspend to disk. And you
+don't want to see all this ugliness in front of you!
+</p>
+
+<p>
+Luckily, times are changing. So with the release of openSUSE Beta1,
+you'll not see this ugliness again. With the integration of <a href="http://splashy.alioth.debian.org">splashy</a>,
+you'll always see a nice image showing you the progress of suspend and
+resume. The general aim is to <b>hide</b> all the ugliness on your system
+from you. That doesn't mean removing it. I'm using the ugliness all day
+long on my own ;-)
+</p>
+
+<p>
+Configuring splashy is easy. Most important files atm:
+</p>
+
+
+<ul class="org-ul">
+<li>/etc/splashy/config.xml: General configuration, which theme to use,
+etc. 'man splashy-config.xml' for more information
+</li>
+<li>/etc/splashy/themes/default/theme.xml: Theme configuration, where
+are the images, fade, progressbar, text, etc., 'man
+splashy-theme.xml' for more information
+</li>
+<li>/etc/splashy/themes/default/suspend.png: Image used for
+suspending. You put there any image you like. Run 'mkinitrd'
+afterwards to enable it also for resume
+</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="http://www.homac.de/files/suspend_small.png" alt="suspend_small.png" />
+</p>
+</div>
+
+<p>
+I'm currently using a somehow experimental approach for the suspend
+image. I'm taking a screenshot of the currently displayed desktop,
+blurring and black&amp;whitening it with convert, and using it to show the
+progress bar afterwards. This may take up to two seconds on a moderate
+system. It's a cool feature, however, if the impact on the suspend time
+is too high, I might consider removing it again. Please share any
+experience you may make. Let's test this together in Beta1!
+</p>
+
+<p>
+Currently the screenshot creation and image manipulation is done by a
+pm-utils hook. It would be better to let kpowersave/gnome-power-manager
+take the screenshot and put it to a place splashy can read from. This
+way it would be possible to configure the shown image inside kcontrol or
+the gnome-control-center. And that's actually what you want. There just
+wasn't enough time yet to implement this correctly.
+</p>
+
+<p>
+So what about Suspend to RAM? I'll see what I can do. One might think
+that it doesn't make much sense there because S2RAM is so fast
+anyway. However, it's still not fast enough ;-) You can still read
+"Preparing suspend&#x2026;" for the time of a wink of your eyes. And I've set
+myself the goal to iron this out ;-)
+</p>
+
+<p>
+Actually, splashy is already in Alpha7, but you have to enable it there
+first. So if you're too impatient for waiting for Beta1, enter 'splash =
+y' in /etc/suspend.conf to get it. This is due to a
+<a href="https://bugzilla.novell.com/show_bug.cgi?id=293826">bug</a> which
+prevented to abort the suspend I had to fix first.
+</p>
+
+<p>
+The old <a href="http://www.bootsplash.org/Welcome_to_the_graphical_world_of_Linux">bootsplash</a> is still used for
+general boot and shutdown, though. We'll see what we can do to have a
+smooth conversion in the future.
+</p>
+
+<p>
+As always, if you find issues, put them into
+<a href="http://bugzilla.novell.com">bugzilla</a>.  <b>Hint:</b> Enter 'splash = n' in
+/etc/suspend.conf to disable splash for debugging of general suspend
+problems. But those are non existant anyway ;-)
+</p>
+
+<p>
+Have fun, Holger
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-22" class="outline-2">
+<h2 id="sec-22">Hack Week</h2>
+<div class="outline-text-2" id="text-22">
+<p>
+So <a href="http://idea.opensuse.org/content/hackweek">Hack Week</a> is finally there. I'll limit my studies to a minimum this
+week. Why? To work on a cool idea. Unfortunately, I'm still undecided
+about which <a href="http://idea.opensuse.org">idea</a> I'll be working on :-( Here are my favourites
+(copy&amp;pasted from tomboy):
+</p>
+
+<ul class="org-ul">
+<li><a href="http://idea.opensuse.org/content/ideas/audio-cd-metadata-in-hal%22">HAL Audio Metadata</a> (own daemon?)
+</li>
+<li>Add remote control for presentations along with support for the
+N800. Unfortunately, I still don't have back my N800 from repair
+because of the display sensivity issue. I'm missing it already since
+5 weeks!
+</li>
+<li>Mediacenter, especially mpd, <a href="http://idea.opensuse.org/content/ideas/create-a-media-center-edition-of-opensuse">link</a>
+</li>
+<li>laptop access panel: <a href="http://idea.opensuse.org/content/ideas/laptop-access-panel">link</a>
+</li>
+<li>Bootsplash support could be in 10.3. <a href="http://idea.opensuse.org/content/ideas/safe-sleep">link</a>
+</li>
+<li>Desktop profiler, <a href="http://idea.opensuse.org/content/ideas/desktop-optimization-with-powertop">link</a>
+</li>
+<li>WOL enablement <a href="http://idea.opensuse.org/content/ideas/simplify-configuration-for-automatic-wakeup-lan-time-ring-of-pcs">link</a>, <a href="http://idea.opensuse.org/content/ideas/configure-computer-wakeup-time">link</a>
+</li>
+<li>evolution plugin to allow an external editor (feature? Bug?)
+</li>
+<li>qnotifyd network support
+</li>
+<li>libqnotify integration into KDE4
+</li>
+<li>powersave user binary extensions: Plain C, daemon mode, idle
+detection, libqnotify linkage? (<a href="http://idea.opensuse.org/content/ideas/create-desktop-independent-power_management-session-application">link</a>)
+</li>
+<li>Harware configuration made easy: <a href="http://idea.opensuse.org/content/ideas/openhardwaremanager-dynamic-system-configuration-framework">link</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-23" class="outline-2">
+<h2 id="sec-23">GTK status icon mess</h2>
+<div class="outline-text-2" id="text-23">
+<p>
+While trying to add the ability to change the display brightness via the
+tray icon in gnome-power-manager, I just wanted to catch the
+corresponding mouse wheel events on a GtkStatusIcon. Seeing that this is
+not possible without ugly hacks or whole reimplementations is really
+bad. It would really be simple to add this feature or to export the
+underlying GtkWidget through the API so that one can catch he
+'scroll-event' manually. Looking for the causes, found <a href="http://bugzilla.gnome.org/show_bug.cgi?id=409435">that</a>. Why is
+working on GNOME or GTK sometimes so depressive&#x2026;
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-24" class="outline-2">
+<h2 id="sec-24">org.freedesktop.PowerManagement</h2>
+<div class="outline-text-2" id="text-24">
+<p>
+There's currently a <a href="http://lists.freedesktop.org/archives/xdg/2007-March/009489.html">discussion on the xdg@freedesktop.org list</a> started
+by <a href="http://hughsient.livejournal.com/">Richard Hughes</a> about a common org.freedesktop.PowerManagement
+interface <a href="http://people.freedesktop.org/~hughsient/temp/power_management-spec-0.1.html">(first draft available)</a> which will hopefully become cross
+desktop. Currently it includes methods like:
+</p>
+
+<ul class="org-ul">
+<li>org.freedesktop.PowerManagement.Shutdown()
+</li>
+<li>org.freedesktop.PowerManagement.Reboot()
+</li>
+<li>org.freedesktop.PowerManagement.Suspend()
+</li>
+<li>org.freedesktop.PowerManagement.Suspend()
+</li>
+<li>org.freedesktop.PowerManagement.GetOnBattery()
+</li>
+<li>&#x2026;
+</li>
+</ul>
+
+<p>
+Well, this all sounds very good, no? Of course it does, and it is!
+There's already a lot agreemennt on the most of those methods from both
+sides, KDE and GNOME which is really great.
+</p>
+
+<p>
+But there's one problem I'm currently seeing. In my opinion, it would be
+better to define two methods Shutdown() and Reboot() somewhere in the
+desktop base (something like org.freedesktop.Desktop) in the future
+(KDE4, GNOME 3.0, etc&#x2026;). I indeed think that they are in the scope of
+power management, but still have some kind of exceptional
+position. Having them tied to the o.f.PM interface, and more important,
+the methods being compulsory, would force the desktop to always
+implement all methods of the interface. Do you get the idea?
+</p>
+
+<p>
+So if you don't have a power management application such as kpowersave
+or gnome-power-manager the desktop itself would have to implement all
+the other methods like Suspend() or Hibernate(), which seems strange to
+me, especially in regard to usual desktop systems. You sometimes just
+don't need them. To rephrase it a little bit, some people might just not
+want them for whatever reasons. Having the Shutdown() and Reboot()
+methods methods compulsory will make it very hard to split them out in
+future.
+</p>
+
+<p>
+Indeed, in current implementations, both kpowersave and gnome power
+manager just call the logout mechanism of "their" desktop, which
+involved saving the session etc. Applications could just call the logout
+mechanisms themselves instead of handing them over to a interface which
+then again hands them over to someone else, no?
+</p>
+
+<p>
+Currently gnome-power-manager is very well integrated into GNOME. For
+instance, if there's not battery or other laptop specific capabilities,
+the icon just disappears. So one could argue that g-p-m is a direct part
+of the desktop base. Not so for KDE. KDE currently doesn't have a clever
+power management application by default. However, I really like to see
+kpowersave in KDE default in the near future, but that's another story.
+</p>
+
+<p>
+Ideally, IMHO, it should look as follows in the future:
+</p>
+
+<p>
+Having a base interface org.freedesktop.Desktop which carries out
+methods like Shutdown(), Reboot(), Logout() or Session.Save(). And on
+top of it there should be something like
+org.freedesktop.Desktop.PowerManagement.Suspend() and the like:
+</p>
+
+<ul class="org-ul">
+<li>org.freedesktop.Desktop
+</li>
+<li>org.freedesktop.Desktop.Shutdown()
+</li>
+<li>org.freedesktop.Desktop.Reboot()
+</li>
+<li>org.freedesktop.Desktop.Session.Save()
+</li>
+<li>org.freedesktop.Desktop.PowerManagement.Suspend()
+</li>
+<li>org.freedesktop.Desktop.PowerManagement.GetOnBattery()
+</li>
+</ul>
+
+<p>
+One could of course just let the word "Desktop" slip, that's an
+implementation detail.
+</p>
+
+<p>
+The first four methods get served by the desktop base, the last two by a
+power management application if one available.
+</p>
+
+<p>
+It seems that this proposal already got some agreement from a some
+people both from the KDE and GNOME community. Intefaces might be called
+org.freedesktop.SessionManagement.Shutdown() (same for Reboot()) and
+org.freedesktop.PowerManagement.*. But that is still to be defined.
+</p>
+
+<p>
+Comments and opinions would be welcome!
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-25" class="outline-2">
+<h2 id="sec-25">FOSDEM 2007</h2>
+<div class="outline-text-2" id="text-25">
+<p>
+FOSDEM was great. Attended some interesting talks like one about <a href="http://en.wikipedia.org/wiki/KDE4">KDE4</a>,
+Andrew Morton talking about <a href="http://archive.fosdem.org/2007/schedule/events/linux_kernel">trends in linux kernel development</a>, <a href="http://ohm.freedesktop.org">Open
+Hardware Manager</a> and of course a lot of <a href="http://en.opensuse.org/FOSDEM2007">openSUSE</a> talks. Like the one
+from <a href="http://blog.nouse.net">Timo</a> about <a href="http://thinkfinger.sourceforge.net">libthinkfinger</a> or the one from <a href="http://blog.cryptomilch.de">Daniel</a> about <a href="http://www.opensync.org">opensync</a>.
+</p>
+
+<p>
+But more important are the people you meet. Hacking the whole year,
+writing and answering mails or chatting, and you actually never know to
+whom you are talking. It is hard enough to know what you are talking
+about ;-)
+</p>
+
+<p>
+Well, and I discovered some really nice feature on the n800 called <a href="http://maemo.org/maemowiki/ApplicationManagerRedPillMode">red
+pill mode</a>. Usually the application manager does not show you all the
+library and system packages and does not offer many features for
+advanced users. But with turning on red pill mode, you get them
+all. Turning on blue pill mode makes them go away again. This would
+actually be a great idea for the two biggest desktops. GNOME has too
+less options, KDE too many. With a system like this, you would solve the
+main issue both desktops have IMHO.
+</p>
+
+<p>
+Having some free days now, using for a trip to Amsterdam with my
+girlfriend, until hard work for the upcoming exams at university
+starts. No fun :-(
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-26" class="outline-2">
+<h2 id="sec-26">Couch potato goodies</h2>
+<div class="outline-text-2" id="text-26">
+<script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=48"; </script>
+</div>
+
+<div id="outline-container-sec-26-1" class="outline-3">
+<h3 id="sec-26-1">Maemo Music Player Client</h3>
+<div class="outline-text-3" id="text-26-1">
+<p>
+As briefly mentioned last time, I got a developer code for a <a href="http://www.nokia.com/n800">Nokia
+n800</a>. Thanks. I already had a n770, so without further ado, I decided to
+purchase one. And that really kept me on the go the last couple of
+weeks. At home, my computer is connected to my stereo system to play my
+mp3s with passable good sound. So having a n800 with wlan, I thought
+there has to be a possibility to use it as remote control. Looking for
+something at the web, I shortly found the <a href="http://www.musicpd.org">Music Player Daemon (mpd)</a> to
+be used as a service running on my home computer managing and playing my
+mp3 collection. And very easy to install. Well, first duty was to find a
+good client that works on the n800. Trying two web based clients and
+noticing that they are ugly was not really satisfying. It was not hard
+to build the <a href="http://www.musicpd.org/gmpc.shtml">Gnome Music Player Client</a> with some small modifications
+inside my scratchbox environment for the <a href="http://www.maemo.org">Maemo</a> platform. Too bad for me,
+the GUI is optimised for higher screen resolutions and for multi
+windowed systems.
+</p>
+
+<p>
+The default multimedia player which comes along with the n800 is quite
+nice IMO, so an interface similar to this would be best. Well, noticing
+that Nokia didn't open source its code although there's a request from
+within the community is quite disappointing. I thought they wouldn't do
+things by halves, but, well, other story&#x2026; Hopefully there's at least
+no patent or the like for the GUI, otherwise I just hope they won't sue
+me for reverse engineering it ;-)
+</p>
+
+<p>
+Writing my first own gtk application was quite exhausting. The
+documentation is so horrible bad :-( I just wonder why there aren't more
+tutorials out there. For instance, about IMHO common problems like
+setting bold font of a row in a GtkTreeView. Well, after getting into
+it, it was, hm, well, O.k. ;-)
+</p>
+
+<p>
+So here it is:
+</p>
+
+<p>
+<a href="http://mmpc.garage.maemo.org">http://mmpc.garage.maemo.org</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-26-2" class="outline-3">
+<h3 id="sec-26-2">Maemo Music Player Client (mmpc)</h3>
+<div class="outline-text-3" id="text-26-2">
+
+<div class="figure">
+<p><img src="http://mmpc.garage.maemo.org/images/playing_1.png" alt="playing_1.png" />
+</p>
+</div>
+
+<p>
+It is based on the <a href="http://sarine.nl/gmpc">Gnome Music Player Client</a>, but has undergone quite
+much modification like hildonization, Maemo menus, the new player
+interface, etc&#x2026; The GUI got especially designed to be used as a remote
+control, meaning that it should be good to use without the stylus. All
+in all, it is more a fork than a port. The first couple of days really
+show the huge interest in an application like this. At the time of
+writing this, there are already 281 downloads as you can see on the
+Maemo garage <a href="https://garage.maemo.org/frs/?group_id=193"> project page</a>. It's a great toy ;-)
+</p>
+
+<p>
+Actually I had another cool feature in mind. The device being used as a
+remote control, and only as a remote control, you do not want other
+people using or seeing any other things on the device while managing
+music. So I actually wanted to force fullscreen mode until a correct
+password gets entered. The code is already finished, but there's one
+problem. The actual user can just turn off the device and reboot ;-) So
+anyone having any idea how to prevent the user to reboot the device?
+There's no possibility to lock the device in a way that one has to enter
+a password everytime the device boots. Something like a PIN in cell
+phones would be good. I can catch the hardware button event, of course,
+but the system is turned off in any case. Different story&#x2026;
+</p>
+
+<p>
+What I'm currently looking for is a graphic designer. I'm usually not
+very good at that. So someone out there either doing web design or is
+willing and able to design some nice play, stop, forward, backward,
+etc. buttons? Any help would be appreciated. In any case, visit the
+<a href="http://mmpc.garage.maemo.org">homepage</a> for more information.
+</p>
+
+<p>
+Greetings, Holger
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-27" class="outline-2">
+<h2 id="sec-27">New tasks, openSUSE 10.2 and a framework called Dockutils</h2>
+<div class="outline-text-2" id="text-27">
+</div>
+
+<div id="outline-container-sec-27-1" class="outline-3">
+<h3 id="sec-27-1">New tasks at university</h3>
+<div class="outline-text-3" id="text-27-1">
+<p>
+Long time no post, and a lot of things happened. At least to me. Forgot
+to mention last time, for anyone interested, I started college at the
+<a href="http://www.uni-erlangen.org/">Friedrich-Alexander-University of Erlangen-Nuremberg</a> in middle of
+october with course of studies in computer science. On Friday, the
+winter semester was over - finally. Learning all this difficult and
+completely new stuff is quite different from what I've been doing the
+last couple of years at SUSE. So I was really busy the last months to
+reconcile university and my work on linux ;-)
+</p>
+
+<p>
+Well, but my time at SUSE isn't over, of course, still working there at
+regular times, just not that much like before. And therefore, I wasn't
+able to be as active in regard to linux as I hoped to be. You can't be
+very innovative, you just have to do the things that have to be
+done. Working on bugs, handling mail, etc.. I'll have two exams in
+middle of March, though, but except from that, until the new semester
+starts, I will be able to work fulltime on linux.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-27-2" class="outline-3">
+<h3 id="sec-27-2">openSUSE 10.2 and Dockutils</h3>
+<div class="outline-text-3" id="text-27-2">
+<p>
+Nevertheless, openSUSE 10.2 was released during this time, and I finally
+finished the power management redesign <a href="http://forge.novell.com/pipermail/powersave-devel/2006-June/000589.html">announced</a> some time ago. Doing
+stuff like integrating pm-utils, the CPUFreq HAL addon, adjusting the
+powersave daemon or failing to get more involved in kpowersave's future
+development.
+</p>
+
+<p>
+Not to forget about <a href="http://dockutils.sourceforge.net">dockutils</a>, a framework, or better, a collection of
+scripts providing an infrastructure to easily trigger actions on
+docking/undocking requests for different laptops and vendors. To quote
+the <a href="http://en.opensuse.org/Dockutils">openSUSE wiki page</a> where you can find more information, it shall be
+the following, not more and not less:
+</p>
+
+<ul class="org-ul">
+<li>Provide infrastructure to do userspace stuff that has to be done on
+dock and undock
+</li>
+<li>Provide easy to use infrastructure for hardware vendors,
+distributors or users to get proper docking station support or to do
+just anything they like on dock/undock, for instance starting a
+special tool or just displaying a message on the desktop.
+</li>
+<li>Provide infrastructure for nasty and ugly workarounds either because
+of broken hardware, bugs or just because of a lack of support in the
+kernel
+</li>
+</ul>
+
+<p>
+There are some basic scripts already included, at least to get the X60
+dock station and some other Thinkpads working, but there's also still
+lot to do. Some days ago I registered <a href="http://sourceforge.net/projects/dockutils/">a project</a> at sourceforge. I'm not
+even sure if dockutils prevails itself, but I needed a place to host the
+code, and I did not want to just include it in the openSUSE rpms. So if
+you like to have a look at it, check it out:
+</p>
+
+
+<p>
+svn co <a href="https://dockutils.svn.sourceforge.net/svnroot/dockutils">https://dockutils.svn.sourceforge.net/svnroot/dockutils</a> dockutils
+</p>
+
+
+<p>
+Just to prevent questions: Yes, I know that there is a new generic dock
+station driver (and bay driver) in recent kernels, and yes, I already
+got familiar with it, and yes, I will do the integration into HAL and
+openSUSE very soon ;-)
+</p>
+
+<p>
+Unfortunatelly, we get rare feedback on docking. Therefore I like to ask
+some questions:
+</p>
+
+<p>
+Do you have a docking station? Does it work for you? Does it work
+combined with suspend/resume? Does the hardware included in the dock
+station work after docking/undocking? Do you have a workaround or a
+script to get it working? Please drop a comment, send me a mail or
+create a bugreport if you can answer any of the above
+questions. Otherwise it will be nearly impossible to improve docking
+station support. You can find my email at the <a href="http://en.opensuse.org/Dockutils#How_to_contribute">openSUSE</a>. Thanks.
+</p>
+
+<p>
+Next post will follow very soon, because I will have to write something
+very exciting (at least to me) regarding the Nokia n800 I received a
+developer code for, thanks Nokia!
+</p>
+
+<p>
+Regards, Holger
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-28" class="outline-2">
+<h2 id="sec-28">Liblazy - D-Bus methods provided for convenience</h2>
+<div class="outline-text-2" id="text-28">
+<p>
+I finally found some time to release <a href="http://liblazy.freedesktop.org/wiki/Software_2fliblazy">liblazy</a> to the public. I'm already
+using it in several smaller applications and the KDE kickoff menu links
+against it in openSUSE 10.2, so it's some kind of public, but there
+hasn't been a place where you can download tarballs or to get further
+information. Starting from today, it is hosted on <a href="http://www.freedesktop.org">freedesktop</a> and has a
+<a href="http://liblazy.freedesktop.org/wiki/Software_2fliblazy">wiki page</a>.
+</p>
+
+<p>
+So what's liblazy all about? Liblazy is a simple and easy to use library
+that provides convenient functions for sending messages over the D-Bus
+daemon, querying information from HAL or asking PolicyKit for a
+privilege. Its features may grow as needed, though.
+</p>
+</div>
+
+<div id="outline-container-sec-28-1" class="outline-3">
+<h3 id="sec-28-1">Rationale</h3>
+<div class="outline-text-3" id="text-28-1">
+<p>
+Once in a while, I stumble across an application which has no proper
+D-Bus support and gathers some information through reading /proc or
+sysfs, or any other circumstantial way, although software like HAL or
+PolicyKit already have this information. Or they just want to send a
+simple message to another application, sometimes even without caring
+about the reply. These applications often only have to do very simple
+tasks.
+</p>
+
+<p>
+So to adopt these applications, you always have to duplicate lots of
+code over and over again.
+</p>
+
+<p>
+Just some examples&#x2026;
+</p>
+
+<p>
+To to send a message over D-Bus one has to do:
+</p>
+
+<ol class="org-ol">
+<li>Get a D-Bus connection
+</li>
+<li>Check for errors
+</li>
+<li>Send a message over the bus
+</li>
+<li>Check for errors
+</li>
+<li>Get the reply
+</li>
+<li>Check for errors
+</li>
+</ol>
+
+<p>
+To get a simple property from HAL, one has to do (with libhal in this
+example):
+</p>
+
+<ol class="org-ol">
+<li>Get a D-Bus connection
+</li>
+<li>Check for errors
+</li>
+<li>Get a LibHalContext
+</li>
+<li>C.f.e.
+</li>
+<li>Register the connection with the context
+</li>
+<li>C.f.e.
+</li>
+<li>Fetch the property with libhal
+</li>
+<li>C.f.e
+</li>
+</ol>
+
+<p>
+When you have to check if your application possess a specific privilege
+according to PolicyKit:
+</p>
+
+<ul class="org-ul">
+<li>Either do a mixture of the above things to ask directly via D-Bus or
+link against libpolkit and do a complicated call of
+libpolkit<sub>is</sub><sub>uid</sub><sub>allowed</sub><sub>for</sub><sub>privilege</sub>(7 arguments follow). This
+call gives you a lot of information you might not care about at all.
+</li>
+</ul>
+
+<p>
+So in every application, you have to implement functions like:
+</p>
+
+<ul class="org-ul">
+<li>dbus<sub>send</sub><sub>message</sub>(service, path, interface, method);
+</li>
+<li>dbus<sub>send</sub><sub>message</sub><sub>with</sub><sub>reply</sub>(service, path, interface, method,
+&amp;reply);
+</li>
+<li>hal<sub>get</sub><sub>property</sub><sub>int</sub>(udi, property)
+</li>
+<li>&#x2026;
+</li>
+</ul>
+
+<p>
+There are a lot of applications which just don't want to care too much
+about D-Bus or HAL at all. I'm mostly talking about small applications,
+of course, even about those without a mainloop. They just want to make
+use of hardware databases and abstractions and a new way of inter
+process communication we have with D-Bus these days.
+</p>
+
+<p>
+So what I've done is combining these very simple functions into one
+small library called liblazy. A small application may just want to do
+the following to send a message over the bus and get its reply, maybe
+even with ignoring any errors:
+</p>
+
+
+<p>
+DBusMessage *reply;
+liblazy<sub>dbus</sub><sub>system</sub><sub>send</sub><sub>method</sub><sub>call</sub>("org.freedesktop.NetworkworkManager",
+"/org/freedesktop/NetworkManager",
+"org.freedesktop.NetworkManager", "sleep", &amp;reply,
+DBUS<sub>TYPE</sub><sub>INVALID</sub>);
+</p>
+
+<p>
+int *arg<sub>from</sub><sub>reply</sub>; liblazy<sub>dbus</sub><sub>message</sub><sub>get</sub><sub>arg</sub>(reply,
+DBUS<sub>TYPE</sub><sub>INT32</sub>, &amp;arg<sub>from</sub><sub>reply</sub>, 0);
+</p>
+
+
+<p>
+That's it. The application developer just has to link against libdbus
+and liblazy, without caring about any other stuff.
+</p>
+
+<p>
+Liblazy also contains very simple functions to get a property from HAL
+or ask for a privilege from PolicyKit. But it doesn't contain complex
+functionality. It may grow as needed, though. But&#x2026;
+</p>
+
+<p>
+It is definitely not intended for replacing any of the dbus bindings,
+libhal or libpolkit. Complex applications can and will still have their
+own implementations and will link agains libhal or libpolkit or
+whatever. They are free to use liblazy, of course. But it is definitely
+of benefit for small applications which only need a subset of
+functionality and like to profit from new software like D-Bus, HAL,
+etc. but without having to care a lot. It should serve as a set of
+functions for developers provided for convenience. Also a lot more
+command line applications could make use of HAL, etc. in an easy way
+IMO. Additionally, it may serve as a code example for developers to get
+familiar with D-Bus.
+</p>
+
+<p>
+Most likely, my next blog post will contain something about dockutils, a
+framework for getting docking station support for as many notebooks as
+possible. But read more next time&#x2026;
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-29" class="outline-2">
+<h2 id="sec-29">My Work Today</h2>
+<div class="outline-text-2" id="text-29">
+<p>
+My work today: Rather sad if you think that I wrote this code someday
+and now have to throw it away. But for good reasons, of course ;-)
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="right" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">config\<sub>files</sub>/dbus\<sub>powersave.conf</sub></td>
+<td class="right">8</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">config\<sub>files</sub>/scheme\<sub>presentation</sub></td>
+<td class="right">154</td>
+<td class="left">-----</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">daemon/Makefile.am</td>
+<td class="right">6</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">daemon/acpi.cpp</td>
+<td class="right">18</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">daemon/brightness.cpp</td>
+<td class="right">27</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">daemon/clientConnection.cpp</td>
+<td class="right">92</td>
+<td class="left">---</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">daemon/clientConnection.h</td>
+<td class="right">105</td>
+<td class="left">---</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">daemon/cpufreq<sub>management.cpp</sub></td>
+<td class="right">26</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">daemon/dbus\<sub>server.cpp</sub></td>
+<td class="right">44</td>
+<td class="left">-</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">daemon/dbus\<sub>server.h</sub></td>
+<td class="right">4</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">daemon/device.cpp</td>
+<td class="right">125</td>
+<td class="left">+---</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">daemon/device<sub>management.cpp</sub></td>
+<td class="right">3</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">daemon/pm\<sub>interface.cpp</sub></td>
+<td class="right">161</td>
+<td class="left">+----</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">daemon/pm\<sub>interface.h</sub></td>
+<td class="right">67</td>
+<td class="left">--</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">libpower/Makefile.am</td>
+<td class="right">31</td>
+<td class="left">-</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">libpower/battery.c</td>
+<td class="right">729</td>
+<td class="left"><del>++</del>----------------------</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">libpower/devices.c</td>
+<td class="right">98</td>
+<td class="left">---</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">libpower/powerlib.c</td>
+<td class="right">87</td>
+<td class="left">---</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">libpower/powerlib.h</td>
+<td class="right">168</td>
+<td class="left">+-----</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">libpower/powerlib<sub>local.h</sub></td>
+<td class="right">33</td>
+<td class="left">-</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">libpower/powersave-dbus.pc.in</td>
+<td class="right">12</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">libpower/powersave-hal.pc.in</td>
+<td class="right">12</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">libpower/powersave\<sub>dbus.c</sub></td>
+<td class="right">338</td>
+<td class="left">------------</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">libpower/powersave\<sub>dbus.h</sub></td>
+<td class="right">224</td>
+<td class="left">--------</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">libpower/powersave\<sub>hal.c</sub></td>
+<td class="right">234</td>
+<td class="left">--------</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">libpower/powersave\<sub>hal.h</sub></td>
+<td class="right">130</td>
+<td class="left">----</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">libpower/processor.c</td>
+<td class="right">127</td>
+<td class="left">----</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">libpower/sleep.c</td>
+<td class="right">90</td>
+<td class="left">---</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">testsuite/Makefile.am</td>
+<td class="right">2</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">testsuite/linktests/Makefile.am</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">testsuite/linktests/link\<sub>libpowersave</sub>\<sub>dbus.c</sub></td>
+<td class="right">10</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">testsuite/linktests/link\<sub>libpowersave</sub>\<sub>hal.c</sub></td>
+<td class="right">11</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">testsuite/testclient/Makefile.am</td>
+<td class="right">4</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">testsuite/testclient/testclient.c</td>
+<td class="right">27</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">user\<sub>binary</sub>/Makefile.am</td>
+<td class="right">7</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">user\<sub>binary</sub>/powersave.cpp</td>
+<td class="right">743</td>
+<td class="left"><del><del><del><del><del><del>+</del></del></del></del></del></del>--------------</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+36 files changed, 730 insertions(+), 3241 deletions(-)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-30" class="outline-2">
+<h2 id="sec-30">At Harrachov</h2>
+<div class="outline-text-2" id="text-30">
+<p>
+Up early. Listened to some talks. Poked at beer. Suspend to bed.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-31" class="outline-2">
+<h2 id="sec-31">Arrived at SUSE Labs Conference</h2>
+<div class="outline-text-2" id="text-31">
+<p>
+Arrival at the SUSE Labs Conference in the Czech Republic. Journey was
+tight ;-). Five people with luggage in one car from Nuernberg to
+Harrachov. Had some beers, dinner, again with beer, now up to the city
+of Harrachov for catching some money and getting some more beer :-)
+</p>
+
+<p>
+Tomorrow real work starts, looking forward to see some interesting
+talks&#x2026;
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-32" class="outline-2">
+<h2 id="sec-32">CPU frequency scaling in HAL</h2>
+<div class="outline-text-2" id="text-32">
+<p>
+Yesterday, my HAL addon which cares about CPU frequency scaling got
+committed to the HAL git master branch. Finally, after one and a half
+month of discussions, new patches, and no responses.
+</p>
+
+<p>
+It's main goal is to unify the way linux distributions are doing CPU
+frequency scaling. At the moment there are different daemons out there
+which are doing the job. powernowd, cpuspeed or powersaved. Powersaved
+currently is the only one which supports both kernel governors
+(powersave, performance and ondemand) and has a userspace governor
+implementation. All this is wrapped around by a nice DBus interface to
+make it easy controllable by higher level applications like desktop GUIs
+(e.g. kpowersave).
+</p>
+
+<p>
+But unfortunately powersaved didn't get enough acceptance in the
+community, for whatever reasons. And my main goal is to improve power
+management in linux. So the only solution which seemed to be accepted by
+the GNOME, the KDE and the general community was to put CPU frequency
+scaling functionality into <a href="http://hal.freedesktop.org">HAL</a>.
+</p>
+
+<p>
+In the end, this was no bad idea. This decision forced me reconsider
+some parts of the present implementation and design which we have in
+powersaved. And I really had a great idea. Maybe the best idea I ever
+had. It's a real masterpiece ;-)
+</p>
+
+<p>
+So in future, it comes along with most modern distributions. And
+hopefully everybody will use it ;-) At least the gnome power manager
+maintainer already states his willingness to make use of it in his
+<a href="http://hughsient.livejournal.com/3265.html">blog</a>.
+</p>
+
+<p>
+The following explanations should be the documentation for the CPUFreq
+addon. It summarizes what has been discussed on the HAL and
+powersave-devel mailinglist during the last weeks and what's the addon
+all about. It should point out answers to the common questions which may
+come up. If anything else is not clear, please don't hesitate to send me
+an email or add a comment.
+</p>
+</div>
+
+
+
+<div id="outline-container-sec-32-1" class="outline-3">
+<h3 id="sec-32-1">Available methods on the interface org.freedesktop.Hal.Device.CPUFreq.</h3>
+<div class="outline-text-3" id="text-32-1">
+<p>
+Method: SetCPUFreqGovernor (string)
+</p>
+
+<p>
+Parameters: The name of the governor to set. Get a list of available
+governors with the GetCPUFreqAvailableGovernors method.
+</p>
+
+<p>
+Sets a CPU frequency scaling governor for all CPUFreq interfaces the
+kernel provides. If the userspace governor is set, this interface also
+contains a proper scaling mechanism. The default performance is set to
+</p>
+<ol class="org-ol">
+<li></li>
+</ol>
+
+<p>
+Method: SetCPUFreqPerformance (integer)
+</p>
+
+<p>
+Parameters: The performance between 1 and 100 to set in dynamic scaling
+modes.
+</p>
+
+<p>
+Sets the performance of the dynamic scaling mechanism. This method
+summarizes and abstracts all the different settings which can be taken
+for dynamic frequency adjustments, like at which load to switch up
+frequency or how many steps the mechanism should traverse until reaching
+the maximum frequency. The higher the value, the more performance you
+get. Respectively, the higher the value, the sooner and the more often
+the frequency is switched up.
+</p>
+
+<p>
+Method: SetCPUFreqConsiderNice (boolean)
+</p>
+
+<p>
+Parameters: Whether or not niced processes should be considered on CPU
+load calculation.
+</p>
+
+<p>
+Whether or not niced processes should be considered on CPU load
+calculation. If niced processes are considered, they can cause a
+frequency increment although their absolute load percentage wouldn't
+trigger the scaling mechanism to switch up the frequency. The default
+setting is 'false'.
+</p>
+
+<p>
+Method: GetCPUFreqGovernor (void)
+</p>
+
+<p>
+Get the current active governor for all CPU frequency interfaces
+(string).
+</p>
+
+<p>
+Method: GetCPUFreqPerformance (void)
+</p>
+
+<p>
+Get the current active performance setting if a dynamic scaling
+mechanism is in use (integer between 1 and 100).
+</p>
+
+<p>
+Method: GetCPUFreqConsiderNice (void)
+</p>
+
+<p>
+Returns whether niced processed are considered during CPU load
+calculation or not (returns boolean).
+</p>
+
+<p>
+Method: GetCPUFreqAvailableGovernors (void)
+</p>
+
+<p>
+Returns a list of strings of all available governors which could be set
+with the SetCPUFreqGovernor method.
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-sec-32-2" class="outline-3">
+<h3 id="sec-32-2">Errors the above methods may raise on the interface org.freedesktop.Hal.Device.CPUFreq.</h3>
+<div class="outline-text-3" id="text-32-2">
+<p>
+Error: GeneralError (void)
+</p>
+
+<p>
+Detail field: The exact error.
+</p>
+
+<p>
+A general error occured.
+</p>
+
+<p>
+Error: UnknownGovernor (void)
+</p>
+
+<p>
+Detail field: The governor which was tried be to set.
+</p>
+
+<p>
+The governor which was tried to be set doesn't exist.
+</p>
+
+<p>
+Error: PermissionDenied (void)
+</p>
+
+<p>
+Detail field: The privilege the caller needs to execute the method.
+</p>
+
+<p>
+The caller doesn't have the privilege to execute this method.
+</p>
+
+<p>
+Error: NoSuitableGovernor (void)
+</p>
+
+<p>
+Detail field: The method which was tried to be executed.
+</p>
+
+<p>
+The method executed doesn't exist for the current active governor.
+</p>
+
+<p>
+Error: GovernorInitFailed (void)
+</p>
+
+<p>
+Detail field: The reason for the failure.
+</p>
+
+<p>
+The initialization of the governor failed.
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-sec-32-3" class="outline-3">
+<h3 id="sec-32-3">What's the CPUFreq addon all about</h3>
+<div class="outline-text-3" id="text-32-3">
+<p>
+Addon-cpufreq supports kernel governors and also implements a userspace
+controlling mechanism. That makes it the "all you need for CPUFreq"
+application. Furthermore, to not make things unnecessarily complicated
+for desktop applications, it is supposed to abstract all the different
+settings you can make for the different governors. One thing which isn't
+available yet, is the possibility to control the performance of
+dynamically scaled CPUs. There's a method to set the performance (from 1
+to 100) which can be easily used from other applications with showing a
+nice progress bar or the like. That makes it unique in contrast to
+former solutions.
+</p>
+
+<p>
+The biggest advantage is that you get CPUFreq out of the box on every
+system supporting HAL without the need to install another
+daemon. Another one is that desktop applications like
+gnome-power-manager or kpowersave can use one common interface after
+all.
+</p>
+
+<p>
+In general, there are three different policies one can choose from:
+</p>
+
+<ol class="org-ol">
+<li>Statically min frequency (corresponds to the powersave governor)
+</li>
+<li>Statically max frequency (corresponds to the performance governor)
+</li>
+<li>Dynamic frequency (ondemand or userspace governor)
+</li>
+</ol>
+
+<p>
+In an ideal world, the the first two shouldn't be used at all. But at
+least the performance governor is still used because you get a little
+bit more performance in comparison with the dynamic policy. Particularly
+as soon as you have many small processes running. The default dynamic
+setting can be and was sufficient in most cases. But it's a too general
+setting IMO. So to basically get rid of the two static policies, I'm
+doing a split of the dynmaic policy into several parts.
+</p>
+
+<p>
+The dynamic machanisms, either ondemand governor, conservative governor
+or the userspace implementation etc. consist each of several different
+settings and configuration options like at which load to switch up, how
+many steps the mechanism should traverse until reaching max freq and so
+on. The SetCPUFreqPerformance method which is available combines all
+these setting into one. The performance can be set between 1 and 100.
+</p>
+
+<p>
+In general it sais, the higher the value the more often and the faster
+the frequency is switched up. Each governor has some sort of fixed CPU
+load limit (up<sub>threshold</sub>) at which load to switch up frequencies. For
+instance, the ondemand governor has the up<sub>threshold</sub> set to 80 by
+default. This corresponds to a performance value of 50. As an example,
+if you change the performance to 75, the up<sub>threshold</sub> is set to
+about 45. So if the CPU load reaches a value higher than 45, the
+frequency is switched up. If the up<sub>threshold</sub> would be 80 and a process
+would only need 60 percent of CPU, the frequency wouldn't be switched
+up. If the performance value would be 1 (lowest performance), the
+up<sub>threshold</sub> would be 99. That means that the frequency is really only
+increased if you have a process which needs all CPU power (100%, for
+instance at compilation time).
+</p>
+
+<p>
+I will do a small comparison&#x2026; Two main situations where policies
+differ are
+</p>
+
+<ul class="org-ul">
+<li>On AC power: You want to do dynamic frequency scaling, but It's not
+that important to reduce power consumption. You want to have the
+maximum performance as soon as you start a process but still want to
+reduce the power drain as soon as the system is idle. (e.g. because
+of thermal reasons). So you need a more aggressive dynamic CPU
+frequency scaling where you switch up sooner and more often. So for
+instance, you set the performance to 75.
+</li>
+<li>On battery: The primary goal is to increase battery life. But you
+still want a job done as fast as possible as soon there is need to,
+for instance when compiling. So you might want a more tentative
+frequency adjustment. Performance maybe set to 25 in this case.
+</li>
+</ul>
+
+<p>
+The reason why I chose such a fine grained range (from 1 to 100) is to
+get an interface that is not limited to only one implementation. For the
+CPUFreq case, one can image to have only five steps like min, low,
+medium, high, max. But that's something the GUI can and should
+decide. It can map these 100 steps to whatever it likes but I don't
+think that's the job of the addon. And maybe some system (embedded?,
+whatever) likes to have a completely other implementation with 20, 30,
+or even 100 steps but still likes to take advantage of the common
+interface, it than wouldn't be limited to a predefined range.
+</p>
+
+<p>
+Additionally, if a policy decision maker (like a GUI) doesn't like to
+touch the performance setting, it doesn't need to. It gets a good
+default setting. The default is 50 and corresponds to a configuration
+which is either the kernel default or which is tested to be stable and
+useful for several years now in the userspace case.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-32-4" class="outline-3">
+<h3 id="sec-32-4">FAQ</h3>
+<div class="outline-text-3" id="text-32-4">
+<p>
+<b>Q:</b> What's the SetCPUFreqConsiderNice setting all about?
+</p>
+
+<p>
+<b>A:</b> With the ondemand governor this setting is set through
+/sys/devices/system/cpu/cpu0/cpufreq/ondemand/ignore<sub>nice</sub><sub>load</sub> . The
+userspace implementation evaluates the CPU nice load when calculation
+the CPU load, too.  It specifies whether niced processes can cause a CPU
+frequency increment although they don't really need that much CPU power
+and thus wouldn't jump over the UP<sub>THRESHOLD</sub> where frequencies are
+usually increased.  It's a policy decision. On AC power for example, you
+also want to consider niced processes because switching up CPU
+frequencies more often isn't that problematic. In the other case, On
+battery, you want a more passive frequency policy and thus you don't
+consider niced processes.
+</p>
+
+<p>
+<b>Q:</b> Why not export a D-Bus interface for each of the processors in the
+system?
+</p>
+
+<p>
+<b>A:</b> I thought about this possibility, too, but came to the conclusion
+that it doesn't make sense. There main reasons are:
+</p>
+
+<ol class="org-ol">
+<li>There are several dependencies between the different CPUs. The
+cpufreq interfaces below <i>sys/devices/system/cpu</i> lists all
+available CPUs, each in one directory. However, you cannot assume
+that you can simply control each CPU through it's single
+interface. There's a file affected<sub>cpus</sub> in each directory listing
+the CPUs which are controlled through this interface. So maybe it
+could look like:
+</li>
+</ol>
+
+<p>
+cpu0/cpufreq/ &#x2013;&gt; controls cpu0, cpu1 cpu1/cpufreq/ &#x2013;&gt; controls cpu0,
+cpu1 &#x2026;
+</p>
+
+<p>
+or: cpu0/cpufreq/ &#x2013;&gt; controls cpu0, cpu1, cpu2, cpu3 &#x2026;
+</p>
+
+<p>
+or: cpu0/cpufreq/ &#x2013;&gt; only controls cpu0 cpu1/cpufreq/ &#x2013;&gt; only controls
+cpu1 &#x2026;
+</p>
+
+
+<p>
+It doesn't make sence to export these dependencies. This would make
+things unnecessarily complicated for higher level applications.
+</p>
+
+<ol class="org-ol">
+<li>I can't imagine a use case were one might want to have different
+settings for different CPUs.
+</li>
+<li>Some of the cpufreq kernel developers even are agains the
+possibility to set different governors for the CPUs.
+</li>
+<li>There's a new powernow-k8 driver pending where you only can scale
+all CPUs at a time which would perfectly fit into the current
+desing.
+</li>
+<li>There's currently no such device object where to export it. There's
+only acpi<sub>CPU</sub>*. Except in very new implementations, in general,
+cpufreq has nothing to do with acpi, it also works with apm or even
+without acpi <span class="underline">and</span> apm.
+</li>
+</ol>
+
+<p>
+<b>Q:</b> Isn't there a possibility to set the frequency manually?
+</p>
+
+<p>
+<b>A:</b> No. Usually I'm one of those arguing for having a possibility to
+export all possible features to the user on the desktop ;-) But&#x2026;  This
+doesn't really fit into the concept of this addon. It would be a method
+that can only exclusively used if the userspace governor is set. And
+that contradics the concept to use common interfaces for all
+governors. And to be honest, we all hope that the userspace governor
+wouldn't be needed anymore someday. However, it would be possible. It
+would need another method SetCPUFreqFrequency and another property
+'cpufreq<sub>available</sub><sub>frequencies</sub>'. But I really like to avoid that. This
+would also be something which we could add afterwards if it turns out be
+be <span class="underline">really</span> needed.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-33" class="outline-2">
+<h2 id="sec-33">Futuristic hacking on the Nokia 770</h2>
+<div class="outline-text-2" id="text-33">
+<p>
+Doesn't this look cool? Hacking on a Nokia 770 with a futuristic virtual
+keyboard. Well honestly, the bluetooth keyboard is crap and is hard to
+use, but it just makes fun ;-)
+</p>
+
+
+<div class="figure">
+<p><img src="http://blog.homac.de/images/dsc00321.jpg" alt="dsc00321.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-34" class="outline-2">
+<h2 id="sec-34">My personal GNOME experience</h2>
+<div class="outline-text-2" id="text-34">
+<script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=39"; </script>
+
+<p>
+About three weeks ago, something must have happened with my mind. KDE
+became too boring, WindowMaker was already gone for some time and I
+needed something new. Well, I always used GNOME applications before, I
+really like the design and it's the business desktop number one, so I
+gave it a try. And I don't mean something like starting it, clicking
+around and leaving. This I've already done multiple times like when
+testing the gnome-power-manager or other applications. I really ment to
+try to get familiar with it and working with it on a daily basis. So I
+opened my mind for something which is known as "the bad thing" among KDE
+developers
+</p>
+
+<p>
+After all, I decided to write down everything I would like or
+dislike. And now, after 3 weeks of continuous GNOME usage, here are the
+results. If anything is wrong, or maybe I just oversaw a gconf key,
+please tell me.
+</p>
+</div>
+
+<div id="outline-container-sec-34-1" class="outline-3">
+<h3 id="sec-34-1">Window resizing</h3>
+<div class="outline-text-3" id="text-34-1">
+<p>
+The most likely most popular example that also hit me is the not
+existing possibility to resize windows with ALT-Right-Click. Well if you
+are used to that behaviour, it's really hard to forget this
+feature. Additionally, when working in a fast way, moving windows
+around, resizing many of them, it's sometimes hard to catch the bottom
+right area to bring up an arrow to finally change the size. After one
+week or so, I got along with it and it wasn't that painful anymore
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-34-2" class="outline-3">
+<h3 id="sec-34-2">Workspace switching</h3>
+<div class="outline-text-3" id="text-34-2">
+<p>
+I'm used to a one dimensional workspace layout, four workspaces in a
+row. And of course, after the last workspace I want to wrap around to
+the first. Well, not possible with GNOME. There's already a detailed
+bugreport about this issue but was rejected because it would confuse the
+users. Oh what a mess. So I changed the layout to have two rows, each
+one having two desktops.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-34-3" class="outline-3">
+<h3 id="sec-34-3">Icons on the desktop [UPDATE]</h3>
+<div class="outline-text-3" id="text-34-3">
+<p>
+There's no possibility to remove all icons from the desktop, two will
+stay there whatever you do. Oh stop, I finally found a possibility,
+killing the nautilus process. Unfortunatelly, my desktop wallpaper
+disappears, but that's something I can cope with.
+</p>
+
+<p>
+Thanks for the comments. It is possible to remove the icons,
+gconf-editor &#x2013;&gt; apps &#x2013;&gt; nautilus &#x2013;&gt; desktop. Looks easy, so I'm just
+too dumb to find it :-)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-34-4" class="outline-3">
+<h3 id="sec-34-4">Changing the interface language</h3>
+<div class="outline-text-3" id="text-34-4">
+<p>
+If english is not your native language, like in my case, but you still
+have to deal with bugreports, reproducing, confirming, etc., you like to
+switch the language of the GUIs at runtime. Not possible. You have to
+specify the language at login time. But that's one of the smaller
+issues, it would just be "nice to have". Nevetheless, annoying.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-34-5" class="outline-3">
+<h3 id="sec-34-5">Bad session management for non-GNOME applications</h3>
+<div class="outline-text-3" id="text-34-5">
+<p>
+One might argue that you simply should use GNOME applications in this
+case, but that's not the way I'm working. I use a mixture of all, GNOME,
+KDE, QT, tcl applications and so on. Yes, you can't support all crappy
+applications, but why isn't emacs recognized at all for example? Just
+strange that KDE can handle this.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-34-6" class="outline-3">
+<h3 id="sec-34-6">The hidden monster</h3>
+<div class="outline-text-3" id="text-34-6">
+<p>
+Although it has a rather minimalistic style and design (What I really
+like actually), it's as slow as KDE. Also the memory usage is as high as
+with KDE. I just recall people telling me that C++ applications are a
+performance loss&#x2026;
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-34-7" class="outline-3">
+<h3 id="sec-34-7">Panel application starter</h3>
+<div class="outline-text-3" id="text-34-7">
+<p>
+When invoking the panel application starter with ALT-F2, I can't figure
+out the system how applications are stored in the history. I would
+expect that if I press the up-arrow-key, the previous executed
+application would come up. There's lots of applications in the history,
+but not the last or the second to the last. But I really can't say were
+the application which come up do come from.
+</p>
+
+<p>
+And again, this application is so fucking slow. Even on startup. After
+typing a command, it seems to be that it has some sort of completion
+mechanism and tries to find the corresponding icon for the application
+typed. And this can last up to 3 seconds.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-34-8" class="outline-3">
+<h3 id="sec-34-8">Gnome-terminal</h3>
+<div class="outline-text-3" id="text-34-8">
+<p>
+My favourite terminal is konsole. Actually I would use xterm if it
+wouldn't lose it's focus sometimes when switching workspaces. So it's
+some kind of comparison between konsole and the gnome-terminal. Because
+if I'm using GNOME, I also want to use its utilities.
+</p>
+
+<ul class="org-ul">
+<li>Not possible to scroll single lines with shift-up/down
+</li>
+<li>Not possible to store tabs in profiles
+</li>
+<li>Just a personal opinion, the tabs on top of the window really look
+ugly ;-)
+</li>
+<li>Same problem like with workspaces, not possible to wrap around from
+the last tab to the first one
+</li>
+<li>gnome-terminal seems to be incompatible with some key combinations
+like ALT-. They are not working in the default configuration for zsh
+and irssi. And I wasn't able to change this via the provided menus
+like I can do for konsole.
+</li>
+</ul>
+
+<p>
+All in all, no, gnome-terminal is nothing for me if I like to do
+productive working.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-34-9" class="outline-3">
+<h3 id="sec-34-9">Gaim</h3>
+<div class="outline-text-3" id="text-34-9">
+<p>
+On disconnect, for whatever reason (Network, ICQ) , I get a reconnect
+window on the desktop which is currently active. But why? My gaim main
+window is open on a completely different workspace.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-34-10" class="outline-3">
+<h3 id="sec-34-10">Conclusion</h3>
+<div class="outline-text-3" id="text-34-10">
+<p>
+I really like the look and feel of gtk. It's simple but very nice. And I
+really think that the GNOME desktop is better suited for business use or
+for unexperienced users in contrast to KDE in its current state. In KDE
+the user is striked daed by hundred of menus and settings which is
+really confusing in the first place. Although I didn't elaborate these
+two advantages much, they are very very strong.
+</p>
+
+<p>
+I used and worked with it for 3 weeks now. I changed my personal working
+behaviour and I really became inured to it. I can work with it now after
+adopting to what this desktop (matacity, whatever) pretends. But I think
+this is actually the problem. I simply don't want to adopt! That's not
+how I see this open source thing these days. If a developer started with
+GNOME and got used to it, he wouldn't ever notice that this desktop
+doesn't do what he actually wants. He just fits his working behaviour
+into the desktop guidelines. If that would be the way he works anyway,
+then he's the lucky one. But for anyone else I can't understand how a
+developer actually likes to use it. Yes, developing it, extending it,
+making it better, but not using it. Everytime I have an idea how to
+perfect the way I work a little bit more to get the best out of it, I'm
+limited by the desktop. That's not satisfying. So the day before
+yesterday, I switched back to KDE although I don't like the look and
+feel that much. Fortunately, everybody can make this decision on his
+own.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-35" class="outline-2">
+<h2 id="sec-35">Mutt next generation</h2>
+<div class="outline-text-2" id="text-35">
+<script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=38"; </script>
+
+<p>
+Looking for some nice modifications for my mutt in the web, I stumbled
+over <a href="http://mutt-ng.berlios.de/">mutt-ng (mutt next generation)</a>.
+</p>
+
+<p>
+Well, that it what I was looking for all the time. These are the reasons
+why I favour mutt-ng over mutt&#x2026;
+</p>
+
+<ul class="org-ul">
+<li>I do not have to patch my mutt anymore to get a nice sidebar showing
+all my folders. It highlights folders with new mail and I can see
+which folders still have unread (not new) mails in them.
+</li>
+<li>Another big advantage is the possibility to read nntp news and to
+treat them exactly like any other mails.
+</li>
+<li>Until now, everytime I reinstalled my system I had to configure my
+local postfix to sent my mails (with tls). Muttng finally supports
+the smtp protocol (with tls, of course). I agree that the separation
+of a MUA like mutt and an MTA like postfix is generally a good idea,
+but with the new integration of smtp, it makes my life a lot
+easier. I just have to store my configuration in my home directory
+and everytime I upgrade my system I just have to keep my home
+partition and I can send mails without any further
+adjustments. That's nice!
+</li>
+<li>According to the <a href="http://mutt-ng.berlios.de/">homepage</a> and the two mailinglists, there's heavy
+(and happy ;-) development going on. So possible new features and
+patches will hopefully go in sooner as it has been with mutt until
+now.
+</li>
+<li>No problems and crashes so far
+</li>
+</ul>
+
+<p>
+I also decided to package it for the SUSE distribution. So it should
+soon show up in the factory tree.
+</p>
+
+<p>
+I have nicely separated my "old" mutt configuration from the new mutt-ng
+configuration so I can switch back easily if something unexpected might
+happen. I now have file ~/.muttngrc which sources my ~/.mutt/muttrc with
+the following content:
+</p>
+
+<p>
+` source ~/.mutt/muttrc # sidebar settings set sidebar<sub>visible</sub>=yes set
+sidebar<sub>width</sub>=25 set sidebar<sub>shorten</sub><sub>hierarchy</sub>=yes set
+sidebar<sub>number</sub><sub>format</sub>=%n(%u) color sidebar<sub>new</sub> brightyellow default #
+keybindings for the sidebar bind index \CP sidebar-prev bind index \CN
+sidebar-next bind index \CO sidebar-open bind pager \CP sidebar-prev
+bind pager \CN sidebar-next bind pager \CO sidebar-open macro index \CT
+':toggle sidebar<sub>visible</sub> macro pager \CT ':toggle sidebar<sub>visible</sub> # nntp
+configuration set nntp<sub>host</sub>="news.gmane.org" set
+nntp<sub>cache</sub><sub>dir</sub>=~/.mutt/ # keybindings for nntp bind index \en
+change-newsgroup # smtp configuration set smtp<sub>host</sub>=&lt;my relayhost&gt; set
+smtp<sub>user</sub>=hmacht set smtp<sub>use</sub><sub>tls</sub>=enabled `
+</p>
+
+<p>
+Have fun, Holger
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-36" class="outline-2">
+<h2 id="sec-36">Working on homepage www.Foto-Hersbruck.de</h2>
+<div class="outline-text-2" id="text-36">
+<p>
+Worked on a new homepage <a href="http://www.Foto-Hersbruck.de">www.Foto-Hersbruck.de</a> this evening. It's a
+homepage for a local photography club near Nuernberg. Webdesign is
+actually not my cup of tea, but it's simple enough to do my father this
+favour.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-37" class="outline-2">
+<h2 id="sec-37">Suspend project gets bootsplash support</h2>
+<div class="outline-text-2" id="text-37">
+<p>
+The suspend and resume tools from the <i>suspend project</i> finally got
+bootplash support. That's one of the most desired features regarding
+suspend from users IMO. Except that suspend to disk/ram should work at
+all, of course ;-) Currently only bootsplash.org's method is
+supported. But I designed it to be as modular as possible to support any
+kind of splash implementations. The next thing I like to look at is
+fbsplash. But therefore I have to setup a gentoo system which will needs
+some time ;-)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-38" class="outline-2">
+<h2 id="sec-38">Back to the promised land</h2>
+<div class="outline-text-2" id="text-38">
+<p>
+Back from vacation and from the US. I'm very happy to be back to
+germany. The 11 hour flight was just horrible. My legs and feet are
+aching because there was so little room. For me it's now about 3 am,
+although the local clock tells me it's 1 pm ;-) So I will again need
+some days to recover adapt. Nevertheless, trying to go through some
+mails and bugreports and I have to try to keep up until this evening to
+get some usual over-night sleep and to be relaxed for work tomorrow ;-)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-39" class="outline-2">
+<h2 id="sec-39">Preparing for home</h2>
+<div class="outline-text-2" id="text-39">
+<p>
+Still at San Francisco. Back from LA yesterday and found a very nice
+hotel to for the last day. Today it's getting back home. Will arrive at
+11 am (MET) at the Nuernberg airport. It was great to stay here for the
+first time, but nevertheless I'm really looking forward to see the usual
+suspects and european people. Additionally, It would be great to get a
+"Schweinebraden mid Gniedler" instead of fast food which I simply hate
+these days ;-)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-40" class="outline-2">
+<h2 id="sec-40">Across the pond</h2>
+<div class="outline-text-2" id="text-40">
+<p>
+Up at 5 am. Still suffering from the time shift and the flight to San
+Francisco. Second day of Power Management Summit started. Yesterday I
+had a small talk about power management at SUSE, respectively the
+powersave daemon itself. Well, it was ok IMO. It's just hard to explain
+to all those kernel hackers why we workaround so many broken modules and
+implementations instead of fixing them ;-)
+</p>
+
+<p>
+So here's a little bit blurred and dark image taken from the hotel room
+balcony. It's unbelievable how many cars are already on the roads at 5
+am. In Nuernberg, everybody seems to be still sleeping at that time ;-)
+</p>
+
+
+<div class="figure">
+<p><img src="http://blog.homac.de/images/from-hotel.jpg" alt="from-hotel.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-41" class="outline-2">
+<h2 id="sec-41">Powersave 0.13.0 - A longer Statement</h2>
+<div class="outline-text-2" id="text-41">
+<script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=32"; </script>
+
+<p>
+Finally I managed to release Powersave 0.13.0 that brings along a lot
+new features. After some nerve-racking problems with sourceforge, files
+have arrived at the server. Here comes the announcement I'm still
+waiting for to be delivered to our powersave mailinglists.
+</p>
+</div>
+
+<div id="outline-container-sec-41-1" class="outline-3">
+<h3 id="sec-41-1">Topics</h3>
+<div class="outline-text-3" id="text-41-1">
+<ol class="org-ol">
+<li>New release 0.13.0
+</li>
+<li>CPU Hotplugging
+</li>
+<li>Suspend to ram that 'just works'
+</li>
+<li>Make use of our messaging architecture
+</li>
+<li>Excerpt from the changelog
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-41-2" class="outline-3">
+<h3 id="sec-41-2">New release 0.13.0</h3>
+<div class="outline-text-3" id="text-41-2">
+<p>
+I'm glad to announce a brand new release of the Powersave Daemon. It's
+tagged with 0.13.0, our so called 'unstable' series of releases. 0.12.x
+is, or will become, the stable set which will be maintained over a long
+time period. SUSE 10.0 packages are already available on sourceforge,
+FC4 or Mandriva packages will follow soon.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-41-3" class="outline-3">
+<h3 id="sec-41-3">CPU Hotplugging</h3>
+<div class="outline-text-3" id="text-41-3">
+<p>
+So, what's new? The most important thing is definitely the support for
+CPU hotplugging with full integration into our scheme architecture.
+</p>
+
+<p>
+[Once again, I think we are the first application out there implementing
+that state of the art feature and integrating it into an easy to use
+architecture]
+</p>
+
+<p>
+What about disabling one of two cores when running on batteries and
+being at full throttle when on ac? I think this simply a great and
+promising opportunity. Unfortunatelly, up to now only newer laptops
+support it at all, but this will become more and more important in
+future. Of course, this also works for desktop or server systems. So if
+you are already in a position (like me ;-) to make use of it, try it and
+provide feedback of any kind. Integration into kpowersave will be done
+soon.
+</p>
+
+<p>
+There's a new configuration variable that can be set in each scheme
+controlling CPU hotplugging: From /etc/powersave/scheme<sub>powersave</sub>:
+</p>
+
+<p>
+` ## Path: System/Powermanagement/Powersave/CPU ## Type:
+integer(1:100) ## Default: "0" # # Set how much CPUs should be online at
+max. A value of 0 means 'all'. # MAX<sub>CPUS</sub><sub>ONLINE</sub>="" `
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-41-4" class="outline-3">
+<h3 id="sec-41-4">Suspend to ram that 'just works'</h3>
+<div class="outline-text-3" id="text-41-4">
+<p>
+We integrated the s2ram utility from the suspend project <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> into the
+daemon if it is installed. Thanks to Stefan Seyfried for doing the most
+work! This tool integrates all those nasty workarounds like vbetool,
+radeontool or setting acpi video flags like s3<sub>mode</sub> or s3
+bios. Additonally, or even more important, it contains a huge whitelist
+of machines that are known to work with suspend to ram including the
+hacks which are needed for each of those systems. But this list is of
+course not complete. So&#x2026;
+</p>
+
+<p>
+PLEASE HELP US! Stefan created a wikipage on openSUSE <sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> that explains
+the steps that can be done to get suspend to ram working out of the box
+without applying any manual steps. Please read this guide and if it
+makes suspend to ram working on your system, please provide the needed
+information either to the e-mail mentioned in the output of the s2ram
+utility or mail it to the powersave-devel list.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-41-5" class="outline-3">
+<h3 id="sec-41-5">Make use of our messaging architecture</h3>
+<div class="outline-text-3" id="text-41-5">
+<p>
+Furthermore, we opened up our notification architecture to be used by
+other root applications. Simply use the powersave-notify script located
+in /usr/lib/powersave/powersave-notify to make use of it. You do not
+need to bother any longer about in which way the user or admin will be
+notified, just be sure he will get informed.
+</p>
+
+<p>
+<b>What we provide:</b>
+</p>
+
+<p>
+No client connected and no X Server running: Do 'wall' message
+</p>
+
+<p>
+No client connected and user logged in to X: Pop up kdialog (KDE) or
+zenity (GNOME)
+</p>
+
+<p>
+client connected (like kpowersave): Forward message to client which in
+turn displays the message
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-41-6" class="outline-3">
+<h3 id="sec-41-6">Excerpt from the changelog</h3>
+<div class="outline-text-3" id="text-41-6">
+<p>
+` -&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;
+Fri Mar 17 20:52:15 CET 2006 - hmacht@suse.de - CPU hotplugging support
+and integration into schemes
+-&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014; Fri
+Mar 17 16:54:01 CET 2006 - hmacht@suse.de - if suspend is done as root
+user, don't use su to do the xlock (novell bug 158773) - open one DBus
+connection in library and reuse it (novell bug 157905) - add script for
+use by other applications to use the powersaved's notification
+architecture (e.g. upsd) - increase timeout we wait for hal to 10
+minutes on startup - -r2079
+-&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014; Mon
+Mar 13 18:36:34 CET 2006 - hmacht@suse.de - fix compilation errors when
+C library is included in cpp application - add powersave-notify script
+to be used by other applications using the powersave message
+architecture - inform user on suspend2ram if his machine is not in the
+whitelist
+-&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014; Mon
+Mar 6 19:06:55 CET 2006 - hmacht@suse.de - integrate s2ram utility from
+<a href="http://sourceforge.net/projects/suspend">http://sourceforge.net/projects/suspend</a> that brings along a huge
+whitelist and the needed workarounds (vbetool, radeontool, acpi<sub>sleep</sub>=)
+(seife) (closes novell bug 145294) - bump version to go along with
+upstream version - r1990 ` Have a lot of fun, Holger <sup><a id="fnr.1.100" class="footref" href="#fn.1">1</a></sup>
+<a href="http://sourceforge.net/projects/suspend">http://sourceforge.net/projects/suspend</a> <sup><a id="fnr.2.100" class="footref" href="#fn.2">2</a></sup> <a href="http://en.opensuse.org/S2ram">http://en.opensuse.org/S2ram</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-42" class="outline-2">
+<h2 id="sec-42">Screen capturing with vnc2swf</h2>
+<div class="outline-text-2" id="text-42">
+<script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=31"; </script>
+
+<p>
+Looking for a screen capturing software this evening, I finally found
+vnc2swf which works quite well. I only tried the C version because I was
+too lazy to solve all those python dependencies and I have no good rpm
+repository at home. Just a short guide for anyone who wants to try:
+</p>
+
+<ol class="org-ol">
+<li>Download vnc2swf from
+<a href="http://www.unixuser.org/~euske/vnc2swf/vnc2swf.html">here</a>
+</li>
+<li>Compile and install it
+</li>
+<li>Start a vnc server like that: `vncserver :1 -geometry 640x480
+</li>
+</ol>
+<p>
+-depth 16`
+</p>
+<ol class="org-ol">
+<li>Execute the following command to start recording: `vnc2swf
+</li>
+</ol>
+<p>
+-startrecording -geometry 640:480 out.swf :1 &gt; out.html`
+</p>
+<ol class="org-ol">
+<li>Play the resulting html file in your favourite browser which
+supports shockwave flash
+</li>
+</ol>
+
+<p>
+If you like to see how a possible result might look like, watch my <b>live
+demonstration</b> about <a href="http://qnotify.homac.de">LibQNotify</a>. LibQNotify
+is an very easy to use QT library to pop up information on the
+desktop. There also comes along a command line tool and daemon. Have a
+look at the <a href="http://qnotify.homac.de">project page</a> for more
+information. The video is not perfect because the frame drops are too
+high in some cases. So be sure that in reality everything is very smooth
+;-)
+</p>
+</div>
+
+<div id="outline-container-sec-42-1" class="outline-3">
+<h3 id="sec-42-1"><a href="http://www.homac.de/files/qnotify-demo.html">&#x2013;&gt; LibQNotify Live Demontration (2,7M)</a></h3>
+</div>
+</div>
+
+<div id="outline-container-sec-43" class="outline-2">
+<h2 id="sec-43">Exhausting wordpress update</h2>
+<div class="outline-text-2" id="text-43">
+<p>
+Promised myself to not spend too much time on updating wordpress from
+1.5 to 2.0.2. But it seems that I can't keep a promise. Playing and
+fiddling around since about four hours. What a mess. Richtext, plugins,
+options, everything contains a lot of pain. It was a hard week, maybe
+that's the reason why the last post is again some days ago. Now I'm too
+tired to write anything more&#x2026; Falling asleep, Holger
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-44" class="outline-2">
+<h2 id="sec-44">Why using batteries?</h2>
+<div class="outline-text-2" id="text-44">
+<p>
+Hmm, it seems that even without a battery and a ac adapter my laptop is
+running and running&#x2026;
+</p>
+
+<p>
+` hmacht@linux:~&gt; cat /proc/acpi/battery/C1B3/state present: yes
+capacity state: critical charging state: discharging present rate: 15680
+mW remaining capacity: 0 mWh present voltage: 14237 mV hmacht@linux:~&gt;
+cat /proc/acpi/battery/C1B4/state present: yes capacity state: critical
+charging state: charged present rate: 0 mW remaining capacity: 0 mWh
+present voltage: 14752 mV ` But why didn't powersaved shut down when
+reaching 3%? Hmm, more work for tomorrow&#x2026; Have fun, Holger
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-45" class="outline-2">
+<h2 id="sec-45">Time for blogging&#x2026;</h2>
+<div class="outline-text-2" id="text-45">
+<script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=28"; </script>
+
+<p>
+There really happened much the last time, although the last post is
+nearly one month ago. Sorry for that (if anyone is interested in what I
+am writing at all ;-) The most time consuming was my trip to <a href="http://www.fosdem.org">FOSDEM</a> at
+Brussels. I spent much time with the preparations of a talk I had
+toghether with Timo Honig about Powermanagement. Slides are already
+available at <a href="http://en.opensuse.org/FOSDEM">opensuse wiki</a>. Videos should also be uploaded soon. Hmm,
+for me, having a talk in english for the first time, I am satisfied with
+the result. We had a little break with technical problems in the middle
+of the talk, but all in all, it was ok. I mean, for a kraut having a
+talk in english the first time in his life, I did not expect more ;-)
+But the even more important impressions were the people I met. I met
+Fred Blaise (<a href="http://madpenguin.org/blogs/chapeaurouge/">blog</a>, yes, he has one, unlike Timo ;-) ). a friend of Timo
+from France, aehm, the USA, Belgium or whatever ;-). I really hope to
+meet him again some day, having a beer, or two, or three&#x2026; Dominic
+Rath, also a friend of Timo gave a talk in the embedded devel room. I'm
+still not sure what he was exactly talking about, but the other embedded
+freaks listening seemed to be really impressed ;-) Back in Nurnberg, the
+main thing I've done is maintaining the powersave daemon. And I mean
+real maintenance. Not much development, only integrating patches,
+branching, merging, releasing and so on. We have know support for
+suspend2 and the socalled hibernate scripts out of the
+box. Unfortunately, it seems too late to get the Powersave daemon as a
+default powermanagement solution for the Ubuntu Dapper release. That
+would really be great and I would like to help in any regard to make
+this possible. But it's not my decision ;-) I'm also currently
+evaluating multicore support for Powersave. Many of the newer laptops
+are shipped with two cores already, and it will become even more
+important in the future. So it would be great to have only one core
+activated when running on battery and having full power when running on
+ac. Hopefully I will find some time for integration into the Powersave
+schemes soon. Finally, again promising that I will blog more regulary in
+future, don't forget to have a lot of fun! Holger
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-46" class="outline-2">
+<h2 id="sec-46">Powersave-0.11.10 released</h2>
+<div class="outline-text-2" id="text-46">
+<p>
+I uploaded and released Powersave-0.11.10. Again, SUSE 10.0 and Fedora
+Core 4 packages are available at sourceforge and novell forge. FC4 RPMs
+for kpowersave-0.5.6 can also be downloaded. The last changelog entries
+are: -&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;
+Tue Feb 7 10:00:53 CET 2006 - hmacht@suse.de Patch by Michael Biebl: -
+adjust fix paths in documentation - configure.ac cleanup
+-&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014; Mon
+Feb 6 17:49:11 CET 2006 - hmacht@suse.de - remove config substitution
+for smp machines and userspace governor for now - install extra scripts
+in package, not in specfile - initscript cleanup - add check for
+POWERSAVE=off on kernel cmdline to avoid starting of powersaved and thus
+loading of cpufreq modules - remember which filesystems where remounted
+(novell bug #147584) - adjust writing of image size from MB to bytes due
+to kernel interface change - If suspend to disk fails because of missing
+swap space, try again with minimal image size - only link daemon binary
+agains libcpufreq Have fun, Holger
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-47" class="outline-2">
+<h2 id="sec-47">New mailinglist and IRC channel for topics regarding the Powersave daemon</h2>
+<div class="outline-text-2" id="text-47">
+<p>
+We are really making progress with bringing the Powersave daemon into
+the community. There are already about 15 subscribers on the powersave
+devel list. Due to this increasing number, I set up a new mailinglist
+powersave-users@forge.novell.com. There should be handled all kind of so
+called 'user support'. Everything related to development should be
+handled on powersave-devel. This announcement was made on several
+mailing lists to reach as much interested people as possible. We (the
+powersave team ;-)) invite everybody to take part in developing the
+Powersave daemon. I'm really happy to see that we get more and more
+feedback from other distributions like Fedora, KUbuntu or Debian. Let's
+continue that way&#x2026; Additionally. I registered a channel #powersave at
+freenode. Let's see if anyone, except Danny ;-), joins. Have fun, Holger
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-48" class="outline-2">
+<h2 id="sec-48">Getting in touch with bootsplashing</h2>
+<div class="outline-text-2" id="text-48">
+<script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=25"; </script>
+
+<p>
+I just wanted to play around with the bootsplash a little bit, but it
+consts me several hours. At first, the documentation is completely
+outdated, thus RTFM didn't help much. Someone knows more recent
+documentation (not the READMEs, they are the same)? Please drop me a
+note and I will slap the bootsplash.org webmaster for not pointing to it
+;-) Google? Maybe I unlearned " to google" in the right way, but there
+is not much either. Installing a new bootsplash is steight
+forward. Simply copy a new theme below /etc/bootsplash/themes and
+recreate your initrd to use it. Getting the "verbose splash" while the
+system is up is also easy: ` splash
+/etc/bootsplash/themes//config/bootsplash-.cfg ` But I nearly dispaired
+of getting the "silent splash". When looking at several websites, the
+splash utility is used in many different ways. At first it came to my
+mind that the "splash -s" or "splash -S" could mean silent, but who
+knows? No manpage, no "&#x2013;help" output. Sorry, but this piece of software
+is a horror. I saw another one while digging around the web and maybe
+should have used that one. Ok, back to getting into silent splash
+mode. After looking at various rc scripts, I came across /etc/rc.splash
+which finally had the solution. The SuSE bootsplash theme contains some
+lines as follows: ` trigger silent play anim trigger "rlchange B" play
+text system trigger "rlchange 3" play text devices trigger "rlchange 5"
+play text devices trigger "rlreached 5" toverbose trigger "YaST running"
+stopanim anim trigger "rlreached 0" tosilent ` Seems that this is
+related to my aim. On action "rlchange 0" for example, goto silent mode
+(tosilent). But how to trigger this trigger? Ahh, there is an option
+'-t' to give to the splash binary. Everything I read said something
+about "this is the text to display". That might be true if you have a
+textbox in your bootsplash, and have defined triggers to change the
+text, but this is generally speaking simply wrong. The option '-t' just
+triggers specific actions and has nothing to do with text. No
+documentation states that. Bullshit! So all you need to go to silent
+mode is to do a ` splash -t "rlreached 0"
+/etc/bootsplash/themes//config/bootsplash-.cfg ` provided that you have
+a line like this in your config file: `trigger "rlreached 0" tosilent`
+Wouldn't it be better to have something like this: `trigger "silent"
+tosilent` A 'splash -t "silent"' would be more intuitive IMHO. But this
+is personal taste. Last but not least, I have one more. Don't forget to
+put a newline at the end of your config file, else you will wonder for a
+long time why it doesn't work as expected although you thought that you
+had understand this whole thing. As a conclusion, IMO I think all this
+bootspash monster is a good example how software should not be done. At
+least i learned that ;-) Happy splashing, Holger
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-49" class="outline-2">
+<h2 id="sec-49">Powersave 0.11.6 update FC4 packages</h2>
+<div class="outline-text-2" id="text-49">
+<p>
+We released a new version 0.11.6 of powersave for both SUSE10 and Fedora
+Core 4. To make this possible, I had to rebuild cpufrequtils 0.4 and
+provide it in our "update requirements" section on sourceforce because
+FC4 does not ship it. Meanwhile Danny released new packages of
+kpowersave (0.5.4), too. Have fun, Holger
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-50" class="outline-2">
+<h2 id="sec-50">LibQNotify goes into production ;-)</h2>
+<div class="outline-text-2" id="text-50">
+<p>
+Nearly one year has passed, but now I have published an even more
+powerful QNotify. It comes along with an independent library called
+LibQNotify intended to be used by any other Qt application. Its API is
+very easy to use. If you like to have amazing popups scolling and
+sliding around on the desktop, LibQNotify is the library of your choice
+;-) Go download it from the <a href="http://sourceforge.net/projects/qnotify">sourceforge project page</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-51" class="outline-2">
+<h2 id="sec-51">Userland software suspend</h2>
+<div class="outline-text-2" id="text-51">
+<p>
+Tested the new userland software suspend today with patched kernel
+2.6.15.1-mm3. Things seem pretty well. Except that after resuming kacpid
+loaded the cpu to 99 %. Have to look at this further. Also I did not yet
+test the resume functionality because the system also resumed with the
+old in-kernel implementation wich should be 100% compatible. Have to
+figure out how to start a binary from initrd first. I think I will
+write, or only adjust, the userland tools needed. This way we will have
+some nice bootsplash on suspend and resume. I think there will be
+another release to test soon. Have fun, Holger
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-52" class="outline-2">
+<h2 id="sec-52">Powersave goes Fedora Core 4</h2>
+<div class="outline-text-2" id="text-52">
+<p>
+Oh yeah, I managed to build and realease Fedora Core 4 packages of
+Powersave and KPowersave. Downloads are available on the sourceforge
+project page. Additionally I announced it on
+fedora-list@redhat.com. Let's see what and even if we get some
+responses. hopefully some of "them" will accept it ;-)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-53" class="outline-2">
+<h2 id="sec-53">LibQNotify</h2>
+<div class="outline-text-2" id="text-53">
+<p>
+Oh yes. Just finished the <a href="http://qnotify.homac.de">qnotify</a> redesign laying around since my
+christmas vacations. Now we have:
+</p>
+
+<ol class="org-ol">
+<li>LibQNotify: Library containing central class QNotifyPopup to be
+used by QT or KDE applications
+</li>
+<li>QNotify: Command line application using LibQNotify for displaying
+</li>
+</ol>
+<p>
+nice desktop notifications.  New features: Setting color and height of
+the progress bar featured by LibQNotify
+</p>
+
+<p>
+What's left: Code cleanup of QNotify and of course, bugfixing ;-) Have
+fun, Holger I will do a first release tomorrow, hm, today, on
+sourceforge.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-54" class="outline-2">
+<h2 id="sec-54">Libcpufreq integration into powersave</h2>
+<div class="outline-text-2" id="text-54">
+<p>
+On Friday I committed the libcpufreq ( from cpufrequtils) implementation
+into the powersave daemon svn repository. This hopefully preserves us
+from future interface changes and less maintainance. A release will be
+done in the beginning of next week on sourceforge. Have fun, Holger
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-55" class="outline-2">
+<h2 id="sec-55">Vi vs. Emacs</h2>
+<div class="outline-text-2" id="text-55">
+<p>
+Cool ;-) <img src="http://www.homac.de/images/vi-vs-emacs.png" alt="vi-vs-emacs.png" />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-56" class="outline-2">
+<h2 id="sec-56">GNU autotools tutorial</h2>
+<div class="outline-text-2" id="text-56">
+<p>
+I just put my <a href="http://www.homac.de/cgi-bin/index.pl?page=autotools_tut">GNU autotools tutorial</a> I wrote over one year ago on my
+homepage. This was one one the things I ever wanted to do but never got
+the time. Or being more precise, there was everytime something more
+important.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-57" class="outline-2">
+<h2 id="sec-57">ndiswrapper and wpa<sub>supplicant</sub></h2>
+<div class="outline-text-2" id="text-57">
+<p>
+I got a Netgear WG511v2 pcmcia card and really feared the installation
+and setup. But it was much easier as I thought. I only had to perform
+the following steps:
+</p>
+
+<p>
+<b>Basic setup or configuring ndiswrapper:</b>
+</p>
+
+<ol class="org-ol">
+<li>Copy the files WG511v2.INF and WG511v2.sys from the windows
+installation CDs to your local linux box
+</li>
+<li>Issue the command 'ndiswrapper -i WG511v2.INF' to install the
+windows driver
+</li>
+<li>execute 'modprobe ndiswrapper'
+</li>
+<li>now iwconfig showed up my wlan card as wlan1 and it was ready for
+action
+</li>
+</ol>
+
+<p>
+<b>Getting wpa encryption with wpa<sub>supplicant</sub>:</b>
+</p>
+
+<ol class="org-ol">
+<li>Setup your access point to use wpa encryption
+</li>
+<li>Copy the basic configuration part from the wpa<sub>supplicant</sub> README to
+/etc/wpa<sub>supplicant.con</sub> and adjust it to your personal needs:
+</li>
+</ol>
+
+
+<p>
+#allow frontend (e.g., wpa<sub>cli</sub>) to be used by all users in 'root' group
+ctrl<sub>interface</sub>=/var/run/wpa<sub>supplicant</sub> ctrl<sub>interface</sub><sub>group</sub>=root
+</p>
+<p>
+network={ ssid="essidfoo" scan<sub>ssid</sub>=1 key<sub>mgmt</sub>=WPA-PSK psk="keybar"
+        }
+</p>
+
+
+<ol class="org-ol">
+<li>Now start wpa<sub>supplicant</sub> with 'wpa<sub>supplicant</sub> -d -c
+/etc/wpa<sub>supplicant.conf</sub> -i wlan1 -D ndiswrapper' as root
+</li>
+<li>done
+</li>
+</ol>
+
+<p>
+Happy hotspotting ;-)!
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-58" class="outline-2">
+<h2 id="sec-58">Making progress with getting the community involved</h2>
+<div class="outline-text-2" id="text-58">
+<p>
+Yesterday we received some patches for the powersave daemon regarding
+scripts and the cpufreq implementation. I am really pleased with
+that. It seems that we are really making progress with our efforts
+regarding "distribution independence" and "get the community involved"
+strategy. Hope this will extend in future.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-59" class="outline-2">
+<h2 id="sec-59">Online at home</h2>
+<div class="outline-text-2" id="text-59">
+<p>
+I dug out my old analogue modem to get online at home until my dsl line
+is ready. And also I managed to get it working ;-). Nevertheless, I am
+looking forward to go online at work on monday to get rid of this slow
+motion ;-) BTW: Powersave's cvs repository finally migrated to svn.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-60" class="outline-2">
+<h2 id="sec-60">Powersave project page on www.opensuse.org</h2>
+<div class="outline-text-2" id="text-60">
+<p>
+I just created the powersave project page on <a href="http://en.opensuse.org/Projects_Powersave">opensuse.org</a>. It should be
+a first starting point for users, developers or just interested people
+what I am or what we are doing at SUSE regarding the Powersave
+daemon. But the page exactly states that the Powersave daemon is a
+community project like any other. Please read if you like. Bye, Holger
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-61" class="outline-2">
+<h2 id="sec-61">Powersave updates on sourceforge and novellforge</h2>
+<div class="outline-text-2" id="text-61">
+<p>
+With the fresh released powersave packages made available today on
+sorceforge and forge.novell.comentirely, I finally completed all code-,
+documentation- and implementation cleanups. We will now entirely
+concentrate on new features and enhancements in the next weeks. With the
+first bugreport about an oopsing module when suspending a network
+device, runtime device power management will be the greatest upcoming
+challange I fear. But other features will be less problematic I
+expect. Will go to my still "netless" home now :-( Bye, Holger
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-62" class="outline-2">
+<h2 id="sec-62">Blog goes online</h2>
+<div class="outline-text-2" id="text-62">
+<p>
+Yesterday I did a small redesign of my personal <a href="http://www.homac.de">homepage</a>. To be precise,
+it is not much more than installing a new stylesheet, tweaking it a bit
+and adjusting headers and footers. Subsequently, my personal blog went
+online. And as you can see, this is the first post. Unfortunatelly, due
+to my relocation to Nuremberg last weekend, I have no webaccess at my
+new home, yet. Thus, this post delayed one day and is composed at
+work. But I will try to be more on time in future ;-)
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-sec-63" class="outline-2">
+<h2 id="sec-63">org-mode configuration</h2>
+<div class="outline-text-2" id="text-63">
+<p>
+Set this to not include tags in the headlines
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p>DEFINITION NOT FOUND.</p></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p>DEFINITION NOT FOUND.</p></div>
+
+
+</div>
+</div>

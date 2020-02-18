@@ -1,0 +1,2577 @@
+* Post-Mortem Memory Analysis of Cold-Booted Android Devices :android:security:forensics:
+:PROPERTIES:
+:ON: <2014-06-29 Sun 23:30>
+:date: 2014-06-29 Sun 23:30
+:END:
+
+Although the [[http://www1.gi-ev.de/fachbereiche/sicherheit/fg/sidar/imf/imf2014/][IMF 2014]] already took place over a month ago, it is still
+time to mention the publication which has been presented there:
+
+ *Post-Mortem Memory Analysis of Cold-Booted Android Devices*
+
+Both the [[http://www.homac.de/publications/Post-Mortem-Memory-Analysis-of-Cold-Booted-Android-Devices.pdf][paper]] and the corresponding [[http://www.homac.de/publications/Post-Mortem-Memory-Analysis-of-Cold-Booted-Android-Devices-slides.pdf][presentation slides]] are online
+(click links or see [[http://blog.homac.de/publications.html][publications]]).
+
+The paper was created in cooperation with the [[https://www4.cs.fau.de/][Department of Computer
+Science]] at the Friedrich-Alexander-University of Erlangen-Nuremberg. I
+herewith thank the other authors Christian Hilgers, Tilo Müller and
+Michael Spreitzenbarth. Especially for presenting the paper at the
+conference during my absence.
+
+* Mirrored / Gespiegelt - Android App Updated :android:apps:gespiegelt:
+:PROPERTIES:
+:ON: <2014-01-15 Wed 23:30>
+:date: 2014-01-15 Thu 23:30
+:END:
+
+Well, never actually blogged about this one. Although the project's
+initial release has been done in late 2010. It basically started as a
+proof of concept to see what those Android apps are all about. And it
+was a good exercise for doing some Java I used to need at university
+that time.
+
+So what is it all about? Mirrored (German name "Gespiegelt") is a simple
+news reader to read the articles posted on [[http://www.spiegel.de][Spiegel Online]]. What is
+special about it? It has been around even before the [[http://www.spiegel.de][Spiegel]] published
+the official application. Though there is more, it has the capability to
+download and save the articles to read them offline. Comes in handy when
+having no internet flat rate or being on the subway without proper
+broadband people tell in comments.
+
+ [[http://www.homac.de/images/mirrored_highres.png]]
+
+Anyway, it is up on [[https://play.google.com/store/apps/details?id=de.homac.Mirrored][Google Play]] and can be installed from your favorite
+Android device. The source code and more information is available on
+[[https://gitorious.org/mirrored/pages/Home][Gitorious]].
+
+I just released version 0.2.5 fixing a bug in offline storage and a
+minor menu alignment issue caused by the latest design changes. Bug
+fixing, let me call it maintenance instead, is basically everything I do
+for Mirrored though. It is feature complete and my personal motivation
+for doing high level programming with Java is rather low.
+
+So last but not least, let me seize the chance to thank [[https://gitorious.org/~framas][Frank Scheffold]]
+and [[https://gitorious.org/~doccrazy][Doccrazy]] for their bug fixing and improvements during the last
+couple of years. I am really grateful for any patches or improvements I
+receive. Even if someone would like to take over maintainership, go for
+it.
+
+* python-killswitch ported to URfkill 0.4 :laptops:power_management:
+:PROPERTIES:
+:ON: <2012-10-25 Thu 10:30>
+:date: 2012-10-25 Thu 10:30
+:END:
+
+URfkill 0.4 has been released for quite some time now. However, I've
+been quite busy the last couple of months so I didn't make it to port
+the python-killswitch module to the new DBus API. Until now, until I've
+finally releasing python-killswitch 0.4 which is basically fixing [[https://bugzilla.novell.com/show_bug.cgi?id=734894][SUSE
+bug 734894]].
+
+The package can either be found in my [[https://build.opensuse.org/package/show?package=python-killswitch&project=home%3Ahmacht][home project]] or can be installed
+via [[http://software.opensuse.org/package/python-killswitch?search_term=python-killswitch][1-Click-Install]]. Maintenance updates for openSUSE 12.1 and 12.2 are
+already running. The source code can be found at [[https://gitorious.org/python-killswitch/python-killswitch][Gitorious]].
+
+* Declaring MMPC unsupported, nearly deathlike 	      :maemo:mmpc:
+:PROPERTIES:
+:ON: <2011-10-08 Sat 20:02>
+:date: 2011-10-08 Sat 20:02
+:END:
+
+Quite surprised by receiving yet another feature request about the
+/Maemo Music Player Client/ for the Maemo platform. I always got some
+mails here and then, but didn't receive one in quite a while. But just
+that everybody knows:
+
+*I hereby declare* [[http://mmpc.garage.maemo.org][MMPC]] *officially unsupported, not to say dead, stone-dead in particular.*
+
+Nevertheless, it's nice to hear that the project still has (at least a
+few) users, so that I can say it has been a success after all.
+
+* Saving Power with a new Killswitch Applet  :power_management:laptops:
+:PROPERTIES:
+:ON: <2010-06-14 Mon 10:15>
+:date: 2010-06-14 Mon 10:15
+:END:
+
+So there has been [[https://features.opensuse.org/hackweek][Hackweek]] at SUSE/Novell the last week and I'm finally
+finding the time to release a new version of [[http://gitorious.org/python-killswitch/killswitch-applet][killswitch-applet]]. This
+time, it's version 0.2.3, and really a lot has changed from the previous
+[[http://blog.homac.de/2009/04/17/killswitch-applet----or-my-personal-hello-world-in-python.html][0.1 release]]:
+
+ - The applet remembers your settings across reboots
+
+   That is actually *the* feature which makes you want killswitch-applet
+   at all. Without the applet, whenever you disable a device, let's say
+   bluetooth, after a reboot, the device is active again. I'm assuming
+   two prerequisites here:
+
+   1) You're not using a Thinkpad laptop, because those are the only
+      ones I know of (please enlighten me if you know of others) which
+      are able to store the state of their devices in
+      NVRAM. Speficically, the thinkpad-acpi driver is able to do so.
+
+   2) Your laptop doesn't have a physical hardware switch for
+      enabling/disabling bluetooth/wifi. This hardware switch might also
+      be hidden after a usual button which doesn't look like it is
+      handled in hardware.
+
+   All other laptop owners might find killswitch-applet very useful. If
+   you're the owner of let's say, a sony, HP, Acer, or whatever laptop,
+   you would have to disable the bluetooth device over and over again
+   after each reboot. Maybe even after a sleep, depending on the
+   hardware configuration, distribution, kernel version, etc.. These
+   unnecessary mouse clicks are just avoided. Disabling the bluetooth
+   device once will take care that it is disabled the next time
+   killswitch-applet starts, which is mostly when you're doing a reboot
+   and/or logging in to your desktop.
+
+ - Vector graphic (svg) is used for the tray icon, which makes it scale
+   nicely for whatever panel (kicker, gnome-applet, etc.) you're using.
+
+ - Add tool tip to get a fast overview about which killswitches are
+   active.
+
+ [[http://www.homac.de/images/killswitch-applet-0.2.3-screenshot.png]]
+
+** Source Code/Tarball Release
+
+   I found a home for the [[http://gitorious.org/python-killswitch][code]] and chose [[http://gitorious.org][gitorious]] for it. Contributions
+   welcome!
+
+   Here are the required tarballs:
+
+   - [[http://www.homac.de/files/python-killswitch-0.2.tar.gz][python-killswitch-0.2]]
+   - [[http://www.homac.de/files/killswitch-applet-0.2.3.tar.gz][killswitch-applet-0.2.3]]
+
+** Packages for openSUSE users
+
+   The package can be found in my [[https://build.opensuse.org/package/show?package=killswitch-applet&project=home%3Ahmacht][home project]] or can be installed via
+   [[http://en.opensuse.org/One_Click_Install][1-Click-Install]]:
+
+   - [[http://software.opensuse.org/ymp/home:hmacht/openSUSE_Factory/killswitch-applet.ymp?base=openSUSE%3AFactory&query=killswitch-applet][openSUSE Factory]]
+   - [[http://software.opensuse.org/ymp/home:hmacht/openSUSE_11.2/killswitch-applet.ymp?base=openSUSE%3A11.2&query=killswitch-applet][openSUSE 11.2]]
+   - [[http://software.opensuse.org/ymp/home:hmacht/openSUSE_11.1/killswitch-applet.ymp?base=openSUSE%3A11.1&query=killswitch-applet][openSUSE 11.1]]
+
+* z-shell (zsh) completion for osc and zypper 			   :openSUSE:
+:PROPERTIES:
+:ON: <2010-03-29 Mon 00:13>
+:date: 2010-03-29 Mon 00:13
+:END:
+
+When working with the [[http://www.opensuse.org][openSUSE]] distribution, there are a couple of tools
+you have to deal with over and over again. Two of them are [[http://en.opensuse.org/Osc][osc]] and
+[[http://en.opensuse.org/Zypper][zypper]]. The first one to build or fix packages, the latter to install,
+remove or update them. Using one of those tools on a regular basis? Read
+on...
+
+...but to make this post actually useful for you, there needs to be
+another prerequisite: You need to use zsh as your primary shell. And I
+hope you do. If not, you should definitely put this on your TODO list.
+
+All of the following is ready to use, because it's already in openSUSE
+Factory for quite some time and has already been in openSUSE 11.2. I
+just have the feeling that people are not aware of this feature, so I am
+writing this post...
+
+** osc
+So let's start with osc. There are a couple of sub commands like
+/checkout/, /getbinaries/ or /branch/ I need all the time. And every
+time I do, I have to look up the syntax. For instance, have a look at
+the /osc getbinaries/ command:
+
+#+BEGIN_SRC bash
+$ osc help getbinaries
+osc getbinaries PROJECT PACKAGE REPOSITORY ARCHITECTURE
+#+END_SRC
+
+Hm? Four parameters? Things like that were actually the reason I sat
+down implementing a solution which works quite well for me: Zsh
+completion for osc. Now you can do stuff like the following:
+
+#+BEGIN_SRC bash
+$ osc getbinaries <tab>
+home:hmacht              openSUSE:11.0            openSUSE:11.3            SUSE:SLE-11:Update:Test
+home:hmacht:kernel-sony  openSUSE:11.1            openSUSE:Factory
+openSUSE:10.3            openSUSE:11.2            SUSE:SLE-11-SP1:GA
+
+$ osc getbinaries openSUSE:Factory aaa_base <tab>
+openSUSE_10.2     openSUSE_11.0     openSUSE_11.2     openSUSE_Factory  SUSE_SLE-11_GA
+openSUSE_10.3     openSUSE_11.1     openSUSE_11.3     standard
+
+$ osc getbinaries openSUSE:Factory aaa_base openSUSE_Factory
+i586    x86_64
+#+END_SRC
+
+Quite handy, isn't it?
+
+You might also wonder why the first completion output in the above
+example contains my personal home project /home:hmacht/. By default, the
+completion contains a couple of default build targets, repositories and
+architectures like /openSUSE\_Factory/, /openSUSE:Factory/ or
+/x86\_64/. You can extend those lists with the shell variables
+/ZSH\_OSC\_PROJECTS\_EXTRA/ and /ZSH\_OSC\_BUILD\_TARGETS\_EXTRA/. My
+corresponding part of my ~/.zshrc looks so:
+
+#+BEGIN_SRC bash
+export ZSH_OSC_PROJECTS_EXTRA="home:hmacht home:hmacht:kernel-sony SUSE:SLE-11:Update:Test SUSE:SLE-11-SP1:GA"
+export ZSH_OSC_BUILD_TARGETS_EXTRA="standard SUSE_SLE-11_GA"
+#+END_SRC
+
+After that, the extra repos/targets show up in the completion output.
+
+By default, the completion is in /verbose mode/:
+
+#+BEGIN_SRC bash
+$ osc <tab>
+--debugger             -- jump into the debugger before executing anything
+--no-keyring           -- disable usage of desktop keyring system
+--post-mortem          -- jump into the debugger in case of errors
+--version              -- show program's version number and exit
+-A                     -- URL/alias, --apiurl=URL/alias
+-H                     -- --http-debug debug HTTP traffic
+-c                     -- FILE, --config=FILE
+-d                     -- --debug print info useful for debugging
+-h                     -- --help show this help message and exit
+-q                     -- --quiet be quiet, not verbose
+-t                     -- --traceback print call trace in case of errors
+-v                     -- --verbose increase verbosity
+abortbuild             -- Aborts the build of a certain project/package
+add                    -- Mark files to be added upon the next commit
+addremove              -- (ar) Adds new files, removes disappeared files
+aggregatepac           -- "Aggregate" a package to another package
+api                    -- Issue an arbitrary request to the API
+branch                 -- (bco, branchco, getpac)
+bugowner               -- Show bugowners of a project/package
+build                  -- Build a package on your local machine
+[...]
+#+END_SRC
+
+To change that you can set
+#+BEGIN_SRC bash
+$ zstyle ':completion:*:osc:*' verbose no
+$ zstyle ':completion:*:osc-subcommand:*' verbose no
+#+END_SRC
+
+Now it looks like:
+
+#+BEGIN_SRC bash
+$ osc <tab>
+--debugger             api                    diff                   meta                   resolved
+--no-keyring           branch                 disable                mkpac                  results
+--post-mortem          bugowner               getbinaries            mv                     rremove
+--version              build                  global                 my                     search
+[...]
+#+END_SRC
+
+All the completion output is auto generated by the /osc help/ output
+(btw., even /osc help <tab>/ can be completed), so new commands should
+show up automatically. However, this contains the risk of possible bugs
+where the help output is unexpected, so if you find any issues, send me
+a mail or add a comment.
+
+** zypper
+
+Basically all the above applies for /zypper/. An example output looks like:
+
+#+BEGIN_SRC bash
+$ zypper re<tab>
+refresh                 -- ref Refresh all repositories.
+refresh-services        -- refs Refresh all services.
+remove                  -- rm Remove packages.
+removelock              -- rl Remove a package lock.
+removerepo              -- rr Remove specified repository.
+removeservice           -- rs Remove specified service.
+renamerepo              -- nr Rename specified repository.
+repos                   -- lr List all defined repositories.
+#+END_SRC
+
+Change verbose/short output with:
+
+#+BEGIN_SRC bash
+$ zstyle ':completion:*:osc:*' verbose no
+$ zstyle ':completion:*:osc-subcommand:*' verbose no
+#+END_SRC
+
+Personally I use the zypper completion quite seldom, nevertheless, some
+people might find it useful.
+
+* Power Management in openSUSE and SLE11 				     :laptops:power_management:
+:PROPERTIES:
+:ON: <2009-05-11 Mon 20:50>
+:date: 2009-05-11 Mon 20:50
+:END:
+
+[[http://blog.homac.de/images/energystar_logo_planet.png]]
+
+Wanna know what we're doing to make your laptop run longer? Have a look
+at the new [[http://en.opensuse.org/Powersaving][wiki page]] I have just finished. It talks about three major
+topics:
+
+  * What is done
+  * What can be done better
+  * What is not done
+
+It might give you some hints to tease even more out of your battery
+runtime.
+
+Discussion welcome!
+
+* killswitch-applet-0.1 ...  or my personal Hello World in Python	     :laptops:
+:PROPERTIES:
+:ON: <2009-04-17 Fri 21:29>
+:date: 2009-04-17 Fri 21:29
+:END:
+
+One thing that was on my TODO for already quite some time was to have a
+look at that half-new language called Python. Because an old-fashioned
+"Hello World" is far too simple here, I was looking for some kind of
+project to get familiar with the basic principles.
+
+One thing I found quite annoying in the past was the fact that I always
+had to disable some kind of radios in some far too complicated ways to
+save some battery power. Modern laptops often have multiple killswitches
+for their wireless communication devices like bluetooth, WLAN or
+WWAN. So that was the chance for me to seize, and the output looks like
+this:
+
+[[http://blog.homac.de/images/killswitch-applet-large.png]]
+
+** From the README:
+
+killswitch-applet is a small application sitting in the system tray
+providing the possibility to manage all the killswitches found in the
+system. In this context, "managing" means enabling or disabling certain
+killswitches. This is especially useful if you have multiple
+killswitches like bluetooth, WWAN or WLAN seen in many modern laptops.
+
+[[http://blog.homac.de/images/killswitch-applet-screenshot.png]] Tray
+Icon on the Left
+
+The source tarball for version 0.1 can be downloaded here:
+[[http://www.homac.de/files/killswitch-applet-0.1.tar.gz][killswitch-applet-0.1]]
+
+The summary here definitely is: Wow, that was damn simple! Especially
+when it comes down to GTK programming and D-Bus interaction, Python
+definitely provides a very good way to hack those things together quite
+easily. The whole source file contains a whole of 189 lines of code
+including comments.
+
+Another question: Is it worth creating a sourceforge project for this?
+I'll wait until and if I'm getting some feedback.
+
+** Note for openSUSE users:
+
+Of course this is also available in the openSUSE Buildservice. Go to
+[[http://software.opensuse.org/search][http://software.opensuse.org/search]] and search for "killswitch-applet".
+
+* Tomboy^WGnote
+:PROPERTIES:
+:ON: <2009-04-16 Thu 22:49>
+:date: 2009-04-16 Thu 22:49
+:END:
+
+#+HTML: <script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=109"; </script>
+
+Inspired by a recent [[http://www.figuiere.net/hub/blog/?2009/04/15/660-gnote-012][blog post]], [[http://live.gnome.org/Gnote][Gnote]] is now available in the openSUSE
+build service. If you have been using Tomboy and wouldn't miss any of
+its plugins (which are WIP), give it a try. The Mono to C++ conversion
+can be that easy:
+
+
+
+      * For Factory: $ zypper ar \
+    http://download.opensuse.org/repositories/home:/hmacht/openSUSE_Factory/
+    \ home:hmacht
+
+
+
+      * For 11.1: $ zypper ar \
+    http://download.opensuse.org/repositories/home:/hmacht/openSUSE_11.1/
+    \ home:hmacht
+
+
+
+      * $ zypper in gnote
+
+
+
+      * $ mkdir ~/.gnote && cp ~/.tomboy/*.note ~/.gnote/
+
+
+
+      * $ gnote
+
+
+
+
+AFAICT, it's running quite well. Tomboy has been the only Mono
+application I was running, so 'zypper remove mono' removed a bunch of 42
+packages.
+
+Have fun, Holger
+
+* Maemo Music Player Client (MMPC) for Diablo				     :maemo:mmpc:
+:PROPERTIES:
+:ON: <2009-02-24 Tue 08:56>
+:date: 2009-02-24 Tue 08:56
+:END:
+
+#+HTML: <script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=81"; </script>
+
+Finally I took the time to respond to multiple requests about providing
+[[http://mmpc.garage.maemo.org][mmpc 0.2.1]] packages for Diablo. That also gave me the possibility to try
+the [[https://garage.maemo.org/extras-assistant/index.php][maemo autobuilder]] to upload my packages to the [[http://wiki.maemo.org/Uploading_to_Extras][extras
+repository]]. And well, it worked out. It's especially useful for those
+people not running debian based systems, because with autobuilder you
+don't have to care about signing and uploading the packages with debian
+tools like debsign and dput.
+
+So, this is not a new release, these are just new packages build for the
+Diable 4.1 distribution. I still did not manage to find the time to
+enhance mmpc further. There are just too many other things like work and
+university I have to care about. Either download the packages from [[https://garage.maemo.org/frs/?group_id=193][
+Maemo Garage]], or just get it through the extras repository as usual.
+
+* "GreenIT: Power Consumption and -Optimization of PCs"			     :power_management:
+:PROPERTIES:
+:ON: <2009-01-14 Wed 10:27>
+:date: 2009-01-14 Wed 10:27
+:END:
+
+In the middle of last year, I participated in a seminar called "GreenIT"
+at university. The result was a 17 paged whitepaper called [[http://www.homac.de/files/Power_Consumption_and_-Optimization_of_PCs.pdf]["GreenIT:
+Power Consumption and -Optimization of PCs"]]. It took quite some time to
+finish this up, so it would be a waste of time if I would not publish
+it. A shortened table of contents looks like this:
+
+  1. Introduction
+  2. ACPI
+  3. System as a Whole
+  4. System Components
+  5. Software Policies
+  6. Conclusion
+
+Please note: If you are only interested in how things are implemented in
+Linux, this might not be that interesting for you. It does not include
+any specific operating system details. It's rather general, although of
+a technical nature, and thus can be applied to any operating system out
+there.
+
+If you are lazy of reading through the whole document, you might
+consider having a look at the corresponding [[http://www.homac.de/files/Power_Consumption_and_-Optimization_of_PCs-presentation.pdf][presentation
+slides]]. However, you need to be able to speak, or at least to read, the
+German language for the slides to be useful for you.
+
+* GNOME Docker 0.1 Released						     :docking:
+:PROPERTIES:
+:ON: <2008-07-14 Mon 21:13>
+:date: 2008-07-14 Mon 21:13
+:END:
+
+#+HTML: <script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=64"; </script>
+
+Finally I managed to release gnome-docker 0.1, a small application to
+support users using a docking station. It is already included in
+[[http://www.opensuse.org][openSUSE]] 11.0, but other pending things prevented me to do a public
+release earlier. One of these things is the self designed tray
+icon :-). I definitely have to look for a better alternative. The README
+should have all the necessary information:
+
+** GNOME docker 0.1
+
+GNOME application for notifying laptop users about the state of their
+dock station and the possibility to undock the system via software,
+either from the tray icon, or via a hotkey. In future, it will also care
+about hotpluggable devices placed on the dock station, such as hard
+drives and DVD/CD drives.
+
+It is meant to be well designed and to fit into the GNOME desktop. So an
+important aim for gnome-docker is to be shipped with GNOME upstream. It
+is still in early development.
+
+Currently, it has the following features:
+
+  * tray icon showing the current status and with functionality to
+    undock a laptop
+  * handling of hotkeys to undock a laptop (e.g. FN-F9 on ThinkPads)
+  * xrandr support to enable/disable external outputs attached to the
+    dock station (experimental, evaluating how it fits there)
+  * user notifications about the state of the dock station. E.g.: "Now
+    it's safe to remove the laptop"
+
+[[http://blog.homac.de/images/gnome-docker-pointer.png]]
+
+As gnome-docker forges ahead, the linux kernel has to improve and has to
+provide sensible date for userspace to make use of, like exporting which
+devices are inside a dock station.
+
+** Requirements
+
+**
+
+  * liblazy >= 0.2 from http://www.freedesktop.org/wiki/Software/liblazy
+
+** Download
+
+  * [[http://www.homac.de/files/gnome-docker-0.1.tar.gz][gnome-docker 0.1]]
+
+* Back from LinuxTag 2008						     :power_management:
+:PROPERTIES:
+:ON: <2008-06-03 Tue 19:32>
+:date: 2008-06-03 Tue 19:32
+:END:
+
+Came back from [[http://www.linuxtag.org/2008/][Linux Tag 2008]] on saturday evening. It was a short, only
+two days lasting trip to Berlin, but nevertheless, just great! Had a lot
+of fun with my colleagues [[http://blog.nouse.net][Timo Hoenig]] and [[http://trinkteufel.de/][Helmut Schaa]] giving a talk
+about laptop support in the upcoming openSUSE 11.0. It was a huge
+success. Great thanks goes to Martin Lasarsch for managing/moderating
+our talk. The quiz at the end giving away some USB sticks for correct
+answers has been just fun. It seems people are really listening to our
+laptops stories, or should we better not have told them at the beginning
+that there will be give-aways? ;-)
+
+If you like to have a look at our achivement regarding fingerprint
+readers, suspend, power management and wireless, go have a look at [[http://files.opensuse.org/opensuse/en/0/09/LinuxTag-2008-Laptop-2.0.pdf][the
+slides]].
+
+I think the improvements have never been so astonishing before!
+Actually, they even suprised myself when seeing the test results. Just
+some key facts:
+
+** Suspend to Disk
+
+  * LinuxTag 2007: 37.5 seconds
+  * LinuxTag 2008: 14.9 seconds
+
+Pretty fast, I guess.
+
+** Idle power consumption on a battery powered Thinkpad T61
+
+  * openSUSE 10.3: 11.11 Watt
+  * openSUSE 11.0 RC1: 8.51 Watt
+
+Pretty economical, I guess.
+
+For more details, look
+[[http://files.opensuse.org/opensuse/en/0/09/LinuxTag-2008-Laptop-2.0.pdf][here]].
+
+* Providing a D-Bus interface for CPUFreq knobs				     :power_management:
+:PROPERTIES:
+:ON: <2008-05-09 Fri 23:30>
+:date: 2008-05-09 Fri 23:30
+:END:
+
+There has been a discussion on the HAL development list regarding
+DeviceKit, a corresponding power management subsystem daemon, and a
+possible CPU frequency scaling interface.
+
+During the discussion, it turned out, and I realised this quite late,
+that KPowersave still exports the possibility to set either the
+powersave or performance governor. That is basically a bad idea, and
+still there because of former times. See this [[http://mjg59.livejournal.com/2008/05/08/][journal]] for a good
+rationale. However, the author quite unfriendly rants towards the
+developers. Unfortunately, I've not seen a bugreport in [[http://sourceforge.net/tracker/?group_id=124576&atid=700009][sourceforge's
+bugtracker]] for that, nor anywhere else. Maybe he could have pointed this
+out in a more elegant way, instead of immediately telling people they
+are dangerous. How emotional. And funny after all. I filed it [[https://bugzilla.novell.com/show_bug.cgi?id=389049][here]], just
+to be sure it is not missed for upcoming openSUSE 11.0.
+
+So that is the one issue of the discussion, a completely other one is
+about if we need a D-Bus interface for tuning CPU frequency scaling
+(related to the ondemand governor) knobs. As an example, the ondemand
+governor provides an up_threshold setting you can tune through
+sysfs. Basically it defines how long a CPU burst has to be so that the
+frequency is increased. Quoting the kernel documentation:
+
+
+    up_threshold: defines what the average CPU usaged between the
+    samplings of 'sampling_rate' needs to be for the kernel to make a
+    decision on whether it should increase the frequency.  For example
+    when it is set to its default value of '80' it means that between
+    the checking intervals the CPU needs to be on average more than 80%
+    in use to then decide that the CPU frequency needs to be increased.
+
+
+When having only short CPU bursts, it is better to stay at a low
+frequency for a short period of time when it comes down to power
+consumption. And the typical desktop use consists of those short CPU
+bursts. Browsing a web page, opening a mail folder, etc.
+
+The kernel sets a sane default for this setting. It is nearly
+self-evident for a default to be sane, someone should have thought
+carefully about it. However, that does not mean it is ideal. It just
+cannot be for all different kind of use cases. Servers, desktops, what
+applications are running, "on battery", "on AC", namely, depending on
+the current power source.
+
+So I am an advocator of having a D-Bus interface somewhere at the system
+level (we already have in HAL, but this will most likely vanish sooner
+or later due to its successor called DeviceKit) for tuning such knobs by
+someone who cares about policy. And policy is more and more put to
+Desktop applications these days.
+
+* Maemo Music Player Client 0.2.1					     :maemo:
+:PROPERTIES:
+:ON: <2008-04-14 Mon 15:21>
+:date: 2008-04-14 Mon 15:21
+:END:
+
+I finally managed to get to work on [[http://mmpc.garage.maemo.org][MMPC]] after quite some time. MMPC 0.1
+was 2007-11-14 08:45 (wow, that was pretty early in morning :-))
+
+[[http://mmpc.garage.maemo.org/images/mmpc.png]]
+
+Well, mmpc-0.2.1 is available for immediate consumption. Changes, which
+were major concerns until now, are:
+
+  * New buttons and images, finally. And a new logo you can see above.
+  * Add tap-and-hold functionality to more places. For example, it's now
+    possible to update the database from within the client.
+  * Add scroll windows to all preference tabs to display the full
+    content.
+  * Bold the currently played track.
+  * Increase connection timeout to 3 seconds. This will hopefully solve
+    the strange disconnect issues I wasn't able to reproduce.
+  * Fixed tree browsing in playlist browser.
+
+Fresh screenshots can be found [[http://mmpc.garage.maemo.org][here]]. Packages are available from the
+extras repository. So most people will get the update automatically (if
+anything goes wrong, try to enable red pill mode). Otherwise, grab them
+from [[https://garage.maemo.org/frs/?group_id=193][garage]].
+
+Next things will include the support for some plugins. Please report any
+problems. Happy listening!
+
+* "Energy Star: Jump on the Bandwagon!"					     :general:power_management:
+:PROPERTIES:
+:ON: <2008-03-09 Sun 21:50>
+:date: 2008-03-09 Sun 21:50
+:END:
+
+#+HTML: <script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=60"; </script>
+
+** Do it yourself
+
+Ever wondered what the Energy Star label is good for? Ever wondered why
+it mostly pops up on things like printers and monitors? But how about
+your personal computer or your laptop?
+
+If you want to find out, consider reading [[http://www.homac.de/files/EnergyStar/PowerMeasurements.pdf][Measuring Power Consumption in
+the Light of EnergyStar]]. It contains a detailed guide about how to test
+your laptop for Energy Star compliance. At SUSE's [[http://en.opensuse.org/Mobile_Devices_Team][Mobile Devices Team]],
+we're currently building up a database of all different kind of laptop
+computers regarding their Energy Star compliance and power
+consumption. Wanna help? Follow the above mentioned guide and send your
+results to me (hmacht a t suse d o t de). All results will help us to
+drive development efforts in this area and will help to identify
+possible power consumption regressions in upcoming releases. However, to
+make this possible, the first thing we need is a base collection of
+laptop results to compare against.
+
+To prevent questions about publishing the results, no, I won't do
+that. I do not want to compromise any kind of manufacturer in
+public. They will notice for themselves as soon as there pop up more
+laptops running Linux having a shiny blue Energy Star label printed on
+the case or packing ;-)
+
+[[http://www.homac.de/files/EnergyStar/EnergyStar.jpg]]
+
+** FOSDEM 2008
+
+Like the homonymous title of this post, I gave a [[http://files.opensuse.org/opensuse/en/3/34/EnergyStar.pdf][talk]] at this year's
+[[http://www.fosdem.org][FOSDEM]] at Brussels on Energy Star. It focuses on the requirements for
+laptop computers, and about how anyone can test his laptop for Energy
+Star compliance.
+
+If you're too lazy to read through the [[http://files.opensuse.org/opensuse/en/3/34/EnergyStar.pdf][slides]], which should be quite
+self-explanatory, wait for the video showing me in action. The videos of
+all FOSDEM talks given by openSUSE community people should be up at the
+openSUSE FOSDEM page soon. Stay tuned.
+
+** http://en.opensuse.org/PowerMeasurements
+
+Interested in power consumption measurements in general? Consider having
+a look at the [[http://en.opensuse.org/PowerMeasurements][PowerMeasurements openSUSE wiki page]]. This is, and will be
+pushed to become the central point for collecting information, hints or
+tips and tricks about this topic.
+
+* Package Updates (Powersave, QNotify, Update KTray)			     :power_management:powersave_development:
+:PROPERTIES:
+:ON: <2008-02-04 Mon 23:16>
+:date: 2008-02-04 Mon 23:16
+:END:
+
+** [[http://en.opensuse.org/Projects_Powersave][Powersave Daemon]]
+
+I finally managed to release a new version of the powersave daemon,
+0.15.20. This is a plain bugfix release. We're some kind of feature
+complete, so I doubt that there will be anything else than bugfix
+releases in the future ;-) [[http://sourceforge.net/project/showfiles.php?group_id=124576&package_id=162525][Sourceforge]] has the files.
+
+** [[http://qnotify.homac.de][QNotify]]
+
+After almost 2 years of QNotify hacking abstinence, I finally managed to
+do what was on my TODO for so long. I removed the qnotifyd daemon which
+blew my machine with 100% CPU usage from time to time. Now the qnotify
+command line client manages multiple notification widget on the desktop
+on its own, by using a simple file locking mechanism. The outcome is
+qnotify-0.6. Again, [[http://sourceforge.net/project/showfiles.php?group_id=116172&package_id=126131&release_id=573987][Sourceforge]] is your friend. For a really cool video
+about what QNotify actually can be used for, have a look at this [[http://www.homac.de/files/qnotify-demo.html][video]].
+
+On a related note, does KDE4 actually have a companion piece to GNOME's
+notification daemon? Does it look cool? May be I've to check again
+myself... If not, may be I finally manage to get a grip on myself and
+try to integrate libQNotify's features into KDE4.
+
+** Update: [[http://ktray.homac.de][KTray]]
+
+And while we're at it, just hacked in a user request feature into
+KTray. I was suprised that someone is actually still using it. Yes,
+there are users out there who don't use KDE or GNOME, so they need ktray
+to use tray applications correctly. [[https://sourceforge.net/project/showfiles.php?group_id=133266&package_id=146415&release_id=574174][Sourceforge]] has version 0.2 which
+features:
+
+  * add cmd line option -r to use horizontal alignment
+  * add cmd line option -w to draw widget without borders
+  * add cmd line option -p to specify the window position
+
+* Fixing a broken N810, or... A new way to freeze a device		     :maemo:
+:PROPERTIES:
+:ON: <2008-01-12 Sat 14:05>
+:date: 2008-01-12 Sat 14:05
+:END:
+
+#+HTML: <script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=58"; </script>
+
+Finally I ordered a [[http://www.nokia.com/N810][Nokia N810]] with my discount code provided by the
+[[http://www.maemo.org][Maemo]] project on Tuesday. It arrived Thursday. With all my tenseness and
+pleasant anticipation, it looked and felt great while having a quick
+glance. But the disenchantment followed right away:
+
+Huh? What's that? It doesn't power on after shutting it down the first
+time. Putting in the charger doesn't help. Removing the battery and
+putting it back doesn't help. "Charging" it several hours (without any
+sign that it does so) doesn't help. Removing the battery for several
+minutes doesn't help. Checking with a original Nokia battery and charger
+from a colleague doesn't help. What to do? (Already really frightened of
+having received a broken device...)
+
+In the evening, I decided to remove the battery and put it on the
+balcony. On the balcony? Why that? It only was a very vague
+suspicion...it's currently winter in Europe, you know
+;-). Waiting...(and maybe praying) about another 30 minutes. Device was
+cold now. Inserting the battery, pushing the power button, and voila!
+The N810 turns on and powers up properly. Happy about thinking that this
+was only a temporary failure, I tried again some minutes later and the
+device kept silent again. What a mess! Next day, another colleague came
+to me telling me that he has exactly the same problem. And I already had
+a temporary solution for him...(Skip the next paragraph if you want to
+read it immediately)
+
+[[http://www.yahoo.com][Yahoo]]'ing around, I found out that this is a well known problem, at
+least for the customers, I don't know how it behaves to the Nokia
+company/manufacturers. There are plenty of reports for this issue. On
+[[http://www.internettablettalk.com/][Internettablettalk]] and even in the [[https://bugs.maemo.org/show_bug.cgi?id=2673][ Maemo bugzilla]] known as "N800 Power
+up Drama". Interestingly, the problem seems to also be present on N800
+devices. But only the new and recent ones. So it seems that some
+electronic parts like capacitors installed in recent devices (N800 and
+N810) are causing this issue. I tried everything people are suggesting,
+waiting a specific period of time before switching it on again, making
+sure that everything fits properly, enabling r&d mode, and so on. Please
+don't tell me "Just don't power off the device", because that's what I'm
+generally doing, but that's no choice when you're on the road running
+out of battery. And you sometimes need to power down the device for
+development, too.
+
+The only thing that seems to help:
+
+  1. Switch the device off
+  2. Remove the battery
+  3. Put the device to a fridge (without the battery) for about 30
+     minutes. If you are impatient like I am, put it into a deep-freezer
+     for about 10 minutes to get it cold. Hint: Use a plastic bag to
+     protect it from moisture, and more importantly, don't forget about
+     it while doing something else ;-)
+  4. Take it out and insert the battery
+  5. Turn it back on, you'll see that it works
+
+This procedure was already verified on two devices.
+
+Strange, I currently know of five people having a [[http://www.nokia.com/N810][N810]], with two of them
+showing this issue. This is really bad percentage. I already fear that
+this is like the issue I encountered with my N800 and the display issue
+where the right side of the touchscreen became more and more
+unresponsive. Also widely known. To that time, I returned the [[http://www.nokia.com/N800][N800]] back
+to Nokia, and it lasted solid 6 weeks until I got a repaired device. I
+do not want to repeat that! I do not want to develop inside a scratchbox
+without the possibility to see the outcome on a live device. But the
+most frustrating thing I encounter these days is that there is no
+official statement from Nokia about this issue. There's still not even
+one for the display issue with the N800. Please correct me if I'm wrong.
+
+The only thing which keeps me alive ( ;-) ) and which prevents me from
+returning the device immediately is the hope that it can be fixed via
+software. I just hope that there will be a statement by the [[http://www.nokia.com][Nokia]] or
+[[http://www.maemo.org][Maemo]] people telling me: "Be patient, we're working on the issue with
+high pressure and we think it can be fixed with a firmware update". If
+it really is a hardware issue, I at least hope that the issue is handled
+as "we've sold broken devices, process returned ones with high
+priority!".
+
+Getting away from the bad news, if there wouldn't be those, I would
+really be amazed by this gadget! As long as it's on, I just have fun
+with it. I'm just very frustrated.
+
+* MMPC for Chinook 						      :maemo:
+:PROPERTIES:
+:ON: <2007-11-14 Wed 12:04>
+:date: 2007-11-14 Wed 12:04
+:END:
+
+#+HTML: <script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=55"; </script>
+
+Even before the N810 is shipped, I'm able to to announce [[http://mmpc.garage.maemo.org][MMPC]] [[https://garage.maemo.org/frs/?group_id=193][packages]]
+for the new Chinook 4.0 (OS2008) release. Untested in real production
+environments, of course, but I see no reason why it shouldn't work
+outside my ARM development environment.
+
+Packages are [[https://garage.maemo.org/frs/?group_id=193][here]] (including libmpd). Please report any issues you might
+encounter.
+
+Now I'm eagerly awaiting the availability of the [[http://www.nokia.de/n810][N810]] in Germany to
+finally get rid of my discount code. Thanks Nokia!
+
+[[http://mmpc.garage.maemo.org/images/playing.png]]
+[[http://mmpc.garage.maemo.org/images/playing_1.png]]
+
+On a related note: I'm still looking for designers creating some nice,
+"Play", "Stop", "Pause", "Backward" and "Forward" buttons. These are
+just too ugly in the current state. Nobody willing to help out?
+
+* MMPC for the N770							     :maemo:
+:PROPERTIES:
+:ON: <2007-10-18 Thu 21:24>
+:date: 2007-10-18 Thu 21:24
+:END:
+#+HTML: <script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=54"; </script>
+I am proud to announce that there finally are [[http://mmpc.garage.maemo.org][Maemo Music Player Client]]
+[[https://garage.maemo.org/frs/?group_id=193][packages]] built for the N770 (OS2006). It is thanks to [[http://wap.ecw.de][Christopher Klein]],
+who did the required code changes and the rebuild, that my inbox will be
+delivered from requests about this apparently important missing piece.
+
+* The Ugliness of Suspend
+:PROPERTIES:
+:ON: <2007-08-05 Sun 16:10>
+:date: 2007-08-05 Sun 16:10
+:END:
+
+#+HTML: <script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=53"; </script>
+
+These days, you can do absolutely all kinds of freaky stuff with your
+Linux box. There are nearly no limitations for doing fancy graphics,
+applications, 3D desktops etc.
+
+However, there are still some rough edges which makes Linux still look
+like a hacky system to new, or M$ blended,
+users. Suspend. Hibernate. Standby. Whatever you might call them.  No!
+You never ever want to see a white font on a black background with
+cryptic statements when using a computer. You're writing letters, you're
+browsing the web, you're sending emails, you're editing pictures, and
+once in a while, you like you're system to suspend to disk. And you
+don't want to see all this ugliness in front of you!
+
+Luckily, times are changing. So with the release of openSUSE Beta1,
+you'll not see this ugliness again. With the integration of [[http://splashy.alioth.debian.org][splashy]],
+you'll always see a nice image showing you the progress of suspend and
+resume. The general aim is to *hide* all the ugliness on your system
+from you. That doesn't mean removing it. I'm using the ugliness all day
+long on my own ;-)
+
+Configuring splashy is easy. Most important files atm:
+
+
+  * /etc/splashy/config.xml: General configuration, which theme to use,
+    etc. 'man splashy-config.xml' for more information
+  * /etc/splashy/themes/default/theme.xml: Theme configuration, where
+    are the images, fade, progressbar, text, etc., 'man
+    splashy-theme.xml' for more information
+  * /etc/splashy/themes/default/suspend.png: Image used for
+    suspending. You put there any image you like. Run 'mkinitrd'
+    afterwards to enable it also for resume
+
+[[http://www.homac.de/files/suspend_small.png]]
+
+I'm currently using a somehow experimental approach for the suspend
+image. I'm taking a screenshot of the currently displayed desktop,
+blurring and black&whitening it with convert, and using it to show the
+progress bar afterwards. This may take up to two seconds on a moderate
+system. It's a cool feature, however, if the impact on the suspend time
+is too high, I might consider removing it again. Please share any
+experience you may make. Let's test this together in Beta1!
+
+Currently the screenshot creation and image manipulation is done by a
+pm-utils hook. It would be better to let kpowersave/gnome-power-manager
+take the screenshot and put it to a place splashy can read from. This
+way it would be possible to configure the shown image inside kcontrol or
+the gnome-control-center. And that's actually what you want. There just
+wasn't enough time yet to implement this correctly.
+
+So what about Suspend to RAM? I'll see what I can do. One might think
+that it doesn't make much sense there because S2RAM is so fast
+anyway. However, it's still not fast enough ;-) You can still read
+"Preparing suspend..." for the time of a wink of your eyes. And I've set
+myself the goal to iron this out ;-)
+
+Actually, splashy is already in Alpha7, but you have to enable it there
+first. So if you're too impatient for waiting for Beta1, enter 'splash =
+y' in /etc/suspend.conf to get it. This is due to a
+[[https://bugzilla.novell.com/show_bug.cgi?id=293826][bug]] which
+prevented to abort the suspend I had to fix first.
+
+The old [[http://www.bootsplash.org/Welcome_to_the_graphical_world_of_Linux][bootsplash]] is still used for
+general boot and shutdown, though. We'll see what we can do to have a
+smooth conversion in the future.
+
+As always, if you find issues, put them into
+[[http://bugzilla.novell.com][bugzilla]].  *Hint:* Enter 'splash = n' in
+/etc/suspend.conf to disable splash for debugging of general suspend
+problems. But those are non existant anyway ;-)
+
+Have fun, Holger
+
+* Hack Week
+:PROPERTIES:
+:ON: <2007-06-25 Mon 07:33>
+:date: 2007-06-25 Mon 07:33
+:END:
+
+So [[http://idea.opensuse.org/content/hackweek][Hack Week]] is finally there. I'll limit my studies to a minimum this
+week. Why? To work on a cool idea. Unfortunately, I'm still undecided
+about which [[http://idea.opensuse.org][idea]] I'll be working on :-( Here are my favourites
+(copy&pasted from tomboy):
+
+  * [[http://idea.opensuse.org/content/ideas/audio-cd-metadata-in-hal"][HAL Audio Metadata]] (own daemon?)
+  * Add remote control for presentations along with support for the
+    N800. Unfortunately, I still don't have back my N800 from repair
+    because of the display sensivity issue. I'm missing it already since
+    5 weeks!
+  * Mediacenter, especially mpd, [[http://idea.opensuse.org/content/ideas/create-a-media-center-edition-of-opensuse][link]]
+  * laptop access panel: [[http://idea.opensuse.org/content/ideas/laptop-access-panel][link]]
+  * Bootsplash support could be in 10.3. [[http://idea.opensuse.org/content/ideas/safe-sleep][link]]
+  * Desktop profiler, [[http://idea.opensuse.org/content/ideas/desktop-optimization-with-powertop][link]]
+  * WOL enablement [[http://idea.opensuse.org/content/ideas/simplify-configuration-for-automatic-wakeup-lan-time-ring-of-pcs][link]], [[http://idea.opensuse.org/content/ideas/configure-computer-wakeup-time][link]]
+  * evolution plugin to allow an external editor (feature? Bug?)
+  * qnotifyd network support
+  * libqnotify integration into KDE4
+  * powersave user binary extensions: Plain C, daemon mode, idle
+    detection, libqnotify linkage? ([[http://idea.opensuse.org/content/ideas/create-desktop-independent-power_management-session-application][link]])
+  * Harware configuration made easy: [[http://idea.opensuse.org/content/ideas/openhardwaremanager-dynamic-system-configuration-framework][link]]
+
+* GTK status icon mess
+:PROPERTIES:
+:ON: <2007-05-31 Thu 20:11>
+:date: 2007-05-31 Thu 20:11
+:END:
+
+While trying to add the ability to change the display brightness via the
+tray icon in gnome-power-manager, I just wanted to catch the
+corresponding mouse wheel events on a GtkStatusIcon. Seeing that this is
+not possible without ugly hacks or whole reimplementations is really
+bad. It would really be simple to add this feature or to export the
+underlying GtkWidget through the API so that one can catch he
+'scroll-event' manually. Looking for the causes, found [[http://bugzilla.gnome.org/show_bug.cgi?id=409435][that]]. Why is
+working on GNOME or GTK sometimes so depressive...
+
+* org.freedesktop.PowerManagement					     :power_management:
+:PROPERTIES:
+:ON: <2007-03-31 Sat 16:53>
+:date: 2007-03-31 Sat 16:53
+:END:
+
+There's currently a [[http://lists.freedesktop.org/archives/xdg/2007-March/009489.html][discussion on the xdg@freedesktop.org list]] started
+by [[http://hughsient.livejournal.com/][Richard Hughes]] about a common org.freedesktop.PowerManagement
+interface [[http://people.freedesktop.org/~hughsient/temp/power_management-spec-0.1.html][(first draft available)]] which will hopefully become cross
+desktop. Currently it includes methods like:
+
+  * org.freedesktop.PowerManagement.Shutdown()
+  * org.freedesktop.PowerManagement.Reboot()
+  * org.freedesktop.PowerManagement.Suspend()
+  * org.freedesktop.PowerManagement.Suspend()
+  * org.freedesktop.PowerManagement.GetOnBattery()
+  * ...
+
+Well, this all sounds very good, no? Of course it does, and it is!
+There's already a lot agreemennt on the most of those methods from both
+sides, KDE and GNOME which is really great.
+
+But there's one problem I'm currently seeing. In my opinion, it would be
+better to define two methods Shutdown() and Reboot() somewhere in the
+desktop base (something like org.freedesktop.Desktop) in the future
+(KDE4, GNOME 3.0, etc...). I indeed think that they are in the scope of
+power management, but still have some kind of exceptional
+position. Having them tied to the o.f.PM interface, and more important,
+the methods being compulsory, would force the desktop to always
+implement all methods of the interface. Do you get the idea?
+
+So if you don't have a power management application such as kpowersave
+or gnome-power-manager the desktop itself would have to implement all
+the other methods like Suspend() or Hibernate(), which seems strange to
+me, especially in regard to usual desktop systems. You sometimes just
+don't need them. To rephrase it a little bit, some people might just not
+want them for whatever reasons. Having the Shutdown() and Reboot()
+methods methods compulsory will make it very hard to split them out in
+future.
+
+Indeed, in current implementations, both kpowersave and gnome power
+manager just call the logout mechanism of "their" desktop, which
+involved saving the session etc. Applications could just call the logout
+mechanisms themselves instead of handing them over to a interface which
+then again hands them over to someone else, no?
+
+Currently gnome-power-manager is very well integrated into GNOME. For
+instance, if there's not battery or other laptop specific capabilities,
+the icon just disappears. So one could argue that g-p-m is a direct part
+of the desktop base. Not so for KDE. KDE currently doesn't have a clever
+power management application by default. However, I really like to see
+kpowersave in KDE default in the near future, but that's another story.
+
+Ideally, IMHO, it should look as follows in the future:
+
+Having a base interface org.freedesktop.Desktop which carries out
+methods like Shutdown(), Reboot(), Logout() or Session.Save(). And on
+top of it there should be something like
+org.freedesktop.Desktop.PowerManagement.Suspend() and the like:
+
+  * org.freedesktop.Desktop
+  * org.freedesktop.Desktop.Shutdown()
+  * org.freedesktop.Desktop.Reboot()
+  * org.freedesktop.Desktop.Session.Save()
+  * org.freedesktop.Desktop.PowerManagement.Suspend()
+  * org.freedesktop.Desktop.PowerManagement.GetOnBattery()
+
+One could of course just let the word "Desktop" slip, that's an
+implementation detail.
+
+The first four methods get served by the desktop base, the last two by a
+power management application if one available.
+
+It seems that this proposal already got some agreement from a some
+people both from the KDE and GNOME community. Intefaces might be called
+org.freedesktop.SessionManagement.Shutdown() (same for Reboot()) and
+org.freedesktop.PowerManagement.*. But that is still to be defined.
+
+Comments and opinions would be welcome!
+
+* FOSDEM 2007								     :private:
+:PROPERTIES:
+:ON: <2007-02-26 Mon 21:06>
+:date: 2007-02-26 Mon 21:06
+:END:
+
+FOSDEM was great. Attended some interesting talks like one about [[http://en.wikipedia.org/wiki/KDE4][KDE4]],
+Andrew Morton talking about [[http://archive.fosdem.org/2007/schedule/events/linux_kernel][trends in linux kernel development]], [[http://ohm.freedesktop.org][Open
+Hardware Manager]] and of course a lot of [[http://en.opensuse.org/FOSDEM2007][openSUSE]] talks. Like the one
+from [[http://blog.nouse.net][Timo]] about [[http://thinkfinger.sourceforge.net][libthinkfinger]] or the one from [[http://blog.cryptomilch.de][Daniel]] about [[http://www.opensync.org][opensync]].
+
+But more important are the people you meet. Hacking the whole year,
+writing and answering mails or chatting, and you actually never know to
+whom you are talking. It is hard enough to know what you are talking
+about ;-)
+
+Well, and I discovered some really nice feature on the n800 called [[http://maemo.org/maemowiki/ApplicationManagerRedPillMode][red
+pill mode]]. Usually the application manager does not show you all the
+library and system packages and does not offer many features for
+advanced users. But with turning on red pill mode, you get them
+all. Turning on blue pill mode makes them go away again. This would
+actually be a great idea for the two biggest desktops. GNOME has too
+less options, KDE too many. With a system like this, you would solve the
+main issue both desktops have IMHO.
+
+Having some free days now, using for a trip to Amsterdam with my
+girlfriend, until hard work for the upcoming exams at university
+starts. No fun :-(
+
+* Couch potato goodies							     :maemo:
+:PROPERTIES:
+:ON: <2007-02-19 Mon 17:12>
+:date: 2007-02-19 Mon 17:12
+:END:
+
+#+HTML: <script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=48"; </script>
+
+** Maemo Music Player Client :maemo:
+
+As briefly mentioned last time, I got a developer code for a [[http://www.nokia.com/n800][Nokia
+n800]]. Thanks. I already had a n770, so without further ado, I decided to
+purchase one. And that really kept me on the go the last couple of
+weeks. At home, my computer is connected to my stereo system to play my
+mp3s with passable good sound. So having a n800 with wlan, I thought
+there has to be a possibility to use it as remote control. Looking for
+something at the web, I shortly found the [[http://www.musicpd.org][Music Player Daemon (mpd)]] to
+be used as a service running on my home computer managing and playing my
+mp3 collection. And very easy to install. Well, first duty was to find a
+good client that works on the n800. Trying two web based clients and
+noticing that they are ugly was not really satisfying. It was not hard
+to build the [[http://www.musicpd.org/gmpc.shtml][Gnome Music Player Client]] with some small modifications
+inside my scratchbox environment for the [[http://www.maemo.org][Maemo]] platform. Too bad for me,
+the GUI is optimised for higher screen resolutions and for multi
+windowed systems.
+
+The default multimedia player which comes along with the n800 is quite
+nice IMO, so an interface similar to this would be best. Well, noticing
+that Nokia didn't open source its code although there's a request from
+within the community is quite disappointing. I thought they wouldn't do
+things by halves, but, well, other story... Hopefully there's at least
+no patent or the like for the GUI, otherwise I just hope they won't sue
+me for reverse engineering it ;-)
+
+Writing my first own gtk application was quite exhausting. The
+documentation is so horrible bad :-( I just wonder why there aren't more
+tutorials out there. For instance, about IMHO common problems like
+setting bold font of a row in a GtkTreeView. Well, after getting into
+it, it was, hm, well, O.k. ;-)
+
+So here it is:
+
+[[http://mmpc.garage.maemo.org]]
+
+** Maemo Music Player Client (mmpc)
+
+[[http://mmpc.garage.maemo.org/images/playing_1.png]]
+
+It is based on the [[http://sarine.nl/gmpc][Gnome Music Player Client]], but has undergone quite
+much modification like hildonization, Maemo menus, the new player
+interface, etc... The GUI got especially designed to be used as a remote
+control, meaning that it should be good to use without the stylus. All
+in all, it is more a fork than a port. The first couple of days really
+show the huge interest in an application like this. At the time of
+writing this, there are already 281 downloads as you can see on the
+Maemo garage [[https://garage.maemo.org/frs/?group_id=193][ project page]]. It's a great toy ;-)
+
+Actually I had another cool feature in mind. The device being used as a
+remote control, and only as a remote control, you do not want other
+people using or seeing any other things on the device while managing
+music. So I actually wanted to force fullscreen mode until a correct
+password gets entered. The code is already finished, but there's one
+problem. The actual user can just turn off the device and reboot ;-) So
+anyone having any idea how to prevent the user to reboot the device?
+There's no possibility to lock the device in a way that one has to enter
+a password everytime the device boots. Something like a PIN in cell
+phones would be good. I can catch the hardware button event, of course,
+but the system is turned off in any case. Different story...
+
+What I'm currently looking for is a graphic designer. I'm usually not
+very good at that. So someone out there either doing web design or is
+willing and able to design some nice play, stop, forward, backward,
+etc. buttons? Any help would be appreciated. In any case, visit the
+[[http://mmpc.garage.maemo.org][homepage]] for more information.
+
+Greetings, Holger
+
+* New tasks, openSUSE 10.2 and a framework called Dockutils		     :docking:private:
+:PROPERTIES:
+:ON: <2007-02-11 Sun 20:26>
+:date: 2007-02-11 Sun 20:26
+:END:
+
+** New tasks at university
+
+Long time no post, and a lot of things happened. At least to me. Forgot
+to mention last time, for anyone interested, I started college at the
+[[http://www.uni-erlangen.org/][Friedrich-Alexander-University of Erlangen-Nuremberg]] in middle of
+october with course of studies in computer science. On Friday, the
+winter semester was over - finally. Learning all this difficult and
+completely new stuff is quite different from what I've been doing the
+last couple of years at SUSE. So I was really busy the last months to
+reconcile university and my work on linux ;-)
+
+Well, but my time at SUSE isn't over, of course, still working there at
+regular times, just not that much like before. And therefore, I wasn't
+able to be as active in regard to linux as I hoped to be. You can't be
+very innovative, you just have to do the things that have to be
+done. Working on bugs, handling mail, etc.. I'll have two exams in
+middle of March, though, but except from that, until the new semester
+starts, I will be able to work fulltime on linux.
+
+** openSUSE 10.2 and Dockutils
+
+Nevertheless, openSUSE 10.2 was released during this time, and I finally
+finished the power management redesign [[http://forge.novell.com/pipermail/powersave-devel/2006-June/000589.html][announced]] some time ago. Doing
+stuff like integrating pm-utils, the CPUFreq HAL addon, adjusting the
+powersave daemon or failing to get more involved in kpowersave's future
+development.
+
+Not to forget about [[http://dockutils.sourceforge.net][dockutils]], a framework, or better, a collection of
+scripts providing an infrastructure to easily trigger actions on
+docking/undocking requests for different laptops and vendors. To quote
+the [[http://en.opensuse.org/Dockutils][openSUSE wiki page]] where you can find more information, it shall be
+the following, not more and not less:
+
+  * Provide infrastructure to do userspace stuff that has to be done on
+    dock and undock
+  * Provide easy to use infrastructure for hardware vendors,
+    distributors or users to get proper docking station support or to do
+    just anything they like on dock/undock, for instance starting a
+    special tool or just displaying a message on the desktop.
+  * Provide infrastructure for nasty and ugly workarounds either because
+    of broken hardware, bugs or just because of a lack of support in the
+    kernel
+
+There are some basic scripts already included, at least to get the X60
+dock station and some other Thinkpads working, but there's also still
+lot to do. Some days ago I registered [[http://sourceforge.net/projects/dockutils/][a project]] at sourceforge. I'm not
+even sure if dockutils prevails itself, but I needed a place to host the
+code, and I did not want to just include it in the openSUSE rpms. So if
+you like to have a look at it, check it out:
+
+
+ svn co https://dockutils.svn.sourceforge.net/svnroot/dockutils dockutils
+
+
+Just to prevent questions: Yes, I know that there is a new generic dock
+station driver (and bay driver) in recent kernels, and yes, I already
+got familiar with it, and yes, I will do the integration into HAL and
+openSUSE very soon ;-)
+
+Unfortunatelly, we get rare feedback on docking. Therefore I like to ask
+some questions:
+
+Do you have a docking station? Does it work for you? Does it work
+combined with suspend/resume? Does the hardware included in the dock
+station work after docking/undocking? Do you have a workaround or a
+script to get it working? Please drop a comment, send me a mail or
+create a bugreport if you can answer any of the above
+questions. Otherwise it will be nearly impossible to improve docking
+station support. You can find my email at the [[http://en.opensuse.org/Dockutils#How_to_contribute][openSUSE]]. Thanks.
+
+Next post will follow very soon, because I will have to write something
+very exciting (at least to me) regarding the Nokia n800 I received a
+developer code for, thanks Nokia!
+
+Regards, Holger
+
+* Liblazy - D-Bus methods provided for convenience
+:PROPERTIES:
+:ON: <2006-11-12 Sun 01:31>
+:date: 2006-11-12 Sun 01:31
+:END:
+
+I finally found some time to release [[http://liblazy.freedesktop.org/wiki/Software_2fliblazy][liblazy]] to the public. I'm already
+using it in several smaller applications and the KDE kickoff menu links
+against it in openSUSE 10.2, so it's some kind of public, but there
+hasn't been a place where you can download tarballs or to get further
+information. Starting from today, it is hosted on [[http://www.freedesktop.org][freedesktop]] and has a
+[[http://liblazy.freedesktop.org/wiki/Software_2fliblazy][wiki page]].
+
+So what's liblazy all about? Liblazy is a simple and easy to use library
+that provides convenient functions for sending messages over the D-Bus
+daemon, querying information from HAL or asking PolicyKit for a
+privilege. Its features may grow as needed, though.
+
+** Rationale
+
+Once in a while, I stumble across an application which has no proper
+D-Bus support and gathers some information through reading /proc or
+sysfs, or any other circumstantial way, although software like HAL or
+PolicyKit already have this information. Or they just want to send a
+simple message to another application, sometimes even without caring
+about the reply. These applications often only have to do very simple
+tasks.
+
+So to adopt these applications, you always have to duplicate lots of
+code over and over again.
+
+Just some examples...
+
+To to send a message over D-Bus one has to do:
+
+  1. Get a D-Bus connection
+  2. Check for errors
+  3. Send a message over the bus
+  4. Check for errors
+  5. Get the reply
+  6. Check for errors
+
+To get a simple property from HAL, one has to do (with libhal in this
+example):
+
+  1. Get a D-Bus connection
+  2. Check for errors
+  3. Get a LibHalContext
+  4. C.f.e.
+  5. Register the connection with the context
+  6. C.f.e.
+  7. Fetch the property with libhal
+  8. C.f.e
+
+When you have to check if your application possess a specific privilege
+according to PolicyKit:
+
+  * Either do a mixture of the above things to ask directly via D-Bus or
+    link against libpolkit and do a complicated call of
+    libpolkit_is_uid_allowed_for_privilege(7 arguments follow). This
+    call gives you a lot of information you might not care about at all.
+
+So in every application, you have to implement functions like:
+
+  * dbus_send_message(service, path, interface, method);
+  * dbus_send_message_with_reply(service, path, interface, method,
+    &reply);
+  * hal_get_property_int(udi, property)
+  * ...
+
+There are a lot of applications which just don't want to care too much
+about D-Bus or HAL at all. I'm mostly talking about small applications,
+of course, even about those without a mainloop. They just want to make
+use of hardware databases and abstractions and a new way of inter
+process communication we have with D-Bus these days.
+
+So what I've done is combining these very simple functions into one
+small library called liblazy. A small application may just want to do
+the following to send a message over the bus and get its reply, maybe
+even with ignoring any errors:
+
+
+      DBusMessage *reply;
+      liblazy_dbus_system_send_method_call("org.freedesktop.NetworkworkManager",
+      "/org/freedesktop/NetworkManager",
+      "org.freedesktop.NetworkManager", "sleep", &reply,
+      DBUS_TYPE_INVALID);
+
+      int *arg_from_reply; liblazy_dbus_message_get_arg(reply,
+      DBUS_TYPE_INT32, &arg_from_reply, 0);
+
+
+That's it. The application developer just has to link against libdbus
+and liblazy, without caring about any other stuff.
+
+Liblazy also contains very simple functions to get a property from HAL
+or ask for a privilege from PolicyKit. But it doesn't contain complex
+functionality. It may grow as needed, though. But...
+
+It is definitely not intended for replacing any of the dbus bindings,
+libhal or libpolkit. Complex applications can and will still have their
+own implementations and will link agains libhal or libpolkit or
+whatever. They are free to use liblazy, of course. But it is definitely
+of benefit for small applications which only need a subset of
+functionality and like to profit from new software like D-Bus, HAL,
+etc. but without having to care a lot. It should serve as a set of
+functions for developers provided for convenience. Also a lot more
+command line applications could make use of HAL, etc. in an easy way
+IMO. Additionally, it may serve as a code example for developers to get
+familiar with D-Bus.
+
+Most likely, my next blog post will contain something about dockutils, a
+framework for getting docking station support for as many notebooks as
+possible. But read more next time...
+
+* My Work Today
+:PROPERTIES:
+:ON: <2006-09-28 Thu 21:41>
+:date: 2006-09-28 Thu 21:41
+:END:
+
+My work today: Rather sad if you think that I wrote this code someday
+and now have to throw it away. But for good reasons, of course ;-)
+
+| config\_files/dbus\_powersave.conf             |   8 |                             |
+|                                                |     |                             |
+| config\_files/scheme\_presentation             | 154 | -----                       |
+|                                                |     |                             |
+| daemon/Makefile.am                             |   6 |                             |
+|                                                |     |                             |
+| daemon/acpi.cpp                                |  18 |                             |
+|                                                |     |                             |
+| daemon/brightness.cpp                          |  27 |                             |
+|                                                |     |                             |
+| daemon/clientConnection.cpp                    |  92 | ---                         |
+|                                                |     |                             |
+| daemon/clientConnection.h                      | 105 | ---                         |
+|                                                |     |                             |
+| daemon/cpufreq_management.cpp                  |  26 |                             |
+|                                                |     |                             |
+| daemon/dbus\_server.cpp                        |  44 | -                           |
+|                                                |     |                             |
+| daemon/dbus\_server.h                          |   4 |                             |
+|                                                |     |                             |
+| daemon/device.cpp                              | 125 | +---                        |
+|                                                |     |                             |
+| daemon/device_management.cpp                   |   3 |                             |
+|                                                |     |                             |
+| daemon/pm\_interface.cpp                       | 161 | +----                       |
+|                                                |     |                             |
+| daemon/pm\_interface.h                         |  67 | --                          |
+|                                                |     |                             |
+| libpower/Makefile.am                           |  31 | -                           |
+|                                                |     |                             |
+| libpower/battery.c                             | 729 | ++++----------------------  |
+|                                                |     |                             |
+| libpower/devices.c                             |  98 | ---                         |
+|                                                |     |                             |
+| libpower/powerlib.c                            |  87 | ---                         |
+|                                                |     |                             |
+| libpower/powerlib.h                            | 168 | +-----                      |
+|                                                |     |                             |
+| libpower/powerlib_local.h                      |  33 | -                           |
+|                                                |     |                             |
+| libpower/powersave-dbus.pc.in                  |  12 |                             |
+|                                                |     |                             |
+| libpower/powersave-hal.pc.in                   |  12 |                             |
+|                                                |     |                             |
+| libpower/powersave\_dbus.c                     | 338 | ------------                |
+|                                                |     |                             |
+| libpower/powersave\_dbus.h                     | 224 | --------                    |
+|                                                |     |                             |
+| libpower/powersave\_hal.c                      | 234 | --------                    |
+|                                                |     |                             |
+| libpower/powersave\_hal.h                      | 130 | ----                        |
+|                                                |     |                             |
+| libpower/processor.c                           | 127 | ----                        |
+|                                                |     |                             |
+| libpower/sleep.c                               |  90 | ---                         |
+|                                                |     |                             |
+| testsuite/Makefile.am                          |   2 |                             |
+|                                                |     |                             |
+| testsuite/linktests/Makefile.am                |     |                             |
+|                                                |     |                             |
+| testsuite/linktests/link\_libpowersave\_dbus.c |  10 |                             |
+|                                                |     |                             |
+| testsuite/linktests/link\_libpowersave\_hal.c  |  11 |                             |
+|                                                |     |                             |
+| testsuite/testclient/Makefile.am               |   4 |                             |
+|                                                |     |                             |
+| testsuite/testclient/testclient.c              |  27 |                             |
+|                                                |     |                             |
+| user\_binary/Makefile.am                       |   7 |                             |
+|                                                |     |                             |
+| user\_binary/powersave.cpp                     | 743 | +++++++++++++-------------- |
+
+36 files changed, 730 insertions(+), 3241 deletions(-)
+
+* At Harrachov
+:PROPERTIES:
+:ON: <2006-09-14 Thu 23:41>
+:date: 2006-09-14 Thu 23:41
+:END:
+
+Up early. Listened to some talks. Poked at beer. Suspend to bed.
+
+* Arrived at SUSE Labs Conference
+:PROPERTIES:
+:ON: <2006-09-13 Wed 17:51>
+:date: 2006-09-13 Wed 17:51
+:END:
+
+Arrival at the SUSE Labs Conference in the Czech Republic. Journey was
+tight ;-). Five people with luggage in one car from Nuernberg to
+Harrachov. Had some beers, dinner, again with beer, now up to the city
+of Harrachov for catching some money and getting some more beer :-)
+
+Tomorrow real work starts, looking forward to see some interesting
+talks...
+
+* CPU frequency scaling in HAL						     :power_management:powersave_development:
+:PROPERTIES:
+:ON: <2006-08-25 Fri 21:50>
+:date: 2006-08-25 Fri 21:50
+:END:
+
+Yesterday, my HAL addon which cares about CPU frequency scaling got
+committed to the HAL git master branch. Finally, after one and a half
+month of discussions, new patches, and no responses.
+
+It's main goal is to unify the way linux distributions are doing CPU
+frequency scaling. At the moment there are different daemons out there
+which are doing the job. powernowd, cpuspeed or powersaved. Powersaved
+currently is the only one which supports both kernel governors
+(powersave, performance and ondemand) and has a userspace governor
+implementation. All this is wrapped around by a nice DBus interface to
+make it easy controllable by higher level applications like desktop GUIs
+(e.g. kpowersave).
+
+But unfortunately powersaved didn't get enough acceptance in the
+community, for whatever reasons. And my main goal is to improve power
+management in linux. So the only solution which seemed to be accepted by
+the GNOME, the KDE and the general community was to put CPU frequency
+scaling functionality into [[http://hal.freedesktop.org][HAL]].
+
+In the end, this was no bad idea. This decision forced me reconsider
+some parts of the present implementation and design which we have in
+powersaved. And I really had a great idea. Maybe the best idea I ever
+had. It's a real masterpiece ;-)
+
+So in future, it comes along with most modern distributions. And
+hopefully everybody will use it ;-) At least the gnome power manager
+maintainer already states his willingness to make use of it in his
+[[http://hughsient.livejournal.com/3265.html][blog]].
+
+The following explanations should be the documentation for the CPUFreq
+addon. It summarizes what has been discussed on the HAL and
+powersave-devel mailinglist during the last weeks and what's the addon
+all about. It should point out answers to the common questions which may
+come up. If anything else is not clear, please don't hesitate to send me
+an email or add a comment.
+
+
+
+** Available methods on the interface org.freedesktop.Hal.Device.CPUFreq.
+
+Method: SetCPUFreqGovernor (string)
+
+Parameters: The name of the governor to set. Get a list of available
+governors with the GetCPUFreqAvailableGovernors method.
+
+Sets a CPU frequency scaling governor for all CPUFreq interfaces the
+kernel provides. If the userspace governor is set, this interface also
+contains a proper scaling mechanism. The default performance is set to
+50.
+
+Method: SetCPUFreqPerformance (integer)
+
+Parameters: The performance between 1 and 100 to set in dynamic scaling
+modes.
+
+Sets the performance of the dynamic scaling mechanism. This method
+summarizes and abstracts all the different settings which can be taken
+for dynamic frequency adjustments, like at which load to switch up
+frequency or how many steps the mechanism should traverse until reaching
+the maximum frequency. The higher the value, the more performance you
+get. Respectively, the higher the value, the sooner and the more often
+the frequency is switched up.
+
+Method: SetCPUFreqConsiderNice (boolean)
+
+Parameters: Whether or not niced processes should be considered on CPU
+load calculation.
+
+Whether or not niced processes should be considered on CPU load
+calculation. If niced processes are considered, they can cause a
+frequency increment although their absolute load percentage wouldn't
+trigger the scaling mechanism to switch up the frequency. The default
+setting is 'false'.
+
+Method: GetCPUFreqGovernor (void)
+
+Get the current active governor for all CPU frequency interfaces
+(string).
+
+Method: GetCPUFreqPerformance (void)
+
+Get the current active performance setting if a dynamic scaling
+mechanism is in use (integer between 1 and 100).
+
+Method: GetCPUFreqConsiderNice (void)
+
+Returns whether niced processed are considered during CPU load
+calculation or not (returns boolean).
+
+Method: GetCPUFreqAvailableGovernors (void)
+
+Returns a list of strings of all available governors which could be set
+with the SetCPUFreqGovernor method.
+
+
+
+** Errors the above methods may raise on the interface org.freedesktop.Hal.Device.CPUFreq.
+
+Error: GeneralError (void)
+
+Detail field: The exact error.
+
+A general error occured.
+
+Error: UnknownGovernor (void)
+
+Detail field: The governor which was tried be to set.
+
+The governor which was tried to be set doesn't exist.
+
+Error: PermissionDenied (void)
+
+Detail field: The privilege the caller needs to execute the method.
+
+The caller doesn't have the privilege to execute this method.
+
+Error: NoSuitableGovernor (void)
+
+Detail field: The method which was tried to be executed.
+
+The method executed doesn't exist for the current active governor.
+
+Error: GovernorInitFailed (void)
+
+Detail field: The reason for the failure.
+
+The initialization of the governor failed.
+
+
+
+** What's the CPUFreq addon all about
+
+Addon-cpufreq supports kernel governors and also implements a userspace
+controlling mechanism. That makes it the "all you need for CPUFreq"
+application. Furthermore, to not make things unnecessarily complicated
+for desktop applications, it is supposed to abstract all the different
+settings you can make for the different governors. One thing which isn't
+available yet, is the possibility to control the performance of
+dynamically scaled CPUs. There's a method to set the performance (from 1
+to 100) which can be easily used from other applications with showing a
+nice progress bar or the like. That makes it unique in contrast to
+former solutions.
+
+The biggest advantage is that you get CPUFreq out of the box on every
+system supporting HAL without the need to install another
+daemon. Another one is that desktop applications like
+gnome-power-manager or kpowersave can use one common interface after
+all.
+
+In general, there are three different policies one can choose from:
+
+  1. Statically min frequency (corresponds to the powersave governor)
+  2. Statically max frequency (corresponds to the performance governor)
+  3. Dynamic frequency (ondemand or userspace governor)
+
+In an ideal world, the the first two shouldn't be used at all. But at
+least the performance governor is still used because you get a little
+bit more performance in comparison with the dynamic policy. Particularly
+as soon as you have many small processes running. The default dynamic
+setting can be and was sufficient in most cases. But it's a too general
+setting IMO. So to basically get rid of the two static policies, I'm
+doing a split of the dynmaic policy into several parts.
+
+The dynamic machanisms, either ondemand governor, conservative governor
+or the userspace implementation etc. consist each of several different
+settings and configuration options like at which load to switch up, how
+many steps the mechanism should traverse until reaching max freq and so
+on. The SetCPUFreqPerformance method which is available combines all
+these setting into one. The performance can be set between 1 and 100.
+
+In general it sais, the higher the value the more often and the faster
+the frequency is switched up. Each governor has some sort of fixed CPU
+load limit (up_threshold) at which load to switch up frequencies. For
+instance, the ondemand governor has the up_threshold set to 80 by
+default. This corresponds to a performance value of 50. As an example,
+if you change the performance to 75, the up_threshold is set to
+about 45. So if the CPU load reaches a value higher than 45, the
+frequency is switched up. If the up_threshold would be 80 and a process
+would only need 60 percent of CPU, the frequency wouldn't be switched
+up. If the performance value would be 1 (lowest performance), the
+up_threshold would be 99. That means that the frequency is really only
+increased if you have a process which needs all CPU power (100%, for
+instance at compilation time).
+
+I will do a small comparison... Two main situations where policies
+differ are
+
+  * On AC power: You want to do dynamic frequency scaling, but It's not
+    that important to reduce power consumption. You want to have the
+    maximum performance as soon as you start a process but still want to
+    reduce the power drain as soon as the system is idle. (e.g. because
+    of thermal reasons). So you need a more aggressive dynamic CPU
+    frequency scaling where you switch up sooner and more often. So for
+    instance, you set the performance to 75.
+  * On battery: The primary goal is to increase battery life. But you
+    still want a job done as fast as possible as soon there is need to,
+    for instance when compiling. So you might want a more tentative
+    frequency adjustment. Performance maybe set to 25 in this case.
+
+The reason why I chose such a fine grained range (from 1 to 100) is to
+get an interface that is not limited to only one implementation. For the
+CPUFreq case, one can image to have only five steps like min, low,
+medium, high, max. But that's something the GUI can and should
+decide. It can map these 100 steps to whatever it likes but I don't
+think that's the job of the addon. And maybe some system (embedded?,
+whatever) likes to have a completely other implementation with 20, 30,
+or even 100 steps but still likes to take advantage of the common
+interface, it than wouldn't be limited to a predefined range.
+
+Additionally, if a policy decision maker (like a GUI) doesn't like to
+touch the performance setting, it doesn't need to. It gets a good
+default setting. The default is 50 and corresponds to a configuration
+which is either the kernel default or which is tested to be stable and
+useful for several years now in the userspace case.
+
+** FAQ
+
+*Q:* What's the SetCPUFreqConsiderNice setting all about?
+
+*A:* With the ondemand governor this setting is set through
+/sys/devices/system/cpu/cpu0/cpufreq/ondemand/ignore_nice_load . The
+userspace implementation evaluates the CPU nice load when calculation
+the CPU load, too.  It specifies whether niced processes can cause a CPU
+frequency increment although they don't really need that much CPU power
+and thus wouldn't jump over the UP_THRESHOLD where frequencies are
+usually increased.  It's a policy decision. On AC power for example, you
+also want to consider niced processes because switching up CPU
+frequencies more often isn't that problematic. In the other case, On
+battery, you want a more passive frequency policy and thus you don't
+consider niced processes.
+
+*Q:* Why not export a D-Bus interface for each of the processors in the
+system?
+
+*A:* I thought about this possibility, too, but came to the conclusion
+that it doesn't make sense. There main reasons are:
+
+  1. There are several dependencies between the different CPUs. The
+     cpufreq interfaces below /sys/devices/system/cpu/ lists all
+     available CPUs, each in one directory. However, you cannot assume
+     that you can simply control each CPU through it's single
+     interface. There's a file affected_cpus in each directory listing
+     the CPUs which are controlled through this interface. So maybe it
+     could look like:
+
+cpu0/cpufreq/ --> controls cpu0, cpu1 cpu1/cpufreq/ --> controls cpu0,
+cpu1 ...
+
+or: cpu0/cpufreq/ --> controls cpu0, cpu1, cpu2, cpu3 ...
+
+or: cpu0/cpufreq/ --> only controls cpu0 cpu1/cpufreq/ --> only controls
+cpu1 ...
+
+
+It doesn't make sence to export these dependencies. This would make
+things unnecessarily complicated for higher level applications.
+
+  2. I can't imagine a use case were one might want to have different
+     settings for different CPUs.
+  3. Some of the cpufreq kernel developers even are agains the
+     possibility to set different governors for the CPUs.
+  4. There's a new powernow-k8 driver pending where you only can scale
+     all CPUs at a time which would perfectly fit into the current
+     desing.
+  5. There's currently no such device object where to export it. There's
+     only acpi_CPU*. Except in very new implementations, in general,
+     cpufreq has nothing to do with acpi, it also works with apm or even
+     without acpi _and_ apm.
+
+*Q:* Isn't there a possibility to set the frequency manually?
+
+*A:* No. Usually I'm one of those arguing for having a possibility to
+export all possible features to the user on the desktop ;-) But...  This
+doesn't really fit into the concept of this addon. It would be a method
+that can only exclusively used if the userspace governor is set. And
+that contradics the concept to use common interfaces for all
+governors. And to be honest, we all hope that the userspace governor
+wouldn't be needed anymore someday. However, it would be possible. It
+would need another method SetCPUFreqFrequency and another property
+'cpufreq_available_frequencies'. But I really like to avoid that. This
+would also be something which we could add afterwards if it turns out be
+be _really_ needed.
+
+* Futuristic hacking on the Nokia 770
+:PROPERTIES:
+:ON: <2006-08-08 Tue 10:53>
+:date: 2006-08-08 Tue 10:53
+:END:
+
+Doesn't this look cool? Hacking on a Nokia 770 with a futuristic virtual
+keyboard. Well honestly, the bluetooth keyboard is crap and is hard to
+use, but it just makes fun ;-)
+
+[[http://blog.homac.de/images/dsc00321.jpg]]
+
+* My personal GNOME experience
+:PROPERTIES:
+:ON: <2006-07-11 Tue 22:27>
+:date: 2006-07-11 Tue 22:27
+:END:
+
+#+HTML: <script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=39"; </script>
+
+About three weeks ago, something must have happened with my mind. KDE
+became too boring, WindowMaker was already gone for some time and I
+needed something new. Well, I always used GNOME applications before, I
+really like the design and it's the business desktop number one, so I
+gave it a try. And I don't mean something like starting it, clicking
+around and leaving. This I've already done multiple times like when
+testing the gnome-power-manager or other applications. I really ment to
+try to get familiar with it and working with it on a daily basis. So I
+opened my mind for something which is known as "the bad thing" among KDE
+developers
+
+After all, I decided to write down everything I would like or
+dislike. And now, after 3 weeks of continuous GNOME usage, here are the
+results. If anything is wrong, or maybe I just oversaw a gconf key,
+please tell me.
+
+** Window resizing
+
+The most likely most popular example that also hit me is the not
+existing possibility to resize windows with ALT-Right-Click. Well if you
+are used to that behaviour, it's really hard to forget this
+feature. Additionally, when working in a fast way, moving windows
+around, resizing many of them, it's sometimes hard to catch the bottom
+right area to bring up an arrow to finally change the size. After one
+week or so, I got along with it and it wasn't that painful anymore
+
+** Workspace switching
+
+I'm used to a one dimensional workspace layout, four workspaces in a
+row. And of course, after the last workspace I want to wrap around to
+the first. Well, not possible with GNOME. There's already a detailed
+bugreport about this issue but was rejected because it would confuse the
+users. Oh what a mess. So I changed the layout to have two rows, each
+one having two desktops.
+
+** Icons on the desktop [UPDATE]
+
+There's no possibility to remove all icons from the desktop, two will
+stay there whatever you do. Oh stop, I finally found a possibility,
+killing the nautilus process. Unfortunatelly, my desktop wallpaper
+disappears, but that's something I can cope with.
+
+Thanks for the comments. It is possible to remove the icons,
+gconf-editor --> apps --> nautilus --> desktop. Looks easy, so I'm just
+too dumb to find it :-)
+
+** Changing the interface language
+
+If english is not your native language, like in my case, but you still
+have to deal with bugreports, reproducing, confirming, etc., you like to
+switch the language of the GUIs at runtime. Not possible. You have to
+specify the language at login time. But that's one of the smaller
+issues, it would just be "nice to have". Nevetheless, annoying.
+
+** Bad session management for non-GNOME applications
+
+One might argue that you simply should use GNOME applications in this
+case, but that's not the way I'm working. I use a mixture of all, GNOME,
+KDE, QT, tcl applications and so on. Yes, you can't support all crappy
+applications, but why isn't emacs recognized at all for example? Just
+strange that KDE can handle this.
+
+** The hidden monster
+
+Although it has a rather minimalistic style and design (What I really
+like actually), it's as slow as KDE. Also the memory usage is as high as
+with KDE. I just recall people telling me that C++ applications are a
+performance loss...
+
+** Panel application starter
+
+When invoking the panel application starter with ALT-F2, I can't figure
+out the system how applications are stored in the history. I would
+expect that if I press the up-arrow-key, the previous executed
+application would come up. There's lots of applications in the history,
+but not the last or the second to the last. But I really can't say were
+the application which come up do come from.
+
+And again, this application is so fucking slow. Even on startup. After
+typing a command, it seems to be that it has some sort of completion
+mechanism and tries to find the corresponding icon for the application
+typed. And this can last up to 3 seconds.
+
+** Gnome-terminal
+
+My favourite terminal is konsole. Actually I would use xterm if it
+wouldn't lose it's focus sometimes when switching workspaces. So it's
+some kind of comparison between konsole and the gnome-terminal. Because
+if I'm using GNOME, I also want to use its utilities.
+
+  * Not possible to scroll single lines with shift-up/down
+  * Not possible to store tabs in profiles
+  * Just a personal opinion, the tabs on top of the window really look
+    ugly ;-)
+  * Same problem like with workspaces, not possible to wrap around from
+    the last tab to the first one
+  * gnome-terminal seems to be incompatible with some key combinations
+    like ALT-. They are not working in the default configuration for zsh
+    and irssi. And I wasn't able to change this via the provided menus
+    like I can do for konsole.
+
+All in all, no, gnome-terminal is nothing for me if I like to do
+productive working.
+
+** Gaim
+
+On disconnect, for whatever reason (Network, ICQ) , I get a reconnect
+window on the desktop which is currently active. But why? My gaim main
+window is open on a completely different workspace.
+
+** Conclusion
+
+I really like the look and feel of gtk. It's simple but very nice. And I
+really think that the GNOME desktop is better suited for business use or
+for unexperienced users in contrast to KDE in its current state. In KDE
+the user is striked daed by hundred of menus and settings which is
+really confusing in the first place. Although I didn't elaborate these
+two advantages much, they are very very strong.
+
+I used and worked with it for 3 weeks now. I changed my personal working
+behaviour and I really became inured to it. I can work with it now after
+adopting to what this desktop (matacity, whatever) pretends. But I think
+this is actually the problem. I simply don't want to adopt! That's not
+how I see this open source thing these days. If a developer started with
+GNOME and got used to it, he wouldn't ever notice that this desktop
+doesn't do what he actually wants. He just fits his working behaviour
+into the desktop guidelines. If that would be the way he works anyway,
+then he's the lucky one. But for anyone else I can't understand how a
+developer actually likes to use it. Yes, developing it, extending it,
+making it better, but not using it. Everytime I have an idea how to
+perfect the way I work a little bit more to get the best out of it, I'm
+limited by the desktop. That's not satisfying. So the day before
+yesterday, I switched back to KDE although I don't like the look and
+feel that much. Fortunately, everybody can make this decision on his
+own.
+
+* Mutt next generation
+:PROPERTIES:
+:ON: <2006-06-05 Mon 00:52>
+:date: 2006-06-05 Mon 00:52
+:END:
+
+#+HTML: <script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=38"; </script>
+
+Looking for some nice modifications for my mutt in the web, I stumbled
+over [[http://mutt-ng.berlios.de/][mutt-ng (mutt next generation)]].
+
+Well, that it what I was looking for all the time. These are the reasons
+why I favour mutt-ng over mutt...
+
+  * I do not have to patch my mutt anymore to get a nice sidebar showing
+    all my folders. It highlights folders with new mail and I can see
+    which folders still have unread (not new) mails in them.
+  * Another big advantage is the possibility to read nntp news and to
+    treat them exactly like any other mails.
+  * Until now, everytime I reinstalled my system I had to configure my
+    local postfix to sent my mails (with tls). Muttng finally supports
+    the smtp protocol (with tls, of course). I agree that the separation
+    of a MUA like mutt and an MTA like postfix is generally a good idea,
+    but with the new integration of smtp, it makes my life a lot
+    easier. I just have to store my configuration in my home directory
+    and everytime I upgrade my system I just have to keep my home
+    partition and I can send mails without any further
+    adjustments. That's nice!
+  * According to the [[http://mutt-ng.berlios.de/][homepage]] and the two mailinglists, there's heavy
+    (and happy ;-) development going on. So possible new features and
+    patches will hopefully go in sooner as it has been with mutt until
+    now.
+  * No problems and crashes so far
+
+I also decided to package it for the SUSE distribution. So it should
+soon show up in the factory tree.
+
+I have nicely separated my "old" mutt configuration from the new mutt-ng
+configuration so I can switch back easily if something unexpected might
+happen. I now have file ~/.muttngrc which sources my ~/.mutt/muttrc with
+the following content:
+
+` source ~/.mutt/muttrc # sidebar settings set sidebar_visible=yes set
+sidebar_width=25 set sidebar_shorten_hierarchy=yes set
+sidebar_number_format=%n(%u) color sidebar_new brightyellow default #
+keybindings for the sidebar bind index \CP sidebar-prev bind index \CN
+sidebar-next bind index \CO sidebar-open bind pager \CP sidebar-prev
+bind pager \CN sidebar-next bind pager \CO sidebar-open macro index \CT
+':toggle sidebar_visible macro pager \CT ':toggle sidebar_visible # nntp
+configuration set nntp_host="news.gmane.org" set
+nntp_cache_dir=~/.mutt/ # keybindings for nntp bind index \en
+change-newsgroup # smtp configuration set smtp_host=<my relayhost> set
+smtp_user=hmacht set smtp_use_tls=enabled `
+
+Have fun, Holger
+
+* Working on homepage www.Foto-Hersbruck.de
+:PROPERTIES:
+:ON: <2006-05-03 Wed 20:49>
+:date: 2006-05-03 Wed 20:49
+:END:
+
+Worked on a new homepage [[http://www.Foto-Hersbruck.de][www.Foto-Hersbruck.de]] this evening. It's a
+homepage for a local photography club near Nuernberg. Webdesign is
+actually not my cup of tea, but it's simple enough to do my father this
+favour.
+
+* Suspend project gets bootsplash support
+:PROPERTIES:
+:ON: <2006-05-01 Mon 21:55>
+:date: 2006-05-01 Mon 21:55
+:END:
+
+The suspend and resume tools from the [[suspend.sourceforge.net][suspend project]] finally got
+bootplash support. That's one of the most desired features regarding
+suspend from users IMO. Except that suspend to disk/ram should work at
+all, of course ;-) Currently only bootsplash.org's method is
+supported. But I designed it to be as modular as possible to support any
+kind of splash implementations. The next thing I like to look at is
+fbsplash. But therefore I have to setup a gentoo system which will needs
+some time ;-)
+
+* Back to the promised land
+:PROPERTIES:
+:ON: <2006-04-24 Mon 11:22>
+:date: 2006-04-24 Mon 11:22
+:END:
+
+Back from vacation and from the US. I'm very happy to be back to
+germany. The 11 hour flight was just horrible. My legs and feet are
+aching because there was so little room. For me it's now about 3 am,
+although the local clock tells me it's 1 pm ;-) So I will again need
+some days to recover adapt. Nevertheless, trying to go through some
+mails and bugreports and I have to try to keep up until this evening to
+get some usual over-night sleep and to be relaxed for work tomorrow ;-)
+
+* Preparing for home
+:PROPERTIES:
+:ON: <2006-04-23 Sun 16:40>
+:date: 2006-04-23 Sun 16:40
+:END:
+
+Still at San Francisco. Back from LA yesterday and found a very nice
+hotel to for the last day. Today it's getting back home. Will arrive at
+11 am (MET) at the Nuernberg airport. It was great to stay here for the
+first time, but nevertheless I'm really looking forward to see the usual
+suspects and european people. Additionally, It would be great to get a
+"Schweinebraden mid Gniedler" instead of fast food which I simply hate
+these days ;-)
+
+* Across the pond
+:PROPERTIES:
+:ON: <2006-04-13 Thu 13:47>
+:date: 2006-04-13 Thu 13:47
+:END:
+
+Up at 5 am. Still suffering from the time shift and the flight to San
+Francisco. Second day of Power Management Summit started. Yesterday I
+had a small talk about power management at SUSE, respectively the
+powersave daemon itself. Well, it was ok IMO. It's just hard to explain
+to all those kernel hackers why we workaround so many broken modules and
+implementations instead of fixing them ;-)
+
+So here's a little bit blurred and dark image taken from the hotel room
+balcony. It's unbelievable how many cars are already on the roads at 5
+am. In Nuernberg, everybody seems to be still sleeping at that time ;-)
+
+[[http://blog.homac.de/images/from-hotel.jpg]]
+
+* Powersave 0.13.0 - A longer Statement					     :powersave_development:
+:PROPERTIES:
+:ON: <2006-03-17 Fri 23:18>
+:date: 2006-03-17 Fri 23:18
+:END:
+
+#+HTML: <script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=32"; </script>
+
+Finally I managed to release Powersave 0.13.0 that brings along a lot
+new features. After some nerve-racking problems with sourceforge, files
+have arrived at the server. Here comes the announcement I'm still
+waiting for to be delivered to our powersave mailinglists.
+
+** Topics
+
+  1. New release 0.13.0
+  2. CPU Hotplugging
+  3. Suspend to ram that 'just works'
+  4. Make use of our messaging architecture
+  5. Excerpt from the changelog
+
+** New release 0.13.0
+
+I'm glad to announce a brand new release of the Powersave Daemon. It's
+tagged with 0.13.0, our so called 'unstable' series of releases. 0.12.x
+is, or will become, the stable set which will be maintained over a long
+time period. SUSE 10.0 packages are already available on sourceforge,
+FC4 or Mandriva packages will follow soon.
+
+** CPU Hotplugging
+
+So, what's new? The most important thing is definitely the support for
+CPU hotplugging with full integration into our scheme architecture.
+
+[Once again, I think we are the first application out there implementing
+that state of the art feature and integrating it into an easy to use
+architecture]
+
+What about disabling one of two cores when running on batteries and
+being at full throttle when on ac? I think this simply a great and
+promising opportunity. Unfortunatelly, up to now only newer laptops
+support it at all, but this will become more and more important in
+future. Of course, this also works for desktop or server systems. So if
+you are already in a position (like me ;-) to make use of it, try it and
+provide feedback of any kind. Integration into kpowersave will be done
+soon.
+
+There's a new configuration variable that can be set in each scheme
+controlling CPU hotplugging: From /etc/powersave/scheme_powersave:
+
+` ## Path: System/Powermanagement/Powersave/CPU ## Type:
+integer(1:100) ## Default: "0" # # Set how much CPUs should be online at
+max. A value of 0 means 'all'. # MAX_CPUS_ONLINE="" `
+
+** Suspend to ram that 'just works'
+
+We integrated the s2ram utility from the suspend project [1] into the
+daemon if it is installed. Thanks to Stefan Seyfried for doing the most
+work! This tool integrates all those nasty workarounds like vbetool,
+radeontool or setting acpi video flags like s3_mode or s3
+bios. Additonally, or even more important, it contains a huge whitelist
+of machines that are known to work with suspend to ram including the
+hacks which are needed for each of those systems. But this list is of
+course not complete. So...
+
+PLEASE HELP US! Stefan created a wikipage on openSUSE [2] that explains
+the steps that can be done to get suspend to ram working out of the box
+without applying any manual steps. Please read this guide and if it
+makes suspend to ram working on your system, please provide the needed
+information either to the e-mail mentioned in the output of the s2ram
+utility or mail it to the powersave-devel list.
+
+** Make use of our messaging architecture
+
+Furthermore, we opened up our notification architecture to be used by
+other root applications. Simply use the powersave-notify script located
+in /usr/lib/powersave/powersave-notify to make use of it. You do not
+need to bother any longer about in which way the user or admin will be
+notified, just be sure he will get informed.
+
+*What we provide:*
+
+No client connected and no X Server running: Do 'wall' message
+
+No client connected and user logged in to X: Pop up kdialog (KDE) or
+zenity (GNOME)
+
+client connected (like kpowersave): Forward message to client which in
+turn displays the message
+
+** Excerpt from the changelog
+
+` -------------------------------------------------------------------
+Fri Mar 17 20:52:15 CET 2006 - hmacht@suse.de - CPU hotplugging support
+and integration into schemes
+------------------------------------------------------------------- Fri
+Mar 17 16:54:01 CET 2006 - hmacht@suse.de - if suspend is done as root
+user, don't use su to do the xlock (novell bug 158773) - open one DBus
+connection in library and reuse it (novell bug 157905) - add script for
+use by other applications to use the powersaved's notification
+architecture (e.g. upsd) - increase timeout we wait for hal to 10
+minutes on startup - -r2079
+------------------------------------------------------------------- Mon
+Mar 13 18:36:34 CET 2006 - hmacht@suse.de - fix compilation errors when
+C library is included in cpp application - add powersave-notify script
+to be used by other applications using the powersave message
+architecture - inform user on suspend2ram if his machine is not in the
+whitelist
+------------------------------------------------------------------- Mon
+Mar 6 19:06:55 CET 2006 - hmacht@suse.de - integrate s2ram utility from
+http://sourceforge.net/projects/suspend that brings along a huge
+whitelist and the needed workarounds (vbetool, radeontool, acpi_sleep=)
+(seife) (closes novell bug 145294) - bump version to go along with
+upstream version - r1990 ` Have a lot of fun, Holger [1]
+http://sourceforge.net/projects/suspend [2] http://en.opensuse.org/S2ram
+
+* Screen capturing with vnc2swf
+:PROPERTIES:
+:ON: <2006-03-12 Sun 02:27>
+:date: 2006-03-12 Sun 02:27
+:END:
+
+#+HTML: <script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=31"; </script>
+
+Looking for a screen capturing software this evening, I finally found
+vnc2swf which works quite well. I only tried the C version because I was
+too lazy to solve all those python dependencies and I have no good rpm
+repository at home. Just a short guide for anyone who wants to try:
+
+  1. Download vnc2swf from
+     [[http://www.unixuser.org/~euske/vnc2swf/vnc2swf.html][here]]
+  2. Compile and install it
+  3. Start a vnc server like that: `vncserver :1 -geometry 640x480
+-depth 16`
+  4. Execute the following command to start recording: `vnc2swf
+-startrecording -geometry 640:480 out.swf :1 > out.html`
+  5. Play the resulting html file in your favourite browser which
+     supports shockwave flash
+
+If you like to see how a possible result might look like, watch my *live
+demonstration* about [[http://qnotify.homac.de][LibQNotify]]. LibQNotify
+is an very easy to use QT library to pop up information on the
+desktop. There also comes along a command line tool and daemon. Have a
+look at the [[http://qnotify.homac.de][project page]] for more
+information. The video is not perfect because the frame drops are too
+high in some cases. So be sure that in reality everything is very smooth
+;-)
+
+** [[http://www.homac.de/files/qnotify-demo.html][--> LibQNotify Live Demontration (2,7M)]]
+
+* Exhausting wordpress update
+:PROPERTIES:
+:ON: <2006-03-11 Sat 01:19>
+:date: 2006-03-11 Sat 01:19
+:END:
+
+Promised myself to not spend too much time on updating wordpress from
+1.5 to 2.0.2. But it seems that I can't keep a promise. Playing and
+fiddling around since about four hours. What a mess. Richtext, plugins,
+options, everything contains a lot of pain. It was a hard week, maybe
+that's the reason why the last post is again some days ago. Now I'm too
+tired to write anything more... Falling asleep, Holger
+
+* Why using batteries?
+:PROPERTIES:
+:ON: <2006-03-08 Wed 22:32>
+:date: 2006-03-08 Wed 22:32
+:END:
+
+Hmm, it seems that even without a battery and a ac adapter my laptop is
+running and running...
+
+` hmacht@linux:~> cat /proc/acpi/battery/C1B3/state present: yes
+capacity state: critical charging state: discharging present rate: 15680
+mW remaining capacity: 0 mWh present voltage: 14237 mV hmacht@linux:~>
+cat /proc/acpi/battery/C1B4/state present: yes capacity state: critical
+charging state: charged present rate: 0 mW remaining capacity: 0 mWh
+present voltage: 14752 mV ` But why didn't powersaved shut down when
+reaching 3%? Hmm, more work for tomorrow... Have fun, Holger
+
+* Time for blogging...							     :powersave_development:
+:PROPERTIES:
+:ON: <2006-03-04 Sat 21:37>
+:date: 2006-03-04 Sat 21:37
+:END:
+
+#+HTML: <script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=28"; </script>
+
+There really happened much the last time, although the last post is
+nearly one month ago. Sorry for that (if anyone is interested in what I
+am writing at all ;-) The most time consuming was my trip to [[http://www.fosdem.org][FOSDEM]] at
+Brussels. I spent much time with the preparations of a talk I had
+toghether with Timo Honig about Powermanagement. Slides are already
+available at [[http://en.opensuse.org/FOSDEM][opensuse wiki]]. Videos should also be uploaded soon. Hmm,
+for me, having a talk in english for the first time, I am satisfied with
+the result. We had a little break with technical problems in the middle
+of the talk, but all in all, it was ok. I mean, for a kraut having a
+talk in english the first time in his life, I did not expect more ;-)
+But the even more important impressions were the people I met. I met
+Fred Blaise ([[http://madpenguin.org/blogs/chapeaurouge/][blog]], yes, he has one, unlike Timo ;-) ). a friend of Timo
+from France, aehm, the USA, Belgium or whatever ;-). I really hope to
+meet him again some day, having a beer, or two, or three... Dominic
+Rath, also a friend of Timo gave a talk in the embedded devel room. I'm
+still not sure what he was exactly talking about, but the other embedded
+freaks listening seemed to be really impressed ;-) Back in Nurnberg, the
+main thing I've done is maintaining the powersave daemon. And I mean
+real maintenance. Not much development, only integrating patches,
+branching, merging, releasing and so on. We have know support for
+suspend2 and the socalled hibernate scripts out of the
+box. Unfortunately, it seems too late to get the Powersave daemon as a
+default powermanagement solution for the Ubuntu Dapper release. That
+would really be great and I would like to help in any regard to make
+this possible. But it's not my decision ;-) I'm also currently
+evaluating multicore support for Powersave. Many of the newer laptops
+are shipped with two cores already, and it will become even more
+important in the future. So it would be great to have only one core
+activated when running on battery and having full power when running on
+ac. Hopefully I will find some time for integration into the Powersave
+schemes soon. Finally, again promising that I will blog more regulary in
+future, don't forget to have a lot of fun! Holger
+
+* Powersave-0.11.10 released						     :powersave_development:
+:PROPERTIES:
+:ON: <2006-02-07 Tue 09:54>
+:date: 2006-02-07 Tue 09:54
+:END:
+
+I uploaded and released Powersave-0.11.10. Again, SUSE 10.0 and Fedora
+Core 4 packages are available at sourceforge and novell forge. FC4 RPMs
+for kpowersave-0.5.6 can also be downloaded. The last changelog entries
+are: -------------------------------------------------------------------
+Tue Feb 7 10:00:53 CET 2006 - hmacht@suse.de Patch by Michael Biebl: -
+adjust fix paths in documentation - configure.ac cleanup
+------------------------------------------------------------------- Mon
+Feb 6 17:49:11 CET 2006 - hmacht@suse.de - remove config substitution
+for smp machines and userspace governor for now - install extra scripts
+in package, not in specfile - initscript cleanup - add check for
+POWERSAVE=off on kernel cmdline to avoid starting of powersaved and thus
+loading of cpufreq modules - remember which filesystems where remounted
+(novell bug #147584) - adjust writing of image size from MB to bytes due
+to kernel interface change - If suspend to disk fails because of missing
+swap space, try again with minimal image size - only link daemon binary
+agains libcpufreq Have fun, Holger
+
+* New mailinglist and IRC channel for topics regarding the Powersave daemon  :powersave_development:
+:PROPERTIES:
+:ON: <2006-02-03 Fri 19:19>
+:date: 2006-02-03 Fri 19:19
+:END:
+
+We are really making progress with bringing the Powersave daemon into
+the community. There are already about 15 subscribers on the powersave
+devel list. Due to this increasing number, I set up a new mailinglist
+powersave-users@forge.novell.com. There should be handled all kind of so
+called 'user support'. Everything related to development should be
+handled on powersave-devel. This announcement was made on several
+mailing lists to reach as much interested people as possible. We (the
+powersave team ;-)) invite everybody to take part in developing the
+Powersave daemon. I'm really happy to see that we get more and more
+feedback from other distributions like Fedora, KUbuntu or Debian. Let's
+continue that way... Additionally. I registered a channel #powersave at
+freenode. Let's see if anyone, except Danny ;-), joins. Have fun, Holger
+
+* Getting in touch with bootsplashing
+:PROPERTIES:
+:ON: <2006-02-02 Thu 01:07>
+:date: 2006-02-02 Thu 01:07
+:END:
+
+#+HTML: <script type="text/javascript">  var disqus_url = "http://blog.homac.de/?p=25"; </script>
+
+I just wanted to play around with the bootsplash a little bit, but it
+consts me several hours. At first, the documentation is completely
+outdated, thus RTFM didn't help much. Someone knows more recent
+documentation (not the READMEs, they are the same)? Please drop me a
+note and I will slap the bootsplash.org webmaster for not pointing to it
+;-) Google? Maybe I unlearned " to google" in the right way, but there
+is not much either. Installing a new bootsplash is steight
+forward. Simply copy a new theme below /etc/bootsplash/themes and
+recreate your initrd to use it. Getting the "verbose splash" while the
+system is up is also easy: ` splash
+/etc/bootsplash/themes//config/bootsplash-.cfg ` But I nearly dispaired
+of getting the "silent splash". When looking at several websites, the
+splash utility is used in many different ways. At first it came to my
+mind that the "splash -s" or "splash -S" could mean silent, but who
+knows? No manpage, no "--help" output. Sorry, but this piece of software
+is a horror. I saw another one while digging around the web and maybe
+should have used that one. Ok, back to getting into silent splash
+mode. After looking at various rc scripts, I came across /etc/rc.splash
+which finally had the solution. The SuSE bootsplash theme contains some
+lines as follows: ` trigger silent play anim trigger "rlchange B" play
+text system trigger "rlchange 3" play text devices trigger "rlchange 5"
+play text devices trigger "rlreached 5" toverbose trigger "YaST running"
+stopanim anim trigger "rlreached 0" tosilent ` Seems that this is
+related to my aim. On action "rlchange 0" for example, goto silent mode
+(tosilent). But how to trigger this trigger? Ahh, there is an option
+'-t' to give to the splash binary. Everything I read said something
+about "this is the text to display". That might be true if you have a
+textbox in your bootsplash, and have defined triggers to change the
+text, but this is generally speaking simply wrong. The option '-t' just
+triggers specific actions and has nothing to do with text. No
+documentation states that. Bullshit! So all you need to go to silent
+mode is to do a ` splash -t "rlreached 0"
+/etc/bootsplash/themes//config/bootsplash-.cfg ` provided that you have
+a line like this in your config file: `trigger "rlreached 0" tosilent`
+Wouldn't it be better to have something like this: `trigger "silent"
+tosilent` A 'splash -t "silent"' would be more intuitive IMHO. But this
+is personal taste. Last but not least, I have one more. Don't forget to
+put a newline at the end of your config file, else you will wonder for a
+long time why it doesn't work as expected although you thought that you
+had understand this whole thing. As a conclusion, IMO I think all this
+bootspash monster is a good example how software should not be done. At
+least i learned that ;-) Happy splashing, Holger
+
+* Powersave 0.11.6 update FC4 packages
+:PROPERTIES:
+:ON: <2006-01-25 Wed 09:20>
+:date: 2006-01-25 Wed 09:20
+:END:
+
+We released a new version 0.11.6 of powersave for both SUSE10 and Fedora
+Core 4. To make this possible, I had to rebuild cpufrequtils 0.4 and
+provide it in our "update requirements" section on sourceforce because
+FC4 does not ship it. Meanwhile Danny released new packages of
+kpowersave (0.5.4), too. Have fun, Holger
+
+* LibQNotify goes into production ;-)
+:PROPERTIES:
+:ON: <2006-01-19 Thu 14:27>
+:date: 2006-01-19 Thu 14:27
+:END:
+
+Nearly one year has passed, but now I have published an even more
+powerful QNotify. It comes along with an independent library called
+LibQNotify intended to be used by any other Qt application. Its API is
+very easy to use. If you like to have amazing popups scolling and
+sliding around on the desktop, LibQNotify is the library of your choice
+;-) Go download it from the [[http://sourceforge.net/projects/qnotify][sourceforge project page]].
+
+* Userland software suspend
+:PROPERTIES:
+:ON: <2006-01-19 Thu 14:05>
+:date: 2006-01-19 Thu 14:05
+:END:
+
+Tested the new userland software suspend today with patched kernel
+2.6.15.1-mm3. Things seem pretty well. Except that after resuming kacpid
+loaded the cpu to 99 %. Have to look at this further. Also I did not yet
+test the resume functionality because the system also resumed with the
+old in-kernel implementation wich should be 100% compatible. Have to
+figure out how to start a binary from initrd first. I think I will
+write, or only adjust, the userland tools needed. This way we will have
+some nice bootsplash on suspend and resume. I think there will be
+another release to test soon. Have fun, Holger
+
+* Powersave goes Fedora Core 4						     :powersave_development:
+:PROPERTIES:
+:ON: <2006-01-18 Wed 15:27>
+:date: 2006-01-18 Wed 15:27
+:END:
+
+Oh yeah, I managed to build and realease Fedora Core 4 packages of
+Powersave and KPowersave. Downloads are available on the sourceforge
+project page. Additionally I announced it on
+fedora-list@redhat.com. Let's see what and even if we get some
+responses. hopefully some of "them" will accept it ;-)
+
+* LibQNotify
+:PROPERTIES:
+:ON: <2006-01-16 Mon 00:28>
+:date: 2006-01-16 Mon 00:28
+:END:
+
+Oh yes. Just finished the [[http://qnotify.homac.de][qnotify]] redesign laying around since my
+christmas vacations. Now we have:
+
+  1. LibQNotify: Library containing central class QNotifyPopup to be
+     used by QT or KDE applications
+  2. QNotify: Command line application using LibQNotify for displaying
+nice desktop notifications.  New features: Setting color and height of
+the progress bar featured by LibQNotify
+
+What's left: Code cleanup of QNotify and of course, bugfixing ;-) Have
+fun, Holger I will do a first release tomorrow, hm, today, on
+sourceforge.
+
+* Libcpufreq integration into powersave					     :powersave_development:
+:PROPERTIES:
+:ON: <2006-01-14 Sat 00:31>
+:date: 2006-01-14 Sat 00:31
+:END:
+
+On Friday I committed the libcpufreq ( from cpufrequtils) implementation
+into the powersave daemon svn repository. This hopefully preserves us
+from future interface changes and less maintainance. A release will be
+done in the beginning of next week on sourceforge. Have fun, Holger
+
+* Vi vs. Emacs
+:PROPERTIES:
+:ON: <2005-12-30 Fri 15:37>
+:date: 2005-12-30 Fri 15:37
+:END:
+
+Cool ;-) [[http://www.homac.de/images/vi-vs-emacs.png]]
+
+* GNU autotools tutorial
+:PROPERTIES:
+:ON: <2005-12-29 Thu 01:04>
+:date: 2005-12-29 Thu 01:04
+:END:
+
+I just put my [[http://www.homac.de/cgi-bin/index.pl?page=autotools_tut][GNU autotools tutorial]] I wrote over one year ago on my
+homepage. This was one one the things I ever wanted to do but never got
+the time. Or being more precise, there was everytime something more
+important.
+
+* ndiswrapper and wpa_supplicant
+:PROPERTIES:
+:ON: <2005-12-28 Wed 01:11>
+:date: 2005-12-28 Wed 01:11
+:END:
+
+I got a Netgear WG511v2 pcmcia card and really feared the installation
+and setup. But it was much easier as I thought. I only had to perform
+the following steps:
+
+*Basic setup or configuring ndiswrapper:*
+
+  1. Copy the files WG511v2.INF and WG511v2.sys from the windows
+     installation CDs to your local linux box
+  2. Issue the command 'ndiswrapper -i WG511v2.INF' to install the
+     windows driver
+  3. execute 'modprobe ndiswrapper'
+  4. now iwconfig showed up my wlan card as wlan1 and it was ready for
+     action
+
+*Getting wpa encryption with wpa_supplicant:*
+
+  1. Setup your access point to use wpa encryption
+  2. Copy the basic configuration part from the wpa_supplicant README to
+     /etc/wpa_supplicant.con and adjust it to your personal needs:
+
+
+    #allow frontend (e.g., wpa_cli) to be used by all users in 'root' group
+    ctrl_interface=/var/run/wpa_supplicant ctrl_interface_group=root
+    #
+    # home network; allow all valid ciphers
+    network={ ssid="essidfoo" scan_ssid=1 key_mgmt=WPA-PSK psk="keybar"
+	    }
+
+
+  3. Now start wpa_supplicant with 'wpa_supplicant -d -c
+     /etc/wpa_supplicant.conf -i wlan1 -D ndiswrapper' as root
+  4. done
+
+Happy hotspotting ;-)!
+
+* Making progress with getting the community involved			     :powersave_development:
+:PROPERTIES:
+:ON: <2005-12-18 Sun 21:45>
+:date: 2005-12-18 Sun 21:45
+:END:
+
+Yesterday we received some patches for the powersave daemon regarding
+scripts and the cpufreq implementation. I am really pleased with
+that. It seems that we are really making progress with our efforts
+regarding "distribution independence" and "get the community involved"
+strategy. Hope this will extend in future.
+
+* Online at home
+:PROPERTIES:
+:ON: <2005-12-10 Sat 22:27>
+:date: 2005-12-10 Sat 22:27
+:END:
+
+I dug out my old analogue modem to get online at home until my dsl line
+is ready. And also I managed to get it working ;-). Nevertheless, I am
+looking forward to go online at work on monday to get rid of this slow
+motion ;-) BTW: Powersave's cvs repository finally migrated to svn.
+
+* Powersave project page on www.opensuse.org				     :powersave_development:
+:PROPERTIES:
+:ON: <2005-12-09 Fri 16:34>
+:date: 2005-12-09 Fri 16:34
+:END:
+
+I just created the powersave project page on [[http://en.opensuse.org/Projects_Powersave][opensuse.org]]. It should be
+a first starting point for users, developers or just interested people
+what I am or what we are doing at SUSE regarding the Powersave
+daemon. But the page exactly states that the Powersave daemon is a
+community project like any other. Please read if you like. Bye, Holger
+
+* Powersave updates on sourceforge and novellforge			     :powersave_development:
+:PROPERTIES:
+:ON: <2005-12-08 Thu 15:21>
+:date: 2005-12-08 Thu 15:21
+:END:
+
+With the fresh released powersave packages made available today on
+sorceforge and forge.novell.comentirely, I finally completed all code-,
+documentation- and implementation cleanups. We will now entirely
+concentrate on new features and enhancements in the next weeks. With the
+first bugreport about an oopsing module when suspending a network
+device, runtime device power management will be the greatest upcoming
+challange I fear. But other features will be less problematic I
+expect. Will go to my still "netless" home now :-( Bye, Holger
+
+* Blog goes online
+:PROPERTIES:
+:ON: <2005-12-08 Thu 07:40>
+:date: 2005-12-08 Thu 07:40
+:END:
+
+Yesterday I did a small redesign of my personal [[http://www.homac.de][homepage]]. To be precise,
+it is not much more than installing a new stylesheet, tweaking it a bit
+and adjusting headers and footers. Subsequently, my personal blog went
+online. And as you can see, this is the first post. Unfortunatelly, due
+to my relocation to Nuremberg last weekend, I have no webaccess at my
+new home, yet. Thus, this post delayed one day and is composed at
+work. But I will try to be more on time in future ;-)
+
+
+
+* org-mode configuration
+#+FILETAGS: BLOG
+#+TAGS: powersave_development general docking power_management private maemo laptops
+#+PROPERTY: stylesheet /stylesheets/dark.css
+Set this to not include tags in the headlines
+#+OPTIONS: tags:nil

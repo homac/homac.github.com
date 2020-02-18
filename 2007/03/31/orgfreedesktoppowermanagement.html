@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>org.freedesktop.PowerManagement</title>
+<!--    <link rel="stylesheet" href="" type="text/css" media="screen"/>-->
+ <link rel="stylesheet" href="/stylesheets/dark.css" type="text/css" media="screen"/>
+  </head>
+
+  <body>
+    <div id="page">
+      <div id="header">
+	<div id="headerimg">
+	  <h1 class="caption"><a href="http://blog.homac.de" class="caption">Holger's Blog</a></h1>
+	  <h3 class="description">Cervisiam Bibat</h3>
+	</div>
+      </div>
+
+      <div id="content">
+	<small>31 Mar 2007 16:53</small>
+	<a href="/atom.xml" title="Subscribe"><img class="top-icon" width="48"
+						   height="48" alt="Subscribe"
+						   src="/images/feed-icon.png"/></a>
+
+
+
+<span class="navigation">
+  <a rel="prev" href="/2007/02/26/fosdem-.html" title="View FOSDEM 2007">&larr; previous</a>
+</span>
+
+
+<br>
+<span class="navigation">
+  <a rel="next" href="/2007/05/31/gtk-status-icon-mess.html" title="View GTK status icon mess">next &rarr;</a>
+</span>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><a href="http://blog.homac.de//2007/03/31/orgfreedesktoppowermanagement.html">org.freedesktop.PowerManagement</a></h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+There's currently a <a href="http://lists.freedesktop.org/archives/xdg/2007-March/009489.html">discussion on the xdg@freedesktop.org list</a> started
+by <a href="http://hughsient.livejournal.com/">Richard Hughes</a> about a common org.freedesktop.PowerManagement
+interface <a href="http://people.freedesktop.org/~hughsient/temp/power_management-spec-0.1.html">(first draft available)</a> which will hopefully become cross
+desktop. Currently it includes methods like:
+</p>
+<ul>
+<li>org.freedesktop.PowerManagement.Shutdown()
+</li>
+<li>org.freedesktop.PowerManagement.Reboot()
+</li>
+<li>org.freedesktop.PowerManagement.Suspend()
+</li>
+<li>org.freedesktop.PowerManagement.Suspend()
+</li>
+<li>org.freedesktop.PowerManagement.GetOnBattery()
+</li>
+<li>&hellip;
+</li>
+</ul>
+
+
+<p>
+Well, this all sounds very good, no? Of course it does, and it is!
+There's already a lot agreemennt on the most of those methods from both
+sides, KDE and GNOME which is really great.
+</p>
+<p>
+But there's one problem I'm currently seeing. In my opinion, it would be
+better to define two methods Shutdown() and Reboot() somewhere in the
+desktop base (something like org.freedesktop.Desktop) in the future
+(KDE4, GNOME 3.0, etc&hellip;). I indeed think that they are in the scope of
+power management, but still have some kind of exceptional
+position. Having them tied to the o.f.PM interface, and more important,
+the methods being compulsory, would force the desktop to always
+implement all methods of the interface. Do you get the idea?
+</p>
+<p>
+So if you don't have a power management application such as kpowersave
+or gnome-power-manager the desktop itself would have to implement all
+the other methods like Suspend() or Hibernate(), which seems strange to
+me, especially in regard to usual desktop systems. You sometimes just
+don't need them. To rephrase it a little bit, some people might just not
+want them for whatever reasons. Having the Shutdown() and Reboot()
+methods methods compulsory will make it very hard to split them out in
+future.
+</p>
+<p>
+Indeed, in current implementations, both kpowersave and gnome power
+manager just call the logout mechanism of "their" desktop, which
+involved saving the session etc. Applications could just call the logout
+mechanisms themselves instead of handing them over to a interface which
+then again hands them over to someone else, no?
+</p>
+<p>
+Currently gnome-power-manager is very well integrated into GNOME. For
+instance, if there's not battery or other laptop specific capabilities,
+the icon just disappears. So one could argue that g-p-m is a direct part
+of the desktop base. Not so for KDE. KDE currently doesn't have a clever
+power management application by default. However, I really like to see
+kpowersave in KDE default in the near future, but that's another story.
+</p>
+<p>
+Ideally, IMHO, it should look as follows in the future:
+</p>
+<p>
+Having a base interface org.freedesktop.Desktop which carries out
+methods like Shutdown(), Reboot(), Logout() or Session.Save(). And on
+top of it there should be something like
+org.freedesktop.Desktop.PowerManagement.Suspend() and the like:
+</p>
+<ul>
+<li>org.freedesktop.Desktop
+</li>
+<li>org.freedesktop.Desktop.Shutdown()
+</li>
+<li>org.freedesktop.Desktop.Reboot()
+</li>
+<li>org.freedesktop.Desktop.Session.Save()
+</li>
+<li>org.freedesktop.Desktop.PowerManagement.Suspend()
+</li>
+<li>org.freedesktop.Desktop.PowerManagement.GetOnBattery()
+</li>
+</ul>
+
+
+<p>
+One could of course just let the word "Desktop" slip, that's an
+implementation detail.
+</p>
+<p>
+The first four methods get served by the desktop base, the last two by a
+power management application if one available.
+</p>
+<p>
+It seems that this proposal already got some agreement from a some
+people both from the KDE and GNOME community. Intefaces might be called
+org.freedesktop.SessionManagement.Shutdown() (same for Reboot()) and
+org.freedesktop.PowerManagement.*. But that is still to be defined.
+</p>
+<p>
+Comments and opinions would be welcome!
+</p></div>
+</div>
+
+
+<p>&nbsp;<hr></p>
+      <!-- DISQUS -->
+<!--      <script type="text/javascript">  var disqus_developer = true; </script>-->
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+	(function() {
+	var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	dsq.src = 'http://holgersblog.disqus.com/embed.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=holgersblog">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </div> <!-- content -->
+
+      <div id="footer">
+	<p>Generated with a <a href="http://www.gnu.org/software/emacs/tour/">GNU Emacs</a>, <a href="http://orgmode.org/">org-mode</a>,
+          <a href="http://github.com/mojombo/jekyll">Jekyll</a>,
+          and <a href="http://juanreyero.com/open/org-jekyll/">org-jekyll</a>
+          toolchain.</p>
+      </div>
+    </div> <!-- page -->
+
+  </body>
+</html>
+

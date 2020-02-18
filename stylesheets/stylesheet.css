@@ -1,0 +1,101 @@
+/*
+
+ Based on Kubrick theme from wordpress
+
+ Released under GPLv2
+
+*/
+
+body {
+    font: Verdana, Arial, Helvetica, sans-serif;
+    background: url('../images/kubrickbgcolor.jpg');
+    text-align: center;
+}
+
+#page {
+    background-color: white;
+    text-align: left;
+    background: url("../images/kubrickbgwide.jpg") repeat-y top; border: none;
+    width: 750px;
+    margin: 0 auto;
+}
+
+#content {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    font-size: 0.9em;
+}
+
+#header {
+    background: url("../images/kubrickheader.jpg") no-repeat top center;
+    height: 200px;
+}
+
+#headerimg {
+    color: white;
+    text-align: center;
+    height: 180px;
+}
+
+#headerimg .caption {
+    font-size: 1.7em;
+    color: white;
+    text-decoration: none;
+    padding-top: 70px;
+}
+
+#headerimg .description {
+    font-size: 0.95em;
+    color: white;
+}
+
+#footer {
+    background: #eee url('../images/kubrickfooter.jpg') no-repeat top;
+    margin: 0 auto;
+    width: 750px;
+    clear: both;
+    height: 60px;
+}
+
+#footer p {
+    font-size: 0.8em;
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 0;
+    width: 95%;
+}
+
+small {
+        font-family: Arial, Helvetica, Sans-Serif;
+        font-size: 0.8em;
+	color: #777;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img.top-icon {
+    border: none;
+    float:right;
+    margin-right:5px;
+    padding:2px;
+    position:relative;
+    top:-0px;
+    right: -90px;
+    vertical-align:middle;
+}
+
+span.date { display:block; float:left;width: 100px }
+
+.navigation a {
+    font-size: 0.8em;
+    color: #777;
+    position:relative;
+    padding-right: -100px;
+    float: right;
+}
